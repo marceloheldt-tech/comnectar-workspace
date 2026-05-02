@@ -55,4 +55,15 @@
 
 ---
 
+## Perfil do autor
+
+> Usado no estilo "tweet" do carrossel. Preenchido automaticamente no setup.
+
+- **Nome:**
+- **Handle:**
+- **Foto:** *(ex: marca/foto-perfil.jpg)*
+- **Badge verificado:** *(sim/não)*
+
+---
+
 ## Observações adicionais
