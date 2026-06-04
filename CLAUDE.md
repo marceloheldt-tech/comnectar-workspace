@@ -1,14 +1,45 @@
-# Claude Code OS — Kit Ratos de IA
+# comnéctar — Claude Code OS
 
-Este repositório é o kit de boas-vindas do curso Claude Code OS.
+## O que é esse workspace
+Esse é o espaço de trabalho do Marcelo na comnéctar, ecommerce de vinhos premium. Aqui ficam conteúdos, campanhas, análises, controle financeiro e tudo que envolve a operação do negócio.
 
-Se você acabou de clonar esse repositório:
-1. Rode `/setup` pra configurar o sistema pro seu negócio (uns 5 minutos)
-2. Depois rode `/mapear` pra criar skills personalizadas pro que você faz no dia a dia
+**Estrutura de pastas:**
+- `conteudo/` — posts para redes sociais, email marketing e WhatsApp
+- `campanhas/` — campanhas de vendas ativas e encerradas
+- `analises/` — análises de vinhos e relatórios de vendas
+- `financeiro/` — controle financeiro e fechamentos mensais
+- `dados/` — arquivos de apoio, imagens, referências
+- `marca/` — logo, identidade visual e design guide
+- `_contexto/` — contexto do negócio, preferências e estratégia
+- `templates/skills/` — templates de skills prontos pra personalizar com /mapear
+- `templates/ferramentas/catalogo.md` — APIs e ferramentas disponíveis pra usar em skills
+
+## Sobre o negócio
+comnéctar é um ecommerce de vinhos premium com foco em B2C. O Marcelo toca tudo sozinho — desde a curadoria e análise dos vinhos até as vendas, pós-venda, campanhas e controle financeiro. Tem 2 freelancers que hoje cuidam dos criativos (layouts e copies), mas o plano é internalizar essa parte.
+
+## O que mais fazemos aqui
+- Conteúdo para Instagram e TikTok
+- Campanhas de vendas disparadas via WhatsApp
+- Email marketing para base de clientes (via Shopify)
+- Análise de vinhos com oportunidade de compra
+- Controle financeiro e fechamentos mensais
+- Análise de vendas e performance
+
+## Clientes e contexto
+Foco principal em consumidor final (B2C), mercado premium. Alguns estabelecimentos PJ compram também, mas não são o foco central.
+
+## Tom de voz
+Informal, leve e educado. O público é premium, então a comunicação é sempre polida — mas sem formalidade exagerada. Escrever como alguém que entende de vinho e fala com naturalidade sobre isso. Veja `_contexto/preferencias.md` para detalhes.
+
+## Ferramentas conectadas
+- Shopify — loja, newsletter e gestão de pedidos (MCP conectado)
+- Bling — sistema de gestão completo (ERP)
+- Canva — criação de visuais (MCP conectado)
+- WhatsApp Business — campanhas e atendimento
+- Instagram — canal principal de conteúdo
+- TikTok — canal em crescimento
 
 ---
-
-<!-- Este arquivo será atualizado pelo /setup com o contexto do seu negócio. -->
 
 ## Contexto do negócio
 
@@ -80,7 +111,7 @@ Mostrar o que vai mudar antes de salvar. Não reformatar o arquivo inteiro, só 
 - Perguntas simples ou conversas sem ação
 - Mudanças que já foram salvas pelo bloco "Aprender com correções"
 
-**Dica:** se não sabe se algo mudou, rode `/atualizar` pra uma varredura completa.
+**Dica:** se não sabe se algo mudou, rode `/atualizar` faz uma varredura completa.
 
 ---
 
