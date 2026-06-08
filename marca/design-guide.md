@@ -47,6 +47,11 @@ Clean e minimalista com posicionamento premium. Muito espaço em branco, fotogra
 - Distorcer ou recolorir o logo
 - **Cobrir a garrafa (ou qualquer produto) com overlay ou máscara escura** — o produto deve aparecer 100% visível. Se houver painel escuro pra texto, o produto fica no lado direito limpo, fora de qualquer sobreposição
 
+## Padrão de layout com imagem de fundo (carrosseis)
+Sempre que houver imagem de fundo num slide:
+1. Aplicar máscara/painel escuro sobre a imagem — o texto fica acima dessa máscara
+2. Se a imagem tiver produto (garrafa), usar painel escuro posicionado apenas no lado do texto (não overlay full-slide), deixando o produto completamente visível no lado oposto
+
 ---
 
 ## Logo

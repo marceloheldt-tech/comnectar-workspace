@@ -16,5 +16,8 @@ Informal com elegância. Parágrafos curtos, linguagem acessível, mas sem gíri
 ## Preferências adicionais
 Quando escrever para o público da comnéctar (posts, emails, WhatsApp), manter o mesmo registro: informal, polido, conhecedor de vinhos sem ser pedante.
 
-## Regra visual obrigatória — produtos
-**A garrafa (ou qualquer produto) deve aparecer 100% visível em todos os posts e carrosseis.** O cliente precisa ver o produto por inteiro. Nunca deixar a garrafa cortada, atrás de overlay/máscara escura ou parcialmente oculta. Se houver máscara de fundo, ela deve cobrir apenas a área do texto — o produto fica sempre no lado limpo, sem sobreposição.
+## Regras visuais obrigatórias — carrosseis e posts
+
+**1. Máscara escura sobre a imagem de fundo:** sempre aplicar um overlay/painel escuro sobre a imagem de fundo. O texto do slide fica posicionado acima dessa máscara, garantindo legibilidade.
+
+**2. Produto sempre 100% visível:** a garrafa (ou qualquer produto) nunca pode ficar atrás da máscara escura. A máscara cobre apenas a área do texto. O produto fica no lado limpo do slide, sem nenhuma sobreposição. Usar painel escuro posicionado (não overlay full-slide) quando houver produto na imagem.
