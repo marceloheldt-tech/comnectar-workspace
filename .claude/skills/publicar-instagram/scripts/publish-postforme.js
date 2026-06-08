@@ -17,7 +17,7 @@ function parseArgs() {
 }
 
 const API_KEY = process.env.POSTFORME_API_KEY;
-const BASE = "https://app.postforme.dev/api";
+const BASE = "https://api.postforme.dev";
 
 async function apiFetch(endpoint, options = {}) {
   const res = await fetch(`${BASE}${endpoint}`, {
