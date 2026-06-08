@@ -45,6 +45,7 @@ Clean e minimalista com posicionamento premium. Muito espaço em branco, fotogra
 - Poluir o visual com muitos elementos decorativos
 - Usar cores fora da paleta sem aprovação
 - Distorcer ou recolorir o logo
+- **Cobrir a garrafa (ou qualquer produto) com overlay ou máscara escura** — o produto deve aparecer 100% visível. Se houver painel escuro pra texto, o produto fica no lado direito limpo, fora de qualquer sobreposição
 
 ---
 
