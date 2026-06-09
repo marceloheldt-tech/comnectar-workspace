@@ -15,5 +15,9 @@ Crescimento com restrição de topo de funil. A base de clientes existe, o produ
 ## Contexto com prazo
 Sem prazos específicos mencionados. Ambas as prioridades são de médio prazo.
 
+## Ferramentas operacionais ativas
+
+- **Catálogo de vinhos** — formato PNG + PDF padronizado e aprovado em junho/2026. Marcelo manda a lista de vinhos, o catálogo é gerado com o design fixo. Skill: `/catalogo-vinhos`. Template de referência: `conteudo/catalogos/2026-06-09-italia-franca/`.
+
 ---
 *Atualize esse arquivo quando suas prioridades mudarem.*
