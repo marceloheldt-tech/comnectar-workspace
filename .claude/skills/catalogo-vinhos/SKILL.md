@@ -127,49 +127,68 @@ Se algum dado estiver errado ou faltando, o usuário pode corrigir antes de cont
 
 #### Layout da capa
 
+- **Fundo branco** (`#FFFFFF`) — coerência com o fundo das fotos de garrafa
+- **Logo comnéctar completa** (`dados/image.png`) centralizada verticalmente, tamanho ~280px de largura
+- **Linha fina vinho** `#991356` abaixo do logo (80px largura, 2px altura)
+- **Título da seleção** em Geotipe, ~44px, preto, centralizado (ex: "Seleção de Vinhos", "Especial Dia dos Pais")
+- **Subtítulo ou data** em Rubik, 14px, `#999`, letra-espaçada (opcional, só se o usuário informar)
+- **Rodapé fixo** (mesma estrutura de todas as páginas — ver abaixo)
+
+---
+
+#### Rodapé padrão — presente em TODAS as páginas (capa + páginas de produto)
+
+Posicionado no canto inferior direito, a ~32px da borda:
+
 ```html
-<!-- Capa: fundo preto, logo centralizada, título da seleção -->
-<div style="width:1080px; height:1350px; background:#000; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:40px;">
-  <img src="../../../../dados/image-1.png" style="width:220px;">
-  <div style="width:80px; height:2px; background:#991356;"></div>
-  <h1 style="font-family:'Geotipe',Georgia,serif; color:#fff; font-size:52px; letter-spacing:4px; text-transform:uppercase; margin:0;">Seleção de Vinhos</h1>
-  <!-- subtítulo da campanha se houver -->
+<!-- Rodapé canto inferior direito -->
+<div style="position:absolute; bottom:32px; right:40px; display:flex; align-items:center; gap:10px;">
+  <span style="font-family:'Rubik',sans-serif; font-size:11px; color:#bbb; letter-spacing:2px; text-transform:uppercase;">comnéctar</span>
+  <img src="../../../../dados/image-2.png" style="width:22px; opacity:0.4;">
 </div>
 ```
+
+Usar `position:relative` no container da página pra o rodapé funcionar com `position:absolute`.
 
 ---
 
 #### Layout de cada card de vinho
 
-Cada card ocupa metade da largura (~480px). Fundo branco, borda sutil.
+Cada card ocupa metade da largura (~480px). Fundo branco, sem bordas pesadas.
 
 Elementos do card (de cima pra baixo):
-1. **Foto do produto** — height: 240px, object-fit: contain, sem cortar a garrafa, fundo branco
-2. **Linha divisória** — 2px, cor vinho `#991356`, largura total do card
-3. **Nome do vinho** — Geotipe, 20-22px, preto, sem bold pesado
-4. **País + Região** — `[emoji bandeira] [País] · [Região]`, Rubik, 13px, `#444`
-5. **Uva** — Rubik, 13px, `#444`
-6. **Teor alcoólico** — Rubik, 12px, `#666`
-7. **Preço** — Rubik bold, 28px, cor vinho `#991356`
+1. **Foto do produto** — height: 260px, `object-fit: contain`, sem cortar a garrafa, fundo branco
+2. **Bloco de dados** com fundo discreto — padding 16px, sem bordas externas no card
+3. **Nome do vinho** — Geotipe, 20-22px, preto, peso regular
+4. **Linha fina vinho** `#991356` — 100% largura do bloco, 1.5px, margem 8px vertical
+5. **País + Região** — `[emoji bandeira] [País] · [Região]`, Rubik 500, 13px, cor vinho `#991356`
+6. **Uva(s)** — label "Uva" em Rubik 400 12px `#999` + valor em Rubik 500 13px `#000`
+7. **Teor alcoólico** — label "Teor" em Rubik 400 12px `#999` + valor em Rubik 500 13px `#000`
+8. **Preço** — Rubik bold, 30px, cor vinho `#991356`, margem top 12px
 
-Omitir campos que não tiverem dado (não deixar linha vazia nem "—").
+País, Região, Uva e Teor devem usar a cor da marca `#991356` como acento — seja no label, no ícone ou no destaque do valor. Omitir campos sem dado.
 
 ---
 
 #### Estrutura HTML das páginas de produto
 
 ```html
-<div class="page" style="width:1080px; height:1350px; overflow:hidden; background:#fff; font-family:'Rubik',sans-serif; box-sizing:border-box; padding:48px 40px;">
-  
+<div class="page" style="position:relative; width:1080px; height:1350px; overflow:hidden; background:#fff; font-family:'Rubik',sans-serif; box-sizing:border-box; padding:48px 40px 80px;">
+
   <!-- Header discreto da página -->
-  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:32px; padding-bottom:16px; border-bottom:1px solid #eee;">
-    <img src="../../../../dados/image-2.png" style="width:36px; opacity:0.7;">
-    <span style="font-size:12px; color:#aaa; letter-spacing:2px; text-transform:uppercase;">Catálogo comnéctar</span>
+  <div style="display:flex; justify-content:flex-start; align-items:center; margin-bottom:36px; padding-bottom:16px; border-bottom:1px solid #f0f0f0;">
+    <span style="font-size:11px; color:#ccc; letter-spacing:3px; text-transform:uppercase;">Seleção de Vinhos</span>
   </div>
 
   <!-- Grid 2x2 -->
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px; height:calc(100% - 80px);">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:36px;">
     <!-- card de vinho × 4 -->
+  </div>
+
+  <!-- Rodapé canto inferior direito (em toda página) -->
+  <div style="position:absolute; bottom:32px; right:40px; display:flex; align-items:center; gap:10px;">
+    <span style="font-size:11px; color:#bbb; letter-spacing:2px; text-transform:uppercase;">comnéctar</span>
+    <img src="../../../../dados/image-2.png" style="width:22px; opacity:0.4;">
   </div>
 
 </div>
@@ -236,5 +255,8 @@ Se o usuário informar nome da ação (ex: "Dia dos Pais"), usar: `catalogo-dia-
 - Se algum dado não for encontrado (região, teor), omitir o campo — nunca inventar
 - Se a imagem do Shopify não existir, mostrar placeholder elegante com o nome do vinho
 - Mostrar a capa para aprovação antes de renderizar as demais páginas
-- Design clean: fundo branco, muito espaço em branco, sem gradientes, sem sombras pesadas
+- **Fundo sempre branco** — as fotos de garrafa têm fundo branco, não criar contraste desnecessário
+- **Logo comnéctar na capa** (centralizada) + **rodapé discreto em todas as páginas** (canto inferior direito: texto "comnéctar" + gota)
+- **Cor da marca como acento** nos campos de país, região, uva e teor — não apenas no preço
+- Design clean: muito espaço em branco, sem gradientes, sem sombras, sem elementos decorativos extras
 - Paleta restrita: preto `#000`, vinho `#991356`, branco `#FFF` — nada fora disso
