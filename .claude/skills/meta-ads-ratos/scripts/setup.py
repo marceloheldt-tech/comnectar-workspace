@@ -10,6 +10,32 @@ import os
 import sys
 import shutil
 
+# Carrega .env antes de qualquer checagem
+_ENV_PATH = os.path.expanduser("~/.claude/skills/meta-ads-ratos/.env")
+_PROJECT_ENV = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env")
+
+def _load_env():
+    for path in [_ENV_PATH, _PROJECT_ENV]:
+        if os.path.isfile(path):
+            with open(path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line or line.startswith("#"):
+                        continue
+                    if line.startswith("export "):
+                        line = line[7:]
+                    if "=" not in line:
+                        continue
+                    k, _, v = line.partition("=")
+                    k = k.strip()
+                    v = v.strip().strip('"').strip("'")
+                    if k and v and not os.environ.get(k):
+                        os.environ[k] = v
+            return path
+    return None
+
+_loaded_from = _load_env()
+
 
 def check_python():
     v = sys.version_info

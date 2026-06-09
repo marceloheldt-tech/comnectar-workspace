@@ -33,3 +33,23 @@ clientes:
   #   notas: "qualquer observacao relevante"
 
   # -- Suas contas abaixo --
+
+  comnectar:
+    nome: "comnéctar"
+    conta_anuncio: "act_1253892951871195"
+    pagina_facebook: "108269122061516"
+    instagram_username: "@comn.ectar"
+    moeda: "BRL"
+    notas: "Conta principal comnéctar. Business ID: 2957016517932718"
+
+  marcelo-pessoal:
+    nome: "Marcelo De Camargo Heldt"
+    conta_anuncio: "act_154468634614588"
+    moeda: "BRL"
+    notas: "Conta pessoal do Marcelo"
+
+  comnectar-antiga:
+    nome: "[ANTIGA] ComnécTar"
+    conta_anuncio: "act_383345043885272"
+    moeda: "BRL"
+    notas: "Conta antiga — nao usar para novas campanhas"
