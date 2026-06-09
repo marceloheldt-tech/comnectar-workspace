@@ -4,6 +4,20 @@ Regras aprendidas durante o uso. O Claude DEVE ler este arquivo antes de criar q
 
 ---
 
+### 2026-06-09 — Relatório de performance padrão
+**Regra:** Quando o Marcelo pedir "performance", "como estão os anúncios", "resultados" ou "métricas" sem especificar outra coisa, rodar SEMPRE este comando como ponto de partida:
+```
+python .claude/skills/meta-ads-ratos/scripts/insights.py account \
+  --account act_1253892951871195 \
+  --date-preset last_7d \
+  --fields "campaign_name,impressions,clicks,spend,ctr,cpm,cpc" \
+  --level campaign
+```
+Apresentar os resultados formatados em tabela legível, não JSON cru.
+**Contexto:** É o relatório que o Marcelo sempre pede. Conta padrão: comnéctar (act_1253892951871195).
+
+---
+
 ### 2026-04-03 — Sempre incluir CTA no criativo
 **Regra:** Ao criar criativos (create.py creative), SEMPRE incluir call_to_action_type. Padrão: LEARN_MORE pra tráfego, SIGN_UP pra leads, SHOP_NOW pra vendas. Nunca criar criativo sem CTA.
 **Contexto:** Criou carrossel sem botão de CTA. Usuário teve que corrigir manualmente.
