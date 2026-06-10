@@ -45,10 +45,27 @@ for (const wine of wines) {
 
 console.log(`\n🍷 Buscando imagens para ${wines.length} vinho(s)...\n`);
 
-const browser = await chromium.launchPersistentContext(
-  'C:/Users/marce/AppData/Local/Google/Chrome/User Data',
-  { channel: 'chrome', headless: false, args: ['--profile-directory=Default'] }
-);
+// Inicializa browser — tenta Chrome com perfil do usuário (Google logado),
+// senão usa Chromium bundled (para Drive compartilhado via link público)
+let browser;
+let browserInstance = null;
+
+try {
+  browser = await chromium.launchPersistentContext(
+    'C:/Users/marce/AppData/Local/Google/Chrome/User Data',
+    { channel: 'chrome', headless: false, args: ['--profile-directory=Default'] }
+  );
+  console.log('🌐 Chrome com perfil do usuário iniciado');
+} catch {
+  console.log('ℹ Chrome em uso — iniciando Chromium sem perfil');
+  browserInstance = await chromium.launch({
+    headless: false,
+    args: ['--disable-blink-features=AutomationControlled'],
+  });
+  browser = await browserInstance.newContext({
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
+  });
+}
 
 for (const [key, group] of Object.entries(byProducer)) {
   const [linha, produtor] = key.split('|||');
@@ -78,7 +95,7 @@ for (const [key, group] of Object.entries(byProducer)) {
     );
     await viewerPage.waitForTimeout(4000);
 
-    // Pegar o encoded ID do token de autenticação da imagem
+    // Pegar o encoded ID do token da imagem no viewer
     const imgEl  = viewerPage.locator('img[src*="viewer/img"]').first();
     const rawSrc = await imgEl.getAttribute('src', { timeout: 8000 });
     const src    = rawSrc.startsWith('//') ? `https:${rawSrc}` : rawSrc;
@@ -118,7 +135,12 @@ for (const [key, group] of Object.entries(byProducer)) {
   }
 }
 
-await browser.close();
+// Fecha browser
+if (browserInstance) {
+  await browserInstance.close();
+} else {
+  await browser.close();
+}
 
 writeFileSync(join(outDir, '_wines.json'), JSON.stringify(wines, null, 2));
 
