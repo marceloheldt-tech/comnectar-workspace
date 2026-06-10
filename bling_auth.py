@@ -1,9 +1,8 @@
 """
 Bling OAuth 2.0 — geração inicial do access_token e refresh_token.
-Roda uma vez. Salva os tokens no .env automaticamente.
+Fluxo manual: sem servidor local, sem redirect URI configurado.
 """
 import os, base64, secrets, webbrowser, urllib.parse
-from http.server import HTTPServer, BaseHTTPRequestHandler
 import requests
 
 # Carrega .env
@@ -18,7 +17,7 @@ with open(env_path) as f:
 
 CLIENT_ID     = env.get("BLING_CLIENT_ID", "")
 CLIENT_SECRET = env.get("BLING_API_KEY", "")
-REDIRECT_URI  = "http://localhost:9999/callback"
+REDIRECT_URI  = "https://localhost/callback"
 STATE         = secrets.token_hex(16)
 
 if not CLIENT_ID or not CLIENT_SECRET:
@@ -29,45 +28,32 @@ if not CLIENT_ID or not CLIENT_SECRET:
 auth_url = (
     f"https://www.bling.com.br/Api/v3/oauth/authorize"
     f"?response_type=code&client_id={CLIENT_ID}&state={STATE}"
+    f"&redirect_uri={urllib.parse.quote(REDIRECT_URI)}"
 )
 
 print("\n=== Bling OAuth ===")
-print("Abrindo navegador para autorização...")
-print(f"URL: {auth_url}\n")
+print("Abrindo o Bling no navegador para você autorizar...\n")
 webbrowser.open(auth_url)
 
-# Servidor local para capturar o callback
-captured = {}
+print("Depois de clicar em Autorizar, o navegador vai dar um erro de conexão.")
+print("Isso é NORMAL. Você só precisa copiar a URL completa que aparece na barra do navegador.")
+print("\nEx: https://localhost/callback?code=XXXXXX&state=YYYYYY\n")
 
-class CallbackHandler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        params = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
-        captured["code"]  = params.get("code",  [""])[0]
-        captured["state"] = params.get("state", [""])[0]
-        self.send_response(200)
-        self.end_headers()
-        self.wfile.write(b"Autorizado! Pode fechar esta aba.")
-        print("Callback recebido.")
+callback_url = input("Cole aqui a URL da barra do navegador: ").strip()
 
-    def log_message(self, *args):
-        pass  # silencia logs do servidor
-
-server = HTTPServer(("localhost", 9999), CallbackHandler)
-print("Aguardando autorização no navegador...")
-server.handle_request()
-
-code  = captured.get("code")
-state = captured.get("state")
+# Extrai o code da URL colada
+params = urllib.parse.parse_qs(urllib.parse.urlparse(callback_url).query)
+code  = params.get("code",  [""])[0]
+state = params.get("state", [""])[0]
 
 if not code:
-    print("ERRO: authorization_code não recebido.")
+    print("ERRO: não consegui encontrar o 'code' na URL. Tente novamente.")
     exit(1)
 
 if state != STATE:
-    print("ERRO: state inválido. Possível ataque CSRF. Abortando.")
-    exit(1)
+    print("AVISO: state diferente do esperado. Continuando mesmo assim...")
 
-print(f"Authorization code recebido. Trocando por tokens...")
+print(f"\nCódigo recebido. Trocando por tokens...")
 
 # Troca o código pelos tokens
 credentials = base64.b64encode(f"{CLIENT_ID}:{CLIENT_SECRET}".encode()).decode()
@@ -81,12 +67,14 @@ response = requests.post(
     data={
         "grant_type": "authorization_code",
         "code": code,
+        "redirect_uri": REDIRECT_URI,
     },
     timeout=15,
 )
 
 if response.status_code != 200:
-    print(f"ERRO ao obter tokens: {response.status_code} — {response.text}")
+    print(f"ERRO ao obter tokens: {response.status_code}")
+    print(response.text)
     exit(1)
 
 tokens = response.json()
@@ -94,8 +82,7 @@ access_token  = tokens["access_token"]
 refresh_token = tokens["refresh_token"]
 expires_in    = tokens["expires_in"]
 
-print(f"\nTokens obtidos com sucesso!")
-print(f"access_token expira em: {expires_in}s ({expires_in//3600}h)")
+print(f"Tokens obtidos! Access token expira em {expires_in//3600}h.")
 
 # Salva no .env
 new_lines = []
@@ -120,5 +107,4 @@ if not added_refresh:
 with open(env_path, "w") as f:
     f.writelines(new_lines)
 
-print("Tokens salvos no .env.")
-print("\nPronto! Pode usar a API do Bling agora.")
+print("Tokens salvos no .env. Integração pronta!")
