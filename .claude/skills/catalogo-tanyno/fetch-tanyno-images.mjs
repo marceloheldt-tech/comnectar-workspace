@@ -18,8 +18,13 @@ const outDir = join(ROOT, process.argv[3]);
 mkdirSync(outDir, { recursive: true });
 
 // Região de corte da garrafa nos PDFs Tanyno (renderizado a w=1600px, A4 portrait ~2263px tall)
-// Garrafa fica na metade direita da página, região central-inferior
-const BOTTLE_CLIP = { x: 720, y: 380, width: 820, height: 1350 };
+// Garrafa fica no lado ESQUERDO da página. Badge de avaliação Tanyno fica em ~y=1920 — nunca incluir.
+// Crop validado em junho/2026 no PDF do Alario Claudio (layout padrão Tanyno Autoral):
+//   x=20: pula margem do browser (imagem centralizada no viewport)
+//   y=650: pula header (foto adega) + título do vinho + rótulo "Tinto"
+//   width=550: cobre apenas o lado esquerdo (garrafa), sem a tabela de dados técnicos
+//   height=1050: termina em y=1700, antes do badge de avaliação (~y=1920)
+const BOTTLE_CLIP = { x: 20, y: 650, width: 550, height: 1050 };
 
 // Cada PDF tem: página 0 = capa, página 1 = índice, páginas 2+ = vinhos em ordem
 function getPageIdx(wine) {

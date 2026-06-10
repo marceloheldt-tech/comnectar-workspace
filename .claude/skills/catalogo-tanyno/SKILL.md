@@ -343,8 +343,10 @@ Atualizar o `dir` e a lista de `pages` no script antes de rodar.
 - **Preço:** sempre `preco_venda` do JSON, sem casas decimais. Não exibir o preço A37.
 - **Bandeiras:** sempre SVG base64 da tabela — nunca emoji (não renderiza no Playwright/Windows)
 - **Caminhos:** catálogo fica 3 níveis abaixo da raiz → `../../../dados/image.png`
-- **Sem teor ou uva:** o JSON não tem esses campos — omitir, não inventar
+- **Sem teor ou uva:** o JSON não tem esses campos — omitir, não inventar. Exceto se explicitamente visível no PDF e usado para enriquecer o catálogo.
 - **Estoque:** campo `estoque` no JSON indica unidades disponíveis. Se `estoque = 0`, adicionar tag "Sob Consulta" inline ao lado do preço (usar `.sob-consulta` do CSS padrão)
-- **Script de imagens:** usa Chrome com perfil do usuário para acessar Drive — precisa estar logado no Google no Chrome
-- **Ordem das páginas do PDF:** capa=0, índice=1, vinhos a partir da página 2. Se a imagem vier errada, o índice pode ser off-by-1 — testar com um vinho antes de rodar em lote
+- **Badge de avaliação Tanyno:** NUNCA incluir nos catálogos. O badge circular com nota (ex: 4.3 ★) aparece no rodapé de cada página PDF da Tanyno — o crop deve sempre terminar antes dele (y < 1920 a 1600px de largura). Crop validado: `{ x: 20, y: 650, width: 550, height: 1050 }`.
+- **Layout dos PDFs Tanyno Autoral (formato padrão):** garrafa no lado ESQUERDO da página. Tabela de dados técnicos no lado direito. Título do vinho no topo direito. A imagem renderizada tem ~1600px de largura × ~2263px de altura.
+- **Script de imagens:** usa Chrome com perfil do usuário para acessar Drive — precisa estar logado no Google no Chrome. Se Chrome já estiver aberto, inicia Chromium sem perfil (PDFs compartilhados via link não precisam de login).
+- **Estrutura dos PDFs por produtor:** página 0=capa, páginas 1+=vinhos. Não há índice separado. O número de páginas e a ordem variam por produtor — sempre verificar as primeiras páginas antes de rodar em lote.
 - **Confirmar antes de gerar:** sempre mostrar tabela resumida e aguardar OK antes de criar HTMLs
