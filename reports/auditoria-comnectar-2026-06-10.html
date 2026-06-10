@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auditoria Mensal — comnéctar — Jun 2026</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #0a0a0a;
+      --bg-card:      #111111;
+      --bg-card-hover:#1a1a1a;
+      --bg-section:   #0f0f0f;
+      --text:         #f0f0f0;
+      --text-muted:   #777777;
+      --text-dim:     #555555;
+      --accent:       #991356;
+      --accent-dim:   rgba(153,19,86,0.12);
+      --green:        #22c55e;
+      --green-dim:    rgba(34,197,94,0.10);
+      --red:          #ef4444;
+      --red-dim:      rgba(239,68,68,0.10);
+      --amber:        #f59e0b;
+      --amber-dim:    rgba(245,158,11,0.10);
+      --blue:         #3b82f6;
+      --blue-dim:     rgba(59,130,246,0.10);
+      --border:       #1e1e1e;
+      --radius:       10px;
+      --font:         'Rubik', 'Segoe UI', system-ui, sans-serif;
+    }
+
+    [data-theme="light"] {
+      --bg:           #f5f5f5;
+      --bg-card:      #ffffff;
+      --bg-card-hover:#f0f0f0;
+      --bg-section:   #fafafa;
+      --text:         #111111;
+      --text-muted:   #666666;
+      --text-dim:     #999999;
+      --border:       #e0e0e0;
+      --accent-dim:   rgba(153,19,86,0.08);
+      --green-dim:    rgba(34,197,94,0.08);
+      --red-dim:      rgba(239,68,68,0.08);
+      --amber-dim:    rgba(245,158,11,0.08);
+      --blue-dim:     rgba(59,130,246,0.08);
+    }
+
+    body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; font-size: 14px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    /* ── Header ── */
+    .header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);
+    }
+    .header-left { display: flex; align-items: center; gap: 0.85rem; }
+    .logo-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 4px; }
+    .header-title { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; }
+    .header-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.15rem; }
+    .header-sub span { margin-right: 1rem; }
+    .btn-toggle {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+      padding: 0.4rem 0.85rem; color: var(--text-muted); cursor: pointer; font-size: 0.75rem;
+    }
+    .btn-toggle:hover { border-color: var(--accent); }
+
+    /* ── Section headers ── */
+    .sec-label {
+      font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-dim); margin-bottom: 1rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .sec-label span { color: var(--accent); }
+    .section { margin-bottom: 2.5rem; }
+
+    /* ── Health Score banner ── */
+    .health-banner {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.5rem; margin-bottom: 2.5rem;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; align-items: center;
+    }
+    .hs-score { font-size: 3rem; font-weight: 700; color: var(--amber); line-height: 1; }
+    .hs-score small { font-size: 1rem; color: var(--text-muted); display: block; font-weight: 400; }
+    .hs-center { display: flex; flex-direction: column; gap: 0.5rem; }
+    .hs-bar-track { height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
+    .hs-bar-fill { height: 100%; width: 40%; background: linear-gradient(90deg, var(--amber), #f97316); border-radius: 5px; }
+    .hs-desc { font-size: 0.78rem; color: var(--text-muted); }
+    .hs-note {
+      font-size: 0.78rem; padding: 0.75rem 1rem; border-radius: 8px;
+      background: var(--amber-dim); border: 1px solid rgba(245,158,11,0.2); color: var(--amber);
+      text-align: center; min-width: 140px;
+    }
+    .hs-nota-big { font-size: 2rem; font-weight: 700; display: block; }
+
+    /* ── KPI grid ── */
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem; margin-bottom: 2rem; }
+    .kpi-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1rem 1.1rem; transition: border-color 0.2s;
+    }
+    .kpi-card:hover { border-color: var(--accent); }
+    .kpi-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); margin-bottom: 0.35rem; }
+    .kpi-val { font-size: 1.5rem; font-weight: 700; line-height: 1.1; }
+    .kpi-delta { font-size: 0.72rem; margin-top: 0.2rem; }
+    .up    { color: var(--green); }  .down  { color: var(--red); }
+    .up.inv{ color: var(--red); }    .down.inv{ color: var(--green); }
+    .neutral { color: var(--text-muted); }
+    .badge {
+      display: inline-block; font-size: 0.58rem; font-weight: 700; padding: 0.1rem 0.4rem;
+      border-radius: 3px; margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .b-exc { background: var(--green-dim); color: var(--green); }
+    .b-bom { background: var(--blue-dim);  color: var(--blue); }
+    .b-ate { background: var(--amber-dim); color: var(--amber); }
+    .b-cri { background: var(--red-dim);   color: var(--red); }
+    .kpi-bench { font-size: 0.63rem; color: var(--text-dim); margin-top: 0.15rem; }
+
+    /* ── Chart wrap ── */
+    .charts-row { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+    .chart-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+    .chart-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 1rem; }
+
+    /* ── Kill rules ── */
+    .kill-rule {
+      border: 1px solid; border-radius: var(--radius); padding: 1rem 1.2rem; margin-bottom: 0.75rem;
+      display: flex; gap: 0.85rem; align-items: flex-start;
+    }
+    .kill-rule.red  { border-color: rgba(239,68,68,0.3);  background: var(--red-dim); }
+    .kill-rule.ok   { border-color: rgba(34,197,94,0.2);  background: var(--green-dim); }
+    .kill-rule-icon { font-size: 1.1rem; margin-top: 0.1rem; flex-shrink: 0; }
+    .kill-rule-body strong { display: block; margin-bottom: 0.15rem; font-size: 0.85rem; }
+    .kill-rule-body p { font-size: 0.78rem; color: var(--text-muted); }
+    .kill-rule-action { font-size: 0.72rem; color: var(--amber); margin-top: 0.3rem; }
+
+    /* ── Checks grid ── */
+    .checks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .check-category {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.1rem;
+    }
+    .cat-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+    .cat-name { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; }
+    .cat-weight { font-size: 0.65rem; color: var(--text-muted); }
+    .cat-score { font-size: 0.72rem; font-weight: 700; }
+    .check-row { display: flex; gap: 0.65rem; align-items: flex-start; padding: 0.55rem 0; border-bottom: 1px solid var(--border); }
+    .check-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .check-icon { font-size: 0.85rem; flex-shrink: 0; margin-top: 0.05rem; width: 20px; text-align: center; }
+    .check-text strong { display: block; font-size: 0.78rem; }
+    .check-text p { font-size: 0.71rem; color: var(--text-muted); margin-top: 0.1rem; line-height: 1.4; }
+    .check-text .fix { font-size: 0.68rem; color: var(--accent); margin-top: 0.2rem; }
+
+    /* ── Criativos ── */
+    .criativo-list { display: flex; flex-direction: column; gap: 0.65rem; }
+    .criativo-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.1rem;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; align-items: center;
+    }
+    .criativo-rank { font-size: 1.3rem; font-weight: 700; color: var(--accent); min-width: 2rem; text-align: center; }
+    .criativo-name { font-size: 0.82rem; font-weight: 600; }
+    .criativo-meta { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .criativo-stats { display: flex; gap: 1.5rem; }
+    .stat-item { text-align: right; }
+    .stat-val { font-size: 0.9rem; font-weight: 700; }
+    .stat-lbl { font-size: 0.62rem; color: var(--text-muted); }
+    .tag {
+      font-size: 0.58rem; font-weight: 700; padding: 0.1rem 0.4rem; border-radius: 3px;
+      text-transform: uppercase; letter-spacing: 0.04em; margin-left: 0.35rem; vertical-align: middle;
+    }
+    .tag-best    { background: var(--accent-dim); color: var(--accent); }
+    .tag-revisar { background: var(--red-dim);    color: var(--red); }
+
+    /* ── Desperdício ── */
+    .desperdicio-box {
+      background: var(--bg-card); border: 1px solid rgba(239,68,68,0.25);
+      border-radius: var(--radius); padding: 1.25rem; margin-bottom: 0.75rem;
+    }
+    .desp-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.4rem 0; border-bottom: 1px solid var(--border); font-size: 0.82rem; }
+    .desp-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .desp-row.total { font-weight: 700; font-size: 0.9rem; padding-top: 0.65rem; }
+    .desp-val { color: var(--red); font-weight: 600; }
+    .desp-note { font-size: 0.65rem; color: var(--text-dim); }
+
+    /* ── Quick wins ── */
+    .qw-list { display: flex; flex-direction: column; gap: 0.65rem; }
+    .qw-item {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.1rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .qw-num { font-size: 1.1rem; font-weight: 700; color: var(--accent); flex-shrink: 0; min-width: 1.5rem; }
+    .qw-title { font-size: 0.82rem; font-weight: 600; }
+    .qw-desc { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .qw-impact {
+      font-size: 0.68rem; display: inline-block; margin-top: 0.3rem;
+      background: var(--green-dim); color: var(--green);
+      padding: 0.1rem 0.4rem; border-radius: 3px;
+    }
+    .qw-effort {
+      font-size: 0.68rem; display: inline-block; margin-top: 0.3rem; margin-left: 0.4rem;
+      background: var(--blue-dim); color: var(--blue);
+      padding: 0.1rem 0.4rem; border-radius: 3px;
+    }
+
+    /* ── Plano de ação ── */
+    .plano-group { margin-bottom: 1.25rem; }
+    .plano-group-title {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.07em; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .plano-item {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.8rem 1rem; margin-bottom: 0.4rem;
+      display: flex; justify-content: space-between; align-items: flex-start;
+      font-size: 0.8rem; gap: 1rem;
+    }
+    .plano-item-left strong { display: block; }
+    .plano-item-left p { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.1rem; }
+    .plano-impact { font-size: 0.72rem; color: var(--green); white-space: nowrap; flex-shrink: 0; }
+
+    /* ── Tabela ── */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+    th { padding: 0.55rem 0.85rem; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); border-bottom: 1px solid var(--border); font-weight: 600; text-align: left; }
+    td { padding: 0.7rem 0.85rem; border-bottom: 1px solid var(--border); }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg-card-hover); }
+    .td-r { text-align: right; font-variant-numeric: tabular-nums; }
+    .dot-on { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--green); margin-right: 0.45rem; }
+
+    /* ── Footer ── */
+    .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.68rem; color: var(--text-dim); line-height: 2; }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .checks-grid { grid-template-columns: 1fr; }
+      .charts-row  { grid-template-columns: 1fr; }
+      .health-banner { grid-template-columns: auto 1fr; }
+      .hs-note { grid-column: 1 / -1; text-align: left; }
+      .criativo-card { grid-template-columns: auto 1fr; }
+      .criativo-stats { grid-column: 2; }
+    }
+    @media (max-width: 600px) {
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .header { flex-direction: column; gap: 0.75rem; }
+      .health-banner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="logo-dot"></div>
+      <div>
+        <div class="header-title">comnéctar — Auditoria Mensal</div>
+        <div class="header-sub">
+          <span>Meta Ads + GA4</span>
+          <span>11/05 – 09/06/2026</span>
+          <span>Gerado em 10/06/2026</span>
+        </div>
+      </div>
+    </div>
+    <button class="btn-toggle" onclick="toggleTheme()">☀ Modo Claro</button>
+  </div>
+
+  <!-- Health Score -->
+  <div class="health-banner">
+    <div>
+      <div class="hs-score">40<small>/100</small></div>
+    </div>
+    <div class="hs-center">
+      <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-muted)">Health Score de Infraestrutura</div>
+      <div class="hs-bar-track"><div class="hs-bar-fill"></div></div>
+      <div class="hs-desc">Entrega eficiente, infraestrutura crítica. Pixel sem conversões, CAPI ausente,
+      1 criativo por ad set. CTR e CPC excelentes — mas otimizando para o objetivo errado.</div>
+    </div>
+    <div class="hs-note">
+      <span class="hs-nota-big">D</span>
+      Ação urgente necessária
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="section">
+    <div class="sec-label">Meta Ads — KPIs 30 dias <span>(vs 11/04–10/05/2026)</span></div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Gasto</div>
+        <div class="kpi-val">R$905,80</div>
+        <div class="kpi-delta up inv">↑ 8,8% vs anterior</div>
+        <span class="badge b-ate">Atenção</span>
+        <div class="kpi-bench">Ant: R$832,49</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">CTR</div>
+        <div class="kpi-val">2,12%</div>
+        <div class="kpi-delta up">↑ 26,9% vs anterior</div>
+        <span class="badge b-exc">Excelente</span>
+        <div class="kpi-bench">Benchmark: 1,2–1,8%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">CPC</div>
+        <div class="kpi-val">R$0,26</div>
+        <div class="kpi-delta up inv">↑ 16,8% vs anterior</div>
+        <span class="badge b-exc">Excelente</span>
+        <div class="kpi-bench">Benchmark: R$0,60–1,20</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">CPM</div>
+        <div class="kpi-val">R$5,46</div>
+        <div class="kpi-delta up inv">↑ 48,4% vs anterior ¹</div>
+        <span class="badge b-exc">Excelente</span>
+        <div class="kpi-bench">¹ Junho = +10–20% esperado</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Alcance</div>
+        <div class="kpi-val">117.724</div>
+        <div class="kpi-delta down">↓ 19,9% vs anterior</div>
+        <span class="badge b-ate">Atenção</span>
+        <div class="kpi-bench">Ant: 147.047</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Frequência</div>
+        <div class="kpi-val">1,41</div>
+        <div class="kpi-delta down">↓ 8,3% vs anterior</div>
+        <span class="badge b-exc">Excelente</span>
+        <div class="kpi-bench">Limite: 5,0</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">LP Views</div>
+        <div class="kpi-val">1.371</div>
+        <div class="kpi-delta down">↓ 4,2% vs anterior</div>
+        <span class="badge b-ate">Atenção</span>
+        <div class="kpi-bench">Ant: 1.431</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Conversões</div>
+        <div class="kpi-val" style="color:var(--red)">0</div>
+        <div class="kpi-delta neutral">— sem rastreamento</div>
+        <span class="badge b-cri">Crítico</span>
+        <div class="kpi-bench">Pixel purchase inativo</div>
+      </div>
+    </div>
+
+    <!-- Gráficos -->
+    <div class="charts-row">
+      <div class="chart-card">
+        <div class="chart-title">Gasto diário (R$) — 30 dias</div>
+        <canvas id="chartGasto" height="130"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">CTR por semana (%)</div>
+        <canvas id="chartCTR" height="130"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kill Rules -->
+  <div class="section">
+    <div class="sec-label">Kill Rules — <span>Ações urgentes</span></div>
+
+    <div class="kill-rule red">
+      <div class="kill-rule-icon">🔴</div>
+      <div class="kill-rule-body">
+        <strong>Zero conversões de compra — R$905,80 gastos sem ROI mensurável</strong>
+        <p>Campanhas com objetivo TRAFFIC não otimizam para vendas. O algoritmo do Meta está
+        aprendendo a gerar cliques — não compras. Não há dado de ROAS, CPL real ou retorno.
+        R$905 mês sem saber se gera resultado é o principal risco da conta.</p>
+        <div class="kill-rule-action">→ Instalar evento purchase no pixel Meta (via Shopify, 30 min). Criar campanha CONVERSÕES após 50+ eventos.</div>
+      </div>
+    </div>
+
+    <div class="kill-rule red">
+      <div class="kill-rule-icon">🔴</div>
+      <div class="kill-rule-body">
+        <strong>"Crescimento Instagram" — R$301,23 para 3 visitas ao site (R$100,41/visita)</strong>
+        <p>A campanha está ativa há 7 meses com objetivo PROFILE_VISIT. Gera tráfego para o
+        Instagram, não para a loja. A campanha "Visita Novo Site" faz a mesma visita por R$0,44.
+        33% do orçamento mensal sem conversibilidade mensurável em vendas.</p>
+        <div class="kill-rule-action">→ Calcular CPF (custo por seguidor) dos últimos 7 meses. Se &gt;R$2,50, pausar e realocar R$300/mês.</div>
+      </div>
+    </div>
+
+    <div class="kill-rule ok">
+      <div class="kill-rule-icon">✅</div>
+      <div class="kill-rule-body">
+        <strong>Frequência, CTR e estrutura básica dentro dos limites</strong>
+        <p>Frequência máxima 1,41 (limite: 5,0). CTR cresceu +10,8% na 2ª quinzena — sem fadiga de criativo.
+        Nenhuma campanha travada ou com impressão zero. Sem saturação de público.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checks -->
+  <div class="section">
+    <div class="sec-label">Checks por categoria — <span>10 checks, 4 categorias</span></div>
+    <div class="checks-grid">
+
+      <!-- Pixel/CAPI -->
+      <div class="check-category">
+        <div class="cat-header">
+          <div>
+            <div class="cat-name">Pixel / CAPI</div>
+            <div class="cat-weight">Peso: 30% — Score: 0/100</div>
+          </div>
+          <span class="badge b-cri">Crítico</span>
+        </div>
+        <div class="check-row">
+          <div class="check-icon">❌</div>
+          <div class="check-text">
+            <strong>M1 — EMQ Score [CRÍTICO]</strong>
+            <p>Não avaliável: 0 eventos purchase nos últimos 30 dias. Sem purchase no pixel, a qualidade de matching é irrelevante.</p>
+            <div class="fix">→ Instalar evento purchase no Shopify</div>
+          </div>
+        </div>
+        <div class="check-row">
+          <div class="check-icon">❌</div>
+          <div class="check-text">
+            <strong>M2 — Deduplicação Pixel/CAPI [ALTO]</strong>
+            <p>CAPI (server-side) não configurado. Taxa de dedup = 0% (benchmark: ≥90%). Vulnerável a bloqueios iOS/Android.</p>
+            <div class="fix">→ Ativar CAPI via Shopify → Meta → Conversions API (20 min, sem dev)</div>
+          </div>
+        </div>
+        <div class="check-row">
+          <div class="check-icon">❌</div>
+          <div class="check-text">
+            <strong>M3 — Eventos configurados [ALTO]</strong>
+            <p>Ativos: landing_page_view (1.371), video_view (7.489), view_content (3). Faltam: purchase, add_to_cart, initiate_checkout.</p>
+            <div class="fix">→ Ativar os 3 eventos de funil de compra</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Criativos -->
+      <div class="check-category">
+        <div class="cat-header">
+          <div>
+            <div class="cat-name">Criativos</div>
+            <div class="cat-weight">Peso: 30% — Score: 55/100</div>
+          </div>
+          <span class="badge b-ate">Atenção</span>
+        </div>
+        <div class="check-row">
+          <div class="check-icon">✅</div>
+          <div class="check-text">
+            <strong>M4 — Fadiga de CTR [CRÍTICO]</strong>
+            <p>CTR 1ª quinzena: 1,95% → 2ª quinzena: 2,16%. Variação: +10,8% ↑. Sem fadiga. Criativos ainda engajando.</p>
+          </div>
+        </div>
+        <div class="check-row">
+          <div class="check-icon">⚠️</div>
+          <div class="check-text">
+            <strong>M5 — Diversidade de formatos [MÉDIO]</strong>
+            <p>2 formatos: vídeo (1 ad) e carrossel (2 ads). Benchmark: ≥3 formatos. Faltam imagens estáticas — tendem a ter CPM menor.</p>
+            <div class="fix">→ Criar 1–2 anúncios de imagem estática</div>
+          </div>
+        </div>
+        <div class="check-row">
+          <div class="check-icon">❌</div>
+          <div class="check-text">
+            <strong>M6 — Criativos por ad set [ALTO]</strong>
+            <p>3 ad sets ativos, todos com 1 criativo cada. Benchmark: ≥3 criativos/ad set. Sem variação não há aprendizado criativo.</p>
+            <div class="fix">→ Adicionar 2 criativos por ad set (variações de copy/gancho)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estrutura -->
+      <div class="check-category">
+        <div class="cat-header">
+          <div>
+            <div class="cat-name">Estrutura</div>
+            <div class="cat-weight">Peso: 20% — Score: 50/100</div>
+          </div>
+          <span class="badge b-ate">Atenção</span>
+        </div>
+        <div class="check-row">
+          <div class="check-icon">⚠️</div>
+          <div class="check-text">
+            <strong>M7 — CBO vs ABO [MÉDIO]</strong>
+            <p>ABO com R$10/dia por ad set. "Vídeo Novo Site" tem CTR 2,59% e mais LP views que "Carrossel" (2,36%) com o mesmo orçamento. CBO permitiria realocação automática.</p>
+            <div class="fix">→ Testar CBO na campanha "Visita Novo Site" com R$20/dia total</div>
+          </div>
+        </div>
+        <div class="check-row">
+          <div class="check-icon">⚠️</div>
+          <div class="check-text">
+            <strong>M8 — Learning Phase [ALTO]</strong>
+            <p>Campanhas de tráfego provavelmente saíram da LP (&gt;50 LP views/semana). Mas estão na LP do objetivo errado (cliques vs compras). Com R$10/dia/ad set, learning de conversões precisaria de R$107/dia para 50 purchases/semana.</p>
+            <div class="fix">→ Após pixel ativo, criar campanha CONVERSÕES com orçamento adequado</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Público -->
+      <div class="check-category">
+        <div class="cat-header">
+          <div>
+            <div class="cat-name">Público / Targeting</div>
+            <div class="cat-weight">Peso: 20% — Score: 75/100</div>
+          </div>
+          <span class="badge b-bom">Bom</span>
+        </div>
+        <div class="check-row">
+          <div class="check-icon">✅</div>
+          <div class="check-text">
+            <strong>M9 — Frequência controlada [CRÍTICO]</strong>
+            <p>Vídeo Novo Site: 1,29 · Carrossel Visita: 1,34 · Carrossel Instagram: 1,41. Todos excelentes (limite ATENÇÃO: 3,0). Público amplo com muita margem.</p>
+          </div>
+        </div>
+        <div class="check-row">
+          <div class="check-icon">⚠️</div>
+          <div class="check-text">
+            <strong>M10 — Exclusões entre funis [MÉDIO]</strong>
+            <p>Sem campanha de retargeting ativa. ~233 visitantes/mês sem nenhum remarketing. Sem pixel de purchase, impossível criar audiência de compradores para exclusão.</p>
+            <div class="fix">→ Criar retargeting de visitantes 30 dias após pixel ativo (R$15/dia)</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Campanhas -->
+  <div class="section">
+    <div class="sec-label">Campanhas ativas — <span>detalhamento por ad set</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Ad Set</th>
+            <th>Campanha</th>
+            <th>Objetivo</th>
+            <th class="td-r">Budget/dia</th>
+            <th class="td-r">Gasto 30d</th>
+            <th class="td-r">CTR</th>
+            <th class="td-r">CPC</th>
+            <th class="td-r">CPM</th>
+            <th class="td-r">LP Views</th>
+            <th class="td-r">R$/Visita</th>
+            <th class="td-r">Freq.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="dot-on"></span>Vídeo Novo Site <span class="tag tag-best">Melhor</span></td>
+            <td style="color:var(--text-muted);font-size:0.75rem">Visita Novo Site</td>
+            <td style="font-size:0.72rem">LP Views</td>
+            <td class="td-r">R$10</td>
+            <td class="td-r">R$303,05</td>
+            <td class="td-r" style="color:var(--green)">2,59%</td>
+            <td class="td-r">R$0,305</td>
+            <td class="td-r">R$7,90</td>
+            <td class="td-r">710</td>
+            <td class="td-r" style="color:var(--green)">R$0,43</td>
+            <td class="td-r">1,29</td>
+          </tr>
+          <tr>
+            <td><span class="dot-on"></span>Carrossel</td>
+            <td style="color:var(--text-muted);font-size:0.75rem">Visita Novo Site</td>
+            <td style="font-size:0.72rem">LP Views</td>
+            <td class="td-r">R$10</td>
+            <td class="td-r">R$301,52</td>
+            <td class="td-r">2,36%</td>
+            <td class="td-r">R$0,242</td>
+            <td class="td-r">R$5,73</td>
+            <td class="td-r">658</td>
+            <td class="td-r">R$0,46</td>
+            <td class="td-r">1,34</td>
+          </tr>
+          <tr>
+            <td><span class="dot-on"></span>Carrossel <span class="tag tag-revisar">Revisar</span></td>
+            <td style="color:var(--text-muted);font-size:0.75rem">Crescimento Instagram</td>
+            <td style="font-size:0.72rem">Profile Visit</td>
+            <td class="td-r">R$10</td>
+            <td class="td-r">R$301,23</td>
+            <td class="td-r" style="color:var(--amber)">1,71%</td>
+            <td class="td-r">R$0,235</td>
+            <td class="td-r">R$4,03</td>
+            <td class="td-r">3</td>
+            <td class="td-r" style="color:var(--red)">R$100,41</td>
+            <td class="td-r">1,41</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Criativos -->
+  <div class="section">
+    <div class="sec-label">Criativos — <span>ranking de performance</span></div>
+    <div class="criativo-list">
+
+      <div class="criativo-card">
+        <div class="criativo-rank">1</div>
+        <div>
+          <div class="criativo-name">Vídeo Novo Site <span class="tag tag-best">Top performer</span></div>
+          <div class="criativo-meta">Formato: Vídeo · Ad set: Vídeo Novo Site · Campanha: Visita Novo Site</div>
+          <div class="criativo-meta" style="margin-top:0.2rem;color:var(--blue)">6.613 video views · 710 LP views · frequência 1,29</div>
+        </div>
+        <div class="criativo-stats">
+          <div class="stat-item"><div class="stat-val" style="color:var(--green)">2,59%</div><div class="stat-lbl">CTR</div></div>
+          <div class="stat-item"><div class="stat-val">R$303</div><div class="stat-lbl">Gasto</div></div>
+          <div class="stat-item"><div class="stat-val" style="color:var(--green)">R$0,43</div><div class="stat-lbl">R$/visita</div></div>
+        </div>
+      </div>
+
+      <div class="criativo-card">
+        <div class="criativo-rank">2</div>
+        <div>
+          <div class="criativo-name">Carrossel</div>
+          <div class="criativo-meta">Formato: Carrossel · Ad set: Carrossel · Campanha: Visita Novo Site</div>
+          <div class="criativo-meta" style="margin-top:0.2rem;color:var(--text-muted)">876 video views · 658 LP views · frequência 1,34</div>
+        </div>
+        <div class="criativo-stats">
+          <div class="stat-item"><div class="stat-val">2,36%</div><div class="stat-lbl">CTR</div></div>
+          <div class="stat-item"><div class="stat-val">R$302</div><div class="stat-lbl">Gasto</div></div>
+          <div class="stat-item"><div class="stat-val">R$0,46</div><div class="stat-lbl">R$/visita</div></div>
+        </div>
+      </div>
+
+      <div class="criativo-card" style="border-color:rgba(239,68,68,0.25)">
+        <div class="criativo-rank" style="color:var(--red)">⚠</div>
+        <div>
+          <div class="criativo-name">Carrossel <span class="tag tag-revisar">Revisar ROI</span></div>
+          <div class="criativo-meta">Formato: Carrossel · Ad set: Carrossel · Campanha: Crescimento Instagram (Nov/25)</div>
+          <div class="criativo-meta" style="margin-top:0.2rem;color:var(--red)">Objetivo: PROFILE_VISIT · 3 LP views em 30 dias · rodando há 7 meses</div>
+        </div>
+        <div class="criativo-stats">
+          <div class="stat-item"><div class="stat-val" style="color:var(--amber)">1,71%</div><div class="stat-lbl">CTR</div></div>
+          <div class="stat-item"><div class="stat-val">R$301</div><div class="stat-lbl">Gasto</div></div>
+          <div class="stat-item"><div class="stat-val" style="color:var(--red)">R$100,41</div><div class="stat-lbl">R$/visita</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Desperdício -->
+  <div class="section">
+    <div class="sec-label">Desperdício identificado</div>
+    <div class="desperdicio-box">
+      <div class="desp-row">
+        <div>
+          <div>Campanha Instagram — custo de oportunidade de site</div>
+          <div class="desp-note">R$0,44/visita possível com o mesmo orçamento → 683 visitas ao site perdidas/mês</div>
+        </div>
+        <div class="desp-val">R$301,00/mês</div>
+      </div>
+      <div class="desp-row">
+        <div>
+          <div>Sem retargeting — visitantes sem remarketing</div>
+          <div class="desp-note">~233 visitantes/mês sem nenhuma campanha de reimpacto (bounce 83,4%)</div>
+        </div>
+        <div class="desp-val" style="color:var(--amber)">~R$450/mês est.</div>
+      </div>
+      <div class="desp-row">
+        <div>
+          <div>Sem conversões rastreadas — ROI invisível</div>
+          <div class="desp-note">R$605/mês em campanha de tráfego sem saber se gera vendas</div>
+        </div>
+        <div class="desp-val" style="color:var(--amber)">Não quantificável</div>
+      </div>
+      <div class="desp-row total">
+        <div>Desperdício mensurável total</div>
+        <div class="desp-val">R$301,00/mês</div>
+      </div>
+      <div class="desp-row total" style="border-top:1px solid var(--border);padding-top:0.4rem">
+        <div>Oportunidade não capturada (estimada)</div>
+        <div class="desp-val">~R$751,00/mês</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Wins -->
+  <div class="section">
+    <div class="sec-label">Quick Wins — <span>5 ações desta semana</span></div>
+    <div class="qw-list">
+      <div class="qw-item">
+        <div class="qw-num">1</div>
+        <div>
+          <div class="qw-title">Ativar evento purchase no pixel Meta via Shopify</div>
+          <div class="qw-desc">Shopify Admin → Preferências → Pixel do Meta → ativar "Eventos de conversão". Verificar no Gerenciador de Eventos se purchase dispara após uma compra de teste.</div>
+          <span class="qw-impact">Impacto: ROI visível (pré-requisito de tudo)</span>
+          <span class="qw-effort">Esforço: 30 min</span>
+        </div>
+      </div>
+      <div class="qw-item">
+        <div class="qw-num">2</div>
+        <div>
+          <div class="qw-title">Configurar CAPI (server-side) via integração nativa Shopify</div>
+          <div class="qw-desc">Shopify → Apps → Meta → Conversions API → ativar. Recupera eventos bloqueados por iOS/Android opt-out. Aumenta atribuição em +20–40% sem dev.</div>
+          <span class="qw-impact">Impacto: +20–40% conversões atribuídas</span>
+          <span class="qw-effort">Esforço: 20 min</span>
+        </div>
+      </div>
+      <div class="qw-item">
+        <div class="qw-num">3</div>
+        <div>
+          <div class="qw-title">Avaliar ROI da campanha "Crescimento Instagram" (7 meses)</div>
+          <div class="qw-desc">Exportar crescimento de seguidores de novembro/25 até hoje. Calcular CPF = R$2.400 gasto ÷ novos seguidores. Se CPF &gt; R$2,50, pausar e realocar R$300/mês.</div>
+          <span class="qw-impact">Economia potencial: R$301/mês</span>
+          <span class="qw-effort">Esforço: 15 min</span>
+        </div>
+      </div>
+      <div class="qw-item">
+        <div class="qw-num">4</div>
+        <div>
+          <div class="qw-title">Adicionar 2 criativos por ad set nos 2 ad sets de Visita Novo Site</div>
+          <div class="qw-desc">Criar variações de copy/gancho para "Vídeo Novo Site" e "Carrossel". Mínimo: 3 criativos por ad set para o algoritmo aprender e identificar vencedores.</div>
+          <span class="qw-impact">Impacto: aprendizado criativo + resiliência</span>
+          <span class="qw-effort">Esforço: 2h</span>
+        </div>
+      </div>
+      <div class="qw-item">
+        <div class="qw-num">5</div>
+        <div>
+          <div class="qw-title">Testar CBO na campanha "Visita Novo Site"</div>
+          <div class="qw-desc">Duplicar campanha → mudar para CBO com R$20/dia total → deixar algoritmo distribuir entre "Vídeo" e "Carrossel". Desativar ABO após 7 dias de teste comparativo.</div>
+          <span class="qw-impact">Impacto: +10–20% eficiência de verba estimado</span>
+          <span class="qw-effort">Esforço: 10 min</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Plano de ação -->
+  <div class="section">
+    <div class="sec-label">Plano de ação — <span>priorizado por hierarquia: Converte → Lucrativo → Escalável → Eficiente</span></div>
+
+    <div class="plano-group">
+      <div class="plano-group-title"><span style="color:var(--red)">🔴</span> Urgente — fazer hoje</div>
+      <div class="plano-item">
+        <div class="plano-item-left"><strong>Instalar purchase + add_to_cart + initiate_checkout no pixel</strong><p>Pré-requisito absoluto. Desbloqueia checks M1, M3 e toda análise de ROI.</p></div>
+        <div class="plano-impact">ROI visível</div>
+      </div>
+      <div class="plano-item">
+        <div class="plano-item-left"><strong>Ativar CAPI via Shopify (20 min, sem dev)</strong><p>Desbloqueia check M2. Recupera atribuições perdidas por bloqueio de cookies.</p></div>
+        <div class="plano-impact">+20–40% atribuição</div>
+      </div>
+    </div>
+
+    <div class="plano-group">
+      <div class="plano-group-title"><span style="color:var(--amber)">🟡</span> Alta prioridade — esta semana</div>
+      <div class="plano-item">
+        <div class="plano-item-left"><strong>Adicionar 2 criativos por ad set (de 1 para 3)</strong><p>Check M6. Sem variação não há aprendizado. Criativos atuais ainda performando bem (CTR saudável) — boa hora para testar variações.</p></div>
+        <div class="plano-impact">Aprendizado criativo</div>
+      </div>
+      <div class="plano-item">
+        <div class="plano-item-left"><strong>Avaliar campanha "Crescimento Instagram" → calcular CPF de 7 meses</strong><p>Kill rule ativa. R$301/mês de custo de oportunidade se ineficiente.</p></div>
+        <div class="plano-impact">R$301/mês economy.</div>
+      </div>
+    </div>
+
+    <div class="plano-group">
+      <div class="plano-group-title"><span style="color:var(--blue)">🔵</span> Média prioridade — este mês</div>
+      <div class="plano-item">
+        <div class="plano-item-left"><strong>Criar campanha de retargeting (após pixel ativo)</strong><p>Check M10. ~233 visitantes/mês sem reimpacto. CPL de retargeting é 40–60% menor que prospecção.</p></div>
+        <div class="plano-impact">~R$450/mês capturado</div>
+      </div>
+      <div class="plano-item">
+        <div class="plano-item-left"><strong>Testar CBO na campanha "Visita Novo Site"</strong><p>Check M7. Algoritmo distribui verba para o ad set com melhor resultado automaticamente.</p></div>
+        <div class="plano-impact">+10–20% eficiência</div>
+      </div>
+      <div class="plano-item">
+        <div class="plano-item-left"><strong>Adicionar formato imagem estática ao mix</strong><p>Check M5. CPM de imagem tende a ser menor que vídeo. Completa os 3 formatos obrigatórios.</p></div>
+        <div class="plano-impact">CPM menor estimado</div>
+      </div>
+    </div>
+
+    <div class="plano-group">
+      <div class="plano-group-title"><span style="color:var(--text-dim)">⚪</span> Backlog — após pixel + primeiros dados de conversão</div>
+      <div class="plano-item">
+        <div class="plano-item-left"><strong>Criar campanha CONVERSÕES (após 50+ purchases no pixel)</strong><p>Só faz sentido quando o algoritmo tiver volume para aprender. Precisará de orçamento maior (~R$75/dia/ad set).</p></div>
+        <div class="plano-impact">ROI escalável</div>
+      </div>
+      <div class="plano-item">
+        <div class="plano-item-left"><strong>Segmentar públicos com dados de compradores</strong><p>Lookalike de compradores tende a ter CPL 30–50% menor. Só possível com audience de purchase.</p></div>
+        <div class="plano-impact">CPL -30–50% estimado</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GA4 resumo -->
+  <div class="section">
+    <div class="sec-label">GA4 — comportamento no site</div>
+    <div class="kpi-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="kpi-card">
+        <div class="kpi-label">Sessões</div>
+        <div class="kpi-val">2.161</div>
+        <div class="kpi-bench">Todos os canais</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Bounce Rate</div>
+        <div class="kpi-val" style="color:var(--red)">83,4%</div>
+        <span class="badge b-cri">Crítico</span>
+        <div class="kpi-bench">Benchmark: &lt;60% bom</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Tempo médio</div>
+        <div class="kpi-val">55s</div>
+        <span class="badge b-bom">Bom</span>
+        <div class="kpi-bench">Benchmark: 30–60s</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Conversões</div>
+        <div class="kpi-val" style="color:var(--red)">0</div>
+        <span class="badge b-cri">Não config.</span>
+        <div class="kpi-bench">Enhanced e-com inativo</div>
+      </div>
+    </div>
+    <div style="background:var(--bg-card);border:1px solid rgba(239,68,68,0.2);border-radius:var(--radius);padding:1rem 1.2rem;font-size:0.8rem;">
+      <strong style="color:var(--red)">⚠ Homepage com bounce 87,1% recebe 89% do tráfego pago</strong>
+      <p style="color:var(--text-muted);margin-top:0.3rem">1.924 das 2.161 sessões caem em "/". A página /produtos tem bounce 0% com 116s de tempo médio — mas recebe apenas 12 visitas.
+      Redirecionar tráfego pago de "/" para "/produtos" pode dobrar o aproveitamento sem mudar o orçamento.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Auditoria mensal gerado em 10/06/2026 · Período: 11/05/2026 a 09/06/2026<br>
+    Dados via API oficial Meta Ads + Google Analytics 4 · Benchmarks: mercado brasileiro (WordStream / MLabs / Reportei, abr/2026)<br>
+    Google Ads: não configurado (customer_id ausente no contas.yaml) · Próxima auditoria: 10/07/2026<br>
+    <span style="color:var(--accent)">ads-ratos</span>
+  </div>
+
+</div>
+
+<script>
+  function toggleTheme() {
+    const html = document.documentElement;
+    const btn  = document.querySelector('.btn-toggle');
+    if (html.getAttribute('data-theme') === 'dark') {
+      html.setAttribute('data-theme', 'light');
+      btn.textContent = '🌙 Modo Escuro';
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      btn.textContent = '☀ Modo Claro';
+    }
+  }
+
+  const DAILY = {
+    labels: ["11/05","12/05","13/05","14/05","15/05","16/05","17/05","18/05","19/05","20/05",
+             "21/05","22/05","23/05","24/05","25/05","26/05","27/05","28/05","29/05","30/05",
+             "31/05","01/06","02/06","03/06","04/06","05/06","06/06","07/06","08/06","09/06"],
+    gasto: [30.64,29,25.18,30.7,32.41,26.81,34.32,29.63,30.89,30.32,
+            26.38,31.13,27.18,37.66,32.19,31.82,30.23,28.59,28.67,20.74,
+            38.44,28.63,29.61,29.54,32.25,28.95,22.51,40.04,32.14,29.2],
+    ctr:   [1.85,1.86,1.77,2.35,2.35,1.79,2.09,2.16,2.21,2.48,
+            2.10,1.76,1.82,1.76,2.06,2.15,2.41,2.04,2.18,2.16,
+            2.46,2.44,2.67,2.29,1.92,2.22,1.80,2.15,2.59,1.97]
+  };
+
+  const base = {
+    responsive: true, maintainAspectRatio: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: { backgroundColor:'#1a1a1a', titleColor:'#f0f0f0', bodyColor:'#888', borderColor:'#333', borderWidth:1 }
+    },
+    scales: {
+      x: { ticks:{ color:'#555', font:{size:9}, maxTicksLimit:8 }, grid:{ color:'#151515' } },
+      y: { ticks:{ color:'#555', font:{size:9} }, grid:{ color:'#151515' } }
+    }
+  };
+
+  new Chart(document.getElementById('chartGasto'), {
+    type: 'bar',
+    data: {
+      labels: DAILY.labels,
+      datasets: [{ data: DAILY.gasto, backgroundColor: 'rgba(153,19,86,0.65)', borderColor: '#991356', borderWidth: 1, borderRadius: 3 }]
+    },
+    options: { ...base, plugins: { ...base.plugins, tooltip: { ...base.plugins.tooltip, callbacks: { label: ctx => ` R$${ctx.parsed.y.toFixed(2).replace('.',',')}` }}}}
+  });
+
+  // CTR semanal (médias de 7 em 7)
+  const weeks = ['Sem 1\n11–17/05','Sem 2\n18–24/05','Sem 3\n25–31/05','Sem 4\n01–09/06'];
+  const ctrWeekly = [
+    (1.85+1.86+1.77+2.35+2.35+1.79+2.09)/7,
+    (2.16+2.21+2.48+2.10+1.76+1.82+1.76)/7,
+    (2.06+2.15+2.41+2.04+2.18+2.16+2.46)/7,
+    (2.44+2.67+2.29+1.92+2.22+1.80+2.15+2.59+1.97)/9
+  ];
+  new Chart(document.getElementById('chartCTR'), {
+    type: 'line',
+    data: {
+      labels: weeks,
+      datasets: [{ data: ctrWeekly, borderColor:'#22c55e', backgroundColor:'rgba(34,197,94,0.08)', borderWidth:2.5, pointRadius:5, pointBackgroundColor:'#22c55e', tension:0.3, fill:true }]
+    },
+    options: { ...base, plugins: { ...base.plugins, tooltip: { ...base.plugins.tooltip, callbacks: { label: ctx => ` CTR ${ctx.parsed.y.toFixed(2).replace('.',',')}%` }}}}
+  });
+</script>
+</body>
+</html>
