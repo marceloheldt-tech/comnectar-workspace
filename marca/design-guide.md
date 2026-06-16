@@ -47,10 +47,15 @@ Clean e minimalista com posicionamento premium. Muito espaço em branco, fotogra
 - Distorcer ou recolorir o logo
 - **Cobrir a garrafa (ou qualquer produto) com overlay ou máscara escura** — o produto deve aparecer 100% visível. Se houver painel escuro pra texto, o produto fica no lado direito limpo, fora de qualquer sobreposição
 
-## Padrão de layout com imagem de fundo (carrosseis)
-Sempre que houver imagem de fundo num slide:
-1. Aplicar máscara/painel escuro sobre a imagem — o texto fica acima dessa máscara
-2. Se a imagem tiver produto (garrafa), usar painel escuro posicionado apenas no lado do texto (não overlay full-slide), deixando o produto completamente visível no lado oposto
+## Padrão de layout com imagem (carrosseis)
+Fundo padrão dos slides é SEMPRE branco (#FFFFFF). Imagens entram como elemento visual com máscara CSS gradiente, nunca cobrindo o fundo inteiro com overlay escuro.
+
+**Regras obrigatórias:**
+1. Usar sempre `dados/image.png` (logo fundo branco) em slides com fundo claro
+2. Imagens recebem máscara CSS (`mask-image: linear-gradient(...)`) que funde a foto no fundo branco, garantindo que os produtos (garrafas) fiquem visíveis
+3. Fotos de produto: máscara horizontal (fade da esquerda pro direito), produto aparece no lado direito
+4. Fotos de paisagem/vinhedo: máscara vertical (fade de cima pra baixo), área de texto fica no branco inferior
+5. Nunca usar overlay escuro full-slide — o produto deve ser sempre 100% visível no lado sem máscara
 
 ---
 
