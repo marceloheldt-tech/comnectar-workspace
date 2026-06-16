@@ -16,7 +16,7 @@ description: >
 
 - **Shopify MCP:** buscar dados e imagem do produto
 - **Identidade visual:** `marca/design-guide.md`
-- **Logos:** `dados/image-2.png` (gota vinho, fundo branco) e `dados/image-3.png` (gota branca, fundo vinho)
+- **Logos:** `dados/comnectar-transparente.png` (logo completa, fundo transparente) · `dados/gota-transparente.png` (gota, fundo transparente)
 - **Playwright CLI:** `npx playwright screenshot`
 
 ---
@@ -69,7 +69,7 @@ Criar dois arquivos HTML:
 - Foto do vinho como background full-bleed
 - Gradiente escuro progressivo: transparente no topo, ~85% opacity preto no rodapé
 - Accent bar lateral: barra fina vinho #991356 (6px) na lateral esquerda
-- Logo gota da comnéctar no topo direito: usar `../../../../dados/image-3.png` (gota branca) — tamanho 70x70px
+- Logo gota da comnéctar no topo direito: usar `../../../../dados/gota-transparente.png` com `filter: brightness(0) invert(1)` para fundos escuros — tamanho 70x70px
 - Bandeira do país: usar emoji unicode da bandeira do país (ex: 🇮🇹 🇫🇷 🇦🇷 🇵🇹 🇪🇸 🇨🇱 🇺🇸 🇿🇦 🇩🇪 🇦🇺) renderizado em fonte grande (48px) + nome do país em uppercase pequeno ao lado
 - Nome do vinho: Geotipe (via Google Fonts fallback sans-serif), bold, 64-80px, branco, shadow sutil
 - Dados do vinho em linha ou coluna: uva | safra | teor — Rubik, 28px, branco com opacity 0.85

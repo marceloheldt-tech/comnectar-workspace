@@ -210,7 +210,7 @@ body {
   <div style="position:absolute;right:52px;top:200px;bottom:120px;width:1.5px;background:#bbb;"></div>
 
   <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);text-align:center;width:720px;">
-    <img src="../../../dados/image.png" alt="comnéctar" style="width:540px;display:block;margin:0 auto 44px;">
+    <img src="../../../dados/comnectar-transparente.png" alt="comnéctar" style="width:540px;display:block;margin:0 auto 44px;">
     <div style="width:52px;height:1.5px;background:#991356;margin:0 auto 40px;"></div>
     <h1 style="font-family:'Geotipe','Palatino Linotype',Georgia,serif;font-size:52px;color:#000;font-weight:400;letter-spacing:6px;text-transform:uppercase;margin-bottom:20px;line-height:1.25;">[TÍTULO — ex: Seleção Tanyno]</h1>
     <p style="font-size:13px;color:#991356;font-weight:500;letter-spacing:6px;text-transform:uppercase;margin-bottom:36px;">[SUBTÍTULO — ex: Autoral · Itália & Portugal]</p>
@@ -218,7 +218,7 @@ body {
   </div>
 
   <div style="position:absolute;bottom:28px;right:44px;">
-    <img src="../../../dados/image-2.png" alt="" style="width:88px;opacity:0.75;">
+    <img src="../../../dados/gota-transparente.png" alt="" style="width:88px;opacity:0.75;">
   </div>
 </body>
 </html>
@@ -274,7 +274,7 @@ body {
   </div>
 
   <div class="footer">
-    <img src="../../../dados/image-2.png" alt="">
+    <img src="../../../dados/gota-transparente.png" alt="">
   </div>
 
 </div>
@@ -342,7 +342,7 @@ Atualizar o `dir` e a lista de `pages` no script antes de rodar.
 
 - **Preço:** sempre `preco_venda` do JSON, sem casas decimais. Não exibir o preço A37.
 - **Bandeiras:** sempre SVG base64 da tabela — nunca emoji (não renderiza no Playwright/Windows)
-- **Caminhos:** catálogo fica 3 níveis abaixo da raiz → `../../../dados/image.png`
+- **Caminhos:** catálogo fica 3 níveis abaixo da raiz → `../../../dados/comnectar-transparente.png`
 - **Sem teor ou uva:** o JSON não tem esses campos — omitir, não inventar. Exceto se explicitamente visível no PDF e usado para enriquecer o catálogo.
 - **Estoque:** campo `estoque` no JSON indica unidades disponíveis. Se `estoque = 0`, adicionar tag "Sob Consulta" inline ao lado do preço (usar `.sob-consulta` do CSS padrão)
 - **Badge de avaliação Tanyno:** NUNCA incluir nos catálogos. O badge circular com nota (ex: 4.3 ★) aparece no rodapé de cada página PDF da Tanyno — o crop deve sempre terminar antes dele (y < 1920 a 1600px de largura). Crop validado: `{ x: 20, y: 650, width: 550, height: 1050 }`.

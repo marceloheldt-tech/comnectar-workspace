@@ -13,7 +13,7 @@ description: >
 ## Dependências
 
 - **Shopify MCP:** `search_products`, `graphql_query` — buscar dados e imagens
-- **Logos:** `dados/image.png` (logo comnéctar completa) · `dados/image-2.png` (gota)
+- **Logos:** `dados/comnectar-transparente.png` (logo comnéctar, fundo transparente) · `dados/gota-transparente.png` (gota, fundo transparente)
 - **Playwright CLI:** `npx playwright screenshot --browser chromium`
 - **Node.js:** `node gerar-pdf.mjs` (script na raiz do projeto)
 
@@ -201,7 +201,7 @@ body {
 
   <!-- Conteúdo central -->
   <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-52%); text-align:center; width:720px;">
-    <img src="../../../dados/image.png" alt="comnéctar" style="width:540px; display:block; margin:0 auto 44px;">
+    <img src="../../../dados/comnectar-transparente.png" alt="comnéctar" style="width:540px; display:block; margin:0 auto 44px;">
     <div style="width:52px; height:1.5px; background:#991356; margin:0 auto 40px;"></div>
     <h1 style="font-family:'Geotipe','Palatino Linotype',Georgia,serif; font-size:52px; color:#000; font-weight:400; letter-spacing:6px; text-transform:uppercase; margin-bottom:20px; line-height:1.25;">[TÍTULO DA SELEÇÃO]</h1>
     <p style="font-size:13px; color:#991356; font-weight:500; letter-spacing:6px; text-transform:uppercase; margin-bottom:36px;">[SUBTÍTULO — ex: Tintos · Itália & França]</p>
@@ -210,13 +210,13 @@ body {
 
   <!-- Gota rodapé -->
   <div style="position:absolute; bottom:28px; right:44px;">
-    <img src="../../../dados/image-2.png" alt="" style="width:88px; opacity:0.75;">
+    <img src="../../../dados/gota-transparente.png" alt="" style="width:88px; opacity:0.75;">
   </div>
 </body>
 </html>
 ```
 
-> **Atenção ao caminho das imagens:** o catálogo fica em `conteudo/catalogos/[data]-[nome]/`, que são **3 níveis** abaixo da raiz. Use `../../../dados/image.png`.
+> **Atenção ao caminho das imagens:** o catálogo fica em `conteudo/catalogos/[data]-[nome]/`, que são **3 níveis** abaixo da raiz. Use `../../../dados/comnectar-transparente.png`.
 
 ### Template de Página de Produto — `catalog-p1.html`
 
@@ -266,7 +266,7 @@ body {
   </div>
 
   <div class="footer">
-    <img src="../../../dados/image-2.png" alt="">
+    <img src="../../../dados/gota-transparente.png" alt="">
   </div>
 
 </div>
@@ -349,6 +349,6 @@ Para um novo catálogo, atualizar o `dir` e a lista de `pages` no script.
 - **Vinhos sem estoque** → incluir com "Sob Consulta" inline ao lado do preço
 - **Teor alcoólico** → colocar em todos os vinhos; usar valores típicos se não constar no Shopify
 - **Bandeiras** → usar SVG base64 da tabela, nunca emoji (não renderiza corretamente no Playwright/Windows)
-- **Caminhos de imagem** → 3 níveis acima da raiz: `../../../dados/image.png`
+- **Caminhos de imagem** → 3 níveis acima da raiz: `../../../dados/comnectar-transparente.png`
 - **Última página com 2 vinhos** → usar layout `grid-2` com photos de 850px
 - **Confirmar dados antes de criar HTMLs** — mostrar tabela resumida e esperar aprovação

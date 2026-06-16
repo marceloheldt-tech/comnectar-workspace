@@ -61,12 +61,13 @@ Fundo padrão dos slides é SEMPRE branco (#FFFFFF). Imagens entram como element
 
 ## Logo
 
-- **Versão clara (fundo branco):** `dados/image.png`
-- **Versão escura (fundo preto):** `dados/image-1.png`
-- **Símbolo isolado (gota vinho):** `dados/image-2.png`
-- **Símbolo isolado (gota branca em fundo vinho):** `dados/image-3.png`
-- **Onde usar:** slide final do carrossel (CTA), header de emails, materiais institucionais
-- **Tamanho sugerido:** largura entre 120-200px nos HTMLs
+- **Logo principal (fundo transparente):** `dados/comnectar-transparente.png` ← USAR SEMPRE
+- **Símbolo gota (fundo transparente):** `dados/gota-transparente.png` ← USAR SEMPRE
+- **Versões antigas com fundo:** `dados/image.png`, `dados/image-1.png` — NÃO usar mais
+- **Onde usar:** todo e qualquer material visual — slides, carrosseis, catálogos, emails, posts
+- **Tamanho sugerido:** largura entre 120-180px nos HTMLs
+- **Em fundos escuros:** aplicar `filter: brightness(0) invert(1)` no CSS para tornar o logo branco
+- **Em fundos claros:** usar direto, sem filtro
 
 ---
 
