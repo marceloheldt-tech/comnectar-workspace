@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório de Performance — Abril vs Maio 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: #faf9f7;
+    color: #1a1a1a;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* ---- CAPA ---- */
+  .cover {
+    background: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    text-align: center;
+    page-break-after: always;
+  }
+
+  .cover-logo {
+    margin-bottom: 48px;
+  }
+
+  .cover-logo img {
+    height: 60px;
+  }
+
+  .cover-logo-text {
+    font-family: 'Georgia', serif;
+    font-size: 32px;
+    letter-spacing: 6px;
+    color: #c9a96e;
+    text-transform: lowercase;
+  }
+
+  .cover-logo-text span {
+    color: #fff;
+  }
+
+  .cover-gota {
+    width: 8px;
+    height: 14px;
+    background: #c9a96e;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    margin: 0 auto 48px;
+  }
+
+  .cover-title {
+    font-size: 36px;
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .cover-subtitle {
+    font-size: 15px;
+    color: #c9a96e;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 48px;
+  }
+
+  .cover-period {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+  }
+
+  .cover-period-item {
+    text-align: center;
+  }
+
+  .cover-period-item .month {
+    font-size: 22px;
+    color: #c9a96e;
+    font-family: 'Georgia', serif;
+    margin-bottom: 4px;
+  }
+
+  .cover-period-item .year {
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .cover-divider {
+    width: 1px;
+    background: #444;
+    align-self: stretch;
+  }
+
+  .cover-vs {
+    display: flex;
+    align-items: center;
+    color: #555;
+    font-size: 18px;
+  }
+
+  .cover-footer {
+    position: absolute;
+    bottom: 40px;
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 1px;
+  }
+
+  /* ---- LAYOUT DE PÁGINA ---- */
+  .page {
+    padding: 48px 52px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .page-break { page-break-before: always; }
+
+  /* ---- HEADER DE SEÇÃO ---- */
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #c9a96e;
+  }
+
+  .section-num {
+    font-size: 11px;
+    color: #c9a96e;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-top: 3px;
+    min-width: 24px;
+  }
+
+  .section-title {
+    font-size: 22px;
+    font-weight: normal;
+    color: #1a1a1a;
+    letter-spacing: 0.5px;
+  }
+
+  .section-desc {
+    font-size: 12px;
+    color: #777;
+    margin-top: 4px;
+  }
+
+  /* ---- KPI CARDS ---- */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .kpi-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .kpi-card {
+    background: #fff;
+    border: 1px solid #e8e0d4;
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  .kpi-label {
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .kpi-value {
+    font-size: 22px;
+    color: #1a1a1a;
+    font-family: 'Georgia', serif;
+    margin-bottom: 4px;
+  }
+
+  .kpi-delta {
+    font-size: 11px;
+    font-family: sans-serif;
+  }
+
+  .kpi-delta.up { color: #2e7d32; }
+  .kpi-delta.down { color: #c62828; }
+  .kpi-delta.warn { color: #e65100; }
+  .kpi-delta.neutral { color: #777; }
+
+  .kpi-sub {
+    font-size: 10px;
+    color: #bbb;
+    margin-top: 2px;
+  }
+
+  /* ---- TABELAS ---- */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 28px;
+    font-size: 12px;
+  }
+
+  thead th {
+    background: #1a1a1a;
+    color: #c9a96e;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: normal;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  thead th:first-child { border-radius: 4px 0 0 0; }
+  thead th:last-child { border-radius: 0 4px 0 0; }
+
+  tbody tr:nth-child(odd) { background: #fff; }
+  tbody tr:nth-child(even) { background: #faf9f7; }
+
+  tbody td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #ede8e0;
+    color: #333;
+  }
+
+  tbody tr:hover { background: #f5f0e8; }
+
+  td.highlight { color: #1a1a1a; font-weight: bold; }
+  td.good { color: #2e7d32; font-weight: bold; }
+  td.bad { color: #c62828; }
+  td.warn { color: #e65100; font-weight: bold; }
+
+  /* ---- ALERT BOX ---- */
+  .alert {
+    border-left: 4px solid #c62828;
+    background: #fff5f5;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .alert-warn {
+    border-left-color: #e65100;
+    background: #fff8f0;
+  }
+
+  .alert-good {
+    border-left-color: #2e7d32;
+    background: #f5fbf5;
+  }
+
+  .alert-title {
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: #1a1a1a;
+  }
+
+  .alert p {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  /* ---- DOIS BLOCOS LADO A LADO ---- */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+
+  .col-block {
+    background: #fff;
+    border: 1px solid #e8e0d4;
+    border-radius: 8px;
+    padding: 18px;
+  }
+
+  .col-block h4 {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0e8d8;
+  }
+
+  .row-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #f5f0e8;
+    font-size: 12px;
+  }
+
+  .row-item:last-child { border-bottom: none; }
+
+  .row-label { color: #555; }
+  .row-value { color: #1a1a1a; font-family: 'Georgia', serif; }
+
+  /* ---- INSIGHT BOX ---- */
+  .insight-box {
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+  }
+
+  .insight-box h4 {
+    color: #c9a96e;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .insight-box p {
+    font-size: 13px;
+    color: #ccc;
+    line-height: 1.7;
+  }
+
+  .insight-box strong { color: #fff; }
+
+  /* ---- DIAGNÓSTICO / RECOMENDAÇÕES ---- */
+  .diag-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .diag-card {
+    background: #fff;
+    border: 1px solid #e8e0d4;
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  .diag-card h4 {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .diag-card.good h4 { color: #2e7d32; }
+  .diag-card.bad h4 { color: #c62828; }
+  .diag-card.action h4 { color: #c9a96e; }
+
+  .diag-item {
+    font-size: 12px;
+    color: #444;
+    padding: 5px 0;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.5;
+    border-bottom: 1px solid #f5f0e8;
+  }
+
+  .diag-item:last-child { border-bottom: none; }
+
+  .diag-item::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #c9a96e;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* ---- FOOTER DE PÁGINA ---- */
+  .page-footer {
+    margin-top: 40px;
+    padding-top: 14px;
+    border-top: 1px solid #e8e0d4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: #bbb;
+    letter-spacing: 0.5px;
+  }
+
+  .page-footer strong { color: #c9a96e; }
+
+  /* ---- BARRA VISUAL ---- */
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .bar-label { width: 140px; color: #555; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar-track { flex: 1; background: #f0ebe0; border-radius: 4px; height: 8px; }
+  .bar-fill { height: 8px; border-radius: 4px; background: #c9a96e; }
+  .bar-fill.dark { background: #1a1a1a; }
+  .bar-value { width: 70px; text-align: right; color: #1a1a1a; font-family: 'Georgia', serif; }
+
+  @media print {
+    body { background: #fff; }
+    .cover { page-break-after: always; min-height: 100vh; }
+    .page-break { page-break-before: always; }
+    @page { margin: 0; size: A4; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== CAPA ===== -->
+<div class="cover">
+  <div class="cover-logo">
+    <div class="cover-logo-text"><span>com</span>néctar</div>
+  </div>
+  <div class="cover-gota"></div>
+  <h1 class="cover-title">Relatório de Performance<br>Digital</h1>
+  <p class="cover-subtitle">Google Analytics 4 · Meta Ads</p>
+  <div class="cover-period">
+    <div class="cover-period-item">
+      <div class="month">Abril</div>
+      <div class="year">2026</div>
+    </div>
+    <div class="cover-vs">vs</div>
+    <div class="cover-period-item">
+      <div class="month">Maio</div>
+      <div class="year">2026</div>
+    </div>
+  </div>
+  <div class="cover-footer">Preparado em junho de 2026 · Uso interno</div>
+</div>
+
+<!-- ===== PÁGINA 1 — VISÃO GERAL DO SITE ===== -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div>
+      <div class="section-title">Visão Geral do Site</div>
+      <div class="section-desc">Google Analytics 4 · comnectar.com.br</div>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Sessões</div>
+      <div class="kpi-value">2.330</div>
+      <div class="kpi-delta up">▲ +40% vs abril</div>
+      <div class="kpi-sub">Abril: 1.661</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Usuários</div>
+      <div class="kpi-value">2.116</div>
+      <div class="kpi-delta up">▲ +51% vs abril</div>
+      <div class="kpi-sub">Abril: 1.403</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Novos usuários</div>
+      <div class="kpi-value">2.099</div>
+      <div class="kpi-delta up">▲ +54% vs abril</div>
+      <div class="kpi-sub">Abril: 1.362</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Pageviews</div>
+      <div class="kpi-value">3.228</div>
+      <div class="kpi-delta up">▲ +19% vs abril</div>
+      <div class="kpi-sub">Abril: 2.709</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Bounce Rate</div>
+      <div class="kpi-value">85,3%</div>
+      <div class="kpi-delta warn">▲ +7,4pp — piorou</div>
+      <div class="kpi-sub">Abril: 77,9%</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Duração Média</div>
+      <div class="kpi-value">48s</div>
+      <div class="kpi-delta down">▼ −35% — piorou</div>
+      <div class="kpi-sub">Abril: 1min 14s</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Conversões</div>
+      <div class="kpi-value">0</div>
+      <div class="kpi-delta down">▼ vs 1 em abril</div>
+      <div class="kpi-sub">Único canal: org. Google</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Eventos</div>
+      <div class="kpi-value">9.663</div>
+      <div class="kpi-delta up">▲ +11% vs abril</div>
+      <div class="kpi-sub">Abril: 8.662</div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <h4>Leitura do período</h4>
+    <p>O volume cresceu expressivamente em maio (+40% de sessões), impulsionado pelo aumento de investimento em Meta Ads. No entanto, <strong>a qualidade do tráfego piorou</strong>: o bounce rate subiu 7,4 pontos percentuais, o tempo médio de sessão caiu pela metade e <strong>nenhuma conversão foi registrada</strong>. O aumento de volume veio de tráfego menos qualificado — mais usuários entrando e saindo em segundos.</p>
+  </div>
+
+  <!-- Fontes de Tráfego -->
+  <div class="section-header" style="margin-top:32px;">
+    <div class="section-num">02</div>
+    <div>
+      <div class="section-title">Fontes de Tráfego</div>
+      <div class="section-desc">De onde vem cada sessão e a qualidade de cada canal</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Canal</th>
+        <th>Sessões Abr</th>
+        <th>Sessões Mai</th>
+        <th>Var.</th>
+        <th>Bounce Mai</th>
+        <th>Duração Mai</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="highlight">meta / paid_social</td>
+        <td>970</td>
+        <td>1.333</td>
+        <td class="up good">+37%</td>
+        <td class="bad">96,8%</td>
+        <td class="bad">2,8s</td>
+      </tr>
+      <tr>
+        <td class="warn">facebook / paid ⚠️</td>
+        <td>—</td>
+        <td>475</td>
+        <td>novo</td>
+        <td class="bad">88,2%</td>
+        <td>21s</td>
+      </tr>
+      <tr>
+        <td class="highlight">google / orgânico</td>
+        <td>111</td>
+        <td>155</td>
+        <td class="up good">+40%</td>
+        <td class="good">31,6%</td>
+        <td class="good">7min 26s</td>
+      </tr>
+      <tr>
+        <td>direct / none</td>
+        <td>292</td>
+        <td>118</td>
+        <td class="bad">−60%</td>
+        <td>51,7%</td>
+        <td>1min 30s</td>
+      </tr>
+      <tr>
+        <td class="warn">(not set) ⚠️</td>
+        <td>24</td>
+        <td>106</td>
+        <td class="warn">+341%</td>
+        <td class="bad">82,1%</td>
+        <td>1min 25s</td>
+      </tr>
+      <tr>
+        <td>shopify_email</td>
+        <td>32</td>
+        <td>68</td>
+        <td class="up good">+112%</td>
+        <td>67,6%</td>
+        <td>1min 38s</td>
+      </tr>
+      <tr>
+        <td>l.instagram.com</td>
+        <td>159</td>
+        <td>22</td>
+        <td class="bad">−86%</td>
+        <td>50%</td>
+        <td>50s</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert">
+    <div class="alert-title">⚠️ Campanha sem rastreamento (facebook / paid)</div>
+    <p>Em maio, 475 sessões chegaram classificadas como "facebook / paid" com o ID numérico da campanha como nome. Isso indica uma campanha no Meta Ads rodando sem UTM tags configurados corretamente. Esse tráfego está invisível no funil — não é possível saber o que esses usuários fizeram no site.</p>
+  </div>
+
+  <div class="alert alert-good">
+    <div class="alert-title">✅ Google Orgânico — melhor qualidade absoluta</div>
+    <p>Bounce rate de 31,6%, duração média de quase 8 minutos e a única conversão registrada em todo o período vieram deste canal. Com volume ainda pequeno, é o canal com maior potencial de crescimento sustentável.</p>
+  </div>
+
+  <div class="page-footer">
+    <span><strong>comnéctar</strong> · Relatório de Performance</span>
+    <span>Abril vs Maio 2026</span>
+  </div>
+</div>
+
+<!-- ===== PÁGINA 2 — DISPOSITIVOS, GEO, LANDING PAGES ===== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div>
+      <div class="section-title">Dispositivos</div>
+      <div class="section-desc">Desktop vs Mobile — qualidade por tipo de acesso</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Dispositivo</th>
+        <th>Sessões Abr</th>
+        <th>% Abr</th>
+        <th>Sessões Mai</th>
+        <th>% Mai</th>
+        <th>Bounce Mai</th>
+        <th>Duração Mai</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="highlight">Mobile</td>
+        <td>1.384</td>
+        <td>83%</td>
+        <td>2.092</td>
+        <td>90%</td>
+        <td class="bad">90,5%</td>
+        <td class="bad">17s</td>
+      </tr>
+      <tr>
+        <td class="highlight">Desktop</td>
+        <td>275</td>
+        <td>17%</td>
+        <td>225</td>
+        <td>10%</td>
+        <td class="good">36%</td>
+        <td class="good">5min 42s</td>
+      </tr>
+      <tr>
+        <td>Tablet</td>
+        <td>3</td>
+        <td>0,2%</td>
+        <td>12</td>
+        <td>0,5%</td>
+        <td class="bad">100%</td>
+        <td>0s</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert alert-warn">
+    <div class="alert-title">Atenção — Desktop caiu de participação (17% → 10%)</div>
+    <p>O usuário desktop tem bounce rate de 36% e passa quase 6 minutos no site — é o perfil de quem está considerando comprar. Já o mobile, que representa 90% do tráfego em maio, sai em 17 segundos. A concentração crescente de tráfego pago em mobile pode estar diluindo as métricas de qualidade do funil.</p>
+  </div>
+
+  <!-- Geo -->
+  <div class="section-header" style="margin-top: 32px;">
+    <div class="section-num">04</div>
+    <div>
+      <div class="section-title">Geografia — Top Cidades</div>
+      <div class="section-desc">Sessões e engajamento por praça</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Cidade</th>
+        <th>Sessões Abr</th>
+        <th>Bounce Abr</th>
+        <th>Sessões Mai</th>
+        <th>Bounce Mai</th>
+        <th>Variação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="highlight">Novo Hamburgo</td>
+        <td>210</td>
+        <td class="good">39,5%</td>
+        <td>109</td>
+        <td class="good">33,9%</td>
+        <td class="bad">−48%</td>
+      </tr>
+      <tr>
+        <td>Porto Alegre</td>
+        <td>109</td>
+        <td>65,1%</td>
+        <td>47</td>
+        <td>53,2%</td>
+        <td class="bad">−57%</td>
+      </tr>
+      <tr>
+        <td>São Paulo</td>
+        <td>90</td>
+        <td>57,8%</td>
+        <td>125</td>
+        <td class="warn">74,4%</td>
+        <td class="good">+39%</td>
+      </tr>
+      <tr>
+        <td>Rio de Janeiro</td>
+        <td>41</td>
+        <td>75,6%</td>
+        <td>62</td>
+        <td class="bad">87,1%</td>
+        <td class="good">+51%</td>
+      </tr>
+      <tr>
+        <td>Brasília</td>
+        <td>15</td>
+        <td class="bad">100%</td>
+        <td>38</td>
+        <td class="bad">92,1%</td>
+        <td class="good">+153%</td>
+      </tr>
+      <tr>
+        <td>Goiânia</td>
+        <td>—</td>
+        <td>—</td>
+        <td>38</td>
+        <td class="bad">86,8%</td>
+        <td>novo</td>
+      </tr>
+      <tr>
+        <td>Fortaleza</td>
+        <td>17</td>
+        <td class="bad">82,4%</td>
+        <td>37</td>
+        <td class="bad">100%</td>
+        <td class="good">+118%</td>
+      </tr>
+      <tr>
+        <td>Recife</td>
+        <td>—</td>
+        <td>—</td>
+        <td>31</td>
+        <td class="bad">100%</td>
+        <td>novo</td>
+      </tr>
+      <tr>
+        <td>Belo Horizonte</td>
+        <td>25</td>
+        <td>80%</td>
+        <td>28</td>
+        <td class="bad">85,7%</td>
+        <td>+12%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="insight-box">
+    <h4>Leitura geográfica</h4>
+    <p><strong>Novo Hamburgo e Porto Alegre têm os menores bounces</strong> — são a base mais engajada e provavelmente onde estão os clientes recorrentes. O crescimento em maio veio de cidades do Centro-Norte (Brasília, Goiânia, Fortaleza, Recife) com bounce rate de 87–100%, reflexo do tráfego pago atingindo praças ainda sem maturidade para a marca.</p>
+  </div>
+
+  <!-- Landing Pages -->
+  <div class="section-header" style="margin-top: 32px;">
+    <div class="section-num">05</div>
+    <div>
+      <div class="section-title">Principais Landing Pages</div>
+      <div class="section-desc">Onde o tráfego aterrissa — por sessão e engajamento</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="col-block">
+      <h4>Abril 2026</h4>
+      <div class="row-item"><span class="row-label">/ (Home)</span><span class="row-value">1.221 sess · BR 83%</span></div>
+      <div class="row-item"><span class="row-label">/search</span><span class="row-value">140 sess · BR 77%</span></div>
+      <div class="row-item"><span class="row-label">/collections/tintos</span><span class="row-value">16 sess · BR 62%</span></div>
+      <div class="row-item"><span class="row-label">/products/barolo-marcenasco</span><span class="row-value">12 sess · BR 42%</span></div>
+      <div class="row-item"><span class="row-label">/produtos</span><span class="row-value">11 sess · BR 27%</span></div>
+    </div>
+    <div class="col-block">
+      <h4>Maio 2026</h4>
+      <div class="row-item"><span class="row-label">/ (Home)</span><span class="row-value" style="color:#c62828">2.064 sess · BR 89%</span></div>
+      <div class="row-item"><span class="row-label">/produtos</span><span class="row-value" style="color:#2e7d32">16 sess · BR 19%</span></div>
+      <div class="row-item"><span class="row-label">/products/louis-jadot</span><span class="row-value">12 sess · BR 50%</span></div>
+      <div class="row-item"><span class="row-label">/products/barolo-monvigliero</span><span class="row-value">11 sess · BR 82%</span></div>
+      <div class="row-item"><span class="row-label">/products/brunello-caprili</span><span class="row-value">10 sess · BR 60%</span></div>
+    </div>
+  </div>
+
+  <div class="alert">
+    <div class="alert-title">⚠️ 88% do tráfego pago aterrissa na Home em maio</div>
+    <p>A home tem bounce rate de 89% — praticamente ninguém fica. Páginas de produto têm bounce muito menor (19–60%). Direcionar as campanhas do Meta para páginas de produto ou coleção específicas deve melhorar significativamente a qualidade do tráfego pago.</p>
+  </div>
+
+  <div class="page-footer">
+    <span><strong>comnéctar</strong> · Relatório de Performance</span>
+    <span>Abril vs Maio 2026</span>
+  </div>
+</div>
+
+<!-- ===== PÁGINA 3 — EMAIL + META ADS ===== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <div>
+      <div class="section-title">Email Marketing</div>
+      <div class="section-desc">Campanhas via Shopify Email — performance por disparo</div>
+    </div>
+  </div>
+
+  <div class="kpi-grid kpi-grid-3" style="margin-bottom: 20px;">
+    <div class="kpi-card">
+      <div class="kpi-label">Sessões via email — Abril</div>
+      <div class="kpi-value">32</div>
+      <div class="kpi-sub">2 campanhas identificadas</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Sessões via email — Maio</div>
+      <div class="kpi-value">68</div>
+      <div class="kpi-delta up">▲ +112% vs abril</div>
+      <div class="kpi-sub">7 campanhas identificadas</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Melhor email (abr)</div>
+      <div class="kpi-value">41%</div>
+      <div class="kpi-sub">Bounce · Barolo rei dos vinhos</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Campanha de Email</th>
+        <th>Mês</th>
+        <th>Sessões</th>
+        <th>Bounce</th>
+        <th>Duração</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Por que o Barolo é o rei dos vinhos?</td>
+        <td>Abril</td>
+        <td>17</td>
+        <td class="good">41,2%</td>
+        <td class="good">4min 49s</td>
+      </tr>
+      <tr>
+        <td>Por que o Langhe Nebbiolo é o Baby Barolo?</td>
+        <td>Abril</td>
+        <td>8</td>
+        <td class="bad">100% ⚠️</td>
+        <td class="bad">1s</td>
+      </tr>
+      <tr>
+        <td>Brunello Caprili 2020: Montalcino puro</td>
+        <td>Maio</td>
+        <td>12</td>
+        <td>66,7%</td>
+        <td>1min 4s</td>
+      </tr>
+      <tr>
+        <td>Monvigliero: o Barolo mais perfumado</td>
+        <td>Maio</td>
+        <td>11</td>
+        <td class="warn">81,8%</td>
+        <td>2min 3s</td>
+      </tr>
+      <tr>
+        <td>A base da Borgonha não está nos caros</td>
+        <td>Maio</td>
+        <td>10</td>
+        <td>60%</td>
+        <td>26s</td>
+      </tr>
+      <tr>
+        <td>Antes do Barolo, a Nebbiolo começa aqui</td>
+        <td>Maio</td>
+        <td>8</td>
+        <td>75%</td>
+        <td>17s</td>
+      </tr>
+      <tr>
+        <td>O irmão do vinho mais cobiçado da Espanha</td>
+        <td>Maio</td>
+        <td>8</td>
+        <td>75%</td>
+        <td>13s</td>
+      </tr>
+      <tr>
+        <td>Almaviva 2022: Chile encontrou Bordeaux</td>
+        <td>Maio</td>
+        <td>5</td>
+        <td>60%</td>
+        <td>3min 5s</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- META ADS -->
+  <div class="section-header" style="margin-top: 32px;">
+    <div class="section-num">07</div>
+    <div>
+      <div class="section-title">Meta Ads — Conta Geral</div>
+      <div class="section-desc">Facebook + Instagram · Conta act_1253892951871195</div>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Investimento</div>
+      <div class="kpi-value">R$ 935</div>
+      <div class="kpi-delta down">▲ +48,7% vs abril</div>
+      <div class="kpi-sub">Abril: R$ 628,81</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Impressões</div>
+      <div class="kpi-value">193.939</div>
+      <div class="kpi-delta up">▲ +3,6%</div>
+      <div class="kpi-sub">Abril: 187.126</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Alcance</div>
+      <div class="kpi-value">124.726</div>
+      <div class="kpi-delta up">▲ +4%</div>
+      <div class="kpi-sub">Abril: 119.936</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Frequência</div>
+      <div class="kpi-value">1,55x</div>
+      <div class="kpi-delta neutral">estável</div>
+      <div class="kpi-sub">Abril: 1,56x</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">CTR</div>
+      <div class="kpi-value">1,98%</div>
+      <div class="kpi-delta up">▲ +33% — melhorou</div>
+      <div class="kpi-sub">Abril: 1,49%</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">CPM</div>
+      <div class="kpi-value">R$ 4,82</div>
+      <div class="kpi-delta warn">▲ +43% — ficou mais caro</div>
+      <div class="kpi-sub">Abril: R$ 3,36</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Landing Page Views</div>
+      <div class="kpi-value">1.452</div>
+      <div class="kpi-delta up">▲ +58%</div>
+      <div class="kpi-sub">Abril: 919</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Custo por LPV</div>
+      <div class="kpi-value">R$ 0,64</div>
+      <div class="kpi-delta up">▼ −5,8% — melhorou</div>
+      <div class="kpi-sub">Abril: R$ 0,684</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Video Views</div>
+      <div class="kpi-value">8.496</div>
+      <div class="kpi-delta up">▲ +125%</div>
+      <div class="kpi-sub">Abril: 3.778</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Post Engagement</div>
+      <div class="kpi-value">12.247</div>
+      <div class="kpi-delta up">▲ +85,6%</div>
+      <div class="kpi-sub">Abril: 6.599</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Link Clicks</div>
+      <div class="kpi-value">3.661</div>
+      <div class="kpi-delta up">▲ +38,6%</div>
+      <div class="kpi-sub">Abril: 2.641</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Reações</div>
+      <div class="kpi-value">83</div>
+      <div class="kpi-delta down">▼ −52%</div>
+      <div class="kpi-sub">Abril: 173</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span><strong>comnéctar</strong> · Relatório de Performance</span>
+    <span>Abril vs Maio 2026</span>
+  </div>
+</div>
+
+<!-- ===== PÁGINA 4 — CAMPANHAS + DEMOGRAPHICS ===== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-num">08</div>
+    <div>
+      <div class="section-title">Meta Ads — Por Campanha</div>
+      <div class="section-desc">Duas campanhas ativas no período</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Campanha</th>
+        <th>Mês</th>
+        <th>Gasto</th>
+        <th>Impressões</th>
+        <th>CTR</th>
+        <th>CPM</th>
+        <th>LPV</th>
+        <th>Custo/LPV</th>
+        <th>Video Views</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="warn">Campanha 1 ⚠️</td>
+        <td>Abril</td>
+        <td>R$ 298,02</td>
+        <td>114.473</td>
+        <td>1,13%</td>
+        <td>R$ 2,60</td>
+        <td class="bad">2</td>
+        <td class="bad">R$ 149</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td class="warn">Campanha 1 ⚠️</td>
+        <td>Maio</td>
+        <td>R$ 312,42</td>
+        <td>87.291</td>
+        <td>1,56%</td>
+        <td>R$ 3,58</td>
+        <td class="bad">2</td>
+        <td class="bad">R$ 156</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td class="good">Visita Novo Site (Abr/26)</td>
+        <td>Abril</td>
+        <td>R$ 330,79</td>
+        <td>72.653</td>
+        <td class="good">2,06%</td>
+        <td>R$ 4,55</td>
+        <td class="good">917</td>
+        <td class="good">R$ 0,36</td>
+        <td>3.778</td>
+      </tr>
+      <tr>
+        <td class="good">Visita Novo Site (Abr/26)</td>
+        <td>Maio</td>
+        <td>R$ 622,65</td>
+        <td>106.648</td>
+        <td class="good">2,33%</td>
+        <td>R$ 5,84</td>
+        <td class="good">1.450</td>
+        <td class="good">R$ 0,43</td>
+        <td>8.496</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert">
+    <div class="alert-title">⚠️ Campanha 1 — Pixel não rastreia chegada ao site</div>
+    <p>A Campanha 1 gerou ~1.300 cliques em cada mês, mas apenas 2 landing page views foram registrados pelo pixel em cada período. Com custo de R$610 investido (total nos dois meses), praticamente nenhum dado de comportamento foi captado. O destino provavelmente é um link de WhatsApp, perfil do Instagram ou página sem o pixel da Meta instalado.</p>
+  </div>
+
+  <div class="alert alert-good">
+    <div class="alert-title">✅ Campanha "Visita Novo Site" — a campanha que funciona</div>
+    <p>CTR de 2,33% em maio, custo por landing page view de R$0,43 e 8.496 visualizações de vídeo. O budget quase dobrou (+88%) de abril para maio e os resultados acompanharam. É a campanha que merece escala.</p>
+  </div>
+
+  <!-- Demographics -->
+  <div class="section-header" style="margin-top: 32px;">
+    <div class="section-num">09</div>
+    <div>
+      <div class="section-title">Meta Ads — Público por Idade e Gênero</div>
+      <div class="section-desc">Onde o investimento está concentrado e qual segmento performa melhor</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Segmento</th>
+        <th>Gasto Abr</th>
+        <th>CTR Abr</th>
+        <th>Gasto Mai</th>
+        <th>CTR Mai</th>
+        <th>Evolução CTR</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="highlight">35–44 Feminino</td>
+        <td>R$ 176,05</td>
+        <td>1,52%</td>
+        <td>R$ 306,49</td>
+        <td>1,98%</td>
+        <td class="good">+30%</td>
+      </tr>
+      <tr>
+        <td class="highlight">35–44 Masculino</td>
+        <td>R$ 131,35</td>
+        <td>1,34%</td>
+        <td>R$ 175,81</td>
+        <td>1,72%</td>
+        <td class="good">+28%</td>
+      </tr>
+      <tr>
+        <td>45–54 Feminino</td>
+        <td>R$ 102,36</td>
+        <td>1,56%</td>
+        <td>R$ 161,27</td>
+        <td>2,08%</td>
+        <td class="good">+33%</td>
+      </tr>
+      <tr>
+        <td>45–54 Masculino</td>
+        <td>R$ 86,28</td>
+        <td>1,36%</td>
+        <td>R$ 108,50</td>
+        <td>1,84%</td>
+        <td class="good">+35%</td>
+      </tr>
+      <tr>
+        <td class="highlight">55–64 Feminino</td>
+        <td>R$ 74,17</td>
+        <td>1,76%</td>
+        <td>R$ 106,71</td>
+        <td class="good">2,47%</td>
+        <td class="good">+40%</td>
+      </tr>
+      <tr>
+        <td>55–64 Masculino</td>
+        <td>R$ 55,97</td>
+        <td>1,59%</td>
+        <td>R$ 64,36</td>
+        <td class="good">2,21%</td>
+        <td class="good">+39%</td>
+      </tr>
+      <tr>
+        <td>25–34 (ambos)</td>
+        <td>R$ 0,41</td>
+        <td>4,1%</td>
+        <td>R$ 9,48</td>
+        <td>~2%</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="insight-box">
+    <h4>Leitura demográfica</h4>
+    <p>O CTR melhorou em todos os segmentos de abril para maio — sinal positivo dos criativos. <strong>O segmento 55–64 feminino tem o melhor CTR em maio (2,47%)</strong>, seguido por 55–64 masculino (2,21%). Ambos recebem menos budget que o segmento 35–44, que é o maior por volume de gasto. O público 25–34 quase não recebe budget mas teve CTR historicamente alto — pode ser explorado.</p>
+  </div>
+
+  <div class="page-footer">
+    <span><strong>comnéctar</strong> · Relatório de Performance</span>
+    <span>Abril vs Maio 2026</span>
+  </div>
+</div>
+
+<!-- ===== PÁGINA 5 — DIAGNÓSTICO E RECOMENDAÇÕES ===== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-num">10</div>
+    <div>
+      <div class="section-title">Diagnóstico e Próximos Passos</div>
+      <div class="section-desc">O que melhorou, o que preocupa e onde agir</div>
+    </div>
+  </div>
+
+  <div class="diag-grid">
+    <div class="diag-card good">
+      <h4>✅ O que melhorou</h4>
+      <div class="diag-item">Volume de tráfego +40% em sessões</div>
+      <div class="diag-item">CTR Meta Ads +33% no geral</div>
+      <div class="diag-item">Video Views Meta +125%</div>
+      <div class="diag-item">Google Orgânico com qualidade crescente (BR 31%, 7min de sessão)</div>
+      <div class="diag-item">Email Marketing dobrou em sessões (+112%)</div>
+      <div class="diag-item">Custo por Landing Page View caiu −5,8%</div>
+      <div class="diag-item">CTR melhorou em todos os segmentos de idade</div>
+    </div>
+    <div class="diag-card bad">
+      <h4>⚠️ O que preocupa</h4>
+      <div class="diag-item">Zero conversões em maio (1 em abril)</div>
+      <div class="diag-item">Bounce rate subiu +7,4pp — qualidade caiu</div>
+      <div class="diag-item">Duração média caiu 35% (74s → 48s)</div>
+      <div class="diag-item">CPM subiu 43% — tráfego ficou mais caro</div>
+      <div class="diag-item">Campanha 1 com pixel quebrado (R$610 sem dados)</div>
+      <div class="diag-item">475 sessões sem UTM correto em maio</div>
+      <div class="diag-item">88% do tráfego pago aterrissa na home com BR 89%</div>
+      <div class="diag-item">Desktop caindo (17% → 10%) — perfil mais comprador</div>
+    </div>
+  </div>
+
+  <div class="insight-box" style="margin-bottom: 28px;">
+    <h4>Diagnóstico central</h4>
+    <p>O aumento de budget em maio gerou mais volume, mas o funil está vazando em dois pontos: <strong>(1) a campanha principal manda tráfego para a home page</strong>, onde 89% dos usuários saem em segundos sem explorar produtos; <strong>(2) a Campanha 1 tem o pixel quebrado</strong>, desperdiçando R$300/mês sem nenhuma visibilidade de comportamento. O único canal que gera qualidade real é o Google Orgânico — mas recebe zero investimento direto.</p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-num" style="color: #c9a96e;">→</div>
+    <div>
+      <div class="section-title">Recomendações</div>
+    </div>
+  </div>
+
+  <div class="diag-grid">
+    <div class="diag-card action">
+      <h4>Ações imediatas</h4>
+      <div class="diag-item">Diagnosticar e corrigir o pixel da Campanha 1 — verificar se a landing page tem o script Meta instalado</div>
+      <div class="diag-item">Adicionar UTM tags corretos na campanha que aparece como "facebook/paid" com ID numérico</div>
+      <div class="diag-item">Testar campanhas com landing pages de produto ou coleção em vez da home</div>
+      <div class="diag-item">Verificar link quebrado no email "Baby Barolo" (bounce 100%, 1 segundo no site)</div>
+    </div>
+    <div class="diag-card action">
+      <h4>Ações de médio prazo</h4>
+      <div class="diag-item">Investir em SEO / Google Orgânico — menor bounce, maior duração, único canal com conversão</div>
+      <div class="diag-item">Criar variação de anúncio específica para desktop com copy mais elaborada</div>
+      <div class="diag-item">Testar alocação de budget no público 25–34 (CTR historicamente alto)</div>
+      <div class="diag-item">Escalar a Campanha "Visita Novo Site" — CTR 2,33%, custo por LPV R$0,43</div>
+      <div class="diag-item">Manter cadência de email — canal dobrou e mantém qualidade razoável</div>
+    </div>
+  </div>
+
+  <!-- Resumo financeiro -->
+  <div class="col-block" style="margin-top: 8px; margin-bottom: 28px;">
+    <h4>Resumo de investimento Meta Ads</h4>
+    <div class="row-item">
+      <span class="row-label">Total investido — Abril</span>
+      <span class="row-value">R$ 628,81</span>
+    </div>
+    <div class="row-item">
+      <span class="row-label">Total investido — Maio</span>
+      <span class="row-value">R$ 935,07</span>
+    </div>
+    <div class="row-item">
+      <span class="row-label">Variação</span>
+      <span class="row-value" style="color: #e65100;">+R$ 306,26 (+48,7%)</span>
+    </div>
+    <div class="row-item">
+      <span class="row-label">Custo por LPV — Abril</span>
+      <span class="row-value">R$ 0,684</span>
+    </div>
+    <div class="row-item">
+      <span class="row-label">Custo por LPV — Maio</span>
+      <span class="row-value">R$ 0,644</span>
+    </div>
+    <div class="row-item">
+      <span class="row-label">LPV gerados em Abril</span>
+      <span class="row-value">919</span>
+    </div>
+    <div class="row-item">
+      <span class="row-label">LPV gerados em Maio</span>
+      <span class="row-value">1.452 (+58%)</span>
+    </div>
+    <div class="row-item" style="border-bottom: none;">
+      <span class="row-label">Conversões registradas (ambos os meses)</span>
+      <span class="row-value" style="color: #c62828;">0 via Meta · 1 via Orgânico</span>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span><strong>comnéctar</strong> · Relatório de Performance Digital</span>
+    <span>Abril vs Maio 2026 · Preparado em junho de 2026</span>
+  </div>
+</div>
+
+</body>
+</html>
