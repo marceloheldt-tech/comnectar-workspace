@@ -2,23 +2,11 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-06-18-diogo';
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-06-25-italian-place';
 const pages = [
   'catalog-capa',
   'catalog-p1',
   'catalog-p2',
-  'catalog-p3',
-  'catalog-p4',
-  'catalog-p5',
-  'catalog-p6',
-  'catalog-p7',
-  'catalog-p8',
-  'catalog-p9',
-  'catalog-p10',
-  'catalog-p11',
-  'catalog-p12',
-  'catalog-p13',
-  'catalog-p14',
 ];
 
 const browser = await chromium.launch();
@@ -44,5 +32,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/catalogo-diogo-junho2026.pdf`, output);
-console.log('\n✅ PDF gerado: catalogo-diogo-junho2026.pdf');
+writeFileSync(`${dir}/catalogo-italian-place-junho2026.pdf`, output);
+console.log('\n✅ PDF gerado: catalogo-italian-place-junho2026.pdf');
