@@ -2,17 +2,12 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-06-29-compre5-leve6';
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-06-30-brancos-diogo-tudela';
 const pages = [
   'catalog-capa',
   'catalog-p1',
   'catalog-p2',
   'catalog-p3',
-  'catalog-p4',
-  'catalog-p5',
-  'catalog-p6',
-  'catalog-p7',
-  'catalog-p8',
 ];
 
 const browser = await chromium.launch();
@@ -38,5 +33,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/compre5-leve6-copa2026.pdf`, output);
-console.log('\n✅ PDF gerado: compre5-leve6-copa2026.pdf');
+writeFileSync(`${dir}/brancos-diogo-tudela.pdf`, output);
+console.log('\n✅ PDF gerado: brancos-diogo-tudela.pdf');
