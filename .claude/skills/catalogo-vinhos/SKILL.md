@@ -352,3 +352,8 @@ Para um novo catálogo, atualizar o `dir` e a lista de `pages` no script.
 - **Caminhos de imagem** → 3 níveis acima da raiz: `../../../dados/comnectar-transparente.png`
 - **Última página com 2 vinhos** → usar layout `grid-2` com photos de 850px
 - **Confirmar dados antes de criar HTMLs** — mostrar tabela resumida e esperar aprovação
+
+## Preferências do usuário (anotadas em jun/2026)
+
+- **Fontes maiores** — aumentar todas as fontes ~20% em relação aos valores base do `_shared.css`. Referência aprovada: wine-name 23px, wine-location/grape 17px, wine-alcohol 16px, price-original 15px, price-discount 36px. Ajustar `card-photo` para 350px de altura para abrir espaço.
+- **Preço cheio sem risco** — `.price-original` nunca usa `text-decoration: line-through`. O preço cheio aparece visível (cor `#bbb`) como referência de valor, sem ser tachado.
