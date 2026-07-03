@@ -64,49 +64,50 @@
   }
   .card { display: flex; flex-direction: column; overflow: hidden; min-height: 0; }
   .card-photo {
-    flex-shrink: 0; height: 300px;
+    flex-shrink: 0; height: 260px;
     display: flex; align-items: center; justify-content: center;
     background: #fafafa; padding: 4px 6px;
   }
-  .card-photo img { max-height: 290px; max-width: 90%; object-fit: contain; }
+  .card-photo img { max-height: 250px; max-width: 90%; object-fit: contain; }
   .card-line { width: 100%; height: 1.5px; background: #991356; flex-shrink: 0; }
   .card-info {
-    padding: 10px 4px 0; flex: 1;
+    padding: 12px 4px 0; flex: 1;
     display: flex; flex-direction: column; min-height: 0;
   }
   .wine-name {
     font-family: 'Geotipe', 'Palatino Linotype', Georgia, serif;
-    font-size: 19px; color: #000; font-weight: 400;
-    line-height: 1.3; margin-bottom: 5px;
+    font-size: 23px; color: #000; font-weight: 400;
+    line-height: 1.28; margin-bottom: 7px;
   }
   .wine-location {
-    font-size: 13px; color: #991356; font-weight: 500;
-    letter-spacing: 0.3px; margin-bottom: 3px;
-    display: flex; align-items: center; gap: 5px;
+    font-size: 17px; color: #991356; font-weight: 500;
+    letter-spacing: 0.3px; margin-bottom: 4px;
+    display: flex; align-items: center; gap: 6px;
   }
-  .wine-grape { font-size: 13px; color: #555; margin-bottom: 3px; line-height: 1.35; }
-  .wine-alcohol { font-size: 12px; color: #aaa; margin-bottom: 1px; }
-  .price-block { margin-top: auto; padding-top: 8px; }
+  .wine-grape { font-size: 17px; color: #555; margin-bottom: 4px; line-height: 1.35; }
+  .wine-alcohol { font-size: 16px; color: #aaa; margin-bottom: 2px; }
+  .price-block { margin-top: auto; padding-top: 10px; }
   .price-original {
-    font-size: 12px; color: #ccc; text-decoration: line-through;
-    font-weight: 400; margin-bottom: 1px;
+    font-size: 15px; color: #999;
+    font-weight: 400; margin-bottom: 2px;
   }
-  .price-discount { font-size: 26px; color: #991356; font-weight: 700; line-height: 1; }
+  .price-discount { font-size: 32px; color: #991356; font-weight: 700; line-height: 1; }
 
   /* footer total */
   .footer-total {
     flex-shrink: 0; margin-top: 22px;
     display: flex; align-items: center; justify-content: space-between;
-    border-top: 1px solid #f0f0f0; padding-top: 20px;
+    border-top: 1px solid #f0f0f0; padding-top: 22px;
   }
+  .footer-total-prices { display: flex; align-items: flex-end; gap: 28px; }
+  .footer-total-col { display: flex; flex-direction: column; }
   .footer-total-label {
-    font-size: 11px; color: #bbb; letter-spacing: 2.5px;
-    text-transform: uppercase; margin-bottom: 4px;
+    font-size: 12px; color: #bbb; letter-spacing: 2.5px;
+    text-transform: uppercase; margin-bottom: 6px;
   }
-  .footer-total-value { font-size: 32px; color: #991356; font-weight: 700; }
-  .footer-total-original {
-    font-size: 13px; color: #ccc; text-decoration: line-through; margin-left: 10px;
-  }
+  .footer-total-full { font-size: 40px; color: #999; font-weight: 700; }
+  .footer-arrow { font-size: 28px; color: #ccc; padding-bottom: 6px; }
+  .footer-total-value { font-size: 46px; color: #991356; font-weight: 700; }
   .footer-badges { display: flex; gap: 10px; align-items: center; }
   .footer-badge {
     border: 1px solid #991356; border-radius: 8px;
@@ -217,10 +218,16 @@
   </div>
 
   <div class="footer-total">
-    <div>
-      <div class="footer-total-label">Kit completo no Pix</div>
-      <span class="footer-total-value">R$ 1.268,80</span>
-      <span class="footer-total-original">De R$ 1.586,00 no cartão</span>
+    <div class="footer-total-prices">
+      <div class="footer-total-col">
+        <div class="footer-total-label">Preço cheio</div>
+        <span class="footer-total-full">R$ 1.586,00</span>
+      </div>
+      <div class="footer-arrow">→</div>
+      <div class="footer-total-col">
+        <div class="footer-total-label">Kit completo no Pix</div>
+        <span class="footer-total-value">R$ 1.268,80</span>
+      </div>
     </div>
     <div class="footer-badges">
       <div class="footer-badge">
