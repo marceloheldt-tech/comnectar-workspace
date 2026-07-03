@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      background: #080808;
+      font-family: 'Rubik', sans-serif;
+      overflow: hidden;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── HEADER ─── */
+    .header {
+      height: 110px;
+      padding: 0 52px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .logo {
+      height: 40px;
+      filter: brightness(0) invert(1);
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .french-flag {
+      display: flex;
+      width: 44px;
+      height: 30px;
+      border-radius: 3px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .french-flag div { flex: 1; }
+    .f-blue { background: #002395; }
+    .f-white { background: #ffffff; }
+    .f-red { background: #ed2939; }
+    .kit-label-wrap { text-align: right; }
+    .kit-sup {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .kit-name {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* ─── TITLE ─── */
+    .title-section {
+      padding: 26px 52px 20px;
+      flex-shrink: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .promo-pill {
+      display: inline-flex;
+      align-items: center;
+      background: #991356;
+      border-radius: 100px;
+      padding: 6px 16px;
+      margin-bottom: 16px;
+    }
+    .promo-pill span {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .main-title {
+      font-size: 58px;
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .main-title em {
+      font-style: normal;
+      color: #991356;
+    }
+    .subtitle {
+      font-size: 16px;
+      color: rgba(255,255,255,0.38);
+      font-weight: 400;
+    }
+
+    /* ─── WINE GRID ─── */
+    .wine-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .wine-card {
+      background: #0d0d0d;
+      padding: 24px 22px 22px 25px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .wine-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: #991356;
+    }
+
+    .wine-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .wine-text { flex: 1; padding-top: 2px; }
+
+    .wine-producer {
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      margin-bottom: 8px;
+    }
+
+    .wine-name {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.22;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .wine-spec {
+      font-size: 12px;
+      color: rgba(255,255,255,0.42);
+      line-height: 1.6;
+    }
+    .wine-spec strong {
+      color: rgba(255,255,255,0.7);
+      font-weight: 500;
+    }
+
+    .wine-img {
+      width: 74px;
+      height: 175px;
+      object-fit: contain;
+      object-position: center bottom;
+      flex-shrink: 0;
+      align-self: flex-end;
+      border-radius: 8px;
+    }
+
+    .price-row {
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      margin-top: 14px;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .price-card-value {
+      font-size: 14px;
+      color: rgba(255,255,255,0.28);
+      text-decoration: line-through;
+      text-decoration-color: rgba(255,255,255,0.2);
+    }
+
+    .price-pix-block {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .price-pix-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #991356;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .price-pix-value {
+      font-size: 30px;
+      font-weight: 700;
+      color: white;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: #991356;
+      height: 190px;
+      flex-shrink: 0;
+      padding: 0 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-label {
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 8px;
+    }
+
+    .total-pix {
+      font-size: 54px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .total-card {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      text-decoration: line-through;
+      text-decoration-color: rgba(255,255,255,0.3);
+      margin-top: 8px;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 10px;
+      padding: 12px 22px;
+      text-align: center;
+    }
+    .badge .b-top {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      display: block;
+      margin-bottom: 3px;
+    }
+    .badge .b-main {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .badge-pix {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+    }
+    .badge-pix strong {
+      color: white;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <img class="logo" src="../../dados/comnectar-transparente.png" alt="comnéctar">
+    <div class="header-right">
+      <div class="kit-label-wrap">
+        <span class="kit-sup">Seleção</span>
+        <span class="kit-name">Kit França</span>
+      </div>
+      <div class="french-flag">
+        <div class="f-blue"></div>
+        <div class="f-white"></div>
+        <div class="f-red"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TITLE -->
+  <div class="title-section">
+    <div class="promo-pill"><span>Só hoje</span></div>
+    <div class="main-title">Quatro<br><em>rótulos</em><br>franceses</div>
+    <div class="subtitle">20% off no Pix &nbsp;·&nbsp; frete grátis &nbsp;·&nbsp; estoque limitado</div>
+  </div>
+
+  <!-- WINE GRID -->
+  <div class="wine-grid">
+
+    <!-- Angelus -->
+    <div class="wine-card">
+      <div class="wine-top">
+        <div class="wine-text">
+          <div class="wine-producer">Château Angélus</div>
+          <div class="wine-name">Tempo de Angélus 2023</div>
+          <div class="wine-spec"><strong>Uva</strong> Merlot 90% · Cab. Franc 10%</div>
+          <div class="wine-spec"><strong>Teor</strong> 13,5% vol.</div>
+          <div class="wine-spec"><strong>Região</strong> Saint-Émilion, Bordeaux</div>
+        </div>
+        <img class="wine-img" src="angelus.jpg" alt="Angelus">
+      </div>
+      <div class="price-row">
+        <div class="price-card-value">R$ 429,00 no cartão</div>
+        <div class="price-pix-block">
+          <span class="price-pix-label">Pix</span>
+          <span class="price-pix-value">R$ 343,20</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- A d'Aussieres -->
+    <div class="wine-card">
+      <div class="wine-top">
+        <div class="wine-text">
+          <div class="wine-producer">Domaine D'Aussières</div>
+          <div class="wine-name">A d'Aussières 2023</div>
+          <div class="wine-spec"><strong>Uva</strong> Syrah · Grenache · blend (10 castas)</div>
+          <div class="wine-spec"><strong>Teor</strong> 14% vol.</div>
+          <div class="wine-spec"><strong>Região</strong> Languedoc-Roussillon</div>
+        </div>
+        <img class="wine-img" src="daussieres.jpg" alt="A d'Aussieres">
+      </div>
+      <div class="price-row">
+        <div class="price-card-value">R$ 219,00 no cartão</div>
+        <div class="price-pix-block">
+          <span class="price-pix-label">Pix</span>
+          <span class="price-pix-value">R$ 175,20</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Potensac -->
+    <div class="wine-card">
+      <div class="wine-top">
+        <div class="wine-text">
+          <div class="wine-producer">Château Potensac</div>
+          <div class="wine-name">Delon Médoc 2014</div>
+          <div class="wine-spec"><strong>Uva</strong> Merlot · Cab. Sauvignon · Cab. Franc · Petit Verdot</div>
+          <div class="wine-spec"><strong>Teor</strong> 13,5% vol.</div>
+          <div class="wine-spec"><strong>Região</strong> Médoc, Bordeaux</div>
+        </div>
+        <img class="wine-img" src="potensac.jpg" alt="Potensac">
+      </div>
+      <div class="price-row">
+        <div class="price-card-value">R$ 499,00 no cartão</div>
+        <div class="price-pix-block">
+          <span class="price-pix-label">Pix</span>
+          <span class="price-pix-value">R$ 399,20</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guigal -->
+    <div class="wine-card">
+      <div class="wine-top">
+        <div class="wine-text">
+          <div class="wine-producer">E. Guigal</div>
+          <div class="wine-name">Crozes-Hermitage 2021</div>
+          <div class="wine-spec"><strong>Uva</strong> Syrah 100%</div>
+          <div class="wine-spec"><strong>Teor</strong> 13,5% vol.</div>
+          <div class="wine-spec"><strong>Região</strong> Vale do Ródano Norte</div>
+        </div>
+        <img class="wine-img" src="guigal.jpg" alt="Guigal">
+      </div>
+      <div class="price-row">
+        <div class="price-card-value">R$ 439,00 no cartão</div>
+        <div class="price-pix-block">
+          <span class="price-pix-label">Pix</span>
+          <span class="price-pix-value">R$ 351,20</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <div class="footer-label">Kit completo no Pix</div>
+      <div class="total-pix">R$ 1.268,80</div>
+      <div class="total-card">De R$ 1.586,00 no cartão</div>
+    </div>
+    <div class="footer-right">
+      <div class="badge">
+        <span class="b-top">Frete</span>
+        <span class="b-main">Grátis</span>
+      </div>
+      <div class="badge-pix"><strong>20% off</strong> no Pix, só hoje</div>
+    </div>
+  </div>
+
+</body>
+</html>
