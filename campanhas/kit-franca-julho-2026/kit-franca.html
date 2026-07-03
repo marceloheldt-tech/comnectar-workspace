@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1350px;
+    overflow: hidden; background: #fff;
+    font-family: 'Rubik', sans-serif; position: relative;
+  }
+  .page {
+    width: 1080px; height: 1350px;
+    padding: 44px 44px 36px;
+    position: relative; display: flex; flex-direction: column;
+  }
+
+  /* header */
+  .header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 20px; border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 26px; flex-shrink: 0;
+  }
+  .header-logo { height: 34px; }
+  .header-label {
+    font-size: 12px; color: #bbb; letter-spacing: 3px;
+    text-transform: uppercase; font-weight: 400;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .flag-img {
+    height: 14px; width: auto; display: inline-block;
+    vertical-align: middle; box-shadow: 0 0 0 0.5px #ddd;
+  }
+
+  /* title */
+  .title-block { flex-shrink: 0; margin-bottom: 30px; }
+  .title-pill {
+    display: inline-flex; align-items: center;
+    background: #991356; border-radius: 100px;
+    padding: 6px 16px; margin-bottom: 18px;
+  }
+  .title-pill span {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #fff;
+  }
+  .kit-title {
+    font-family: 'Geotipe', 'Palatino Linotype', Georgia, serif;
+    font-size: 56px; color: #000; font-weight: 400;
+    letter-spacing: 2px; text-transform: uppercase; line-height: 1.05;
+    margin-bottom: 12px;
+  }
+  .kit-title em { font-style: normal; color: #991356; }
+  .kit-subtitle {
+    font-size: 15px; color: #991356; font-weight: 500;
+    letter-spacing: 1px;
+  }
+  .kit-subtitle .sep { color: #ccc; margin: 0 8px; }
+
+  /* grid */
+  .grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 22px; flex: 1; min-height: 0;
+  }
+  .card { display: flex; flex-direction: column; overflow: hidden; min-height: 0; }
+  .card-photo {
+    flex-shrink: 0; height: 300px;
+    display: flex; align-items: center; justify-content: center;
+    background: #fafafa; padding: 4px 6px;
+  }
+  .card-photo img { max-height: 290px; max-width: 90%; object-fit: contain; }
+  .card-line { width: 100%; height: 1.5px; background: #991356; flex-shrink: 0; }
+  .card-info {
+    padding: 10px 4px 0; flex: 1;
+    display: flex; flex-direction: column; min-height: 0;
+  }
+  .wine-name {
+    font-family: 'Geotipe', 'Palatino Linotype', Georgia, serif;
+    font-size: 19px; color: #000; font-weight: 400;
+    line-height: 1.3; margin-bottom: 5px;
+  }
+  .wine-location {
+    font-size: 13px; color: #991356; font-weight: 500;
+    letter-spacing: 0.3px; margin-bottom: 3px;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .wine-grape { font-size: 13px; color: #555; margin-bottom: 3px; line-height: 1.35; }
+  .wine-alcohol { font-size: 12px; color: #aaa; margin-bottom: 1px; }
+  .price-block { margin-top: auto; padding-top: 8px; }
+  .price-original {
+    font-size: 12px; color: #ccc; text-decoration: line-through;
+    font-weight: 400; margin-bottom: 1px;
+  }
+  .price-discount { font-size: 26px; color: #991356; font-weight: 700; line-height: 1; }
+
+  /* footer total */
+  .footer-total {
+    flex-shrink: 0; margin-top: 22px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid #f0f0f0; padding-top: 20px;
+  }
+  .footer-total-label {
+    font-size: 11px; color: #bbb; letter-spacing: 2.5px;
+    text-transform: uppercase; margin-bottom: 4px;
+  }
+  .footer-total-value { font-size: 32px; color: #991356; font-weight: 700; }
+  .footer-total-original {
+    font-size: 13px; color: #ccc; text-decoration: line-through; margin-left: 10px;
+  }
+  .footer-badges { display: flex; gap: 10px; align-items: center; }
+  .footer-badge {
+    border: 1px solid #991356; border-radius: 8px;
+    padding: 8px 16px; text-align: center;
+  }
+  .footer-badge .b-top {
+    font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: #991356; display: block; margin-bottom: 2px;
+  }
+  .footer-badge .b-main { font-size: 13px; font-weight: 700; color: #000; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <img class="header-logo" src="../../dados/comnectar-transparente.png" alt="comnéctar" style="filter: none;">
+    <span class="header-label">
+      <img class="flag-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzIDIiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjIiIGZpbGw9IiMwMDIzOTUiLz48cmVjdCB4PSIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIyIiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iMiIgd2lkdGg9IjEiIGhlaWdodD0iMiIgZmlsbD0iI2VkMjkzOSIvPjwvc3ZnPg==" alt="FR">
+      Vinhos Franceses
+    </span>
+  </div>
+
+  <div class="title-block">
+    <div class="title-pill"><span>Só hoje</span></div>
+    <h1 class="kit-title">Kit <em>França</em></h1>
+    <p class="kit-subtitle">20% OFF NO PIX <span class="sep">·</span> FRETE GRÁTIS <span class="sep">·</span> ESTOQUE LIMITADO</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- Angelus -->
+    <div class="card">
+      <div class="card-photo"><img src="angelus.jpg" alt=""></div>
+      <div class="card-line"></div>
+      <div class="card-info">
+        <p class="wine-name">Tempo de Angélus 2023 — Château Angélus</p>
+        <p class="wine-location">
+          <img class="flag-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzIDIiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjIiIGZpbGw9IiMwMDIzOTUiLz48cmVjdCB4PSIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIyIiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iMiIgd2lkdGg9IjEiIGhlaWdodD0iMiIgZmlsbD0iI2VkMjkzOSIvPjwvc3ZnPg==" alt="FR">
+          França · Bordeaux · Saint-Émilion
+        </p>
+        <p class="wine-grape">Merlot 90% · Cabernet Franc 10%</p>
+        <p class="wine-alcohol">13,5% vol.</p>
+        <div class="price-block">
+          <p class="price-original">De R$ 429,00</p>
+          <p class="price-discount">R$ 343,20</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- A d'Aussieres -->
+    <div class="card">
+      <div class="card-photo"><img src="daussieres.jpg" alt=""></div>
+      <div class="card-line"></div>
+      <div class="card-info">
+        <p class="wine-name">A d'Aussières 2023 — Domaine D'Aussières</p>
+        <p class="wine-location">
+          <img class="flag-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzIDIiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjIiIGZpbGw9IiMwMDIzOTUiLz48cmVjdCB4PSIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIyIiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iMiIgd2lkdGg9IjEiIGhlaWdodD0iMiIgZmlsbD0iI2VkMjkzOSIvPjwvc3ZnPg==" alt="FR">
+          França · Languedoc-Roussillon
+        </p>
+        <p class="wine-grape">Syrah · Grenache · blend (10 castas)</p>
+        <p class="wine-alcohol">14% vol.</p>
+        <div class="price-block">
+          <p class="price-original">De R$ 219,00</p>
+          <p class="price-discount">R$ 175,20</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Potensac -->
+    <div class="card">
+      <div class="card-photo"><img src="potensac.jpg" alt=""></div>
+      <div class="card-line"></div>
+      <div class="card-info">
+        <p class="wine-name">Delon Médoc 2014 — Château Potensac</p>
+        <p class="wine-location">
+          <img class="flag-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzIDIiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjIiIGZpbGw9IiMwMDIzOTUiLz48cmVjdCB4PSIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIyIiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iMiIgd2lkdGg9IjEiIGhlaWdodD0iMiIgZmlsbD0iI2VkMjkzOSIvPjwvc3ZnPg==" alt="FR">
+          França · Bordeaux · Médoc
+        </p>
+        <p class="wine-grape">Merlot · Cabernet Sauvignon · Cabernet Franc · Petit Verdot</p>
+        <p class="wine-alcohol">13,5% vol.</p>
+        <div class="price-block">
+          <p class="price-original">De R$ 499,00</p>
+          <p class="price-discount">R$ 399,20</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guigal -->
+    <div class="card">
+      <div class="card-photo"><img src="guigal.jpg" alt=""></div>
+      <div class="card-line"></div>
+      <div class="card-info">
+        <p class="wine-name">Crozes-Hermitage 2021 — E. Guigal</p>
+        <p class="wine-location">
+          <img class="flag-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzIDIiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjIiIGZpbGw9IiMwMDIzOTUiLz48cmVjdCB4PSIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIyIiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iMiIgd2lkdGg9IjEiIGhlaWdodD0iMiIgZmlsbD0iI2VkMjkzOSIvPjwvc3ZnPg==" alt="FR">
+          França · Vale do Ródano Norte
+        </p>
+        <p class="wine-grape">Syrah 100%</p>
+        <p class="wine-alcohol">13,5% vol.</p>
+        <div class="price-block">
+          <p class="price-original">De R$ 439,00</p>
+          <p class="price-discount">R$ 351,20</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-total">
+    <div>
+      <div class="footer-total-label">Kit completo no Pix</div>
+      <span class="footer-total-value">R$ 1.268,80</span>
+      <span class="footer-total-original">De R$ 1.586,00 no cartão</span>
+    </div>
+    <div class="footer-badges">
+      <div class="footer-badge">
+        <span class="b-top">Frete</span>
+        <span class="b-main">Grátis</span>
+      </div>
+      <div class="footer-badge">
+        <span class="b-top">Válido</span>
+        <span class="b-main">Só hoje</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

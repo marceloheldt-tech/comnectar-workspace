@@ -2,11 +2,9 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-06-30-brancos-diogo-tudela';
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/campanhas/kit-franca-julho-2026';
 const pages = [
-  'catalog-capa',
-  'catalog-p1',
-  'catalog-p2',
+  'kit-franca',
 ];
 
 const browser = await chromium.launch();
@@ -32,5 +30,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/brancos-diogo-tudela.pdf`, output);
-console.log('\n✅ PDF gerado: brancos-diogo-tudela.pdf');
+writeFileSync(`${dir}/kit-franca.pdf`, output);
+console.log('\n✅ PDF gerado: kit-franca.pdf');
