@@ -12,7 +12,7 @@ optional_scopes = [ ]
 use_legacy_install_flow = true
 
 [auth]
-redirect_urls = [ ]
+redirect_urls = [ "http://localhost:8787/callback" ]
 
 [webhooks]
 api_version = "2026-07"
