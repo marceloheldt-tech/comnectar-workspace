@@ -1,0 +1,9 @@
+# segredos
+.env
+# saidas de extracao (dados brutos, criativos, videos pesados)
+output/
+# python
+__pycache__/
+*.pyc
+.DS_Store
+exemplo/_demo/
