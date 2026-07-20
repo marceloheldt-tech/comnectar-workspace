@@ -453,7 +453,7 @@
     "vendor": "E. Guigal",
     "tags": "",
     "price": "439.00",
-    "inventory_quantity": 7
+    "inventory_quantity": 5
   },
   {
     "title": "Vinho Tinto Dairyman Pinot Noir 2022 - Belle Gloss",
@@ -469,7 +469,7 @@
     "vendor": "Chateau Potensac",
     "tags": "",
     "price": "499.00",
-    "inventory_quantity": 12
+    "inventory_quantity": 10
   },
   {
     "title": "Vinho Tinto Doccio A Matteo Chianti Classico Riserva DOCG 2015 - Caparsa",
@@ -605,7 +605,7 @@
     "vendor": "Olek Bondonio",
     "tags": "",
     "price": "479.00",
-    "inventory_quantity": 10
+    "inventory_quantity": 8
   },
   {
     "title": "Vinho Tinto Idda Etna Rosso 2022 - Gaja",
@@ -869,7 +869,7 @@
     "vendor": "Ramon Bilbao",
     "tags": "",
     "price": "499.00",
-    "inventory_quantity": 5
+    "inventory_quantity": 3
   },
   {
     "title": "Vinho Tinto Nebbiolo D'Alba DOC Bernardina Nebbiolo 2021 - Ceretto",
@@ -1077,7 +1077,7 @@
     "vendor": "Olek Bondonio",
     "tags": "",
     "price": "999.00",
-    "inventory_quantity": 6
+    "inventory_quantity": 4
   },
   {
     "title": "Vinho Tinto Roquette & Cazes Douro 2022 - Roquette & Cazes",
@@ -1085,7 +1085,7 @@
     "vendor": "Roquette & Cazes",
     "tags": "",
     "price": "439.00",
-    "inventory_quantity": 6
+    "inventory_quantity": 4
   },
   {
     "title": "Vinho Tinto Rosso \"Attenti Al Lupo\" IGT Sangiovese 2022 - Podere Le Ripi",
