@@ -239,6 +239,13 @@ node --env-file=.env scripts/publish-postforme.js \
   --caption "legenda tiktok" \
   --draft
 
+# Post for Me — agendar pra data/hora futura (ISO 8601, ex: 2026-07-25T14:00:00-03:00)
+node --env-file=.env scripts/publish-postforme.js \
+  --platform "instagram" \
+  --images "slide-01.png,slide-02.png,..." \
+  --caption "legenda" \
+  --scheduled-at "2026-07-25T14:00:00-03:00"
+
 # Graph API — carrossel/imagem/video (o script detecta automaticamente)
 node --env-file=.env scripts/publish-graph-api.js \
   --images "slide-01.png,slide-02.png,..." \

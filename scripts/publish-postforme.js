@@ -4,7 +4,7 @@ const path = require("path");
 // --- Parse args ---
 function parseArgs() {
   const args = process.argv.slice(2);
-  const opts = { platform: "", images: [], caption: "", accountId: "", draft: false, dryRun: false };
+  const opts = { platform: "", images: [], caption: "", accountId: "", draft: false, dryRun: false, scheduledAt: "" };
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--platform") opts.platform = args[++i];
     else if (args[i] === "--images") opts.images = args[++i].split(",").map(s => s.trim());
@@ -12,6 +12,7 @@ function parseArgs() {
     else if (args[i] === "--account-id") opts.accountId = args[++i];
     else if (args[i] === "--draft") opts.draft = true;
     else if (args[i] === "--dry-run") opts.dryRun = true;
+    else if (args[i] === "--scheduled-at") opts.scheduledAt = args[++i];
   }
   return opts;
 }
@@ -56,6 +57,7 @@ async function createPost(opts, accountId, mediaUrls) {
   } else {
     payload.isDraft = opts.draft;
   }
+  if (opts.scheduledAt) payload.scheduled_at = opts.scheduledAt;
   return apiFetch("/v1/social-posts", { method: "POST", body: JSON.stringify(payload) });
 }
 
@@ -77,6 +79,7 @@ async function main() {
     console.log(`Imagens: ${opts.images.join(", ")}`);
     console.log(`Legenda: ${opts.caption.slice(0, 100)}...`);
     console.log(`Draft: ${opts.draft}`);
+    console.log(`Agendado para: ${opts.scheduledAt || "publicar imediatamente"}`);
     return;
   }
 
@@ -90,9 +93,11 @@ async function main() {
   }
 
   // Publicar
-  console.log(`\nPublicando...`);
+  console.log(opts.scheduledAt ? `\nAgendando para ${opts.scheduledAt}...` : `\nPublicando...`);
   const result = await createPost(opts, accountId, mediaUrls);
-  console.log(`Publicado! ID: ${result.id || JSON.stringify(result)}`);
+  console.log(opts.scheduledAt
+    ? `Agendado! ID: ${result.id || JSON.stringify(result)}`
+    : `Publicado! ID: ${result.id || JSON.stringify(result)}`);
 }
 
 main().catch(e => { console.error(e.message); process.exit(1); });
