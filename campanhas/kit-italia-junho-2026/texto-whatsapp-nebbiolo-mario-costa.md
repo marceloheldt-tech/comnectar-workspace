@@ -6,6 +6,8 @@ Nebbiolo puro do Piemonte, do jeito que a uva mais nobre da Itália merece ser b
 
 O Langhe Nebbiolo do Mario Costa é feito pela mesma uva que dá origem ao Barolo e ao Barbaresco, só que numa versão mais acessível e pronta pra beber já. Taninos elegantes, acidez viva, aquele perfume de cereja e rosa que só o Nebbiolo entrega. Um vinho de produtor pequeno, artesanal, com a tipicidade do Piemonte no copo.
 
+Virou o vinho mais vendido do ano aqui na comnéctar e foi eleito o melhor custo-benefício da casa. Quem já provou sabe por quê.
+
 E quanto mais você leva, melhor fica o preço:
 
 • 1 garrafa → *R$ 259* (de R$ 289) — 10% off
