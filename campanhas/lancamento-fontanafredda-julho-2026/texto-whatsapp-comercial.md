@@ -4,7 +4,7 @@
 
 Um vinho de rei no seu copo, com 20% off nessa semana de lançamento 👑🍷
 
-A história começa em 1858: Vittorio Emanuele II, primeiro rei da Itália unificada, comprou uma propriedade em Serralunga d'Alba pra fazer vinho. Hoje a Fontanafredda é a maior vinícola orgânica certificada do Piemonte, tocada por Oscar Farinetti, o mesmo nome por trás da Eataly.
+A história começa em 1858, quando o rei Vittorio Emanuele II comprou essas terras em Serralunga d'Alba pra presentear Rosa Vercellana, sua companheira, e deu a ela o título de Condessa de Fontanafredda. Foi o filho dos dois, Emanuele Alberto, quem décadas depois transformou a propriedade numa vinícola de verdade. O nome ficou até hoje: a Fontanafredda agora é a maior vinícola orgânica certificada do Piemonte, tocada por Oscar Farinetti, o mesmo nome por trás da Eataly.
 
 O Langhe Nebbiolo 2021 é a porta de entrada pra essa casa. Nebbiolo jovem, fruta vermelha, morango e framboesa, toque de pimenta e flor, taninos finos e final longo que evolui pra couro e rosa seca. Pede massa de molho encorpado, carne vermelha, pizza ou queijo de peso.
 
@@ -20,6 +20,7 @@ Chegou pouca quantidade nesse primeiro lote. Me chama aqui que eu já separo a s
 
 > Notas de envio:
 > - Variação estrutural do texto original (texto-whatsapp.md): aqui a oferta e o gancho de prestígio (rei, Eataly) abrem a mensagem, a história vem antes das notas de degustação, e o fechamento usa escassez do lote em vez de "estoque limitado" genérico
+> - História corrigida: o rei comprou o terreno pra dar de presente à Rosa Vercellana (título de Condessa de Fontanafredda em 1877), foi o filho Emanuele Alberto quem depois montou a vinícola de fato. Farinetti entra só em 2008, quase 130 anos depois
 > - Preço D (cartão) = R$ 279,00. Preço Pix da campanha = 20% off = R$ 223,20
 > - O asterisco (*) formata como negrito no WhatsApp
 > - Fontes sobre a vinícola: fontanafredda.it, wine.com, winecouture.it
