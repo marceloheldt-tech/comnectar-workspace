@@ -51,7 +51,7 @@ Clean e minimalista com posicionamento premium. Muito espaço em branco, fotogra
 Fundo padrão dos slides é SEMPRE branco (#FFFFFF). Imagens entram como elemento visual com máscara CSS gradiente, nunca cobrindo o fundo inteiro com overlay escuro.
 
 **Regras obrigatórias:**
-1. Usar sempre `dados/image.png` (logo fundo branco) em slides com fundo claro
+1. Usar sempre `dados/comnectar-transparente.png` (logo fundo transparente) em slides com fundo claro
 2. Imagens recebem máscara CSS (`mask-image: linear-gradient(...)`) que funde a foto no fundo branco, garantindo que os produtos (garrafas) fiquem visíveis
 3. Fotos de produto: máscara horizontal (fade da esquerda pro direito), produto aparece no lado direito
 4. Fotos de paisagem/vinhedo: máscara vertical (fade de cima pra baixo), área de texto fica no branco inferior

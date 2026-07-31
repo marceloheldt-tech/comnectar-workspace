@@ -6,7 +6,7 @@ import os, base64, secrets, webbrowser, urllib.parse
 import requests
 
 # Carrega .env
-env_path = os.path.join(os.path.dirname(__file__), ".env")
+env_path = os.path.join(os.path.dirname(__file__), "..", ".env")
 env = {}
 with open(env_path) as f:
     for line in f:
