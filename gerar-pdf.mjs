@@ -2,8 +2,8 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-07-31-kit-6-garrafas-opcoes';
-const pages = ['catalog-capa', 'catalog-p1'];
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-07-31-uillian-chile-europa';
+const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3', 'catalog-p4', 'catalog-p5', 'catalog-p6'];
 
 const browser = await chromium.launch();
 const context = await browser.newContext();
@@ -28,5 +28,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/kit-6-garrafas-opcoes-julho2026.pdf`, output);
-console.log('\n✅ PDF gerado: kit-6-garrafas-opcoes-julho2026.pdf');
+writeFileSync(`${dir}/catalogo-uillian-chile-europa-julho2026.pdf`, output);
+console.log('\n✅ PDF gerado: catalogo-uillian-chile-europa-julho2026.pdf');
