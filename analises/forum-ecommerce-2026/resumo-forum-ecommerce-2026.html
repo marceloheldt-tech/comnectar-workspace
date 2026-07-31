@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fórum eCommerce Brasil 2026 — Resumo e Aplicação</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Rubik', 'Segoe UI', sans-serif;
+    background: #faf9f7;
+    color: #000;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, .serif { font-family: 'Georgia', serif; }
+
+  /* ---- CAPA ---- */
+  .cover {
+    background: #000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    text-align: center;
+    page-break-after: always;
+    position: relative;
+  }
+
+  .cover-logo { margin-bottom: 40px; }
+  .cover-logo img { height: 46px; filter: brightness(0) invert(1); }
+
+  .cover-gota { margin-bottom: 40px; }
+  .cover-gota img { height: 26px; filter: brightness(0) invert(1); opacity: 0.85; }
+
+  .cover-eyebrow {
+    font-size: 12px;
+    color: #d98fb0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .cover-title {
+    font-family: 'Georgia', serif;
+    font-size: 34px;
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+    line-height: 1.3;
+    max-width: 700px;
+  }
+
+  .cover-subtitle {
+    font-size: 14px;
+    color: #ccc;
+    max-width: 560px;
+    line-height: 1.6;
+    margin-bottom: 44px;
+  }
+
+  .cover-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 560px;
+  }
+
+  .cover-tag {
+    border: 1px solid #444;
+    color: #d98fb0;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  .cover-footer {
+    position: absolute;
+    bottom: 36px;
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 1px;
+  }
+
+  /* ---- LAYOUT ---- */
+  .page { padding: 48px 52px; max-width: 900px; margin: 0 auto; }
+  .page-break { page-break-before: always; }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #991356;
+  }
+
+  .section-num {
+    font-size: 11px;
+    color: #991356;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-top: 3px;
+    min-width: 26px;
+    font-weight: bold;
+  }
+
+  .section-title { font-family: 'Georgia', serif; font-size: 21px; font-weight: normal; color: #000; }
+  .section-desc { font-size: 12px; color: #666; margin-top: 4px; }
+
+  p { margin-bottom: 12px; color: #222; }
+  p:last-child { margin-bottom: 0; }
+
+  strong { color: #000; }
+
+  /* ---- CARDS ---- */
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+  .kpi-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+  .kpi-card { background: #fff; border: 1px solid #e6e6e6; border-radius: 10px; padding: 14px; }
+  .kpi-value { font-family: 'Georgia', serif; font-size: 19px; color: #991356; margin-bottom: 4px; }
+  .kpi-label { font-size: 10.5px; color: #555; line-height: 1.4; }
+
+  .insight-box {
+    background: #000;
+    color: #fff;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+  }
+  .insight-box h4 { color: #d98fb0; font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+  .insight-box p { font-size: 12.5px; color: #ddd; margin-bottom: 0; }
+  .insight-box strong { color: #fff; }
+
+  .quote-box {
+    border-left: 3px solid #991356;
+    background: #fff;
+    padding: 12px 18px;
+    margin-bottom: 18px;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 13.5px;
+    color: #333;
+  }
+
+  .diag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 22px; }
+
+  .diag-card { background: #fff; border: 1px solid #e6e6e6; border-radius: 10px; padding: 16px; }
+  .diag-card h4 { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; color: #991356; }
+
+  .diag-item {
+    font-size: 12px;
+    color: #333;
+    padding: 5px 0 5px 14px;
+    position: relative;
+    line-height: 1.5;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .diag-item:last-child { border-bottom: none; }
+  .diag-item::before { content: '›'; position: absolute; left: 0; color: #991356; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin-bottom: 22px; font-size: 12px; }
+  thead th {
+    background: #000; color: #d98fb0; padding: 9px 12px; text-align: left;
+    font-weight: normal; font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
+  }
+  thead th:first-child { border-radius: 4px 0 0 0; }
+  thead th:last-child { border-radius: 0 4px 0 0; }
+  tbody tr:nth-child(odd) { background: #fff; }
+  tbody tr:nth-child(even) { background: #faf9f7; }
+  tbody td { padding: 8px 12px; border-bottom: 1px solid #eee; color: #333; }
+
+  .tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .tag {
+    background: #fdf1f6; color: #991356; border: 1px solid #f3c6dc;
+    font-size: 10.5px; padding: 4px 12px; border-radius: 16px; font-weight: 600;
+  }
+
+  .aula-badge {
+    display: inline-block;
+    background: #991356;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .page-footer {
+    margin-top: 36px;
+    padding-top: 14px;
+    border-top: 1px solid #e6e6e6;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 0.5px;
+  }
+  .page-footer strong { color: #991356; }
+
+  .framework-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
+  .framework-step {
+    background: #fff; border: 1px solid #e6e6e6; border-radius: 10px; padding: 12px;
+    text-align: center;
+  }
+  .framework-step .num { font-family: 'Georgia', serif; color: #991356; font-size: 18px; margin-bottom: 4px; }
+  .framework-step .label { font-size: 10.5px; color: #333; font-weight: 600; margin-bottom: 3px; }
+  .framework-step .desc { font-size: 10px; color: #666; line-height: 1.4; }
+
+  @media print {
+    body { background: #fff; }
+    .cover { page-break-after: always; min-height: 100vh; }
+    .page-break { page-break-before: always; }
+    @page { margin: 0; size: A4; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== CAPA ===== -->
+<div class="cover">
+  <div class="cover-logo"><img src="../../dados/comnectar-transparente.png" alt="comnéctar"></div>
+  <div class="cover-eyebrow">Uso interno · Equipe comnéctar</div>
+  <h1 class="cover-title">Fórum eCommerce Brasil 2026<br>Resumo das 5 aulas e o que aplicar aqui</h1>
+  <p class="cover-subtitle">Marcelo esteve no evento em São Paulo e trouxe o material de 5 palestras. Este documento reúne o que foi visto e transforma em ações práticas pra comnéctar.</p>
+  <div class="cover-tags">
+    <span class="cover-tag">IA Generativa</span>
+    <span class="cover-tag">GEO / AEO</span>
+    <span class="cover-tag">Conteúdo</span>
+    <span class="cover-tag">Automação</span>
+    <span class="cover-tag">Captação de Leads</span>
+  </div>
+  <div class="cover-footer">Preparado em julho de 2026 · Uso interno</div>
+</div>
+
+<!-- ===== PÁGINA 1 — VISÃO GERAL / O FIO CONDUTOR ===== -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-num">00</div>
+    <div>
+      <div class="section-title">O fio condutor do evento</div>
+      <div class="section-desc">Por que quase todas as 5 aulas bateram na mesma tecla</div>
+    </div>
+  </div>
+
+  <p>As 5 aulas foram de palestrantes diferentes (Tray, uma palestra sobre hiperpersonalização, um especialista em conteúdo pra redes sociais, uma palestra sobre agentes de IA e um material técnico de uma consultoria), mas quase todas convergiram pro mesmo assunto: <strong>a busca tradicional no Google está perdendo espaço pra respostas prontas de inteligência artificial</strong> (ChatGPT, Gemini, Perplexity, Google AI Overview). O cliente está deixando de digitar palavra-chave e clicar em links pra simplesmente perguntar pra uma IA o que comprar, e a IA já entrega uma recomendação direta.</p>
+
+  <p>Isso deu origem a um conjunto de siglas novas que apareceram em praticamente todas as aulas: <strong>SEO, AEO, GEO e AIO</strong>. Vale entender rápido porque tudo o que vem a seguir se apoia nelas.</p>
+
+  <div class="framework-row">
+    <div class="framework-step">
+      <div class="num">SEO</div>
+      <div class="label">Search Engine Optimization</div>
+      <div class="desc">Ser encontrado e ranqueado nos buscadores tradicionais</div>
+    </div>
+    <div class="framework-step">
+      <div class="num">AEO</div>
+      <div class="label">Answer Engine Optimization</div>
+      <div class="desc">Responder com clareza perguntas diretas e conversacionais</div>
+    </div>
+    <div class="framework-step">
+      <div class="num">GEO</div>
+      <div class="label">Generative Engine Optimization</div>
+      <div class="desc">Ser compreendido, citado e recomendado por IAs generativas</div>
+    </div>
+    <div class="framework-step">
+      <div class="num">AIO</div>
+      <div class="label">AI / Agent Optimization</div>
+      <div class="desc">Ser consumido por agentes que comparam e agem sozinhos</div>
+    </div>
+  </div>
+
+  <p>O ponto importante: essas camadas são complementares, não substitutas. SEO continua existindo, só que agora é uma camada entre várias.</p>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-value">−42%</div>
+      <div class="kpi-label">Queda em cliques orgânicos após a expansão dos AI Overviews do Google, em análise com 64 sites (Search Engine Land)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value">4,4x</div>
+      <div class="kpi-label">Mais conversão de leads em tráfego vindo de recomendação de IA, comparado à busca tradicional</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value">5–10%</div>
+      <div class="kpi-label">Das respostas de IA vêm do site próprio da marca. O resto (90–95%) vem de fontes externas</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value">~70%</div>
+      <div class="kpi-label">Da decisão de compra já formada antes do contato comercial, segundo Gartner e Forrester</div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <h4>Por que isso importa especialmente pra comnéctar agora</h4>
+    <p>O gargalo atual do negócio está na captação de novos leads num mercado pequeno e de nicho, onde não dá pra jogar por volume. Recomendação por IA é exatamente um canal de topo de funil novo, ainda pouco explorado por concorrentes de vinho premium no Brasil. Chegar cedo nisso é uma vantagem real, não só uma curiosidade de palestra.</p>
+  </div>
+
+  <p>Nas próximas páginas: um resumo de cada aula e, no final, um plano de ação concreto pra comnéctar.</p>
+
+  <div class="page-footer">
+    <span><strong>comnéctar</strong> · Fórum eCommerce Brasil 2026</span>
+    <span>Resumo interno</span>
+  </div>
+</div>
+
+<!-- ===== PÁGINA 2 — AULA 1 ===== -->
+<div class="page page-break">
+  <div class="aula-badge">Aula 1 · Tray</div>
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div>
+      <div class="section-title">Da busca tradicional pra recomendação de IA</div>
+      <div class="section-desc">Como a IA decide o que recomendar, e o que uma marca precisa fazer pra entrar nessa recomendação</div>
+    </div>
+  </div>
+
+  <p>A Tray mostrou, com uma busca real, como o Google e ferramentas tipo ChatGPT já recomendam produtos direto, sem o cliente precisar abrir várias abas e comparar. A ideia central: <strong>o consumidor não navega mais pra pesquisar. A IA pesquisa por ele.</strong></p>
+
+  <p>O palestrante apresentou um modelo de 4 etapas de como a IA monta essa resposta:</p>
+
+  <div class="framework-row">
+    <div class="framework-step">
+      <div class="num">01</div>
+      <div class="label">Mapeamento</div>
+      <div class="desc">Entende a intenção por trás da pergunta do usuário</div>
+    </div>
+    <div class="framework-step">
+      <div class="num">02</div>
+      <div class="label">Busca semântica</div>
+      <div class="desc">Cruza dados de várias fontes em tempo real</div>
+    </div>
+    <div class="framework-step">
+      <div class="num">03</div>
+      <div class="label">Filtro de credibilidade</div>
+      <div class="desc">Verifica reviews, menções e prova social</div>
+    </div>
+    <div class="framework-step">
+      <div class="num">04</div>
+      <div class="label">Geração da resposta</div>
+      <div class="desc">Monta a resposta final, já citando a loja</div>
+    </div>
+  </div>
+
+  <div class="quote-box">"A IA não confia apenas no que você diz sobre si mesmo. Ela busca validação em um ecossistema complexo."</div>
+
+  <p>Daí vem o checklist prático que a Tray recomendou trabalhar em dois grupos:</p>
+
+  <div class="diag-grid">
+    <div class="diag-card">
+      <h4>Canal próprio (a loja virtual)</h4>
+      <div class="diag-item">Página "Sobre nós" completa e informativa</div>
+      <div class="diag-item">Fichas de produto e categoria bem detalhadas</div>
+      <div class="diag-item">Avaliações de clientes visíveis</div>
+      <div class="diag-item">FAQ bem construído</div>
+      <div class="diag-item">Tabelas comparativas entre produtos</div>
+    </div>
+    <div class="diag-card">
+      <h4>Canais externos (o ecossistema)</h4>
+      <div class="diag-item">Menções em mídia, blogs e fóruns</div>
+      <div class="diag-item">Conteúdo gerado por usuários (UGC)</div>
+      <div class="diag-item">Marketing de influência e afiliados</div>
+      <div class="diag-item">Parcerias com criadores de conteúdo</div>
+    </div>
+  </div>
+
+  <p>O fechamento da aula mostrou na prática: uma busca real por "esse produto é bom?" trouxe uma resposta de IA citando como fonte um vídeo e um post de uma criadora de conteúdo, não o site da marca. Prova de que investir no ecossistema externo é o que de fato alimenta a recomendação.</p>
+
+  <div class="page-footer">
+    <span><strong>comnéctar</strong> · Fórum eCommerce Brasil 2026</span>
+    <span>Aula 1 · Tray</span>
+  </div>
+</div>
+
+<!-- ===== PÁGINA 3 — AULA 2 ===== -->
+<div class="page page-break">
+  <div class="aula-badge">Aula 2 · GEO & Hiperpersonalização</div>
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div>
+      <div class="section-title">GEO & Hiperpersonalização</div>
+      <div class="section-desc">Como transformar sinais de intenção em conteúdo estruturado e personalização real</div>
+    </div>
+  </div>
+
+  <p>Essa foi a aula que trouxe o framework SEO / AEO / GEO / AIO apresentado na página anterior, além de um movimento de mercado concreto: o <strong>Universal Commerce Protocol (UCP)</strong>, anunciado pelo Google na NRF 2026. Ele deve permitir checkout nativo dentro do próprio Google e do Gemini, sem o cliente precisar visitar a página do produto no site da marca. No Brasil ainda sem data confirmada, mas o rollout já começou nos EUA.</p>
+
+  <div class="insight-box">
+    <h4>O que isso muda na prática</h4>
+    <p>Se parte da venda passa a acontecer dentro do próprio Google, sem o cliente pisar no site, o catálogo precisa estar bem estruturado e "legível" por essas plataformas desde já (dados de produto, preço e disponibilidade organizados e completos).</p>
+  </div>
+
+  <p>A aula também trouxe o conceito de <strong>taxonomia semântica de conteúdo</strong>: cada conteúdo do site carrega camadas de contexto (tipo de produto, estágio da jornada de compra, perfil do público, critério de decisão). Isso transforma uma simples visita de página em um dado rico de intenção, que alimenta tanto a personalização do site quanto CRM e mídia paga.</p>
+
+  <p>O fechamento propôs um "novo painel de growth", com 4 famílias de métricas que vale considerar acompanhar além do tradicional:</p>
+
+  <table>
+    <thead>
+      <tr><th>Família de métrica</th><th>O que mede</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="highlight">Presença Generativa</td><td>Menções, citações, share of citation, URLs citadas por IAs</td></tr>
+      <tr><td>Intenção + Conteúdo</td><td>Afinidades, nível de expertise do visitante, progressão, conversão assistida</td></tr>
+      <tr><td>Personalização</td><td>Cobertura, exposição, interação, uplift de testes</td></tr>
+      <tr><td>Negócio</td><td>Conversão, ticket médio, margem, receita incremental, retenção</td></tr>
+    </tbody>
+  </table>
+
+  <p>Mensagem de fechamento: mapear intenções reais dos clientes, estruturar sinais (conteúdo citável, taxonomia, tracking) e usar isso pra personalizar e aprender continuamente, num ciclo que se retroalimenta.</p>
+
+  <div class="page-footer">
+    <span><strong>comnéctar</strong> · Fórum eCommerce Brasil 2026</span>
+    <span>Aula 2 · GEO & Hiperpersonalização</span>
+  </div>
+</div>
+
+<!-- ===== PÁGINA 4 — AULA 3 ===== -->
+<div class="page page-break">
+  <div class="aula-badge">Aula 3 · Sordili</div>
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div>
+      <div class="section-title">Conteúdo que a IA ama</div>
+      <div class="section-desc">Instagram, YouTube e como escrever pra ser citado por uma inteligência artificial</div>
+    </div>
+  </div>
+
+  <p>Essa aula juntou dois assuntos: qual formato de conteúdo performa melhor hoje nas redes, e como estruturar textos e páginas pra que uma IA "entenda" e cite a marca.</p>
+
+  <div class="kpi-grid kpi-grid-3">
+    <div class="kpi-card">
+      <div class="kpi-value">54,7%</div>
+      <div class="kpi-label">Dos brasileiros acessam o Instagram todo dia (Instagram Business, 2025)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value">3x</div>
+      <div class="kpi-label">Mais alcance orgânico dos Reels em relação a posts de foto estática</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value">147 mi</div>
+      <div class="kpi-label">De brasileiros usam o YouTube, hoje o 2º maior motor de busca do mundo</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Formato (Instagram)</th><th>Desempenho</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="highlight">Reels</td><td>Alto alcance</td></tr>
+      <tr><td>Carrossel</td><td>Alta retenção</td></tr>
+      <tr><td>Live</td><td>Alta interação</td></tr>
+      <tr><td>Stories</td><td>Efêmero, mantém proximidade</td></tr>
+      <tr><td>Foto estática</td><td>Baixo alcance orgânico</td></tr>
+    </tbody>
+  </table>
+
+  <div class="quote-box">"No Instagram, o vídeo não é tendência. É o centro da estratégia."</div>
+
+  <p>A segunda metade da aula trouxe a "pirâmide do conteúdo citável", explicando o que faz um texto virar citação de IA:</p>
+
+  <div class="framework-row">
+    <div class="framework-step">
+      <div class="num">1</div>
+      <div class="label">Fundamento</div>
+      <div class="desc">Expertise real, voz única, consistência</div>
+    </div>
+    <div class="framework-step">
+      <div class="num">2</div>
+      <div class="label">Estruturado</div>
+      <div class="desc">Headers, bullets, FAQ, listas</div>
+    </div>
+    <div class="framework-step">
+      <div class="num">3</div>
+      <div class="label">Verificável</div>
+      <div class="desc">Dados, fontes, exemplos concretos</div>
+    </div>
+    <div class="framework-step">
+      <div class="num">4</div>
+      <div class="label">Citável</div>
+      <div class="desc">A IA menciona a marca espontaneamente</div>
+    </div>
+  </div>
+
+  <p>Recomendações práticas de escrita citadas: usar H2/H3 em formato de pergunta, responder FAQs reais do setor, sempre incluir dados com fonte, e escrever pra humano em primeiro lugar, não pro robô. A frase que resume: "conteúdo que ensina algo real tem 5x mais chance de virar citação".</p>
+
+  <div class="page-footer">
+    <span><strong>comnéctar</strong> · Fórum eCommerce Brasil 2026</span>
+    <span>Aula 3 · Sordili</span>
+  </div>
+</div>
+
+<!-- ===== PÁGINA 5 — AULA 4 ===== -->
+<div class="page page-break">
+  <div class="aula-badge">Aula 4</div>
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div>
+      <div class="section-title">De assistente pra agente</div>
+      <div class="section-desc">Como usar IA conectada aos dados reais da operação, não só como um chat de perguntas</div>
+    </div>
+  </div>
+
+  <div class="quote-box">"O futuro da operação não é abrir um dashboard. É conversar com a IA que já tem todos os dados."</div>
+
+  <p>Essa aula trouxe uma distinção que vale entender bem, porque é a diferença entre usar IA de forma superficial ou realmente ganhar tempo com ela:</p>
+
+  <div class="diag-grid">
+    <div class="diag-card">
+      <h4>Assistente</h4>
+      <div class="diag-item">Responde a pergunta</div>
+      <div class="diag-item">Você copia, cola e executa na mão</div>
+    </div>
+    <div class="diag-card">
+      <h4>Agente</h4>
+      <div class="diag-item">Acessa as fontes de dados diretamente</div>
+      <div class="diag-item">Extrai, cruza e executa a rotina sozinho</div>
+      <div class="diag-item">O humano valida e decide no final</div>
+    </div>
+  </div>
+
+  <p>O conceito técnico central foi o <strong>MCP (Model Context Protocol)</strong>, descrito de um jeito bem simples: "a tomada que liga a IA aos seus sistemas". É o que permite à IA se conectar direto em marketplaces, plataforma de e-commerce (Shopify, VTEX), ERP, mídia paga, GA4 e ferramentas de SEO, sem precisar de exportação manual toda vez.</p>
+
+  <div class="insight-box">
+    <h4>Isso já é exatamente como o ambiente de trabalho da comnéctar funciona</h4>
+    <p>O Claude Code OS já usa esse mesmo modelo: MCPs conectados (Shopify, Canva) e skills que automatizam rotinas repetíveis (catálogos, posts, emails). A palestra reforça que esse caminho já adotado está alinhado com o que hoje é ponta de lança no mercado, e que vale continuar mapeando novas rotinas repetitivas pra virar skill.</p>
+  </div>
+
+  <p>O roteiro prático de fechamento pra quem quer começar do zero:</p>
+
+  <div class="framework-row">
+    <div class="framework-step">
+      <div class="num">1</div>
+      <div class="label">Documente</div>
+      <div class="desc">Padronize a rotina num SOP. É o alicerce</div>
+    </div>
+    <div class="framework-step">
+      <div class="num">2</div>
+      <div class="label">Conecte</div>
+      <div class="desc">MCP quando existir, CSV/XLSX quando não</div>
+    </div>
+    <div class="framework-step">
+      <div class="num">3</div>
+      <div class="label">Crie 1 skill</div>
+      <div class="desc">Escolha o processo mais repetitivo e automatize</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span><strong>comnéctar</strong> · Fórum eCommerce Brasil 2026</span>
+    <span>Aula 4</span>
+  </div>
+</div>
+
+<!-- ===== PÁGINA 6 — AULA 5 ===== -->
+<div class="page page-break">
+  <div class="aula-badge">Aula 5 · Material técnico</div>
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div>
+      <div class="section-title">Como aparecer no ChatGPT, Claude e Perplexity</div>
+      <div class="section-desc">Guia prático de implementação de GEO</div>
+    </div>
+  </div>
+
+  <p><strong>Um adendo honesto:</strong> esse PDF parece ser um material de uma consultoria (Growth Team), focado em empresas B2B, e não uma aula do próprio Fórum eCommerce. Mas o conteúdo é totalmente alinhado com o resto do evento e é o mais técnico e aplicável de todos, então entrou no resumo.</p>
+
+  <p>O guia propõe 4 arquivos técnicos, implementados nesta ordem, que fazem um site ser lido e citado por IAs generativas:</p>
+
+  <table>
+    <thead>
+      <tr><th>Arquivo / ação</th><th>Pra que serve</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="highlight">robots.txt</td><td>Liberar explicitamente os bots de IA: GPTBot, ClaudeBot, PerplexityBot, Google-Extended e CCBot. Muitos sites ainda bloqueiam esses bots por padrão de template antigo</td></tr>
+      <tr><td class="highlight">llms.txt</td><td>Um "briefing" em texto puro sobre a empresa, direto pra IA ler: quem é, serviços com preço real, diferenciais, FAQ</td></tr>
+      <tr><td class="highlight">Schema (JSON-LD)</td><td>Dados estruturados invisíveis pro visitante, mas legíveis por IA e Google: LocalBusiness, FAQPage, Product/Service</td></tr>
+      <tr><td class="highlight">FAQ estruturado</td><td>Publicado em 3 lugares (site, Schema e llms.txt) com respostas curtas, objetivas e com número específico</td></tr>
+    </tbody>
+  </table>
+
+  <div class="kpi-grid kpi-grid-3">
+    <div class="kpi-card">
+      <div class="kpi-value">~70%</div>
+      <div class="kpi-label">Da decisão de compra já formada antes do contato comercial (Gartner / Forrester)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value">~12 meses</div>
+      <div class="kpi-label">Janela estimada de vantagem antes do mercado inteiro adotar GEO</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value">5 dias</div>
+      <div class="kpi-label">Tempo estimado pra implementar os 4 arquivos, sem precisar de desenvolvedor</div>
+    </div>
+  </div>
+
+  <p>O guia também traz uma forma simples de testar se a marca já aparece: perguntar direto pro ChatGPT, Perplexity ou Gemini "quem são os melhores [produto/serviço] em [cidade/nicho]", e comparar o resultado antes e depois de implementar os ajustes.</p>
+
+  <div class="page-footer">
+    <span><strong>comnéctar</strong> · Fórum eCommerce Brasil 2026</span>
+    <span>Aula 5 · Material técnico</span>
+  </div>
+</div>
+
+<!-- ===== PÁGINA 7 — PLANO DE AÇÃO ===== -->
+<div class="page page-break">
+  <div class="section-header">
+    <div class="section-num">→</div>
+    <div>
+      <div class="section-title">O que aplicar na comnéctar</div>
+      <div class="section-desc">Traduzindo as 5 aulas em ações concretas, priorizadas pelo foco atual do negócio</div>
+    </div>
+  </div>
+
+  <p>O momento da comnéctar hoje é de crescimento com restrição de topo de funil: a base de clientes existe e a operação roda bem, o desafio é chegar em gente nova num mercado pequeno. Tudo abaixo foi priorizado com esse filtro.</p>
+
+  <div class="diag-grid">
+    <div class="diag-card">
+      <h4>Quick wins técnicos</h4>
+      <div class="diag-item">Checar o robots.txt do site: GPTBot, ClaudeBot, PerplexityBot e Google-Extended precisam estar liberados</div>
+      <div class="diag-item">Criar um llms.txt com dados reais da comnéctar (quem é, diferenciais, faixa de preço, FAQ)</div>
+      <div class="diag-item">Adicionar Schema JSON-LD nas páginas de produto e na home (Product, FAQPage, LocalBusiness)</div>
+      <div class="diag-item">Testar hoje: perguntar pro ChatGPT e Perplexity "onde comprar vinho premium online" e variações, pra ter um baseline</div>
+    </div>
+    <div class="diag-card">
+      <h4>Conteúdo e ficha de produto</h4>
+      <div class="diag-item">Enriquecer fichas de vinho: uva, região, produtor, safra, harmonização, prêmios, teor alcoólico, de forma bem estruturada</div>
+      <div class="diag-item">Montar uma seção de FAQ real sobre vinho (temperatura de serviço, harmonização, guarda, etc)</div>
+      <div class="diag-item">Escrever conteúdo em formato de pergunta (H2/H3), sempre com dado concreto e fonte</div>
+      <div class="diag-item">Ativar reviews visíveis no site e no Google, hoje um dos principais sinais de credibilidade pra IA</div>
+    </div>
+  </div>
+
+  <div class="diag-grid">
+    <div class="diag-card">
+      <h4>Ecossistema e prova social</h4>
+      <div class="diag-item">Buscar menções em mídia especializada de vinho e gastronomia, não só anúncio pago</div>
+      <div class="diag-item">Testar parcerias com criadores de conteúdo e sommeliers pra gerar UGC sobre os vinhos da casa</div>
+      <div class="diag-item">Priorizar Reels e carrossel no Instagram em vez de foto estática, que hoje performa pior</div>
+    </div>
+    <div class="diag-card">
+      <h4>Operacional / automação</h4>
+      <div class="diag-item">O Claude Code OS já segue a lógica de MCP + skills apresentada na Aula 4</div>
+      <div class="diag-item">Mapear mais uma rotina repetitiva do dia a dia pra virar skill nova</div>
+      <div class="diag-item">Documentar processos que ainda não têm SOP, antes de tentar automatizar</div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <h4>Resumo em uma frase, pra levar pra reunião com a equipe</h4>
+    <p>O jeito como o cliente descobre vinho está migrando do Google pra recomendações de IA, e como isso ainda é pouco explorado no mercado de vinho premium brasileiro, é uma oportunidade real de topo de funil pra comnéctar chegar primeiro.</p>
+  </div>
+
+  <div class="page-footer">
+    <span><strong>comnéctar</strong> · Fórum eCommerce Brasil 2026</span>
+    <span>Plano de ação</span>
+  </div>
+</div>
+
+</body>
+</html>
