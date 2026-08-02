@@ -1,0 +1,42 @@
+{
+  "precos_custos": {
+    "arquivo": "precos-custos.xlsx",
+    "colunas": {
+      "produto": null,
+      "preco": null,
+      "custo": null
+    }
+  },
+  "vendas": {
+    "arquivo": "vendas.xlsx",
+    "colunas": {
+      "produto": null,
+      "quantidade": null,
+      "preco_venda": null,
+      "data": null
+    }
+  },
+  "despesas_competencia": {
+    "arquivo": "despesas-competencia.xlsx",
+    "colunas": {
+      "categoria": null,
+      "descricao": null,
+      "valor": null
+    }
+  },
+  "contas_pagas": {
+    "arquivo": "contas-pagas.xlsx",
+    "colunas": {
+      "categoria": null,
+      "descricao": null,
+      "valor": null
+    }
+  },
+  "contas_recebidas": {
+    "arquivo": "contas-recebidas.xlsx",
+    "colunas": {
+      "descricao": null,
+      "valor": null
+    }
+  }
+}
