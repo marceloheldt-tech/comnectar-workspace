@@ -16,14 +16,6 @@
       "data": null
     }
   },
-  "despesas_competencia": {
-    "arquivo": "despesas-competencia.xlsx",
-    "colunas": {
-      "categoria": null,
-      "descricao": null,
-      "valor": null
-    }
-  },
   "contas_pagas": {
     "arquivo": "contas-pagas.xlsx",
     "colunas": {

@@ -3,8 +3,14 @@ Calculadora de fechamento mensal — comnéctar
 Uso: python calculadora.py --mes 2026-07
 
 Lê os relatórios exportados do Bling em financeiro/[AAAA-MM]/ e calcula:
-- Fechamento por competência (receita, CMV, margem bruta, despesas por categoria, resultado)
-- Fechamento de caixa (total recebido, total pago, resultado de caixa)
+
+- Resultado do mês: receita bruta das vendas (por competência) − CMV (custo × quantidade
+  vendida de cada produto) − total pago no mês (contas-pagas.xlsx). A despesa aqui é por
+  caixa (não existe data de vencimento separada da data de pagamento no Bling), então isso
+  NÃO é um fechamento por competência puro — é um híbrido: receita de competência, despesa
+  de caixa. Rotulado como "Resultado do mês", não "resultado por competência".
+- Fluxo de caixa puro: total recebido − total pago no mês (contas-recebidas.xlsx e
+  contas-pagas.xlsx). Esse sim é 100% caixa dos dois lados.
 
 Detecta colunas automaticamente pelo cabeçalho. Se não conseguir identificar uma coluna,
 usa o valor configurado em mapeamento.json (colunas.<campo>) como override manual.
@@ -121,6 +127,7 @@ def main():
     cmv = 0.0
     qtd_total = 0
     produtos_sem_custo = {}
+    vendas_por_produto = {}
     headers, dados, erro = carregar_arquivo(pasta, "vendas")
     if erro:
         avisos.append(erro)
@@ -139,40 +146,29 @@ def main():
                 nome = norm(nome_raw)
                 qtd = parse_valor(row[i_qtd]) if i_qtd < len(row) else 0
                 preco_venda = parse_valor(row[i_preco]) if i_preco < len(row) else 0
-                receita_bruta += preco_venda * qtd
+                venda_total = preco_venda * qtd
+                receita_bruta += venda_total
                 qtd_total += qtd
+
                 info = tabela_custos.get(nome)
-                if info and info["custo"] is not None:
-                    cmv += info["custo"] * qtd
+                custo_unit = info["custo"] if info and info["custo"] is not None else None
+                if custo_unit is not None:
+                    cmv += custo_unit * qtd
                 else:
                     produtos_sem_custo[nome_raw] = produtos_sem_custo.get(nome_raw, 0) + qtd
+
+                item = vendas_por_produto.setdefault(nome_raw, {
+                    "quantidade": 0, "receita": 0.0, "custo": 0.0, "lucro": 0.0, "sem_custo": custo_unit is None
+                })
+                item["quantidade"] += qtd
+                item["receita"] += venda_total
+                if custo_unit is not None:
+                    item["custo"] += custo_unit * qtd
+                    item["lucro"] = item["receita"] - item["custo"]
         if produtos_sem_custo:
             avisos.append(f"{len(produtos_sem_custo)} produto(s) vendido(s) sem custo encontrado em precos-custos.xlsx — CMV pode estar subestimado")
 
     margem_bruta = receita_bruta - cmv
-
-    # --- Despesas por competência ---
-    despesas_por_categoria = {}
-    total_despesas = 0.0
-    headers, dados, erro = carregar_arquivo(pasta, "despesas_competencia")
-    if erro:
-        avisos.append(erro)
-    else:
-        ov = MAPA["despesas_competencia"]["colunas"]
-        i_cat = achar_coluna(headers, ["categoria", "centro de custo", "grupo"], ov.get("categoria"))
-        i_valor = achar_coluna(headers, ["valor", "total"], ov.get("valor"))
-        if i_valor is None:
-            avisos.append("despesas-competencia.xlsx: não identifiquei a coluna de valor — configure em mapeamento.json")
-        else:
-            for row in dados:
-                if i_valor >= len(row):
-                    continue
-                valor = parse_valor(row[i_valor])
-                cat = row[i_cat] if i_cat is not None and i_cat < len(row) and row[i_cat] else "Sem categoria"
-                despesas_por_categoria[cat] = despesas_por_categoria.get(cat, 0.0) + valor
-                total_despesas += valor
-
-    resultado_competencia = margem_bruta - total_despesas
 
     # --- Caixa: pagas e recebidas ---
     def somar_caixa(tipo):
@@ -199,27 +195,30 @@ def main():
 
     total_pago, pago_por_categoria = somar_caixa("contas_pagas")
     total_recebido, recebido_por_categoria = somar_caixa("contas_recebidas")
+
+    resultado_do_mes = margem_bruta - total_pago
     resultado_caixa = total_recebido - total_pago
 
     resultado.update({
-        "competencia": {
+        "resultado_do_mes": {
             "receita_bruta": round(receita_bruta, 2),
             "cmv": round(cmv, 2),
             "margem_bruta": round(margem_bruta, 2),
             "quantidade_vendida": qtd_total,
-            "despesas_por_categoria": {k: round(v, 2) for k, v in despesas_por_categoria.items()},
-            "total_despesas": round(total_despesas, 2),
-            "resultado": round(resultado_competencia, 2),
+            "total_pago": round(total_pago, 2),
+            "pago_por_categoria": {k: round(v, 2) for k, v in pago_por_categoria.items()},
+            "resultado": round(resultado_do_mes, 2),
             "produtos_sem_custo": produtos_sem_custo,
+            "vendas_por_produto": {k: {**v, "quantidade": round(v["quantidade"], 2), "receita": round(v["receita"], 2), "custo": round(v["custo"], 2), "lucro": round(v["lucro"], 2)} for k, v in vendas_por_produto.items()},
         },
-        "caixa": {
+        "fluxo_de_caixa": {
             "total_recebido": round(total_recebido, 2),
             "total_pago": round(total_pago, 2),
             "resultado": round(resultado_caixa, 2),
             "recebido_por_categoria": {k: round(v, 2) for k, v in recebido_por_categoria.items()},
             "pago_por_categoria": {k: round(v, 2) for k, v in pago_por_categoria.items()},
         },
-        "diferenca_competencia_vs_caixa": round(resultado_competencia - resultado_caixa, 2),
+        "diferenca_resultado_vs_caixa": round(resultado_do_mes - resultado_caixa, 2),
         "avisos": avisos,
     })
 
