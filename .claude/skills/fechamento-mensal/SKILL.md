@@ -16,6 +16,7 @@ description: >
 - **Tom de voz:** `_contexto/preferencias.md`
 - **Mapeamento de colunas:** `.claude/skills/fechamento-mensal/mapeamento.json`
 - **Script de cálculo:** `.claude/skills/fechamento-mensal/calculadora.py`
+- **Extrator de PDF:** `.claude/skills/fechamento-mensal/extrair_pdf.py` (o Bling exporta esses 3 relatórios em PDF, não Excel — ver Passo 2)
 
 ---
 
@@ -34,12 +35,16 @@ Os relatórios do Bling ficam em `financeiro/[AAAA-MM]/` (ex: `financeiro/2026-0
 
 | Arquivo | Conteúdo | Pra quê serve |
 |---|---|---|
-| `precos-custos.xlsx` | Todos os produtos, com custo unitário (preço de venda é opcional aqui — vem de `vendas.xlsx`) | Base pra calcular CMV |
-| `vendas.xlsx` | Cada venda do mês: produto, quantidade, preço de venda efetivo, data | Receita bruta e margem por produto |
-| `contas-pagas.xlsx` | Contas efetivamente pagas no mês (data de pagamento), com categoria se o Bling trouxer | Despesa do "Resultado do mês" + lado pago do fluxo de caixa |
-| `contas-recebidas.xlsx` | Contas efetivamente recebidas no mês (data de recebimento) | Lado recebido do fluxo de caixa |
+| `precos-custos.xlsx` | Todos os produtos, com **Código** e custo unitário (preço de venda é opcional — vem de `vendas.xlsx`) | Base pra calcular CMV |
+| `vendas.xlsx` | Relatório "por Produto" de julho: Código, Quantidade, Valor Total | Receita bruta e margem por produto |
+| `contas-pagas.xlsx` | Contas pagas no mês, por categoria (relatório "por Categoria" do Bling) | Despesa do "Resultado do mês" + lado pago do fluxo de caixa |
+| `contas-recebidas.xlsx` | Recebimentos do mês (relatório por cliente do Bling) | Lado recebido do fluxo de caixa |
 
-Se o Marcelo mandar os arquivos com nomes diferentes, renomear/copiar pra esses nomes padrão dentro da pasta do mês, ou ajustar `cfg["arquivo"]` no `mapeamento.json`.
+**O Marcelo exporta esses relatórios do Bling em PDF, não Excel.** Se ele colocar arquivos `.pdf` na pasta do mês (nomes livres, ex: "vendas julho.pdf", "pagamentos julho.pdf", "recebimentos julho.pdf"), converter pra xlsx antes de rodar a calculadora — ver Passo 2.
+
+**Casar produto por Código, não por nome.** Nos PDFs do Bling o nome do produto quebra em várias linhas e a extração de texto embaralha a ordem — o Código não quebra e é a chave confiável entre `precos-custos.xlsx` e `vendas.xlsx`. `calculadora.py` já prioriza código e só cai pra nome normalizado como fallback.
+
+**"Compras de fornecedores" (ou categoria equivalente) nunca entra no "Resultado do mês".** Essa categoria em `contas-pagas.xlsx` é a compra de vinho pros fornecedores — o mesmo custo que já está no CMV via `precos-custos.xlsx`. Contar os dois é dobrar o custo do vinho. A lista de categorias excluídas fica em `mapeamento.json` → `contas_pagas.categorias_ignoradas_no_resultado_do_mes`. Elas continuam entrando no Fluxo de caixa normalmente (que é dinheiro puro, sem relação com CMV). Se aparecer uma categoria nova de compra de mercadoria com nome diferente, adicionar nessa lista antes de calcular — não deixar passar batido, senão o Resultado do mês vem artificialmente baixo (ou negativo).
 
 ---
 
@@ -49,13 +54,25 @@ Se o Marcelo mandar os arquivos com nomes diferentes, renomear/copiar pra esses 
 
 Se o usuário não especificar o mês, perguntar. Assumir o mês anterior ao atual como padrão mais provável (fechamento roda no início do mês seguinte).
 
-Verificar se a pasta `financeiro/[AAAA-MM]/` existe e quais dos 4 arquivos estão presentes. Se faltar algum, avisar quais e perguntar se o usuário quer prosseguir com um fechamento parcial ou esperar o arquivo.
+Verificar se a pasta `financeiro/[AAAA-MM]/` existe e quais dos 4 arquivos estão presentes (`precos-custos.xlsx`, `vendas.xlsx`, `contas-pagas.xlsx`, `contas-recebidas.xlsx` — ou os PDFs equivalentes, ver Passo 2). Se faltar algum, avisar quais e perguntar se o usuário quer prosseguir com um fechamento parcial ou esperar o arquivo.
 
-### Passo 2 — Rodar a calculadora
+### Passo 2 — Converter PDF pra xlsx (se necessário) e rodar a calculadora
+
+Se `vendas.xlsx`, `contas-pagas.xlsx` ou `contas-recebidas.xlsx` não existirem mas houver um `.pdf` correspondente na pasta, converter primeiro:
 
 ```bash
 cd "C:/Users/marce/Desktop/claude comnéctar"
-python ".claude/skills/fechamento-mensal/calculadora.py" --mes 2026-07
+py ".claude/skills/fechamento-mensal/extrair_pdf.py" --tipo vendas       --arquivo "financeiro/2026-07/vendas julho.pdf"       --saida "financeiro/2026-07/vendas.xlsx"
+py ".claude/skills/fechamento-mensal/extrair_pdf.py" --tipo pagamentos   --arquivo "financeiro/2026-07/pagamentos julho.pdf"   --saida "financeiro/2026-07/contas-pagas.xlsx"
+py ".claude/skills/fechamento-mensal/extrair_pdf.py" --tipo recebimentos --arquivo "financeiro/2026-07/recebimentos julho.pdf" --saida "financeiro/2026-07/contas-recebidas.xlsx"
+```
+
+Cada chamada imprime o total somado dos dados extraídos — conferir contra a linha "Totais"/"Total" impressa no PDF antes de seguir. Se não bater, não seguir em frente — o PDF pode ter um layout diferente do esperado (produto por página, colunas deslocadas, etc.) e precisa de um olhar manual antes de confiar no número.
+
+Depois, rodar a calculadora (usar `PYTHONIOENCODING=utf-8` antes do comando — sem isso, acentos podem corromper ao salvar o JSON em arquivo):
+
+```bash
+PYTHONIOENCODING=utf-8 py ".claude/skills/fechamento-mensal/calculadora.py" --mes 2026-07
 ```
 
 O script já tenta identificar as colunas de cada planilha automaticamente pelo cabeçalho (produto, quantidade, valor, categoria, etc). Ele devolve um JSON com todos os números prontos.

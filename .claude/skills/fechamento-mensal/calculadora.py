@@ -100,12 +100,16 @@ def main():
     resultado = {"mes": args.mes, "pasta": pasta}
 
     # --- Preços e custos por produto ---
-    tabela_custos = {}
+    # Indexado por código (mais confiável — nome de produto quebra em várias linhas
+    # em exports de PDF) com fallback por nome normalizado.
+    custos_por_codigo = {}
+    custos_por_nome = {}
     headers, dados, erro = carregar_arquivo(pasta, "precos_custos")
     if erro:
         avisos.append(erro)
     else:
         ov = MAPA["precos_custos"]["colunas"]
+        i_cod = achar_coluna(headers, ["codigo", "cod."], ov.get("codigo"))
         i_prod = achar_coluna(headers, ["produto", "descricao", "nome", "item"], ov.get("produto"))
         i_custo = achar_coluna(headers, ["custo"], ov.get("custo"))
         i_preco = achar_coluna(headers, ["preco", "valor"], ov.get("preco"))
@@ -115,12 +119,14 @@ def main():
             for row in dados:
                 if i_prod >= len(row) or row[i_prod] is None:
                     continue
-                nome = norm(row[i_prod])
-                tabela_custos[nome] = {
+                info = {
                     "produto": row[i_prod],
                     "preco": parse_valor(row[i_preco]) if i_preco is not None and i_preco < len(row) else None,
                     "custo": parse_valor(row[i_custo]) if i_custo < len(row) else 0.0,
                 }
+                custos_por_nome[norm(row[i_prod])] = info
+                if i_cod is not None and i_cod < len(row) and row[i_cod] is not None:
+                    custos_por_codigo[str(row[i_cod]).strip()] = info
 
     # --- Vendas do mês ---
     receita_bruta = 0.0
@@ -133,31 +139,42 @@ def main():
         avisos.append(erro)
     else:
         ov = MAPA["vendas"]["colunas"]
+        i_cod = achar_coluna(headers, ["codigo", "cod."], ov.get("codigo"))
         i_prod = achar_coluna(headers, ["produto", "descricao", "item"], ov.get("produto"))
         i_qtd = achar_coluna(headers, ["quantidade", "qtde", "qtd"], ov.get("quantidade"))
-        i_preco = achar_coluna(headers, ["valor unit", "preco unit", "preco venda", "valor venda", "preco", "valor"], ov.get("preco_venda"))
-        if i_prod is None or i_qtd is None or i_preco is None:
-            avisos.append("vendas.xlsx: não identifiquei produto/quantidade/preço — configure em mapeamento.json")
+        i_valor_total = achar_coluna(headers, ["valor total", "total"], ov.get("valor_total"))
+        i_preco_unit = achar_coluna(headers, ["valor unit", "preco unit", "preco venda", "valor venda", "preco", "valor"], ov.get("preco_venda"))
+        if i_qtd is None or (i_valor_total is None and i_preco_unit is None) or (i_cod is None and i_prod is None):
+            avisos.append("vendas.xlsx: não identifiquei código/produto, quantidade ou valor — configure em mapeamento.json")
         else:
             for row in dados:
-                if i_prod >= len(row) or row[i_prod] is None:
+                cod = str(row[i_cod]).strip() if i_cod is not None and i_cod < len(row) and row[i_cod] is not None else None
+                nome_raw = row[i_prod] if i_prod is not None and i_prod < len(row) else None
+                if cod is None and not nome_raw:
                     continue
-                nome_raw = row[i_prod]
-                nome = norm(nome_raw)
                 qtd = parse_valor(row[i_qtd]) if i_qtd < len(row) else 0
-                preco_venda = parse_valor(row[i_preco]) if i_preco < len(row) else 0
-                venda_total = preco_venda * qtd
+
+                if i_valor_total is not None and i_valor_total < len(row):
+                    venda_total = parse_valor(row[i_valor_total])
+                else:
+                    venda_total = parse_valor(row[i_preco_unit]) * qtd if i_preco_unit < len(row) else 0
+
                 receita_bruta += venda_total
                 qtd_total += qtd
 
-                info = tabela_custos.get(nome)
+                info = custos_por_codigo.get(cod) if cod else None
+                if info is None and nome_raw:
+                    info = custos_por_nome.get(norm(nome_raw))
                 custo_unit = info["custo"] if info and info["custo"] is not None else None
+                nome_produto = info["produto"] if info else (nome_raw or f"Código {cod}")
+
                 if custo_unit is not None:
                     cmv += custo_unit * qtd
                 else:
-                    produtos_sem_custo[nome_raw] = produtos_sem_custo.get(nome_raw, 0) + qtd
+                    chave_sem_custo = nome_produto if nome_raw else f"Código {cod}"
+                    produtos_sem_custo[chave_sem_custo] = produtos_sem_custo.get(chave_sem_custo, 0) + qtd
 
-                item = vendas_por_produto.setdefault(nome_raw, {
+                item = vendas_por_produto.setdefault(nome_produto, {
                     "quantidade": 0, "receita": 0.0, "custo": 0.0, "lucro": 0.0, "sem_custo": custo_unit is None
                 })
                 item["quantidade"] += qtd
@@ -196,7 +213,16 @@ def main():
     total_pago, pago_por_categoria = somar_caixa("contas_pagas")
     total_recebido, recebido_por_categoria = somar_caixa("contas_recebidas")
 
-    resultado_do_mes = margem_bruta - total_pago
+    # Categorias como "Compras de fornecedores" já estão embutidas no CMV (custo do
+    # vinho vendido, vindo de precos-custos.xlsx). Incluí-las de novo aqui contaria o
+    # custo do vinho duas vezes — uma via CMV, outra via contas pagas. Por isso ficam
+    # de fora do total usado no "Resultado do mês", mas continuam no fluxo de caixa
+    # (que é 100% movimentação de dinheiro, sem relação com CMV).
+    categorias_ignoradas = {norm(c) for c in MAPA["contas_pagas"].get("categorias_ignoradas_no_resultado_do_mes", [])}
+    total_ignorado_no_resultado = sum(v for k, v in pago_por_categoria.items() if norm(k) in categorias_ignoradas)
+    total_pago_operacional = total_pago - total_ignorado_no_resultado
+
+    resultado_do_mes = margem_bruta - total_pago_operacional
     resultado_caixa = total_recebido - total_pago
 
     resultado.update({
@@ -205,7 +231,8 @@ def main():
             "cmv": round(cmv, 2),
             "margem_bruta": round(margem_bruta, 2),
             "quantidade_vendida": qtd_total,
-            "total_pago": round(total_pago, 2),
+            "total_pago_operacional": round(total_pago_operacional, 2),
+            "categorias_ignoradas_no_resultado": {k: round(v, 2) for k, v in pago_por_categoria.items() if norm(k) in categorias_ignoradas},
             "pago_por_categoria": {k: round(v, 2) for k, v in pago_por_categoria.items()},
             "resultado": round(resultado_do_mes, 2),
             "produtos_sem_custo": produtos_sem_custo,

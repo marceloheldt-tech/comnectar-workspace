@@ -2,6 +2,7 @@
   "precos_custos": {
     "arquivo": "precos-custos.xlsx",
     "colunas": {
+      "codigo": null,
       "produto": null,
       "preco": null,
       "custo": null
@@ -10,8 +11,10 @@
   "vendas": {
     "arquivo": "vendas.xlsx",
     "colunas": {
+      "codigo": null,
       "produto": null,
       "quantidade": null,
+      "valor_total": null,
       "preco_venda": null,
       "data": null
     }
@@ -22,7 +25,8 @@
       "categoria": null,
       "descricao": null,
       "valor": null
-    }
+    },
+    "categorias_ignoradas_no_resultado_do_mes": ["Compras de fornecedores"]
   },
   "contas_recebidas": {
     "arquivo": "contas-recebidas.xlsx",
