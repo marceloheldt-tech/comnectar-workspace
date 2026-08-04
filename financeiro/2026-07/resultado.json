@@ -6,16 +6,16 @@
     "cmv": 45466.26,
     "margem_bruta": 35338.02,
     "quantidade_vendida": 245.0,
-    "total_pago_operacional": 25137.5,
+    "total_pago_operacional": 19451.89,
     "categorias_ignoradas_no_resultado": {},
     "pago_por_categoria": {
       "Compra de insumos e matéria prima": 252.45,
       "Despesas administrativas": 6829.04,
       "Despesas com pessoal": 4140.47,
       "Despesas comerciais": 2189.0,
-      "Impostos": 11726.54
+      "Impostos (sem DIFAL)": 6040.93
     },
-    "resultado": 10200.52,
+    "resultado": 15886.13,
     "produtos_sem_custo": {
       "ESP. C. GEISSE BLANC DE BLANC C/ 6GFAS 750 ML": 36.0,
       "ORNELLAIA SRL POGGIO ALLE GAZZE DELL'ORNELLAIA TOSCANA 2023": 3.0,
@@ -499,15 +499,15 @@
   },
   "fluxo_de_caixa": {
     "total_recebido": 0.0,
-    "total_pago": 25137.5,
-    "resultado": -25137.5,
+    "total_pago": 19451.89,
+    "resultado": -19451.89,
     "recebido_por_categoria": {},
     "pago_por_categoria": {
       "Compra de insumos e matéria prima": 252.45,
       "Despesas administrativas": 6829.04,
       "Despesas com pessoal": 4140.47,
       "Despesas comerciais": 2189.0,
-      "Impostos": 11726.54
+      "Impostos (sem DIFAL)": 6040.93
     }
   },
   "diferenca_resultado_vs_caixa": 35338.02,
