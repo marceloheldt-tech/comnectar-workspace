@@ -2,8 +2,8 @@
 name: fechamento-mensal
 description: >
   Faz o fechamento financeiro mensal da comnéctar a partir dos relatórios exportados do Bling.
-  Calcula o resultado do mês (margem das vendas menos contas pagas) e o fluxo de caixa puro
-  (recebido menos pago), e monta um relatório comparando os dois.
+  Calcula o Resultado do mês (lucro por produto vendido menos contas pagas por categoria) e o
+  Fluxo de caixa (recebido menos pago), como dois relatórios separados.
   Use quando o usuário disser "fechamento do mês", "fechamento mensal", "fecha o mês passado",
   "resultado de [mês]", "quanto lucramos em [mês]", ou "/fechamento-mensal".
 ---
@@ -16,16 +16,26 @@ description: >
 - **Tom de voz:** `_contexto/preferencias.md`
 - **Mapeamento de colunas:** `.claude/skills/fechamento-mensal/mapeamento.json`
 - **Script de cálculo:** `.claude/skills/fechamento-mensal/calculadora.py`
-- **Extrator de PDF:** `.claude/skills/fechamento-mensal/extrair_pdf.py` (o Bling exporta esses 3 relatórios em PDF, não Excel — ver Passo 2)
+- **Extrator de PDF:** `.claude/skills/fechamento-mensal/extrair_pdf.py` (o Bling costuma exportar em PDF, não Excel)
 
 ---
 
+## O processo do Marcelo (confirmado em 2026-08-04, não presumir diferente disso)
+
+1. **Vendas do mês** — relatório do Bling por produto (código, quantidade, preço médio, valor total). O custo de cada produto **não vem nesse relatório** — é cruzado automaticamente com uma tabela de custos mantida à parte (`precos-custos.xlsx`, por Código), não digitado à mão.
+2. **Contas pagas do mês** — já vem categorizado do Bling como: **pró-labore, software, ferramentas, marketing, aluguel, contabilidade, outros custos**. Essa é a lista de categorias esperada — se aparecer uma categoria fora dessa lista (principalmente algo que pareça compra de mercadoria/estoque/fornecedor de vinho), **parar e perguntar ao Marcelo antes de somar** — pode ser custo de produto duplicado (ver "Por que separar" abaixo).
+3. **Resultado do mês** = Σ (receita − custo) de cada produto vendido − Σ contas pagas no mês.
+4. **Fluxo de caixa** = total recebido − total pago no mês. É um relatório **separado**, próprio arquivo, sem comparação textual com o Resultado do mês.
+
+## Por que separar custo de produto de despesa operacional
+
+O custo do vinho vendido (CMV) já sai da tabela de preços e custos, cruzada por produto. As categorias de despesa do Marcelo (pró-labore, software, ferramentas, marketing, aluguel, contabilidade, outros) são despesas operacionais puras — nenhuma delas é compra de mercadoria. Por isso, diferente da v1 dessa skill, normalmente **nenhuma categoria precisa ser excluída** do Resultado do mês.
+
+Isso já causou um erro real uma vez: no primeiro fechamento (julho/2026), a categoria "Compras de fornecedores" apareceu no relatório de contas pagas e foi somada junto com o CMV, contando o custo do vinho duas vezes — deu um "prejuízo" de -R$42 mil que era artefato de cálculo, não realidade. Por isso existe o mecanismo `mapeamento.json` → `contas_pagas.categorias_ignoradas_no_resultado_do_mes` (hoje vazio) e o **checkpoint obrigatório no Passo 3** — não confiar de olhos fechados que a categorização de despesa nunca vai incluir custo de mercadoria.
+
 ## Por que não é "competência x caixa" no sentido contábil estrito
 
-O Bling do Marcelo não tem data de vencimento separada da data de pagamento nas despesas — só existe a data em que a conta foi paga. Então não dá pra isolar "despesa que pertence a julho" de "despesa paga em julho". Por causa disso, a skill calcula dois números com nomes que refletem o que eles realmente são:
-
-- **Resultado do mês** — receita de vendas por competência (o que vendeu em julho) menos CMV menos o total de contas pagas em julho. É um híbrido: receita por competência, despesa por caixa. Não chamar isso de "resultado por competência" em relatórios pro Marcelo ou terceiros (contador, por exemplo) sem deixar essa ressalva clara.
-- **Fluxo de caixa** — total recebido menos total pago no mês, os dois por data efetiva de movimentação. Esse sim é 100% caixa.
+O Bling não tem data de vencimento separada da data de pagamento nas despesas — só a data em que a conta foi paga. Então o Resultado do mês é um híbrido: receita por competência (o que vendeu no mês) menos despesa por caixa (o que foi pago no mês). Não chamar isso de "resultado por competência" sem essa ressalva se o relatório for repassado pra fora (ex: contador).
 
 ---
 
@@ -35,16 +45,14 @@ Os relatórios do Bling ficam em `financeiro/[AAAA-MM]/` (ex: `financeiro/2026-0
 
 | Arquivo | Conteúdo | Pra quê serve |
 |---|---|---|
-| `precos-custos.xlsx` | Todos os produtos, com **Código** e custo unitário (preço de venda é opcional — vem de `vendas.xlsx`) | Base pra calcular CMV |
-| `vendas.xlsx` | Relatório "por Produto" de julho: Código, Quantidade, Valor Total | Receita bruta e margem por produto |
-| `contas-pagas.xlsx` | Contas pagas no mês, por categoria (relatório "por Categoria" do Bling) | Despesa do "Resultado do mês" + lado pago do fluxo de caixa |
-| `contas-recebidas.xlsx` | Recebimentos do mês (relatório por cliente do Bling) | Lado recebido do fluxo de caixa |
+| `precos-custos.xlsx` | Tabela de custos mantida à parte: Código, Produto, Custo (preço é opcional) | Cruzar com vendas pra achar o custo de cada produto vendido |
+| `vendas.xlsx` | Relatório "por Produto" do mês: Código, Quantidade, Valor Total | Receita e lucro por produto |
+| `contas-pagas.xlsx` | Contas pagas no mês, categorizado (pró-labore, software, ferramentas, marketing, aluguel, contabilidade, outros) | Despesa do Resultado do mês + lado pago do Fluxo de caixa |
+| `contas-recebidas.xlsx` | Recebimentos do mês | Lado recebido do Fluxo de caixa |
 
-**O Marcelo exporta esses relatórios do Bling em PDF, não Excel.** Se ele colocar arquivos `.pdf` na pasta do mês (nomes livres, ex: "vendas julho.pdf", "pagamentos julho.pdf", "recebimentos julho.pdf"), converter pra xlsx antes de rodar a calculadora — ver Passo 2.
+**Se vierem em PDF** (nomes livres, ex: "vendas agosto.pdf"), converter primeiro com `extrair_pdf.py` — ver Passo 2.
 
-**Casar produto por Código, não por nome.** Nos PDFs do Bling o nome do produto quebra em várias linhas e a extração de texto embaralha a ordem — o Código não quebra e é a chave confiável entre `precos-custos.xlsx` e `vendas.xlsx`. `calculadora.py` já prioriza código e só cai pra nome normalizado como fallback.
-
-**"Compras de fornecedores" (ou categoria equivalente) nunca entra no "Resultado do mês".** Essa categoria em `contas-pagas.xlsx` é a compra de vinho pros fornecedores — o mesmo custo que já está no CMV via `precos-custos.xlsx`. Contar os dois é dobrar o custo do vinho. A lista de categorias excluídas fica em `mapeamento.json` → `contas_pagas.categorias_ignoradas_no_resultado_do_mes`. Elas continuam entrando no Fluxo de caixa normalmente (que é dinheiro puro, sem relação com CMV). Se aparecer uma categoria nova de compra de mercadoria com nome diferente, adicionar nessa lista antes de calcular — não deixar passar batido, senão o Resultado do mês vem artificialmente baixo (ou negativo).
+**Casar produto por Código, não por nome.** Em PDF o nome do produto quebra em várias linhas e a extração de texto embaralha a ordem. `calculadora.py` já prioriza código e só cai pra nome normalizado como fallback.
 
 ---
 
@@ -52,47 +60,45 @@ Os relatórios do Bling ficam em `financeiro/[AAAA-MM]/` (ex: `financeiro/2026-0
 
 ### Passo 1 — Confirmar o mês e os arquivos
 
-Se o usuário não especificar o mês, perguntar. Assumir o mês anterior ao atual como padrão mais provável (fechamento roda no início do mês seguinte).
-
-Verificar se a pasta `financeiro/[AAAA-MM]/` existe e quais dos 4 arquivos estão presentes (`precos-custos.xlsx`, `vendas.xlsx`, `contas-pagas.xlsx`, `contas-recebidas.xlsx` — ou os PDFs equivalentes, ver Passo 2). Se faltar algum, avisar quais e perguntar se o usuário quer prosseguir com um fechamento parcial ou esperar o arquivo.
+Se o usuário não especificar o mês, perguntar. Verificar se `financeiro/[AAAA-MM]/` existe e quais dos 4 arquivos estão presentes (xlsx ou PDF equivalente). Se faltar algum, avisar e perguntar se segue parcial ou espera.
 
 ### Passo 2 — Converter PDF pra xlsx (se necessário) e rodar a calculadora
 
-Se `vendas.xlsx`, `contas-pagas.xlsx` ou `contas-recebidas.xlsx` não existirem mas houver um `.pdf` correspondente na pasta, converter primeiro:
-
 ```bash
 cd "C:/Users/marce/Desktop/claude comnéctar"
-py ".claude/skills/fechamento-mensal/extrair_pdf.py" --tipo vendas       --arquivo "financeiro/2026-07/vendas julho.pdf"       --saida "financeiro/2026-07/vendas.xlsx"
-py ".claude/skills/fechamento-mensal/extrair_pdf.py" --tipo pagamentos   --arquivo "financeiro/2026-07/pagamentos julho.pdf"   --saida "financeiro/2026-07/contas-pagas.xlsx"
-py ".claude/skills/fechamento-mensal/extrair_pdf.py" --tipo recebimentos --arquivo "financeiro/2026-07/recebimentos julho.pdf" --saida "financeiro/2026-07/contas-recebidas.xlsx"
+py ".claude/skills/fechamento-mensal/extrair_pdf.py" --tipo vendas       --arquivo "financeiro/2026-07/vendas agosto.pdf"       --saida "financeiro/2026-07/vendas.xlsx"
+py ".claude/skills/fechamento-mensal/extrair_pdf.py" --tipo pagamentos   --arquivo "financeiro/2026-07/pagamentos agosto.pdf"   --saida "financeiro/2026-07/contas-pagas.xlsx"
+py ".claude/skills/fechamento-mensal/extrair_pdf.py" --tipo recebimentos --arquivo "financeiro/2026-07/recebimentos agosto.pdf" --saida "financeiro/2026-07/contas-recebidas.xlsx"
 ```
 
-Cada chamada imprime o total somado dos dados extraídos — conferir contra a linha "Totais"/"Total" impressa no PDF antes de seguir. Se não bater, não seguir em frente — o PDF pode ter um layout diferente do esperado (produto por página, colunas deslocadas, etc.) e precisa de um olhar manual antes de confiar no número.
+Cada chamada imprime o total extraído — conferir contra a linha "Total"/"Totais" do PDF. Se não bater, não seguir — revisar manualmente antes de confiar no número.
 
-Depois, rodar a calculadora (usar `PYTHONIOENCODING=utf-8` antes do comando — sem isso, acentos podem corromper ao salvar o JSON em arquivo):
+Rodar a calculadora (usar `PYTHONIOENCODING=utf-8` antes — sem isso acentos corrompem ao salvar em arquivo):
 
 ```bash
 PYTHONIOENCODING=utf-8 py ".claude/skills/fechamento-mensal/calculadora.py" --mes 2026-07
 ```
 
-O script já tenta identificar as colunas de cada planilha automaticamente pelo cabeçalho (produto, quantidade, valor, categoria, etc). Ele devolve um JSON com todos os números prontos.
+Se o JSON trouxer avisos de coluna não identificada, calibrar em `mapeamento.json` (campo `colunas`, com o nome exato do cabeçalho) e rodar de novo.
 
-### Passo 3 — Calibrar mapeamento (só na primeira vez ou se der aviso)
+### Passo 3 — Checkpoint obrigatório (não pular, mesmo que os números pareçam óbvios)
 
-Se o JSON retornar avisos do tipo "não identifiquei a coluna X", abrir o arquivo em questão, ver o nome exato do cabeçalho da coluna certa, e preencher o campo correspondente em `mapeamento.json` (dentro de `colunas`, com o nome exato do cabeçalho). Rodar de novo.
+Antes de escrever qualquer relatório final, mostrar pro Marcelo no chat (não só gerar o arquivo direto):
 
-Uma vez calibrado pra um tipo de relatório, o Bling costuma manter o mesmo layout todo mês — não precisa recalibrar depois, só se o Marcelo mudar o formato de exportação.
+- Totais extraídos de cada PDF/planilha vs. o total impresso no original — bateram?
+- **Todas** as categorias encontradas em `pago_por_categoria`, com valor de cada uma — perguntar explicitamente se alguma foge das 7 categorias esperadas (pró-labore, software, ferramentas, marketing, aluguel, contabilidade, outros) ou parece compra de mercadoria/estoque. Se aparecer categoria estranha, **não somar sem perguntar** — pode precisar entrar em `categorias_ignoradas_no_resultado_do_mes`.
+- Produtos vendidos sem custo encontrado em `precos-custos.xlsx` (campo `produtos_sem_custo`) — o CMV está subestimado nesses casos.
 
-### Passo 4 — Montar o relatório
+Só gerar os arquivos finais depois do Marcelo confirmar que os números fazem sentido.
 
-Gerar `financeiro/[AAAA-MM]/fechamento-[AAAA-MM].md` nesse formato:
+### Passo 4 — Gerar os dois relatórios (arquivos separados)
+
+`financeiro/[AAAA-MM]/resultado-[AAAA-MM].md`:
 
 ```markdown
-# Fechamento — [Mês/Ano]
+# Resultado do mês — [Mês/Ano]
 
-## Resultado do mês
-
-*Receita das vendas de [mês] menos custo dos produtos vendidos menos contas pagas em [mês]. A despesa aqui é por caixa, não por competência — ver nota no fim.*
+*Lucro de cada produto vendido (receita − custo) menos contas pagas no mês.*
 
 | | Valor |
 |---|---|
@@ -102,48 +108,42 @@ Gerar `financeiro/[AAAA-MM]/fechamento-[AAAA-MM].md` nesse formato:
 | (-) Contas pagas no mês | R$ X |
 | = **Resultado do mês** | **R$ X** |
 
-**Contas pagas por categoria** (se o arquivo trouxer categoria):
-| Categoria | Valor | % do total pago |
-|---|---|---|
+**Contas pagas por categoria:**
+| Categoria | Valor |
+|---|---|
 
-**Produtos com maior margem no mês** (top 5 por lucro, de `vendas_por_produto` no JSON):
+**Top 5 produtos por lucro:**
 | Produto | Qtd | Receita | Custo | Lucro |
 |---|---|---|---|---|
 
-## Fluxo de caixa
+## Avisos
+[produtos sem custo, arquivos faltando, categorias fora do esperado — o que sobrou do checkpoint do Passo 3]
+```
+
+`financeiro/[AAAA-MM]/fluxo-caixa-[AAAA-MM].md`:
+
+```markdown
+# Fluxo de caixa — [Mês/Ano]
 
 | | Valor |
 |---|---|
 | Total recebido | R$ X |
 | Total pago | R$ X |
 | = **Resultado de caixa** | **R$ X** |
-
-## Resultado do mês vs. Fluxo de caixa
-
-Resultado do mês: R$ X
-Fluxo de caixa: R$ X
-Diferença: R$ X — [a diferença aqui vem só do lado da receita: vendas do mês que ainda não foram recebidas (parceladas, boleto em aberto) vs. o que já entrou de fato. Usar os dados disponíveis pra dar pistas, não inventar motivo.]
-
-## Avisos
-[listar os avisos do script, ex: produtos sem custo encontrado, arquivos faltando]
 ```
 
-Comentar os números em prosa curta antes ou depois da tabela — não deixar só tabela seca. Comparar com o mês anterior se o arquivo `fechamento-[mês anterior].md` existir na pasta `financeiro/`.
+Comentar os números em prosa curta, não deixar só tabela seca. Comparar com o mês anterior se o arquivo existir. **Não** criar uma seção comparando os dois relatórios entre si — são dois documentos independentes.
 
 ### Passo 5 — Perguntar próximos passos
 
-Perguntar se quer:
-- Ver o detalhe de algum produto/categoria específica
-- Exportar o relatório em HTML/artifact pra apresentação
-- Já deixar a pasta do próximo mês pronta pra receber os arquivos
+Perguntar se quer ver detalhe de produto/categoria específica, exportar em HTML/artifact, ou deixar a pasta do próximo mês pronta.
 
 ---
 
 ## Regras
 
-- **Nunca inventar número.** Se um relatório não veio ou uma coluna não foi identificada, isso vira aviso no relatório final — não estimar ou completar com suposição.
-- **CMV vem sempre do cruzamento vendas × precos-custos por nome do produto.** Se o produto vendido não aparecer na tabela de custos, listar como "sem custo" e avisar — não assumir custo zero nem médio.
-- **"Resultado do mês" não é sinônimo de competência contábil** — deixar isso explícito sempre que o relatório for usado fora dessa conversa (ex: se o Marcelo repassar pro contador). É receita por competência menos despesa por caixa, um híbrido definido assim porque o Bling não separa vencimento de pagamento.
-- **Resultado do mês ≠ Fluxo de caixa.** Nunca misturar os dois números como se fossem a mesma coisa no texto do relatório. A diferença entre eles é informação relevante, não ruído.
-- **Categorias de despesa são as que já vêm do Bling** — não reclassificar nem inventar categoria nova sem o usuário pedir.
+- **Nunca inventar número.** Relatório não veio ou coluna não identificada → vira aviso, não suposição.
+- **CMV sempre do cruzamento vendas × precos-custos por Código.** Produto sem custo → listar como "sem custo", nunca assumir custo zero ou médio.
+- **O checkpoint do Passo 3 não é opcional.** Foi pulado uma vez e gerou um número de resultado errado por -R$48 mil de diferença. Sempre mostrar as categorias de despesa encontradas antes de somar, mesmo que pareçam bater com o esperado.
+- **Resultado do mês e Fluxo de caixa são relatórios independentes**, arquivos separados, sem seção comparando um com o outro.
 - Tom conforme `_contexto/preferencias.md` — direto, sem "é importante ressaltar que" antes de cada número.
