@@ -2,10 +2,10 @@
   "mes": "2026-07",
   "pasta": "C:\\Users\\marce\\Desktop\\claude comnéctar\\financeiro\\2026-07",
   "resultado_do_mes": {
-    "receita_bruta": 80804.28,
+    "receita_bruta": 75604.28,
     "cmv": 45466.26,
-    "margem_bruta": 35338.02,
-    "quantidade_vendida": 245.0,
+    "margem_bruta": 30138.02,
+    "quantidade_vendida": 216.0,
     "total_pago_operacional": 19451.89,
     "categorias_ignoradas_no_resultado": {},
     "pago_por_categoria": {
@@ -15,9 +15,9 @@
       "Despesas comerciais": 2189.0,
       "Impostos (sem DIFAL)": 6040.93
     },
-    "resultado": 15886.13,
+    "resultado": 10686.13,
     "produtos_sem_custo": {
-      "ESP. C. GEISSE BLANC DE BLANC C/ 6GFAS 750 ML": 36.0,
+      "ESP. C. GEISSE BLANC DE BLANC C/ 6GFAS 750 ML": 7.0,
       "ORNELLAIA SRL POGGIO ALLE GAZZE DELL'ORNELLAIA TOSCANA 2023": 3.0,
       "MASSOLINO BAROLO PARUSSI TTO 750 ML": 1.0,
       "MASSOLINO BARBARESCO TTO 750 ML": 2.0,
@@ -34,8 +34,8 @@
         "sem_custo": false
       },
       "ESP. C. GEISSE BLANC DE BLANC C/ 6GFAS 750 ML": {
-        "quantidade": 36.0,
-        "receita": 6480.0,
+        "quantidade": 7.0,
+        "receita": 1280.0,
         "custo": 0.0,
         "lucro": 0.0,
         "sem_custo": true
@@ -510,7 +510,7 @@
       "Impostos (sem DIFAL)": 6040.93
     }
   },
-  "diferenca_resultado_vs_caixa": 35338.02,
+  "diferenca_resultado_vs_caixa": 30138.02,
   "avisos": [
     "7 produto(s) vendido(s) sem custo encontrado em precos-custos.xlsx — CMV pode estar subestimado",
     "Arquivo não encontrado: contas-recebidas.xlsx"
