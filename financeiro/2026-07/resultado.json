@@ -1,0 +1,517 @@
+{
+  "mes": "2026-07",
+  "pasta": "C:\\Users\\marce\\Desktop\\claude comnéctar\\financeiro\\2026-07",
+  "resultado_do_mes": {
+    "receita_bruta": 75604.28,
+    "cmv": 51847.84,
+    "margem_bruta": 23756.44,
+    "quantidade_vendida": 216.0,
+    "total_pago_operacional": 19451.89,
+    "categorias_ignoradas_no_resultado": {
+      "DIFAL": 5685.61,
+      "Transferências": 3390.9,
+      "Compras de fornecedores": 48820.78
+    },
+    "pago_por_categoria": {
+      "Compra de insumos e matéria prima": 252.45,
+      "Despesas administrativas": 6829.04,
+      "Despesas com pessoal": 4140.47,
+      "Despesas comerciais": 2189.0,
+      "Impostos": 6040.93,
+      "DIFAL": 5685.61,
+      "Transferências": 3390.9,
+      "Compras de fornecedores": 48820.78
+    },
+    "resultado": 4304.55,
+    "produtos_sem_custo": {},
+    "vendas_por_produto": {
+      "Vinho Tinto Langhe Nebbiolo 2024 - Mario Costa": {
+        "quantidade": 51.0,
+        "receita": 10691.0,
+        "custo": 5974.14,
+        "lucro": 4716.86,
+        "sem_custo": false
+      },
+      "ESP. C. GEISSE BLANC DE BLANC C/ 6GFAS 750 ML": {
+        "quantidade": 7.0,
+        "receita": 1280.0,
+        "custo": 861.14,
+        "lucro": 418.86,
+        "sem_custo": false
+      },
+      "Vinho Tinto Langhe Nebbiolo La Chiusa 2023 - Chionetti": {
+        "quantidade": 28.0,
+        "receita": 6441.0,
+        "custo": 4021.08,
+        "lucro": 2419.92,
+        "sem_custo": false
+      },
+      "Vinho Tinto 50th Anniversary Cabernet Sauvignon 2022 - Caymus": {
+        "quantidade": 4.0,
+        "receita": 5191.56,
+        "custo": 3761.4,
+        "lucro": 1430.16,
+        "sem_custo": false
+      },
+      "Vinho Tinto Pommard 2022 - Albert Bichot": {
+        "quantidade": 4.0,
+        "receita": 2838.71,
+        "custo": 1939.08,
+        "lucro": 899.63,
+        "sem_custo": false
+      },
+      "Vinho Tinto Dairyman Pinot Noir 2022 - Belle Gloss": {
+        "quantidade": 3.0,
+        "receita": 2160.0,
+        "custo": 1400.58,
+        "lucro": 759.42,
+        "sem_custo": false
+      },
+      "Vinho Tinto Barbaresco 2021 - Giuseppe Cortese": {
+        "quantidade": 4.0,
+        "receita": 1854.32,
+        "custo": 1165.84,
+        "lucro": 688.48,
+        "sem_custo": false
+      },
+      "Vinho Branco Poggio Alle Gazze 2022 - Ornellaia": {
+        "quantidade": 2.0,
+        "receita": 1820.0,
+        "custo": 1576.78,
+        "lucro": 243.22,
+        "sem_custo": false
+      },
+      "Vinho Tinto Balade Arroyo Pinot Noir 2022 - Belle Gloss": {
+        "quantidade": 3.0,
+        "receita": 1800.0,
+        "custo": 1145.91,
+        "lucro": 654.09,
+        "sem_custo": false
+      },
+      "Vinho Tinto Nuits Saint Georges 2021 - Albert Bichot": {
+        "quantidade": 2.0,
+        "receita": 1600.0,
+        "custo": 1101.76,
+        "lucro": 498.24,
+        "sem_custo": false
+      },
+      "ORNELLAIA SRL POGGIO ALLE GAZZE DELL'ORNELLAIA TOSCANA 2023": {
+        "quantidade": 3.0,
+        "receita": 2728.0,
+        "custo": 2525.93,
+        "lucro": 202.07,
+        "sem_custo": false
+      },
+      "Vinho Tinto Milla Cala 2022 - ViÃ±a Vik": {
+        "quantidade": 6.0,
+        "receita": 1333.75,
+        "custo": 948.6,
+        "lucro": 385.15,
+        "sem_custo": false
+      },
+      "Vinho Tinto Revelation Pinot Noir 2019 - Jerome Arnoux": {
+        "quantidade": 3.0,
+        "receita": 1320.0,
+        "custo": 848.49,
+        "lucro": 471.51,
+        "sem_custo": false
+      },
+      "Vinho Tinto Roncagliette Barbaresco 2021 - Olek Bondonio": {
+        "quantidade": 2.0,
+        "receita": 1292.0,
+        "custo": 1125.58,
+        "lucro": 166.42,
+        "sem_custo": false
+      },
+      "Espumante Blanc de Blanc - Cave Geisse": {
+        "quantidade": 7.0,
+        "receita": 1260.0,
+        "custo": 861.14,
+        "lucro": 398.86,
+        "sem_custo": false
+      },
+      "Vinho Tinto Fiorenzo 2022 - Bakkanali": {
+        "quantidade": 2.0,
+        "receita": 1245.0,
+        "custo": 801.88,
+        "lucro": 443.12,
+        "sem_custo": false
+      },
+      "MASSOLINO BAROLO PARUSSI TTO 750 ML": {
+        "quantidade": 1.0,
+        "receita": 1241.78,
+        "custo": 1149.8,
+        "lucro": 91.98,
+        "sem_custo": false
+      },
+      "Vinho Tinto Aamarone Satinato 2021 - Montresor": {
+        "quantidade": 3.0,
+        "receita": 1178.14,
+        "custo": 808.68,
+        "lucro": 369.46,
+        "sem_custo": false
+      },
+      "Vinho Tinto Langhe Nebbiolo 2021 - Fontanafredda": {
+        "quantidade": 5.0,
+        "receita": 1135.0,
+        "custo": 672.35,
+        "lucro": 462.65,
+        "sem_custo": false
+      },
+      "Vinho Tinto Flor de Pingus 2019 - Dominio de Pingus": {
+        "quantidade": 1.0,
+        "receita": 1125.0,
+        "custo": 975.09,
+        "lucro": 149.91,
+        "sem_custo": false
+      },
+      "MASSOLINO BARBARESCO TTO 750 ML": {
+        "quantidade": 2.0,
+        "receita": 1117.08,
+        "custo": 1034.33,
+        "lucro": 82.75,
+        "sem_custo": false
+      },
+      "Vinho Tinto Almaviva 2022 - Almaviva": {
+        "quantidade": 1.0,
+        "receita": 1115.0,
+        "custo": 1566.42,
+        "lucro": -451.42,
+        "sem_custo": false
+      },
+      "Vinho Tinto Concerto Di Fonterutoli 2020 - Mazzei": {
+        "quantidade": 1.0,
+        "receita": 1020.34,
+        "custo": 552.71,
+        "lucro": 467.63,
+        "sem_custo": false
+      },
+      "Vinho Tinto Barolo Monvigliero 2018 - Castello Di Verduno": {
+        "quantidade": 1.0,
+        "receita": 989.1,
+        "custo": 558.24,
+        "lucro": 430.86,
+        "sem_custo": false
+      },
+      "Vinho Tinto Delon MÃ©doc 2014 - Chateau Potensac": {
+        "quantidade": 3.0,
+        "receita": 962.0,
+        "custo": 703.98,
+        "lucro": 258.02,
+        "sem_custo": false
+      },
+      "Vinho Tinto Sito Moresco Langhe 2020 - Gaja": {
+        "quantidade": 1.0,
+        "receita": 950.0,
+        "custo": 578.54,
+        "lucro": 371.46,
+        "sem_custo": false
+      },
+      "Vinho Branco Rully Montmorin 2022 - Domaine Jean Chartron": {
+        "quantidade": 2.0,
+        "receita": 920.0,
+        "custo": 556.88,
+        "lucro": 363.12,
+        "sem_custo": false
+      },
+      "Vinho Tinto Vik 2021 - ViÃ±a Vik": {
+        "quantidade": 1.0,
+        "receita": 893.88,
+        "custo": 733.37,
+        "lucro": 160.51,
+        "sem_custo": false
+      },
+      "Vinho Tinto Vik A Limited Edition 2023 - ViÃ±a Vik": {
+        "quantidade": 6.0,
+        "receita": 892.93,
+        "custo": 508.62,
+        "lucro": 384.31,
+        "sem_custo": false
+      },
+      "Vinho Tinto Barbaresco RabajÃ¡ 2021 - Giuseppe Cortese": {
+        "quantidade": 1.0,
+        "receita": 881.1,
+        "custo": 462.83,
+        "lucro": 418.27,
+        "sem_custo": false
+      },
+      "Vinho Branco Bourgogne AOC Blanc 2022 - Joseph Drouhin": {
+        "quantidade": 2.0,
+        "receita": 780.0,
+        "custo": 505.82,
+        "lucro": 274.18,
+        "sem_custo": false
+      },
+      "Vinho Branco Vinha Formal 2023 - Luis Pato": {
+        "quantidade": 2.0,
+        "receita": 760.0,
+        "custo": 495.68,
+        "lucro": 264.32,
+        "sem_custo": false
+      },
+      "Vinho Branco Louis Jadot Chablis 2023 - Louis Jadot": {
+        "quantidade": 2.0,
+        "receita": 720.0,
+        "custo": 471.94,
+        "lucro": 248.06,
+        "sem_custo": false
+      },
+      "Vinho Tinto Etna Rosso Santo Spirito 2019 - Tenuta Delle Terre Nere": {
+        "quantidade": 1.0,
+        "receita": 680.88,
+        "custo": 361.45,
+        "lucro": 319.43,
+        "sem_custo": false
+      },
+      "Vinho Tinto Barolo Riva Rocca 2021 - Claudio Alario": {
+        "quantidade": 1.0,
+        "receita": 680.0,
+        "custo": 425.67,
+        "lucro": 254.33,
+        "sem_custo": false
+      },
+      "Vinho Tinto CastelGiocondo Brunello 2020 - Frescobaldi": {
+        "quantidade": 1.0,
+        "receita": 661.42,
+        "custo": 360.53,
+        "lucro": 300.89,
+        "sem_custo": false
+      },
+      "Vinho Tinto Amarone Della Valpoliccella Classico DOCG 2022 - Sensi": {
+        "quantidade": 1.0,
+        "receita": 631.0,
+        "custo": 423.05,
+        "lucro": 207.95,
+        "sem_custo": false
+      },
+      "Vinho Tinto Sant Antimo Rosso 2020 - Capanna": {
+        "quantidade": 3.0,
+        "receita": 623.0,
+        "custo": 339.63,
+        "lucro": 283.37,
+        "sem_custo": false
+      },
+      "Vinho Tinto Mirto 2018 - Ramon Bilbao": {
+        "quantidade": 2.0,
+        "receita": 602.0,
+        "custo": 522.06,
+        "lucro": 79.94,
+        "sem_custo": false
+      },
+      "Vinho Tinto Chateau Ormes de Pez Saint Estephe 2018 - Chateau Ormes de Pez": {
+        "quantidade": 1.0,
+        "receita": 600.0,
+        "custo": 386.57,
+        "lucro": 213.43,
+        "sem_custo": false
+      },
+      "Vinho Tinto Chateauneuf du Pape 2021 - Urbain V": {
+        "quantidade": 1.0,
+        "receita": 599.0,
+        "custo": 380.89,
+        "lucro": 218.11,
+        "sem_custo": false
+      },
+      "Vinho Tinto Giuletta Langhe Rosso 2023 - Olek Bondonio": {
+        "quantidade": 2.0,
+        "receita": 570.0,
+        "custo": 467.6,
+        "lucro": 102.4,
+        "sem_custo": false
+      },
+      "Vinho Tinto Roquette & Cazes Douro 2022 - Roquette & Cazes": {
+        "quantidade": 2.0,
+        "receita": 534.0,
+        "custo": 461.32,
+        "lucro": 72.68,
+        "sem_custo": false
+      },
+      "Vinho Tinto Kani 2023 - Bakkanali": {
+        "quantidade": 1.0,
+        "receita": 500.0,
+        "custo": 322.11,
+        "lucro": 177.89,
+        "sem_custo": false
+      },
+      "Vinho Tinto Doccio A Matteo Chianti Classico Riserva DOCG 2015 - Caparsa": {
+        "quantidade": 1.0,
+        "receita": 480.0,
+        "custo": 321.97,
+        "lucro": 158.03,
+        "sem_custo": false
+      },
+      "Vinho Tinto G D'Estournel 2020 - Chateau Cos D'Estournel": {
+        "quantidade": 1.0,
+        "receita": 460.0,
+        "custo": 303.52,
+        "lucro": 156.48,
+        "sem_custo": false
+      },
+      "Vinho Tinto Crozes Hermitage 2021 - E. Guigal": {
+        "quantidade": 2.0,
+        "receita": 452.0,
+        "custo": 441.7,
+        "lucro": 10.3,
+        "sem_custo": false
+      },
+      "Vinho Tinto Etna Rosso 2022 - Tenuta Delle Terre Nere": {
+        "quantidade": 1.0,
+        "receita": 447.43,
+        "custo": 289.09,
+        "lucro": 158.34,
+        "sem_custo": false
+      },
+      "Vinho Tinto Langhe Nebbiolo DOC Reggimento 2020 - Ratti": {
+        "quantidade": 1.0,
+        "receita": 447.0,
+        "custo": 296.03,
+        "lucro": 150.97,
+        "sem_custo": false
+      },
+      "Vinho Tinto Le Volte Dell'Ornellaia 2022 - Ornellaia": {
+        "quantidade": 1.0,
+        "receita": 420.0,
+        "custo": 285.84,
+        "lucro": 134.16,
+        "sem_custo": false
+      },
+      "Vinho Tinto Col Di Bacche Morellino Di Scansano DOCG 2023 - Col Di Bacche": {
+        "quantidade": 2.0,
+        "receita": 420.0,
+        "custo": 244.06,
+        "lucro": 175.94,
+        "sem_custo": false
+      },
+      "Vinho Tinto Louis Jadot Beaujolais Villages Gamay 2024 - Louis Jadot": {
+        "quantidade": 2.0,
+        "receita": 420.0,
+        "custo": 255.88,
+        "lucro": 164.12,
+        "sem_custo": false
+      },
+      "Vinho Tinto Rosso 2023 - Bakkanali": {
+        "quantidade": 1.0,
+        "receita": 415.0,
+        "custo": 259.05,
+        "lucro": 155.95,
+        "sem_custo": false
+      },
+      "Vinho RosÃ© Rosa 2023 - Bakkanali": {
+        "quantidade": 1.0,
+        "receita": 400.0,
+        "custo": 259.04,
+        "lucro": 140.96,
+        "sem_custo": false
+      },
+      "Vinho Tinto Cotes Du Rhone 2022 - E. Guigal": {
+        "quantidade": 2.0,
+        "receita": 400.0,
+        "custo": 222.24,
+        "lucro": 177.76,
+        "sem_custo": false
+      },
+      "Vinho Tinto Sogni e Follia DOC Rosso Di Montalcino 2021 - Podere Le Ripi": {
+        "quantidade": 1.0,
+        "receita": 400.0,
+        "custo": 229.54,
+        "lucro": 170.46,
+        "sem_custo": false
+      },
+      "MASSOLINO DOLCETTO D ALBA TT 750 ML": {
+        "quantidade": 2.0,
+        "receita": 360.76,
+        "custo": 334.04,
+        "lucro": 26.72,
+        "sem_custo": false
+      },
+      "MASSOLINO MOSCATO D ASTI BCO 375 ML": {
+        "quantidade": 3.0,
+        "receita": 292.32,
+        "custo": 270.67,
+        "lucro": 21.65,
+        "sem_custo": false
+      },
+      "Vinho Branco Marius By Michel Chapoutier Vermentino 2022 - M. Chapoutier": {
+        "quantidade": 3.0,
+        "receita": 255.0,
+        "custo": 147.69,
+        "lucro": 107.31,
+        "sem_custo": false
+      },
+      "Vinho Tinto Dogliani San Luigi 2023 - Chionetti": {
+        "quantidade": 1.0,
+        "receita": 242.2,
+        "custo": 118.2,
+        "lucro": 124.0,
+        "sem_custo": false
+      },
+      "MASSOLINO BARBERA D ALBA TTO 750 ML": {
+        "quantidade": 1.0,
+        "receita": 222.14,
+        "custo": 205.69,
+        "lucro": 16.45,
+        "sem_custo": false
+      },
+      "Vinho Tinto Langhe Dolcetto 2023 - Giuseppe Cortese": {
+        "quantidade": 1.0,
+        "receita": 187.44,
+        "custo": 104.43,
+        "lucro": 83.01,
+        "sem_custo": false
+      },
+      "Vinho Branco Gran Reserva Chardonnay 2023 - Escorihuela GascÃ³n": {
+        "quantidade": 1.0,
+        "receita": 160.0,
+        "custo": 91.0,
+        "lucro": 69.0,
+        "sem_custo": false
+      },
+      "Vinho Tinto Poggio Badiola 2022 - Mazzei": {
+        "quantidade": 1.0,
+        "receita": 155.0,
+        "custo": 68.04,
+        "lucro": 86.96,
+        "sem_custo": false
+      },
+      "Vinho Tinto GarzÃ³n Reserva Tannat 2022 - Bodega GarzÃ³n": {
+        "quantidade": 1.0,
+        "receita": 130.0,
+        "custo": 87.16,
+        "lucro": 42.84,
+        "sem_custo": false
+      },
+      "Vinho Branco GarzÃ³n Reserva AlbariÃ±o 2024 - Bodega GarzÃ³n": {
+        "quantidade": 1.0,
+        "receita": 130.0,
+        "custo": 88.11,
+        "lucro": 41.89,
+        "sem_custo": false
+      },
+      "ESP BABY FREIXENET ICE 200ML UN 200ML QTD. 3.00 UN": {
+        "quantidade": 3.0,
+        "receita": 90.0,
+        "custo": 79.38,
+        "lucro": 10.62,
+        "sem_custo": false
+      }
+    }
+  },
+  "fluxo_de_caixa": {
+    "total_recebido": 72912.56,
+    "total_pago": 77349.18,
+    "resultado": -4436.62,
+    "recebido_por_categoria": {},
+    "pago_por_categoria": {
+      "Compra de insumos e matéria prima": 252.45,
+      "Despesas administrativas": 6829.04,
+      "Despesas com pessoal": 4140.47,
+      "Despesas comerciais": 2189.0,
+      "Impostos": 6040.93,
+      "DIFAL": 5685.61,
+      "Transferências": 3390.9,
+      "Compras de fornecedores": 48820.78
+    }
+  },
+  "diferenca_resultado_vs_caixa": 8741.17,
+  "avisos": []
+}

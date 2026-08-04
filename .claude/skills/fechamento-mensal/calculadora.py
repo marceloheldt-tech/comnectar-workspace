@@ -249,7 +249,10 @@ def main():
         "avisos": avisos,
     })
 
-    print(json.dumps(resultado, ensure_ascii=False, indent=2))
+    saida = json.dumps(resultado, ensure_ascii=False, indent=2)
+    print(saida)
+    with open(os.path.join(pasta, "resultado.json"), "w", encoding="utf-8") as f:
+        f.write(saida)
 
 
 if __name__ == "__main__":

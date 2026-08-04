@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Fechamento Julho/2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Rubik', sans-serif; color: #000000; background: #FFFFFF; }
+  .pagina { width: 210mm; height: 297mm; padding: 16mm 18mm; position: relative; page-break-after: always; }
+  .pagina:last-child { page-break-after: auto; }
+
+  .cabecalho { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10mm; }
+  .cabecalho img { height: 34px; }
+  .cabecalho .titulo-mes { text-align: right; }
+  .cabecalho .titulo-mes .rotulo { font-size: 11px; letter-spacing: 1.5px; color: #666; text-transform: uppercase; }
+  .cabecalho .titulo-mes .mes { font-size: 20px; font-weight: 700; }
+
+  h1.secao { font-size: 15px; letter-spacing: 1px; text-transform: uppercase; color: #666; font-weight: 500; margin-bottom: 2mm; }
+
+  .badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #FFFFFF; margin-bottom: 3mm; }
+
+  .numero-hero { font-size: 52px; font-weight: 900; line-height: 1; margin-bottom: 3mm; }
+  .subtexto-hero { font-size: 13px; color: #555; max-width: 130mm; margin-bottom: 10mm; line-height: 1.5; }
+
+  .kpis { display: flex; gap: 6mm; margin-bottom: 10mm; }
+  .kpi { flex: 1; border: 1px solid #eee; border-radius: 10px; padding: 4mm; }
+  .kpi .rotulo { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1.5mm; }
+  .kpi .valor { font-size: 17px; font-weight: 700; }
+
+  .bloco-barras { margin-bottom: 10mm; }
+  .linha-barra { display: flex; align-items: center; gap: 4mm; margin-bottom: 4mm; }
+  .rotulo-barra { width: 38mm; font-size: 11.5px; color: #333; flex-shrink: 0; }
+  .trilho-barra { flex: 1; height: 8px; background: #f2f2f2; border-radius: 4px; overflow: hidden; }
+  .barra { height: 100%; border-radius: 4px; }
+  .valor-barra { width: 30mm; text-align: right; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+
+  .rodape { position: absolute; bottom: 12mm; left: 18mm; right: 18mm; display: flex; justify-content: space-between; font-size: 9px; color: #999; border-top: 1px solid #eee; padding-top: 3mm; }
+
+  .nota { font-size: 11px; color: #666; line-height: 1.6; background: #fafafa; border-left: 3px solid #991356; padding: 4mm 5mm; margin-top: 4mm; }
+</style>
+</head>
+<body>
+
+<div class="pagina">
+  <div class="cabecalho">
+    <img src="../../dados/comnectar-transparente.png" alt="comnéctar">
+    <div class="titulo-mes">
+      <div class="rotulo">Fechamento mensal</div>
+      <div class="mes">Julho/2026</div>
+    </div>
+  </div>
+
+  <h1 class="secao">Resultado do mês</h1>
+  <div class="badge" style="background:#000000;">LUCRO</div>
+  <div class="numero-hero" style="color:#000000;">R$ 4.304,55</div>
+  <div class="subtexto-hero">Receita das vendas de julho menos o custo dos produtos vendidos menos as contas pagas no mês. Não inclui compra de mercadoria (já contada no custo dos produtos) nem movimentações financeiras.</div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="rotulo">Garrafas vendidas</div><div class="valor">216</div></div>
+    <div class="kpi"><div class="rotulo">Receita bruta</div><div class="valor">R$ 75.604,28</div></div>
+    <div class="kpi"><div class="rotulo">Margem bruta</div><div class="valor">R$ 23.756,44</div></div>
+    <div class="kpi"><div class="rotulo">Contas pagas</div><div class="valor">R$ 19.451,89</div></div>
+  </div>
+
+  <h1 class="secao">Composição do resultado</h1>
+  <div class="bloco-barras">
+    <div class="linha-barra">
+      <div class="rotulo-barra">Receita bruta</div>
+      <div class="trilho-barra">
+        <div class="barra" style="width:100%; background:#991356;"></div>
+      </div>
+      <div class="valor-barra">R$ 75.604,28</div>
+    </div>
+    <div class="linha-barra">
+      <div class="rotulo-barra">(–) CMV</div>
+      <div class="trilho-barra">
+        <div class="barra" style="width:69%; background:#991356;"></div>
+      </div>
+      <div class="valor-barra">-R$ 51.847,84</div>
+    </div>
+    <div class="linha-barra">
+      <div class="rotulo-barra">= Margem bruta</div>
+      <div class="trilho-barra">
+        <div class="barra" style="width:31%; background:#991356;"></div>
+      </div>
+      <div class="valor-barra">R$ 23.756,44</div>
+    </div>
+    <div class="linha-barra">
+      <div class="rotulo-barra">(–) Contas pagas</div>
+      <div class="trilho-barra">
+        <div class="barra" style="width:26%; background:#991356;"></div>
+      </div>
+      <div class="valor-barra">-R$ 19.451,89</div>
+    </div></div>
+
+  <h1 class="secao">Top 5 produtos por lucro</h1>
+  <div class="bloco-barras">
+    <div class="linha-barra">
+      <div class="rotulo-barra">Vinho Tinto Langhe Nebbiolo 2024 - Mari...</div>
+      <div class="trilho-barra">
+        <div class="barra" style="width:100%; background:#991356;"></div>
+      </div>
+      <div class="valor-barra">R$ 4.716,86</div>
+    </div>
+    <div class="linha-barra">
+      <div class="rotulo-barra">Vinho Tinto Langhe Nebbiolo La Chiusa 2...</div>
+      <div class="trilho-barra">
+        <div class="barra" style="width:51%; background:#991356;"></div>
+      </div>
+      <div class="valor-barra">R$ 2.419,92</div>
+    </div>
+    <div class="linha-barra">
+      <div class="rotulo-barra">Vinho Tinto 50th Anniversary Cabernet S...</div>
+      <div class="trilho-barra">
+        <div class="barra" style="width:30%; background:#991356;"></div>
+      </div>
+      <div class="valor-barra">R$ 1.430,16</div>
+    </div>
+    <div class="linha-barra">
+      <div class="rotulo-barra">Vinho Tinto Pommard 2022 - Albert Bichot</div>
+      <div class="trilho-barra">
+        <div class="barra" style="width:19%; background:#991356;"></div>
+      </div>
+      <div class="valor-barra">R$ 899,63</div>
+    </div>
+    <div class="linha-barra">
+      <div class="rotulo-barra">Vinho Tinto Dairyman Pinot Noir 2022 - ...</div>
+      <div class="trilho-barra">
+        <div class="barra" style="width:16%; background:#991356;"></div>
+      </div>
+      <div class="valor-barra">R$ 759,42</div>
+    </div></div>
+
+  <div class="rodape">
+    <span>comnéctar · relatório interno</span>
+    <span>Gerado em 04/08/2026 · Página 1/2</span>
+  </div>
+</div>
+
+<div class="pagina">
+  <div class="cabecalho">
+    <img src="../../dados/comnectar-transparente.png" alt="comnéctar">
+    <div class="titulo-mes">
+      <div class="rotulo">Fechamento mensal</div>
+      <div class="mes">Julho/2026</div>
+    </div>
+  </div>
+
+  <h1 class="secao">Fluxo de caixa</h1>
+  <div class="badge" style="background:#000000;">CAIXA NEGATIVO</div>
+  <div class="numero-hero" style="color:#000000;">-R$ 4.436,62</div>
+  <div class="subtexto-hero">Total que efetivamente entrou e saiu da conta em julho — diferente do Resultado do mês, aqui entra tudo (compra de mercadoria, impostos, transferências), sem nenhum filtro. É dinheiro real, não lucro contábil.</div>
+
+  <h1 class="secao">Recebido x Pago</h1>
+  <div class="bloco-barras">
+    <div class="linha-barra">
+      <div class="rotulo-barra">Total recebido</div>
+      <div class="trilho-barra">
+        <div class="barra" style="width:94%; background:#991356;"></div>
+      </div>
+      <div class="valor-barra">R$ 72.912,56</div>
+    </div>
+    <div class="linha-barra">
+      <div class="rotulo-barra">Total pago</div>
+      <div class="trilho-barra">
+        <div class="barra" style="width:100%; background:#c9629a;"></div>
+      </div>
+      <div class="valor-barra">R$ 77.349,18</div>
+    </div></div>
+
+  <div class="nota">
+    O Resultado do mês e o Fluxo de caixa costumam ser diferentes, e os dois estão certos ao mesmo tempo: um mostra o que a operação de vendas rendeu descontando as despesas do mês; o outro mostra o dinheiro que realmente entrou e saiu da conta, incluindo compra de estoque e outras movimentações que não são despesa do mês.
+  </div>
+
+  <div class="rodape">
+    <span>comnéctar · relatório interno</span>
+    <span>Gerado em 04/08/2026 · Página 2/2</span>
+  </div>
+</div>
+
+</body>
+</html>
