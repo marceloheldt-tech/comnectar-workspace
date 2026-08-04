@@ -26,7 +26,7 @@
       "descricao": null,
       "valor": null
     },
-    "categorias_ignoradas_no_resultado_do_mes": []
+    "categorias_ignoradas_no_resultado_do_mes": ["Compras de fornecedores", "DIFAL", "Transferências"]
   },
   "contas_recebidas": {
     "arquivo": "contas-recebidas.xlsx",
