@@ -3,8 +3,8 @@
   "pasta": "C:\\Users\\marce\\Desktop\\claude comnéctar\\financeiro\\2026-07",
   "resultado_do_mes": {
     "receita_bruta": 75604.28,
-    "cmv": 45466.26,
-    "margem_bruta": 30138.02,
+    "cmv": 51847.84,
+    "margem_bruta": 23756.44,
     "quantidade_vendida": 216.0,
     "total_pago_operacional": 19451.89,
     "categorias_ignoradas_no_resultado": {},
@@ -15,16 +15,8 @@
       "Despesas comerciais": 2189.0,
       "Impostos (sem DIFAL)": 6040.93
     },
-    "resultado": 10686.13,
-    "produtos_sem_custo": {
-      "ESP. C. GEISSE BLANC DE BLANC C/ 6GFAS 750 ML": 7.0,
-      "ORNELLAIA SRL POGGIO ALLE GAZZE DELL'ORNELLAIA TOSCANA 2023": 3.0,
-      "MASSOLINO BAROLO PARUSSI TTO 750 ML": 1.0,
-      "MASSOLINO BARBARESCO TTO 750 ML": 2.0,
-      "MASSOLINO DOLCETTO D ALBA TT 750 ML": 2.0,
-      "MASSOLINO MOSCATO D ASTI BCO 375 ML": 3.0,
-      "MASSOLINO BARBERA D ALBA TTO 750 ML": 1.0
-    },
+    "resultado": 4304.55,
+    "produtos_sem_custo": {},
     "vendas_por_produto": {
       "Vinho Tinto Langhe Nebbiolo 2024 - Mario Costa": {
         "quantidade": 51.0,
@@ -36,9 +28,9 @@
       "ESP. C. GEISSE BLANC DE BLANC C/ 6GFAS 750 ML": {
         "quantidade": 7.0,
         "receita": 1280.0,
-        "custo": 0.0,
-        "lucro": 0.0,
-        "sem_custo": true
+        "custo": 861.14,
+        "lucro": 418.86,
+        "sem_custo": false
       },
       "Vinho Tinto Langhe Nebbiolo La Chiusa 2023 - Chionetti": {
         "quantidade": 28.0,
@@ -99,9 +91,9 @@
       "ORNELLAIA SRL POGGIO ALLE GAZZE DELL'ORNELLAIA TOSCANA 2023": {
         "quantidade": 3.0,
         "receita": 2728.0,
-        "custo": 0.0,
-        "lucro": 0.0,
-        "sem_custo": true
+        "custo": 2525.93,
+        "lucro": 202.07,
+        "sem_custo": false
       },
       "Vinho Tinto Milla Cala 2022 - ViÃ±a Vik": {
         "quantidade": 6.0,
@@ -141,9 +133,9 @@
       "MASSOLINO BAROLO PARUSSI TTO 750 ML": {
         "quantidade": 1.0,
         "receita": 1241.78,
-        "custo": 0.0,
-        "lucro": 0.0,
-        "sem_custo": true
+        "custo": 1149.8,
+        "lucro": 91.98,
+        "sem_custo": false
       },
       "Vinho Tinto Aamarone Satinato 2021 - Montresor": {
         "quantidade": 3.0,
@@ -169,9 +161,9 @@
       "MASSOLINO BARBARESCO TTO 750 ML": {
         "quantidade": 2.0,
         "receita": 1117.08,
-        "custo": 0.0,
-        "lucro": 0.0,
-        "sem_custo": true
+        "custo": 1034.33,
+        "lucro": 82.75,
+        "sem_custo": false
       },
       "Vinho Tinto Almaviva 2022 - Almaviva": {
         "quantidade": 1.0,
@@ -421,16 +413,16 @@
       "MASSOLINO DOLCETTO D ALBA TT 750 ML": {
         "quantidade": 2.0,
         "receita": 360.76,
-        "custo": 0.0,
-        "lucro": 0.0,
-        "sem_custo": true
+        "custo": 334.04,
+        "lucro": 26.72,
+        "sem_custo": false
       },
       "MASSOLINO MOSCATO D ASTI BCO 375 ML": {
         "quantidade": 3.0,
         "receita": 292.32,
-        "custo": 0.0,
-        "lucro": 0.0,
-        "sem_custo": true
+        "custo": 270.67,
+        "lucro": 21.65,
+        "sem_custo": false
       },
       "Vinho Branco Marius By Michel Chapoutier Vermentino 2022 - M. Chapoutier": {
         "quantidade": 3.0,
@@ -449,9 +441,9 @@
       "MASSOLINO BARBERA D ALBA TTO 750 ML": {
         "quantidade": 1.0,
         "receita": 222.14,
-        "custo": 0.0,
-        "lucro": 0.0,
-        "sem_custo": true
+        "custo": 205.69,
+        "lucro": 16.45,
+        "sem_custo": false
       },
       "Vinho Tinto Langhe Dolcetto 2023 - Giuseppe Cortese": {
         "quantidade": 1.0,
@@ -510,9 +502,8 @@
       "Impostos (sem DIFAL)": 6040.93
     }
   },
-  "diferenca_resultado_vs_caixa": 30138.02,
+  "diferenca_resultado_vs_caixa": 23756.44,
   "avisos": [
-    "7 produto(s) vendido(s) sem custo encontrado em precos-custos.xlsx — CMV pode estar subestimado",
     "Arquivo não encontrado: contas-recebidas.xlsx"
   ]
 }
