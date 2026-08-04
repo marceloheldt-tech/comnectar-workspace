@@ -84,8 +84,14 @@ def main():
     # top 5 produtos por lucro
     produtos = sorted(r["vendas_por_produto"].items(), key=lambda kv: kv[1]["lucro"], reverse=True)[:5]
     max_lucro = max((p["lucro"] for _, p in produtos), default=1) or 1
+    def truncar(nome, limite=46):
+        if len(nome) <= limite:
+            return nome
+        corte = nome[:limite].rsplit(" ", 1)[0]
+        return corte + "…"
+
     linhas_produtos = "".join([
-        barra(nome if len(nome) <= 42 else nome[:39] + "...", p["lucro"], max_lucro)
+        barra(truncar(nome), p["lucro"], max_lucro)
         for nome, p in produtos
     ])
 
@@ -113,7 +119,7 @@ def main():
   .pagina:last-child {{ page-break-after: auto; }}
 
   .cabecalho {{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 10mm; }}
-  .cabecalho img {{ height: 34px; }}
+  .cabecalho img {{ height: 64px; }}
   .cabecalho .titulo-mes {{ text-align: right; }}
   .cabecalho .titulo-mes .rotulo {{ font-size: 11px; letter-spacing: 1.5px; color: #666; text-transform: uppercase; }}
   .cabecalho .titulo-mes .mes {{ font-size: 20px; font-weight: 700; }}
@@ -132,7 +138,7 @@ def main():
 
   .bloco-barras {{ margin-bottom: 10mm; }}
   .linha-barra {{ display: flex; align-items: center; gap: 4mm; margin-bottom: 4mm; }}
-  .rotulo-barra {{ width: 38mm; font-size: 11.5px; color: #333; flex-shrink: 0; }}
+  .rotulo-barra {{ width: 46mm; font-size: 11.5px; color: #333; flex-shrink: 0; line-height: 1.3; }}
   .trilho-barra {{ flex: 1; height: 8px; background: #f2f2f2; border-radius: 4px; overflow: hidden; }}
   .barra {{ height: 100%; border-radius: 4px; }}
   .valor-barra {{ width: 30mm; text-align: right; font-size: 12px; font-weight: 700; flex-shrink: 0; }}

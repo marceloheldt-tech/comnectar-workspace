@@ -3,9 +3,10 @@ name: fechamento-mensal
 description: >
   Faz o fechamento financeiro mensal da comnéctar a partir dos relatórios exportados do Bling.
   Calcula o Resultado do mês (lucro por produto vendido menos contas pagas por categoria) e o
-  Fluxo de caixa (recebido menos pago), como dois relatórios separados.
+  Fluxo de caixa (recebido menos pago), como dois relatórios separados, e gera um PDF de
+  apresentação (2 páginas, no padrão visual da marca) pra enviar aos sócios todo mês.
   Use quando o usuário disser "fechamento do mês", "fechamento mensal", "fecha o mês passado",
-  "resultado de [mês]", "quanto lucramos em [mês]", ou "/fechamento-mensal".
+  "resultado de [mês]", "quanto lucramos em [mês]", "manda pros sócios", ou "/fechamento-mensal".
 ---
 
 # /fechamento-mensal — Fechamento Financeiro Mensal
@@ -17,7 +18,10 @@ description: >
 - **Mapeamento de colunas:** `.claude/skills/fechamento-mensal/mapeamento.json`
 - **Script de cálculo:** `.claude/skills/fechamento-mensal/calculadora.py`
 - **Extrator de PDF:** `.claude/skills/fechamento-mensal/extrair_pdf.py` (o Bling costuma exportar em PDF, não Excel)
+- **Gerador da apresentação:** `.claude/skills/fechamento-mensal/gerar_apresentacao.py` (HTML) + `.claude/skills/fechamento-mensal/gerar-pdf-apresentacao.mjs` (HTML → PDF via Playwright)
+- **Guia de marca:** `marca/design-guide.md` — a apresentação segue esse padrão (preto/vinho/branco, Rubik, sem gradiente)
 - **Dependências Python:** `openpyxl`, `pdfplumber`, `xlrd` — podem sumir entre sessões, ver memória `pdf-dependencias-nao-persistem`. Se `xlrd.open_workbook` reclamar de corrupção, usar `ignore_workbook_corruption=True` — os exports `.xls` do Bling abrem assim mesmo "corrompidos".
+- **Dependências Node:** `playwright` (raiz do projeto, `npm install` se `node_modules/` não existir — mesmo padrão de sumiço entre sessões que os catálogos de PDF)
 
 ---
 
@@ -145,9 +149,23 @@ Só gerar os arquivos finais depois do Marcelo confirmar que os números fazem s
 
 Comentar os números em prosa curta, não deixar só tabela seca. Comparar com o mês anterior se o arquivo existir. **Não** criar uma seção comparando os dois relatórios entre si — são dois documentos independentes.
 
-### Passo 5 — Perguntar próximos passos
+### Passo 5 — Gerar o PDF pra apresentar aos sócios
 
-Perguntar se quer ver detalhe de produto/categoria específica, exportar em HTML/artifact, ou deixar a pasta do próximo mês pronta.
+Entregável fixo, todo mês (o Marcelo confirmou que sempre vai enviar isso pros sócios). Gerar **depois** do checkpoint do Passo 3 — os números já confirmados, nunca antes.
+
+```bash
+cd "C:/Users/marce/Desktop/claude comnéctar"
+"C:/Users/marce/AppData/Local/Programs/Python/Python314/python.exe" ".claude/skills/fechamento-mensal/gerar_apresentacao.py" --mes 2026-07
+node ".claude/skills/fechamento-mensal/gerar-pdf-apresentacao.mjs" --mes 2026-07
+```
+
+Gera `financeiro/[AAAA-MM]/apresentacao.html` e depois `financeiro/[AAAA-MM]/apresentacao-[AAAA-MM].pdf` — 2 páginas A4 (Resultado do mês + Fluxo de caixa), com número principal em destaque, barras simples (uma cor só, vinho, sem gradiente) e top 5 produtos. Usa `financeiro/[AAAA-MM]/resultado.json`, que `calculadora.py` já salva sozinho a cada execução — não precisa gerar esse arquivo à parte.
+
+Antes de considerar pronto, tirar um print de cada página (via Playwright, `page.screenshot`) e olhar visualmente — nomes de produto muito longos podem quebrar estranho, número muito grande pode estourar a largura. Ajustar o HTML se precisar, não só confiar que rodou sem erro.
+
+### Passo 6 — Perguntar próximos passos
+
+Perguntar se quer ver detalhe de produto/categoria específica, ou deixar a pasta do próximo mês pronta.
 
 ---
 
@@ -158,4 +176,5 @@ Perguntar se quer ver detalhe de produto/categoria específica, exportar em HTML
 - **O checkpoint do Passo 3 não é opcional.** Já pegou dois erros reais de duplicação de custo (Compras de fornecedores, depois DIFAL escondido em Impostos) que juntos mudariam o resultado em dezenas de milhares de reais. Sempre mostrar as categorias de despesa encontradas antes de somar, mesmo que pareçam bater com o esperado.
 - **`contas-pagas.xlsx` nunca vem pré-filtrado.** Todas as categorias entram no arquivo; quem decide o que não conta no Resultado do mês é `categorias_ignoradas_no_resultado_do_mes` em `mapeamento.json`. Filtrar no arquivo de entrada quebra o Fluxo de caixa (que precisa do total completo).
 - **Resultado do mês e Fluxo de caixa são relatórios independentes**, arquivos separados, sem seção comparando um com o outro.
+- **O PDF pros sócios (Passo 5) só é gerado depois do checkpoint confirmado.** É o documento que sai da comnéctar pra fora — não pode carregar um número que ainda não foi validado com o Marcelo.
 - Tom conforme `_contexto/preferencias.md` — direto, sem "é importante ressaltar que" antes de cada número.
