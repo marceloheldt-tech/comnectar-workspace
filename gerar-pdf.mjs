@@ -2,7 +2,7 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-04-binasso-nossa-eua-franca-argentina';
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-05-ricardo-elegantes-borgonha-barolo-etna';
 const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3'];
 
 const browser = await chromium.launch();
@@ -28,5 +28,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/catalogo-binasso-nossa-eua-franca-argentina-agosto2026.pdf`, output);
-console.log('\n✅ PDF gerado: catalogo-binasso-nossa-eua-franca-argentina-agosto2026.pdf');
+writeFileSync(`${dir}/catalogo-ricardo-elegantes-agosto2026.pdf`, output);
+console.log('\n✅ PDF gerado: catalogo-ricardo-elegantes-agosto2026.pdf');
