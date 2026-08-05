@@ -93,26 +93,35 @@ Pra outro tamanho W (px): `height = W*1.2586`, `scale = W/2417`, `full-width = 8
 
 **Atenção Chromium/file://:** o HTML do slide só consegue carregar imagens locais (background, gota) que estejam dentro da própria árvore do projeto via caminho relativo. Um HTML de teste fora da pasta do projeto (ex: em temp/scratchpad) não consegue carregar `dados/gota-transparente.png` por caminho absoluto — sempre testar/renderizar HTMLs de dentro da pasta do post.
 
+### Regra mais importante: nada em cima da garrafa
+
+A garrafa é o elemento principal do post — nunca posicionar texto, caixa ou painel por cima dela. Antes de posicionar qualquer bloco, olhar a foto e identificar onde a garrafa está (geralmente centro ou centro-esquerda) e colocar o conteúdo **ao lado dela** (coluna direita ou esquerda, o que estiver livre), nunca espremido num cantinho pequeno. Depois de renderizar, sempre checar visualmente se algum texto ficou sobre o vidro/rótulo — se ficou, mover o bloco, não diminuir a fonte.
+
+**Layout de referência (validado ago/2026):** um painel de leitura ocupa uma faixa vertical inteira de um dos lados (não uma caixinha arredondada isolada) — gradiente `linear-gradient(to left/right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 55%, transparent 100%)` cobrindo ~42-48% da largura, do topo à base do slide. O conteúdo (texto, specs, preço) fica dentro dessa faixa. Isso lê como "editorial", não como uma tarja colada no canto.
+
+**Empilhar blocos de altura variável com flexbox, nunca com `top` fixo em px.** Specs + gota + preço têm alturas diferentes conforme o texto (nome do produtor, tamanho da região etc.) — se cada bloco usa um `top` absoluto calculado à mão, qualquer mudança de conteúdo desalinha tudo e pode sobrepor blocos (já aconteceu: preço sobrepondo a gota). Usar um container pai com `position: absolute` + `display: flex; flex-direction: column; align-items: flex-end` (ou `flex-start`) e deixar os filhos em fluxo normal com `margin-bottom`.
+
 ### Slide 1 — Chamada (nome + frase)
 
 - Foto do produto como background full-bleed (`background-size: cover; background-position: center`)
-- Caixa de nome: fundo branco, texto preto bold (Rubik 700-900, ~48-56px), padding ~20px 32px, canto superior esquerdo (~48px de margem)
-- Caixa de subtítulo: colada embaixo da caixa de nome, **sem espaço entre elas**, fundo vinho `#991356`, texto branco uppercase (Rubik 500, ~22-26px, letter-spacing ~1px), padding ~10px 32px
+- Caixa de nome: fundo branco, texto preto bold (Rubik 900, ~56-60px), padding ~24px 36px, canto superior esquerdo (~64px de margem)
+- Caixa de subtítulo: colada embaixo da caixa de nome, **sem espaço entre elas**, fundo vinho `#991356`, texto branco uppercase (Rubik 500, ~24px, letter-spacing ~2px), padding ~13px 36px
   - A caixa de nome leva o identificador mais reconhecível do vinho (apelação ou nome de linha/cuvée, o que for mais forte pra marca). A caixa de subtítulo leva o complemento (produtor ou apelação, o que sobrou)
-- Texto descritivo: bloco de 1 frase (~2-3 linhas), branco, Rubik 400/700 (frase de destaque em bold), ~28-32px, line-height 1.4, com leve text-shadow pra legibilidade. Termina com seta `→` branca
-- Posição do texto descritivo e da gota: adaptar conforme a composição da foto (onde tem área "limpa"), mas sempre longe da garrafa. Gota vinho (~56px) fica perto do bloco de texto
-- Painel escuro atrás do texto descritivo se a foto for clara na área de texto (gradiente radial ou linear sutil, opacity baixa o suficiente pra não ficar pesado)
+- Painel de leitura na lateral **oposta à garrafa** (ver regra acima), largura ~42% do slide, altura total
+- Dentro do painel: gota vinho (~50px) → texto descritivo (Rubik 300 com a frase de destaque em 700, ~28-30px, line-height 1.5, largura ~320-340px, text-shadow sutil) → seta `→` branca. Verticalmente centralizado ou no terço médio do slide — nunca colado no topo nem na base
 
 ### Slide 2 — Ficha técnica + preço
 
 - Foto do produto como background full-bleed, geralmente mais escura/moody (ambientada)
-- Topo esquerdo: bandeira do país (~48px de largura) + bloco de texto ao lado: linha 1 "Tinto/Branco [uva ou estilo]" (Rubik 400, ~24px, branco), linha 2 bold "[safra] | [Produtor]" (Rubik 700, ~26-28px, branco)
+- Topo esquerdo: bandeira do país (~56px de largura) + bloco de texto ao lado: linha 1 "Tinto/Branco [uva ou estilo]" (Rubik 300, ~28px, branco), linha 2 bold "[safra] | [Produtor]" (Rubik 700, ~32px, branco)
   - **Bandeira: nunca usar emoji** (não renderiza no Chromium/Playwright/Windows, vira caixa "IT" em vez da imagem). Usar `<img>` com SVG base64, mesma tabela da skill `catalogo-vinhos` (`.claude/skills/catalogo-vinhos/SKILL.md`, seção "Bandeiras — SVG Base64"). Se o país não estiver na tabela, gerar um SVG simples de 3 faixas com as cores da bandeira
-- Bloco de specs, alinhado à direita, ~60-65% da largura pra direita: 3 linhas (REGIÃO, TEOR ALC., UVAS), cada uma com ícone branco pequeno + label uppercase bold (Rubik 700, ~15px) + valor (Rubik 400, ~19px), todos brancos
-- Gota vinho (~48px) abaixo do bloco de specs, mesmo alinhamento à direita
-- Bloco de preço, alinhado à direita, abaixo da gota: "De: R$ [preço original]" riscado (Rubik 400, ~18px, branco opacity 0.8) · "No pix por:" (mesma linha de cima ou embaixo) · pílula branca arredondada (border-radius ~24px) com o preço pix em vinho bold (Rubik 700, ~34-38px)
-- Rodapé direito: "LINK DO SITE NA BIO." (Rubik 500 uppercase, ~16px, branco) + ícone de globo/link pequeno
-- Painel escuro atrás do bloco de specs/preço (gradiente lateral, mais forte do lado direito onde fica o texto, transparente do lado da garrafa)
+- Painel de leitura no lado direito (ver regra acima), ~48% do slide
+- Dentro do painel (container flex-column, `align-items: flex-end`, ver regra acima), nessa ordem:
+  1. 3 linhas de specs (REGIÃO, TEOR ALC., UVAS), cada uma com **ícone SVG inline branco** (~32px, nunca emoji colorido — foge da paleta de 3 cores) acima do texto, label uppercase bold (Rubik 700, ~20px, letter-spacing 1.5px) e valor (Rubik 300, ~27px). `margin-bottom` ~36px entre specs
+  2. Gota vinho (~54px)
+  3. Preço: "De: R$ [x]" riscado (Rubik 300, ~21px, opacity 0.8) · "No pix por:" (Rubik 300, ~21px) · pílula branca arredondada (border-radius ~30px, padding ~16px 38px) com o preço pix em vinho bold (Rubik 700, ~48px)
+  - Ícones prontos (inline SVG, stroke/fill `#FFFFFF`, viewBox `0 0 24 24`, ~32px): globo (região), círculo com barra + 2 pontos (teor alcoólico), cacho de círculos (uvas). Copiar do último `slide-02.html` renderizado ou gerar variação equivalente
+- Rodapé direito: "LINK DO SITE NA BIO." (Rubik 500 uppercase, ~18px, branco) + ícone de globo pequeno (emoji 🌐 funciona bem aqui, não é bandeira)
 
 ---
 
