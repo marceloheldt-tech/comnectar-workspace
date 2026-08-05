@@ -81,17 +81,17 @@ Baseado em 3 referências: Amarone Satinato (Montresor), Bourgogne Couvent des J
 
 **Legibilidade:** aplicar um painel/gradiente escuro localizado atrás do texto (nunca full-slide). O produto (garrafa) nunca fica atrás de máscara — sempre 100% visível, do lado limpo da foto.
 
-**Gota colorida (vinho, não branca):** como o fundo é sempre uma foto (não um bloco de cor sólida), a gota não usa o filtro `invert` de `post-vinho`. Usar `mask-image` com `dados/gota-transparente.png` e `background-color: #991356` pra pintar a gota sólida em vinho, ex.:
+**Gota colorida (vinho):** `dados/gota-transparente.png` já é vinho `#991356` (não precisa tingir), mas o arquivo é um canvas 8001x4500 com a gota ocupando só uma fatia central (bbox aproximado: 34%-65% da largura, 20%-88% da altura). Usar `background-color`/`mask-image` deixa a gota minúscula dentro do elemento. Em vez disso, recortar via `overflow: hidden` + `<img>` posicionado (não usar mask):
 ```css
-.gota {
-  width: 56px; height: 56px;
-  background-color: #991356;
-  -webkit-mask-image: url('../../../../dados/gota-transparente.png');
-  mask-image: url('../../../../dados/gota-transparente.png');
-  -webkit-mask-size: contain; mask-size: contain;
-  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
-}
+.gota { width: 52px; height: 65px; overflow: hidden; position: relative; }
+.gota img { position: absolute; top: -19.36px; left: -59.03px; width: 172.16px; height: 96.82px; }
 ```
+```html
+<div class="gota"><img src="../../../../dados/gota-transparente.png"></div>
+```
+Pra outro tamanho W (px): `height = W*1.2586`, `scale = W/2417`, `full-width = 8001*scale`, `full-height = 4500*scale`, `offset-left = -2744*scale`, `offset-top = -900*scale`.
+
+**Atenção Chromium/file://:** o HTML do slide só consegue carregar imagens locais (background, gota) que estejam dentro da própria árvore do projeto via caminho relativo. Um HTML de teste fora da pasta do projeto (ex: em temp/scratchpad) não consegue carregar `dados/gota-transparente.png` por caminho absoluto — sempre testar/renderizar HTMLs de dentro da pasta do post.
 
 ### Slide 1 — Chamada (nome + frase)
 
@@ -106,7 +106,8 @@ Baseado em 3 referências: Amarone Satinato (Montresor), Bourgogne Couvent des J
 ### Slide 2 — Ficha técnica + preço
 
 - Foto do produto como background full-bleed, geralmente mais escura/moody (ambientada)
-- Topo esquerdo: emoji de bandeira do país (~40px) + bloco de texto ao lado: linha 1 "Tinto/Branco [uva ou estilo]" (Rubik 400, ~24px, branco), linha 2 bold "[safra] | [Produtor]" (Rubik 700, ~26-28px, branco)
+- Topo esquerdo: bandeira do país (~48px de largura) + bloco de texto ao lado: linha 1 "Tinto/Branco [uva ou estilo]" (Rubik 400, ~24px, branco), linha 2 bold "[safra] | [Produtor]" (Rubik 700, ~26-28px, branco)
+  - **Bandeira: nunca usar emoji** (não renderiza no Chromium/Playwright/Windows, vira caixa "IT" em vez da imagem). Usar `<img>` com SVG base64, mesma tabela da skill `catalogo-vinhos` (`.claude/skills/catalogo-vinhos/SKILL.md`, seção "Bandeiras — SVG Base64"). Se o país não estiver na tabela, gerar um SVG simples de 3 faixas com as cores da bandeira
 - Bloco de specs, alinhado à direita, ~60-65% da largura pra direita: 3 linhas (REGIÃO, TEOR ALC., UVAS), cada uma com ícone branco pequeno + label uppercase bold (Rubik 700, ~15px) + valor (Rubik 400, ~19px), todos brancos
 - Gota vinho (~48px) abaixo do bloco de specs, mesmo alinhamento à direita
 - Bloco de preço, alinhado à direita, abaixo da gota: "De: R$ [preço original]" riscado (Rubik 400, ~18px, branco opacity 0.8) · "No pix por:" (mesma linha de cima ou embaixo) · pílula branca arredondada (border-radius ~24px) com o preço pix em vinho bold (Rubik 700, ~34-38px)
