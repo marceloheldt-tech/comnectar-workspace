@@ -2,7 +2,7 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-04-mauricio-champagne-aniversario';
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-10-amanda-ate-100';
 const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2'];
 
 const browser = await chromium.launch();
@@ -28,5 +28,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/mauricio-champagnes-aniversario-agosto2026.pdf`, output);
-console.log('\n✅ PDF gerado: mauricio-champagnes-aniversario-agosto2026.pdf');
+writeFileSync(`${dir}/catalogo-amanda-ate-100-agosto2026.pdf`, output);
+console.log('\n✅ PDF gerado: catalogo-amanda-ate-100-agosto2026.pdf');
