@@ -12,6 +12,7 @@ Esse é o espaço de trabalho do Marcelo na comnéctar, ecommerce de vinhos prem
 - `marca/` — logo, identidade visual e design guide
 - `_contexto/` — contexto do negócio, preferências e estratégia
 - `templates/skills/` — templates de skills prontos pra personalizar com /mapear
+- `projetos/` — projetos paralelos do Marcelo, fora do escopo da comnéctar (cada um com seu próprio CLAUDE.md)
 - `templates/ferramentas/catalogo.md` — APIs e ferramentas disponíveis pra usar em skills
 
 ## Sobre o negócio
