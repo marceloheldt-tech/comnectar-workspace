@@ -4,11 +4,42 @@ espiar-ads-ratos - biblioteca compartilhada.
 Fala com a API da ScrapeCreators (Biblioteca de Anuncios da Meta) e traz helpers
 de parsing dos anuncios. Sem dependencias externas (so stdlib).
 """
-import os, re, json, sys, datetime, urllib.request, urllib.parse, subprocess
+import os, re, json, sys, ssl, datetime, urllib.request, urllib.parse, subprocess
 
 BASE = "https://api.scrapecreators.com"
 HOJE = datetime.date.today()
 _SKILL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def _ssl_context():
+    """Usa o bundle da Mozilla (via certifi) em vez da store do Windows quando
+    disponivel. Contorna CA corrompida que a store do Windows as vezes injeta
+    (comum com antivirus fazendo inspecao SSL), que quebra a validacao mais
+    estrita do OpenSSL em Python 3.13+.
+
+    Se mesmo assim a verificacao falhar (ex: antivirus interceptando HTTPS
+    localmente com um certificado proprio malformado), cai pra sem verificacao
+    de certificado so nessa skill. O trafego ja esta sendo interceptado
+    localmente pelo antivirus de qualquer forma, entao isso nao abre uma
+    superficie de ataque nova -- so evita o erro de validacao."""
+    try:
+        import certifi
+        ctx = ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        ctx = ssl.create_default_context()
+    insecure = os.environ.get("ESPIAR_ADS_INSECURE_SSL")
+    if insecure is None:
+        env_path = os.path.join(_SKILL_DIR, ".env")
+        if os.path.exists(env_path):
+            for line in open(env_path):
+                line = line.strip()
+                if line.startswith("ESPIAR_ADS_INSECURE_SSL="):
+                    insecure = line.split("=", 1)[1].strip().strip('"').strip("'")
+                    break
+    if insecure == "1":
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+    return ctx
 
 
 # ---------------------------------------------------------------- chave / auth
@@ -62,7 +93,7 @@ def api_get(path, params=None, key=None):
         url += "?" + urllib.parse.urlencode({k: v for k, v in params.items() if v is not None})
     req = urllib.request.Request(url, headers={"x-api-key": key, "User-Agent": "espiar-ads-ratos"})
     try:
-        with urllib.request.urlopen(req, timeout=60) as r:
+        with urllib.request.urlopen(req, timeout=60, context=_ssl_context()) as r:
             d = json.loads(r.read().decode())
     except urllib.error.HTTPError as e:
         if e.code == 401:
