@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
+r"""
 Módulo reutilizável pra gerar o Excel de fluxo de conteúdo da comnéctar.
 Não roda sozinho — importar `build_workbook` a partir de um script que define
 a pauta (guia de imagens + conteúdo de cada semana) e chama a função.
