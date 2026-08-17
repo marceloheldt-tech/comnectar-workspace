@@ -1,6 +1,6 @@
 # Pauta de conteúdo — T1 2026-2027 (90 dias)
 
-Período: 18/ago a 16/nov/2026 (13 semanas)
+Período: 7/set a 6/dez/2026 (13 semanas)
 Objetivo do T1: construir a base (quiz + guia + CRM + newsletter + campanha de captação), meta de 500 leads.
 Esse documento é a pauta editorial — o tema de cada peça. A escrita de cada post/email/mensagem é feita semana a semana, usando as skills (`/post-vinho`, `/email-semanal`, `/carrossel` etc.).
 
@@ -22,13 +22,13 @@ Dispara pra cada lead assim que responde o quiz do Tiago, independente da semana
 | 10 | Seleção comnéctar | Mini-kit alinhado ao perfil |
 | 15 | Primeira oferta | Desconto/frete — Clássico e Casual tendem a converter mais rápido aqui |
 
-Essa régua entra em produção junto com o lançamento do quiz (semana 3).
+Essa régua entra em produção junto com o lançamento do quiz (semana 4).
 
 ---
 
 ## Pauta semanal
 
-### Semana 1 · 18–24/ago — Lançamento do novo posicionamento
+### Semana 1 · 7–13/set — Lançamento do novo posicionamento
 
 | Canal | Dia | Tema |
 |---|---|---|
@@ -37,22 +37,34 @@ Essa régua entra em produção junto com o lançamento do quiz (semana 3).
 | Instagram | Sex | "Vale ou não vale?" — vinho caro é sempre melhor? |
 | WhatsApp | Seg | Mensagem pra base atual anunciando o novo capítulo da marca |
 | WhatsApp | Qua | História rápida de um produtor querido da casa |
-| WhatsApp | Sex | Sugestão de vinho pro fim de semana de inverno |
+| WhatsApp | Sex | Sugestão de vinho pro fim de semana |
 | Email | Qui | Newsletter — "o que muda na comnéctar a partir de agora" |
 
-### Semana 2 · 25–31/ago — Teaser do quiz
+### Semana 2 · 14–20/set — Dia do Cliente
 
 | Canal | Dia | Tema |
 |---|---|---|
-| Instagram | Seg | "O que estamos provando" — os 4 tipos de bebedor de vinho (sem linkar quiz ainda) |
-| Instagram | Qua | Bastidores — como funciona a curadoria da comnéctar na prática |
-| Instagram | Sex | Story com enquete: "tinto encorpado ou vinho leve?" (aquece pro quiz) |
-| WhatsApp | Seg | Teaser — "semana que vem tem novidade" |
+| Instagram | Seg | Post especial Dia do Cliente (15/set) — agradecimento + bastidor da relação com clientes |
+| Instagram | Qua | Bastidores — a curadoria pensada pro cliente |
+| Instagram | Sex | Depoimento/prova social de cliente |
+| WhatsApp | Seg | Oferta especial Dia do Cliente |
 | WhatsApp | Qua | História de produtor |
+| WhatsApp | Sex | Agradecimento + sugestão de fim de semana |
+| Email | Qui | Newsletter Dia do Cliente com oferta |
+
+### Semana 3 · 21–27/set — Chegada da primavera + teaser do quiz
+
+| Canal | Dia | Tema |
+|---|---|---|
+| Instagram | Seg | Educação — vinhos pra receber a primavera (equinócio 23/set): rosés, brancos, espumantes |
+| Instagram | Qua | "O que estamos provando" — os 4 tipos de bebedor de vinho (sem linkar quiz ainda) |
+| Instagram | Sex | Story com enquete: "tinto encorpado ou vinho leve?" (aquece pro quiz) |
+| WhatsApp | Seg | Seleção da semana — leves de primavera |
+| WhatsApp | Qua | Teaser — "semana que vem tem novidade" |
 | WhatsApp | Sex | Harmonização de fim de semana |
 | Email | Qui | "Você sabe qual é o seu perfil de vinho?" — teaser do quiz que estreia semana que vem |
 
-### Semana 3 · 1–7/set — Lançamento do quiz + Guia Mapa do Vinho
+### Semana 4 · 28/set–4/out — Lançamento do quiz + Guia Mapa do Vinho
 
 | Canal | Dia | Tema |
 |---|---|---|
@@ -66,43 +78,19 @@ Essa régua entra em produção junto com o lançamento do quiz (semana 3).
 
 *A partir daqui a régua automática pós-quiz já está rodando em paralelo.*
 
-### Semana 4 · 8–14/set — Uvas de inverno
+### Semana 5 · 5–11/out — Vinhos leves de primavera
 
 | Canal | Dia | Tema |
 |---|---|---|
-| Instagram | Seg | Educação — uvas tintas encorpadas (Cabernet, Malbec, Nebbiolo) |
-| Instagram | Qua | Bastidores da importação — Itália |
-| Instagram | Sex | "Um vinho que você nunca ouviu falar" — uva rara italiana |
-| WhatsApp | Seg | Seleção da semana — tintos encorpados |
-| WhatsApp | Qua | História de produtor italiano |
-| WhatsApp | Sex | Harmonização — vinho + queijo pro fim de semana frio |
-| Email | Qui | Newsletter — guia rápido de uvas encorpadas pro inverno |
-
-### Semana 5 · 15–21/set — Dia do Cliente
-
-| Canal | Dia | Tema |
-|---|---|---|
-| Instagram | Seg | Post especial Dia do Cliente — agradecimento + bastidor da relação com clientes |
-| Instagram | Qua | Bastidores — a curadoria pensada pro cliente |
-| Instagram | Sex | Depoimento/prova social de cliente |
-| WhatsApp | Seg | Oferta especial Dia do Cliente |
-| WhatsApp | Qua | História de produtor |
-| WhatsApp | Sex | Agradecimento + sugestão de fim de semana |
-| Email | Qui | Newsletter Dia do Cliente com oferta |
-
-### Semana 6 · 22–28/set — Chegada da primavera
-
-| Canal | Dia | Tema |
-|---|---|---|
-| Instagram | Seg | Educação — transição pra vinhos mais leves (rosés, brancos, espumantes) |
-| Instagram | Qua | Bastidores — como a estação muda a curadoria |
-| Instagram | Sex | "Vale ou não vale?" — espumante nacional x importado |
-| WhatsApp | Seg | Seleção da semana — leves de primavera |
+| Instagram | Seg | Educação — rosés e brancos leves pra estação |
+| Instagram | Qua | Bastidores da importação — como esses vinhos chegam até aqui |
+| Instagram | Sex | "Um vinho que você nunca ouviu falar" — uva branca pouco conhecida |
+| WhatsApp | Seg | Seleção da semana — leves e refrescantes |
 | WhatsApp | Qua | História de produtor de espumante |
 | WhatsApp | Sex | Harmonização de primavera |
-| Email | Qui | Newsletter — "vinhos pra receber a primavera" |
+| Email | Qui | Newsletter — "guia rápido de vinhos leves pra primavera" |
 
-### Semana 7 · 29/set–5/out — Como ler um rótulo
+### Semana 6 · 12–18/out — Como ler um rótulo
 
 | Canal | Dia | Tema |
 |---|---|---|
@@ -114,7 +102,7 @@ Essa régua entra em produção junto com o lançamento do quiz (semana 3).
 | WhatsApp | Sex | Dica rápida — erro nº1 ao guardar vinho em casa |
 | Email | Qui | Newsletter — "guia rápido pra não errar na próxima garrafa" |
 
-### Semana 8 · 6–12/out — Harmonização
+### Semana 7 · 19–25/out — Harmonização
 
 | Canal | Dia | Tema |
 |---|---|---|
@@ -126,7 +114,7 @@ Essa régua entra em produção junto com o lançamento do quiz (semana 3).
 | WhatsApp | Sex | Sugestão pro churrasco/happy hour de fim de semana |
 | Email | Qui | Newsletter — "o guia de harmonização que a gente usa aqui" |
 
-### Semana 9 · 13–19/out — Histórias de produtores
+### Semana 8 · 26/out–1/nov — Histórias de produtores
 
 | Canal | Dia | Tema |
 |---|---|---|
@@ -138,7 +126,7 @@ Essa régua entra em produção junto com o lançamento do quiz (semana 3).
 | WhatsApp | Sex | Sugestão de fim de semana com o vinho do produtor |
 | Email | Qui | Newsletter — "conheça quem faz o vinho que você bebe" |
 
-### Semana 10 · 20–26/out — Vale ou não vale
+### Semana 9 · 2–8/nov — Vale ou não vale
 
 | Canal | Dia | Tema |
 |---|---|---|
@@ -150,7 +138,7 @@ Essa régua entra em produção junto com o lançamento do quiz (semana 3).
 | WhatsApp | Sex | Dica — mito sobre temperatura de vinho |
 | Email | Qui | Newsletter — "os mitos do vinho que a gente ouve toda semana" |
 
-### Semana 11 · 27/out–2/nov — Descoberta / uvas raras
+### Semana 10 · 9–15/nov — Descoberta / uvas raras
 
 | Canal | Dia | Tema |
 |---|---|---|
@@ -162,7 +150,7 @@ Essa régua entra em produção junto com o lançamento do quiz (semana 3).
 | WhatsApp | Sex | Convite pra experimentar algo novo no fim de semana |
 | Email | Qui | Newsletter — "3 vinhos que você provavelmente nunca ouviu falar" |
 
-### Semana 12 · 3–9/nov — Vinho novo
+### Semana 11 · 16–22/nov — Vinho novo (Beaujolais Nouveau, 19/nov)
 
 | Canal | Dia | Tema |
 |---|---|---|
@@ -170,17 +158,29 @@ Essa régua entra em produção junto com o lançamento do quiz (semana 3).
 | Instagram | Qua | Bastidores — vinho jovem x vinho de guarda |
 | Instagram | Sex | "O que estamos provando" — um vinho jovem da casa |
 | WhatsApp | Seg | Seleção da semana temática vinho novo |
-| WhatsApp | Qua | História de produtor |
+| WhatsApp | Qua | Post no dia — Beaujolais Nouveau (19/nov) |
 | WhatsApp | Sex | Sugestão pro fim de semana |
 | Email | Qui | Newsletter — a tradição do vinho novo |
 
-### Semana 13 · 10–16/nov — Fechamento do trimestre
+### Semana 12 · 23–29/nov — Black Friday (27/nov)
+
+| Canal | Dia | Tema |
+|---|---|---|
+| Instagram | Seg | Anúncio da campanha de Black Friday |
+| Instagram | Qua | Bastidores — como a comnéctar monta a seleção de Black Friday |
+| Instagram | Sex | Post do dia — oferta de Black Friday |
+| WhatsApp | Seg | Aquecimento — "essa semana tem oferta" |
+| WhatsApp | Qua | Lista com a seleção de Black Friday |
+| WhatsApp | Sex | Disparo do dia — oferta de Black Friday |
+| Email | Qui | Newsletter — campanha de Black Friday |
+
+### Semana 13 · 30/nov–6/dez — Fechamento do trimestre
 
 | Canal | Dia | Tema |
 |---|---|---|
 | Instagram | Seg | "Diário da comnéctar" — retrospectiva do trimestre, quantos já fizeram o quiz |
 | Instagram | Qua | Prova social — depoimentos de quem comprou a partir do perfil |
-| Instagram | Sex | Teaser do T2 — programa de indicação e kits temáticos |
+| Instagram | Sex | Teaser do T2 — programa de indicação, kits temáticos e gancho pro Natal |
 | WhatsApp | Seg | Seleção da semana |
 | WhatsApp | Qua | Último convite pra quem ainda não fez o quiz nesses 90 dias |
 | WhatsApp | Sex | Agradecimento + spoiler do que vem no T2 |
@@ -190,4 +190,4 @@ Essa régua entra em produção junto com o lançamento do quiz (semana 3).
 
 ## Próximo passo
 
-Pauta pronta pros 90 dias. A execução de cada peça (texto final, imagem, PNG) segue semana a semana usando as skills já disponíveis — `/post-vinho` ou `/carrossel` pro Instagram, `/email-semanal` ou texto avulso pro email, e texto direto pro WhatsApp.
+Pauta pronta pros 90 dias, começando em 7/set. A execução de cada peça (texto final, imagem, PNG) segue semana a semana usando as skills já disponíveis — `/post-vinho` ou `/carrossel` pro Instagram, `/email-semanal` ou texto avulso pro email, e texto direto pro WhatsApp.
