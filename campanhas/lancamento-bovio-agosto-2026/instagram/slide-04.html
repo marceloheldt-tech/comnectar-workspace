@@ -8,10 +8,11 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   body { width:1080px; height:1350px; overflow:hidden; position:relative; font-family:'Rubik',sans-serif; }
 
-  .bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:25% 32%; }
+  .bg-blur { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 35%; filter: blur(60px) brightness(0.55) saturate(1.1); transform: scale(1.15); }
+  .bg { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center 35%; }
   .overlay {
     position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.95) 100%);
+    background:linear-gradient(180deg, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0.90) 100%);
   }
   .noise { position:absolute; inset:0; opacity:0.05; mix-blend-mode:overlay; }
 
@@ -19,7 +20,7 @@
 
   .tag {
     position:absolute; top:64px; left:56px;
-    color:rgba(255,255,255,0.85); font-size:18px; font-weight:600; letter-spacing:3.5px;
+    color:#991356; font-size:26px; font-weight:700; letter-spacing:3.5px;
     text-transform:uppercase;
   }
 
@@ -39,6 +40,7 @@
 </style>
 </head>
 <body>
+  <img class="bg-blur" src="../imagens/slide-4-familia.webp" alt="">
   <img class="bg" src="../imagens/slide-4-familia.webp" alt="Alessandra, Marco e Elisa Bovio na adega">
   <div class="overlay"></div>
   <svg class="noise" width="100%" height="100%">
