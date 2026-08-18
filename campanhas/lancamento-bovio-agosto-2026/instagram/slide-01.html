@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1080px; height:1350px; overflow:hidden; position:relative; font-family:'Rubik',sans-serif; }
+
+  .bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%; }
+  .overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.30) 45%, rgba(0,0,0,0.92) 100%);
+  }
+  .noise { position:absolute; inset:0; opacity:0.05; mix-blend-mode:overlay; }
+
+  .logo { position:absolute; bottom:96px; right:56px; width:64px; filter:drop-shadow(0 4px 20px rgba(0,0,0,0.5)) brightness(0) invert(1); }
+
+  .tag {
+    position:absolute; top:64px; left:56px;
+    color:rgba(255,255,255,0.85); font-size:16px; font-weight:600; letter-spacing:3.5px;
+    text-transform:uppercase;
+  }
+
+  .content { position:absolute; left:56px; right:80px; bottom:96px; }
+  .headline {
+    font-family:'Palatino Linotype','Book Antiqua',Georgia,serif;
+    color:#FFFFFF; font-size:76px; font-weight:400; line-height:1.12;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.4); margin-bottom:26px;
+  }
+  .headline em { font-style:normal; color:#e8578f; }
+  .subtitle {
+    color:rgba(255,255,255,0.88); font-size:30px; font-weight:400; line-height:1.4;
+    max-width:820px;
+  }
+
+  .progress { position:absolute; bottom:0; left:0; height:3px; width:100%; background:rgba(255,255,255,0.18); }
+  .progress-fill { height:100%; width:12.5%; background:#991356; }
+</style>
+</head>
+<body>
+  <img class="bg" src="../imagens/slide-1-vinhedo.jpeg" alt="Vinhedo em La Morra, Piemonte">
+  <div class="overlay"></div>
+  <svg class="noise" width="100%" height="100%">
+    <filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter>
+    <rect width="100%" height="100%" filter="url(#n)"/>
+  </svg>
+
+  <div class="tag">La Morra · Piemonte</div>
+  <img class="logo" src="../../../dados/gota-transparente.png" alt="comnéctar">
+
+  <div class="content">
+    <div class="headline">Uma família.<br>Um vinhedo de <em>50 anos.</em></div>
+    <div class="subtitle">A linha Bovio chegou na comnéctar.</div>
+  </div>
+
+  <div class="progress"><div class="progress-fill"></div></div>
+</body>
+</html>

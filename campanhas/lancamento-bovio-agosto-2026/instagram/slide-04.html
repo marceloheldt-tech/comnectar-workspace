@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1080px; height:1350px; overflow:hidden; position:relative; font-family:'Rubik',sans-serif; }
+
+  .bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%; }
+  .overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.95) 100%);
+  }
+  .noise { position:absolute; inset:0; opacity:0.05; mix-blend-mode:overlay; }
+
+  .logo { position:absolute; bottom:96px; right:56px; width:56px; filter:drop-shadow(0 4px 20px rgba(0,0,0,0.5)) brightness(0) invert(1); }
+
+  .tag {
+    position:absolute; top:64px; left:56px;
+    color:rgba(255,255,255,0.85); font-size:16px; font-weight:600; letter-spacing:3.5px;
+    text-transform:uppercase;
+  }
+
+  .content { position:absolute; left:56px; right:80px; bottom:96px; }
+  .headline {
+    font-family:'Palatino Linotype','Book Antiqua',Georgia,serif;
+    color:#FFFFFF; font-size:58px; font-weight:400; line-height:1.15;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.4); margin-bottom:22px;
+  }
+  .body {
+    color:rgba(255,255,255,0.88); font-size:30px; font-weight:400; line-height:1.46;
+    max-width:860px;
+  }
+
+  .progress { position:absolute; bottom:0; left:0; height:3px; width:100%; background:rgba(255,255,255,0.18); }
+  .progress-fill { height:100%; width:50%; background:#991356; }
+</style>
+</head>
+<body>
+  <img class="bg" src="../imagens/slide-4-familia.webp" alt="Alessandra, Marco e Elisa Bovio na adega">
+  <div class="overlay"></div>
+  <svg class="noise" width="100%" height="100%">
+    <filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter>
+    <rect width="100%" height="100%" filter="url(#n)"/>
+  </svg>
+
+  <div class="tag">Quarta geração</div>
+
+  <div class="content">
+    <div class="headline">Hoje: Alessandra, Marco e Elisa.</div>
+    <div class="body">A neta de Gianfranco assumiu a gestão em 2014 ao lado do marido Marco. Em 2023, a filha dos dois, Elisa, entrou pra tocar a próxima geração da família.</div>
+  </div>
+
+  <img class="logo" src="../../../dados/gota-transparente.png" alt="comnéctar">
+  <div class="progress"><div class="progress-fill"></div></div>
+</body>
+</html>
