@@ -3,7 +3,7 @@ import { PDFDocument } from 'pdf-lib';
 import { writeFileSync } from 'fs';
 
 const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-19-duda';
-const pages = ['catalog-capa', 'catalog-p1'];
+const pages = ['catalog-p1'];
 
 const browser = await chromium.launch();
 const context = await browser.newContext();
