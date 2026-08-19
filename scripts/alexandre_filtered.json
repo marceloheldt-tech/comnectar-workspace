@@ -1,0 +1,464 @@
+[
+  {
+    "title": "Vinho Tinto Langhe Nebbiolo 2023 - Castello Di Verduno",
+    "price": 289,
+    "final": 231,
+    "id": "gid://shopify/Product/9045899837697"
+  },
+  {
+    "title": "Vinho Tinto Barolo 2021 - Silvio Grasso",
+    "price": 429,
+    "final": 343,
+    "id": "gid://shopify/Product/9045899903233"
+  },
+  {
+    "title": "Vinho Tinto Cartuxa Reserva 2018 - Cartuxa",
+    "price": 599,
+    "final": 479,
+    "id": "gid://shopify/Product/9045899968769"
+  },
+  {
+    "title": "Vinho Tinto La Piu Belle 2022 - Viña Vik",
+    "price": 579,
+    "final": 463,
+    "id": "gid://shopify/Product/9045900001537"
+  },
+  {
+    "title": "Vinho Tinto Capitel Amarone 2016 - Montresor",
+    "price": 599,
+    "final": 479,
+    "id": "gid://shopify/Product/9045900230913"
+  },
+  {
+    "title": "Vinho Tinto Barolo 2020 - Roversi",
+    "price": 349,
+    "final": 279,
+    "id": "gid://shopify/Product/9045900263681"
+  },
+  {
+    "title": "Vinho Tinto Amarone Satinato 2021 - Montresor",
+    "price": 499,
+    "final": 399,
+    "id": "gid://shopify/Product/9045900296449"
+  },
+  {
+    "title": "Vinho Tinto Lucente 2023 - Tenute Luce",
+    "price": 459,
+    "final": 367,
+    "id": "gid://shopify/Product/9045900361985"
+  },
+  {
+    "title": "Vinho Tinto Chianti Classico 2021 - Perano",
+    "price": 369,
+    "final": 295,
+    "id": "gid://shopify/Product/9045900427521"
+  },
+  {
+    "title": "Vinho Tinto Origines Pinot Noir 2023 - Albert Bichot",
+    "price": 349,
+    "final": 279,
+    "id": "gid://shopify/Product/9045900460289"
+  },
+  {
+    "title": "Vinho Tinto Marquesa Alorna 2019 - Quinta da Alorna",
+    "price": 399,
+    "final": 319,
+    "id": "gid://shopify/Product/9045900787969"
+  },
+  {
+    "title": "Vinho Tinto Col Di Bacche Morellino Di Scansano DOCG 2023 - Col Di Bacche",
+    "price": 259,
+    "final": 207,
+    "id": "gid://shopify/Product/9045900820737"
+  },
+  {
+    "title": "Vinho Tinto Ginestrino Langhe Nebbiolo 2023 - Conterno Fantino",
+    "price": 439,
+    "final": 351,
+    "id": "gid://shopify/Product/9045901115649"
+  },
+  {
+    "title": "Vinho Tinto Marqués de Murrieta Reserva 2021 - Marqués de Murrieta",
+    "price": 499,
+    "final": 399,
+    "id": "gid://shopify/Product/9045901639937"
+  },
+  {
+    "title": "Vinho Tinto Roquette & Cazes Douro 2022 - Roquette & Cazes",
+    "price": 439,
+    "final": 351,
+    "id": "gid://shopify/Product/9045901738241"
+  },
+  {
+    "title": "Vinho Tinto Langhe Nebbiolo 2023 - Elio Altare",
+    "price": 359,
+    "final": 287,
+    "id": "gid://shopify/Product/9045901771009"
+  },
+  {
+    "title": "Vinho Tinto Esprit de Pavie 2018 - Chateau Pavie",
+    "price": 389,
+    "final": 311,
+    "id": "gid://shopify/Product/9045901902081"
+  },
+  {
+    "title": "Vinho Tinto Vino Nobile Di Montepulciano DOCG 2021 - Boscarelli",
+    "price": 469,
+    "final": 375,
+    "id": "gid://shopify/Product/9045902229761"
+  },
+  {
+    "title": "Vinho Tinto Prugnolo Rosso Di Montepulciano 2023 - Boscarelli",
+    "price": 279,
+    "final": 223,
+    "id": "gid://shopify/Product/9045902262529"
+  },
+  {
+    "title": "Vinho Tinto Langhe Nebbiolo 2024 - Mario Costa",
+    "price": 289,
+    "final": 231,
+    "id": "gid://shopify/Product/9045902688513"
+  },
+  {
+    "title": "Vinho Tinto Barbera Dasti Battaglione 2023 - Ratti",
+    "price": 359,
+    "final": 287,
+    "id": "gid://shopify/Product/9045903704321"
+  },
+  {
+    "title": "Vinho Tinto Tempo de Angelus 2023 - Angelus",
+    "price": 429,
+    "final": 343,
+    "id": "gid://shopify/Product/9045903802625"
+  },
+  {
+    "title": "Vinho Tinto Villa Pattono Barbera D´Asti 2022 - Ratti",
+    "price": 489,
+    "final": 391,
+    "id": "gid://shopify/Product/9045906850049"
+  },
+  {
+    "title": "Vinho Tinto Colombe Langhe Dolcetto 2023 - Ratti",
+    "price": 299,
+    "final": 239,
+    "id": "gid://shopify/Product/9045906915585"
+  },
+  {
+    "title": "Vinho Tinto Il Gentile Di Casanova IGT Prugnolo 2016 - La Spinetta",
+    "price": 419,
+    "final": 335,
+    "id": "gid://shopify/Product/9045907210497"
+  },
+  {
+    "title": "Vinho Tinto Barbera Dasti Battaglione 2019 - Ratti",
+    "price": 359,
+    "final": 287,
+    "id": "gid://shopify/Product/9045907243265"
+  },
+  {
+    "title": "Vinho Tinto Langhe Nebbiolo DOC Reggimento 2020 - Ratti",
+    "price": 559,
+    "final": 447,
+    "id": "gid://shopify/Product/9045907341569"
+  },
+  {
+    "title": "Vinho Tinto Barbera D'Alba Zio Nando 2021 - Rivetto",
+    "price": 369,
+    "final": 295,
+    "id": "gid://shopify/Product/9045907407105"
+  },
+  {
+    "title": "Vinho Tinto Barbera D'Alba DOC Vignota 2022 - Conterno Fantino",
+    "price": 319,
+    "final": 255,
+    "id": "gid://shopify/Product/9045907439873"
+  },
+  {
+    "title": "Vinho Tinto Langhe DOC Nebbiolo Angelo 2022 - Mauro Veglio",
+    "price": 349,
+    "final": 279,
+    "id": "gid://shopify/Product/9045907538177"
+  },
+  {
+    "title": "Vinho Tinto Barbera D'Alba Punta 2020 - Azelia",
+    "price": 359,
+    "final": 287,
+    "id": "gid://shopify/Product/9045907603713"
+  },
+  {
+    "title": "Vinho Tinto Rosso Di Caparsa IGT 2020 - Caparsa",
+    "price": 259,
+    "final": 207,
+    "id": "gid://shopify/Product/9045907767553"
+  },
+  {
+    "title": "Vinho Tinto Barbera D'Alba DOC Superiore 2021 - Scarzello",
+    "price": 369,
+    "final": 295,
+    "id": "gid://shopify/Product/9045907898625"
+  },
+  {
+    "title": "Vinho Tinto Pinot Nero 2021 - Franz Haas",
+    "price": 429,
+    "final": 343,
+    "id": "gid://shopify/Product/9045908062465"
+  },
+  {
+    "title": "Vinho Tinto Rosso \"Attenti Al Lupo\" IGT Sangiovese 2022 - Podere Le Ripi",
+    "price": 349,
+    "final": 279,
+    "id": "gid://shopify/Product/9045908226305"
+  },
+  {
+    "title": "Vinho Tinto Capisme-e Langhe Nebbiolo 2023 - Domenico Clerico",
+    "price": 319,
+    "final": 255,
+    "id": "gid://shopify/Product/9045908324609"
+  },
+  {
+    "title": "Vinho Tinto Chianti Classico DOCG Sangiovese 2020 - Caparsa",
+    "price": 389,
+    "final": 311,
+    "id": "gid://shopify/Product/9045908488449"
+  },
+  {
+    "title": "Vinho Tinto Nebbiolo D'Alba DOC Bernardina Nebbiolo 2021 - Ceretto",
+    "price": 419,
+    "final": 335,
+    "id": "gid://shopify/Product/9045908586753"
+  },
+  {
+    "title": "Vinho Tinto Alto do Joa 2017 - Casa do Joa",
+    "price": 599,
+    "final": 479,
+    "id": "gid://shopify/Product/9045908947201"
+  },
+  {
+    "title": "Vinho Tinto Louis Jadot Beaujolais Villages Gamay 2024 - Louis Jadot",
+    "price": 259,
+    "final": 207,
+    "id": "gid://shopify/Product/9045909274881"
+  },
+  {
+    "title": "Vinho Tinto Louis Jadot Bourgogne Couvent Des Jacobins Pinot Noir 2022 - Louis Jadot",
+    "price": 399,
+    "final": 319,
+    "id": "gid://shopify/Product/9045909438721"
+  },
+  {
+    "title": "Vinho Tinto Mirea Primitivo di Manduria DOP 2023 - Masseria Borgo dei Trulli",
+    "price": 489,
+    "final": 391,
+    "id": "gid://shopify/Product/9045909733633"
+  },
+  {
+    "title": "Vinho Tinto Preludio Barrel Select 2019 - Familia Deicas",
+    "price": 439,
+    "final": 351,
+    "id": "gid://shopify/Product/9045910716673"
+  },
+  {
+    "title": "Vinho Tinto Protos Reserva 5º Año Tempranillo 2018 - Protos",
+    "price": 619,
+    "final": 495,
+    "id": "gid://shopify/Product/9045910749441"
+  },
+  {
+    "title": "Vinho Tinto Sierra de Las Palmas Pinot Noir 2021 - Vinos de Mar",
+    "price": 549,
+    "final": 439,
+    "id": "gid://shopify/Product/9045910946049"
+  },
+  {
+    "title": "Vinho Tinto Pequeñas Producciones Malbec 2021 - Escorihuela Gascón",
+    "price": 309,
+    "final": 247,
+    "id": "gid://shopify/Product/9045911077121"
+  },
+  {
+    "title": "Vinho Tinto Le Volte Dell'Ornellaia 2022 - Ornellaia",
+    "price": 529,
+    "final": 423,
+    "id": "gid://shopify/Product/9045911175425"
+  },
+  {
+    "title": "Vinho Tinto Milla Cala 2021 - Viña Vik",
+    "price": 339,
+    "final": 271,
+    "id": "gid://shopify/Product/9045911306497"
+  },
+  {
+    "title": "Vinho Tinto Villa Pattono Monferrato 2016 - Ratti",
+    "price": 369,
+    "final": 295,
+    "id": "gid://shopify/Product/9084814033153"
+  },
+  {
+    "title": "Vinho Tinto Basadone 2023 - Castello Di Verduno",
+    "price": 399,
+    "final": 319,
+    "id": "gid://shopify/Product/9087001755905"
+  },
+  {
+    "title": "Vinho Tinto Barbaresco 2021 - Giuseppe Cortese",
+    "price": 589,
+    "final": 471,
+    "id": "gid://shopify/Product/9088470843649"
+  },
+  {
+    "title": "Vinho Tinto Crozes Hermitage 2021 - E. Guigal",
+    "price": 439,
+    "final": 351,
+    "id": "gid://shopify/Product/9092061659393"
+  },
+  {
+    "title": "Vinho Tinto Mirto 2018 - Ramon Bilbao",
+    "price": 499,
+    "final": 399,
+    "id": "gid://shopify/Product/9113690079489"
+  },
+  {
+    "title": "Vinho Tinto Cascinotto D'Alba Nebbiolo 2022 - Claudio Alario",
+    "price": 479,
+    "final": 383,
+    "id": "gid://shopify/Product/9118150197505"
+  },
+  {
+    "title": "Vinho Tinto Etna Rosso 2022 - Tenuta Delle Terre Nere",
+    "price": 579,
+    "final": 463,
+    "id": "gid://shopify/Product/9120547406081"
+  },
+  {
+    "title": "Vinho Tinto Rosso 2023 - Bakkanali",
+    "price": 519,
+    "final": 415,
+    "id": "gid://shopify/Product/9132223267073"
+  },
+  {
+    "title": "Le Haut Medoc Tinto Blend 2018 - Chateau Giscours",
+    "price": 479,
+    "final": 383,
+    "id": "gid://shopify/Product/9170342347009"
+  },
+  {
+    "title": "Vinho Tinto Garzon Single Vineyard Tannat 2023 - Bodega Garzón",
+    "price": 359,
+    "final": 287,
+    "id": "gid://shopify/Product/9172996292865"
+  },
+  {
+    "title": "Vinho Tinto Petit Clos Block 487 Marselan 2020 - Bodega Garzón",
+    "price": 589,
+    "final": 471,
+    "id": "gid://shopify/Product/9173024637185"
+  },
+  {
+    "title": "Vinho Tinto Etna 2023 - Alta Mora",
+    "price": 299,
+    "final": 239,
+    "id": "gid://shopify/Product/9180690055425"
+  },
+  {
+    "title": "Vinho Tinto Sul Vulcano Etna 2021 - Donnafugata",
+    "price": 459,
+    "final": 367,
+    "id": "gid://shopify/Product/9180692709633"
+  },
+  {
+    "title": "Vinho Tinto Chapelle 2016 - Potensac",
+    "price": 499,
+    "final": 399,
+    "id": "gid://shopify/Product/9180694937857"
+  },
+  {
+    "title": "Vinho Tinto Extreme Vineyard Suelo Invertido Tannat 2021 - Familia Deicas",
+    "price": 399,
+    "final": 319,
+    "id": "gid://shopify/Product/9182154522881"
+  },
+  {
+    "title": "Vinho Tinto Giuletta Langhe Rosso 2023 - Olek Bondonio",
+    "price": 479,
+    "final": 383,
+    "id": "gid://shopify/Product/9192449900801"
+  },
+  {
+    "title": "Vinho Tinto Delon Médoc 2014 - Chateau Potensac",
+    "price": 499,
+    "final": 399,
+    "id": "gid://shopify/Product/9212871016705"
+  },
+  {
+    "title": "Vinho Tinto Petit Clos Pinot Noir 2023 - Bodega Garzón",
+    "price": 599,
+    "final": 479,
+    "id": "gid://shopify/Product/9245321527553"
+  },
+  {
+    "title": "Vinho Tinto Milla Cala 2022 - Viña Vik",
+    "price": 339,
+    "final": 271,
+    "id": "gid://shopify/Product/9290682073345"
+  },
+  {
+    "title": "Vinho Tinto Dolcetto D'Alba Campot 2023 - Castello di Verduno",
+    "price": 269,
+    "final": 215,
+    "id": "gid://shopify/Product/9290812129537"
+  },
+  {
+    "title": "Vinho Tinto Bakkanali K 2023 - Bakkanali",
+    "price": 339,
+    "final": 271,
+    "id": "gid://shopify/Product/9290822549761"
+  },
+  {
+    "title": "Vinho Tinto Langhe Nebbiolo 2021 - Fontanafredda",
+    "price": 279,
+    "final": 223,
+    "id": "gid://shopify/Product/9290842734849"
+  },
+  {
+    "title": "Vinho Tinto Campo Sassi Rosso 2023 - Frescobaldi",
+    "price": 299,
+    "final": 239,
+    "id": "gid://shopify/Product/9302737158401"
+  },
+  {
+    "title": "Vinho Tinto Mercurey 2022 - Albert Bichot",
+    "price": 489,
+    "final": 391,
+    "id": "gid://shopify/Product/9302739878145"
+  },
+  {
+    "title": "Vinho Tinto Beaune 2023 - Albert Bichot",
+    "price": 369,
+    "final": 295,
+    "id": "gid://shopify/Product/9302744432897"
+  },
+  {
+    "title": "Vinho Tinto Aloxe Corton 2022 - Albert Bichot",
+    "price": 499,
+    "final": 399,
+    "id": "gid://shopify/Product/9302746661121"
+  },
+  {
+    "title": "Vinho Tinto Langhe Nebbiolo Fralu 2023 - Bruno Rocca",
+    "price": 399,
+    "final": 319,
+    "id": "gid://shopify/Product/9313809006849"
+  },
+  {
+    "title": "Langhe Rosso DOC \"Monprá\" Tinto Blend 2022 - Conterno Fantino",
+    "price": 599,
+    "final": 479,
+    "id": "gid://shopify/Product/9316468752641"
+  },
+  {
+    "title": "Vinho Tinto Firagnetti Langhe Nebbiolo 2023 - Bovio",
+    "price": 399,
+    "final": 319,
+    "id": "gid://shopify/Product/9316480188673"
+  }
+]
