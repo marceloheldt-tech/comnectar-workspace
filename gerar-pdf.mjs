@@ -2,8 +2,8 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-19-robson-bordeaux';
-const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3'];
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-20-cotacao-lucas';
+const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3', 'catalog-p4'];
 
 const browser = await chromium.launch();
 const context = await browser.newContext();
@@ -29,5 +29,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/Vinhos de Bordeaux para Robson.pdf`, output);
-console.log('\n✅ PDF gerado: Vinhos de Bordeaux para Robson.pdf');
+writeFileSync(`${dir}/Cotação de Vinhos para Lucas.pdf`, output);
+console.log('\n✅ PDF gerado: Cotação de Vinhos para Lucas.pdf');
