@@ -2,7 +2,7 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-20-espumantes-serra-gaucha-roger';
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-20-tintos-chile-raul';
 const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2'];
 
 const browser = await chromium.launch();
@@ -29,5 +29,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/Espumantes Serra Gaúcha - Roger.pdf`, output);
-console.log('\n✅ PDF gerado: Espumantes Serra Gaúcha - Roger.pdf');
+writeFileSync(`${dir}/Tintos Chilenos - Raul.pdf`, output);
+console.log('\n✅ PDF gerado: Tintos Chilenos - Raul.pdf');
