@@ -2,8 +2,8 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-21-merlot-dioliver';
-const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3'];
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-21-tintos-premium-rodrigo';
+const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3', 'catalog-p4', 'catalog-p5', 'catalog-p6', 'catalog-p7', 'catalog-p8', 'catalog-p9', 'catalog-p10', 'catalog-p11', 'catalog-p12', 'catalog-p13', 'catalog-p14', 'catalog-p15', 'catalog-p16'];
 
 const browser = await chromium.launch();
 const context = await browser.newContext();
@@ -29,5 +29,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/Seleção Merlot - Dioliver.pdf`, output);
-console.log('\n✅ PDF gerado: Seleção Merlot - Dioliver.pdf');
+writeFileSync(`${dir}/Tintos Premium - Rodrigo.pdf`, output);
+console.log('\n✅ PDF gerado: Tintos Premium - Rodrigo.pdf');
