@@ -2,8 +2,8 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-20-tintos-chile-raul';
-const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2'];
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-21-merlot-dioliver';
+const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3'];
 
 const browser = await chromium.launch();
 const context = await browser.newContext();
@@ -29,5 +29,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/Tintos Chilenos - Raul.pdf`, output);
-console.log('\n✅ PDF gerado: Tintos Chilenos - Raul.pdf');
+writeFileSync(`${dir}/Seleção Merlot - Dioliver.pdf`, output);
+console.log('\n✅ PDF gerado: Seleção Merlot - Dioliver.pdf');
