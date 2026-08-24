@@ -2,8 +2,8 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-24-aveludados-camila';
-const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3'];
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-24-encorpados-nicole';
+const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3', 'catalog-p4', 'catalog-p5', 'catalog-p6', 'catalog-p7', 'catalog-p8'];
 
 const browser = await chromium.launch();
 const context = await browser.newContext();
@@ -29,5 +29,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/Tintos Aveludados - Camila.pdf`, output);
-console.log('\n✅ PDF gerado: Tintos Aveludados - Camila.pdf');
+writeFileSync(`${dir}/Tintos Encorpados - Nicole.pdf`, output);
+console.log('\n✅ PDF gerado: Tintos Encorpados - Nicole.pdf');
