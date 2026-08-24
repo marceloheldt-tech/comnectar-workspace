@@ -53,9 +53,9 @@ Combina bem com carnes vermelhas grelhadas ou assadas, ossobuco com polenta e ma
 
 ## Parágrafo de fechamento
 
-Voltaram só 5 garrafas dessa reposição. R$ 319,00.
+Voltaram só 5 garrafas dessa reposição.
 
-*(Marcelo: sem desconto Pix cadastrado no Shopify pra esse produto agora — me confirma se quer aplicar algum antes de eu travar o valor final)*
+De **R$ 319,00** no cartão, por **R$ 287,10 no Pix** (10% off, condição exclusiva desta campanha).
 
 ## Linha de CTA
 Conheça o Illegale Monferrato Nebbiolo DOC Superiore 2022, Tenuta Santa Caterina, na comnéctar.
@@ -72,7 +72,7 @@ Conheça o Illegale Monferrato Nebbiolo DOC Superiore 2022, Tenuta Santa Caterin
 - [Centro Italia — Illegale Monferrato Nebbiolo DOC](https://centro-italia.de/online-shop/wein/rotwein/illegale-monferrato-nebbiolo/)
 
 > Notas de envio:
-> - Preço R$ 319,00 conforme cadastro no Shopify (compareAtPrice = price, ou seja, não há desconto configurado pra esse produto no momento)
+> - Preço cartão R$ 319,00 conforme cadastro no Shopify (compareAtPrice = price, sem desconto configurado no site). Desconto de 10% no Pix (R$ 287,10) é condição exclusiva desta campanha, não está cadastrado assim no site
 > - Estoque no Shopify: 5 garrafas
 > - Fatos sobre a regra da denominação Monferrato Rosso, o vinhedo Nebbiolo dei Rombi, o processo de produção e as premiações vêm de fontes públicas (site oficial da Tenuta Santa Caterina e lojas parceiras na Alemanha) — não confirmados diretamente com o produtor
 > - "Ficou 1 ano fora de linha" é informação passada pelo Marcelo, não verificada no histórico do Shopify

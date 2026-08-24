@@ -10,13 +10,13 @@ O nome não é força de expressão. A denominação Monferrato Rosso não deixa
 
 Na taça: cor intensa, frutas vermelhas, notas florais e especiarias. Combina bem com carnes vermelhas grelhadas, ossobuco com polenta ou massas com cogumelos.
 
-*R$ 319,00.* Voltaram só 5 garrafas dessa vez.
+*De R$ 319,00 no cartão, por R$ 287,10 no Pix* (10% off). Voltaram só 5 garrafas dessa vez.
 
 Me chama aqui que eu separo uma pra você.
 
 ---
 
 > Notas de envio:
-> - Preço R$ 319,00 conforme Shopify, sem desconto Pix cadastrado pra esse produto. Confirma se quer aplicar algum antes de disparar
+> - Preço cartão R$ 319,00 conforme Shopify. Desconto de 10% no Pix (R$ 287,10) é condição exclusiva desta campanha, não cadastrada assim no site
 > - Fatos sobre a regra da denominação, o vinhedo e as premiações vêm de fontes públicas (site oficial da Tenuta Santa Caterina, lojas parceiras) — não confirmados direto com o produtor
 > - O asterisco (*) formata como negrito no WhatsApp
