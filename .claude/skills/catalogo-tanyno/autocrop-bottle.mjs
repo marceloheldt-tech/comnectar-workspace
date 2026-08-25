@@ -2,7 +2,7 @@ import { loadImage, createCanvas } from 'canvas';
 import { writeFileSync } from 'fs';
 
 const [,, inPath, outPath, profileArg] = process.argv;
-const profile = profileArg || 'prose'; // 'table' (La Horra/Mauro/Roda) ou 'prose' (demais)
+const profile = profileArg || 'prose'; // 'table' | 'prose' | 'clean' (sem selo, garrafa 100% isolada)
 
 const img = await loadImage(inPath);
 const canvas = createCanvas(img.width, img.height);
@@ -33,7 +33,9 @@ const lowerZoneY = Math.floor(height * 0.5);
 // texto corrido de bio vaza mais perto no topo, mas selo de avaliação fica bem mais à
 // direita e mais embaixo — vale abrir a busca só na metade inferior.
 const searchMaxXUpper = profile === 'table' ? Math.floor(width * 0.77) : Math.floor(width * 0.62);
-const searchMaxXLower = profile === 'table' ? Math.floor(width * 0.77) : Math.floor(width * 0.95);
+const searchMaxXLower = profile === 'table' ? Math.floor(width * 0.77)
+  : profile === 'clean' ? Math.floor(width * 0.62)
+  : Math.floor(width * 0.95);
 
 let minX = width, maxX = 0, minY = height, maxY = 0;
 for (let y = searchMinY; y < height; y++) {
