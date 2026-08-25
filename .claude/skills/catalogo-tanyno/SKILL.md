@@ -112,6 +112,25 @@ mkdir -p "conteudo/catalogos/[YYYY-MM-DD]-tanyno-[titulo]/imagens"
 4. **Rodar em lote** (`batch-render.mjs`): mesma lógica do passo 3, mas itera uma lista de
    `{ pdf, page, slug }` e salva tudo em `imagens/[slug].png`.
 
+5. **Isolar só a garrafa** (`autocrop-bottle.mjs <in> <out> [perfil]`): o render do passo 3/4
+   ainda traz o resto da página (cabeçalho do produtor, tabela de dados, texto de bio, selos).
+   Esse script detecta o bounding box do conteúdo não-fundo (branco puro OU cinza neutro chapado
+   de tabela) numa faixa X/Y limitada e recorta só a garrafa, com fundo branco. Três perfis:
+   - `table` (La Horra/Mauro-alguns/Roda): tabela de dados fica colada perto da garrafa —
+     busca estreita o tempo todo.
+   - `prose` (Miguel Merino/Verónica Ortega/José Gil/Clos de l'Obac/Sastre, **default**): texto
+     de bio vaza mais perto no topo, mas o selo de avaliação fica bem à direita e mais embaixo —
+     abre a busca só na metade inferior da imagem pra pegar o selo, aceitando uma tira fina de
+     texto vazando no topo.
+   - `clean`: busca estreita o tempo todo, igual `table` — usar quando o usuário preferir
+     garrafa 100% isolada mesmo perdendo o selo de avaliação (pedir confirmação antes, é uma
+     escolha do cliente entre "mostrar nota da crítica" x "foto limpa igual Shopify").
+
+   **Bug conhecido do node-canvas no Windows:** `loadImage(caminho)` falha com ENOENT em
+   caminhos com acento (ex: `.../comnéctar/...`) mesmo o arquivo existindo — a camada nativa
+   não decodifica bem. Sempre ler o arquivo primeiro com `readFileSync` e passar o Buffer pra
+   `loadImage()`, nunca o path direto.
+
 **Se algum vinho não aparecer no PDF do produtor** (o PDF pode estar desatualizado e não ter a
 safra que o site vende agora): avisar o usuário e perguntar se quer (a) excluir o vinho, ou
 (b) usar a foto de outra safra do mesmo rótulo como substituta (o rótulo costuma ser visualmente

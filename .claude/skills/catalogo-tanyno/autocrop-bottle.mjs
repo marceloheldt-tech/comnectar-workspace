@@ -1,10 +1,13 @@
 import { loadImage, createCanvas } from 'canvas';
-import { writeFileSync } from 'fs';
+import { writeFileSync, readFileSync } from 'fs';
 
 const [,, inPath, outPath, profileArg] = process.argv;
 const profile = profileArg || 'prose'; // 'table' | 'prose' | 'clean' (sem selo, garrafa 100% isolada)
 
-const img = await loadImage(inPath);
+// node-canvas tem um bug conhecido no Windows: loadImage(path) falha com ENOENT quando o
+// caminho tem acentos (ex: "comnéctar"), mesmo o arquivo existindo — a camada nativa não
+// decodifica o path corretamente. Ler o arquivo como Buffer via fs primeiro contorna isso.
+const img = await loadImage(readFileSync(inPath));
 const canvas = createCanvas(img.width, img.height);
 const ctx = canvas.getContext('2d');
 ctx.drawImage(img, 0, 0);
