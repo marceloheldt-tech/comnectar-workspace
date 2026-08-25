@@ -37,7 +37,7 @@ let browserInstance = null;
 
 try {
   browser = await chromium.launchPersistentContext(
-    'C:/Users/marce/AppData/Local/Google/Chrome/User Data',
+    'C:/Users/marce/AppData/Local/ChromeAutomationProfile',
     { channel: 'chrome', headless: false, args: ['--profile-directory=Default'] }
   );
   console.log('🌐 Chrome com perfil do usuário iniciado (logado no Google)');
