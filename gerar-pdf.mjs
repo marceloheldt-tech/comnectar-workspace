@@ -2,8 +2,8 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-25-pinot-cabernet-fernando';
-const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2'];
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-25-espanhois-andre';
+const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3', 'catalog-p4', 'catalog-p5', 'catalog-p6', 'catalog-p7', 'catalog-p8'];
 
 const browser = await chromium.launch();
 const context = await browser.newContext();
@@ -29,5 +29,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/Selecao Especial - Fernando.pdf`, output);
-console.log('\n✅ PDF gerado: Selecao Especial - Fernando.pdf');
+writeFileSync(`${dir}/Selecao Espanhola - Andre.pdf`, output);
+console.log('\n✅ PDF gerado: Selecao Espanhola - Andre.pdf');

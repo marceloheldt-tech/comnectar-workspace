@@ -82,24 +82,49 @@ Antes de qualquer HTML, mostrar tabela resumida e aguardar confirmação:
 mkdir -p "conteudo/catalogos/[YYYY-MM-DD]-tanyno-[titulo]/imagens"
 ```
 
-**Passar os vinhos selecionados para o script de imagens:**
-```bash
-cd "C:/Users/marce/Desktop/claude comnéctar"
-node ".claude/skills/catalogo-tanyno/fetch-tanyno-images.mjs" \
-  '[JSON_ARRAY_DOS_VINHOS_SELECIONADOS]' \
-  'conteudo/catalogos/[YYYY-MM-DD]-tanyno-[titulo]/imagens'
-```
+> ⚠️ **`fetch-tanyno-images.mjs` está QUEBRADO desde ago/2026** — o Google mudou o formato de URL
+> do visualizador do Drive (não é mais `viewer/img?id=...&page=N`, agora é `drive-viewer/AKG...`
+> sem parâmetro de página acessível). Não perder tempo tentando consertar esse script — usar o
+> método abaixo (baixar o PDF e renderizar localmente), que é mais rápido e mais confiável.
 
-O JSON passado é o array de objetos vinho exatamente como saiu do filtro.
+**Método atual — baixar o PDF e localizar a página pelo `wine_code`:**
 
-O script:
-- Abre os PDFs no Google Drive usando Chrome com sessão do usuário
-- Identifica a página correta de cada vinho no PDF do produtor
-- Recorta a região da garrafa (metade direita da página, área central)
-- Salva PNG por vinho em `imagens/[slug].png`
-- Salva `imagens/_wines.json` com os objetos atualizados (campo `_imageSlug`)
+1. **Baixar os PDFs dos produtores necessários** (`download-and-map.mjs`): baixa cada PDF do Drive
+   via download direto (`https://drive.google.com/uc?export=download&id=FILE_ID`, dispara
+   `page.waitForEvent('download')`) e extrai o texto de cada página com `pdfjs-dist`
+   (`legacy/build/pdf.mjs`), salvando um mapa `_text_mapping.json` com o texto de cada página.
+   Precisa do Chrome logado no Google — usar o perfil copiado (ver nota de autenticação abaixo).
 
-**Após o script,** ler `imagens/_wines.json` para ter os slugs de imagem de cada vinho.
+2. **Localizar a página certa de cada vinho:** cada página de ficha técnica contém o `wine_code`
+   exato (ex: `VTESP33022-003`) em algum ponto do texto extraído — buscar esse código nas páginas
+   de `_text_mapping.json` é o jeito confiável de achar a página certa (nunca supor por posição/
+   ordem do site, a ordem do PDF pode ser diferente). Página 2 (0-based, no índice do sumário) ou
+   busca direta pelo código — ambos funcionam, mas o código é mais confiável quando o PDF não tem
+   página de sumário com texto extraível.
+
+3. **Renderizar a página como imagem** (`render-page.mjs <pdfPath> <pageNum1based> <outPath>`):
+   abre o PDF local no Chrome (`file:///path.pdf#page=N&zoom=100`), clica na miniatura da página
+   certa pra garantir alinhamento no topo, e tira um screenshot com `clip: {x:380, y:100,
+   width:460, height:980}` — esse recorte é generoso o bastante pra sempre pegar a garrafa
+   inteira + selos de avaliação em qualquer um dos templates de produtor observados até agora.
+   Ajustar o clip só se a garrafa aparecer cortada num produtor novo.
+
+4. **Rodar em lote** (`batch-render.mjs`): mesma lógica do passo 3, mas itera uma lista de
+   `{ pdf, page, slug }` e salva tudo em `imagens/[slug].png`.
+
+**Se algum vinho não aparecer no PDF do produtor** (o PDF pode estar desatualizado e não ter a
+safra que o site vende agora): avisar o usuário e perguntar se quer (a) excluir o vinho, ou
+(b) usar a foto de outra safra do mesmo rótulo como substituta (o rótulo costuma ser visualmente
+igual entre safras próximas).
+
+**Nota de autenticação:** Chrome recentes bloqueiam debug remoto (`launchPersistentContext`) na
+pasta de perfil padrão (`.../Chrome/User Data`) com o erro "DevTools remote debugging requires a
+non-default data directory". Solução: copiar o perfil `Default` pra uma pasta separada (ex:
+`C:/Users/marce/AppData/Local/ChromeAutomationProfile`) com `robocopy` (excluindo `Cache`,
+`Code Cache`, `GPUCache`, `Service Worker`, `*Cache*` pra não copiar gigabytes à toa) **com o
+Chrome do usuário totalmente fechado** (senão os arquivos de sessão como `Cookies` e `Login Data`
+ficam travados e a cópia falha silenciosamente nesses arquivos específicos). Apontar
+`launchPersistentContext` pra essa cópia em vez da pasta original.
 
 ### 5. Montar os HTMLs
 
