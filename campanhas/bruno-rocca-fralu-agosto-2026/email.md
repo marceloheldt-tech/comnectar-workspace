@@ -14,7 +14,7 @@ Bruno Rocca engarrafa Nebbiolo desde 1978. Essa é a primeira leva do rótulo qu
 ---
 
 ## TÍTULO INTERNO (H1)
-A novidade que carrega o nome de uma família inteira de Barbaresco
+O sobrenome que abre qualquer carta de vinhos séria chegou na comnéctar
 
 Tem produtor e tem produtor. Bruno Rocca é dos que abrem porta em qualquer carta de vinhos séria: família documentada em Barbaresco desde 1834, e uma vinícola que virou referência mundial em Nebbiolo depois que Bruno engarrafou a primeira safra com o próprio sobrenome, em 1978.
 
