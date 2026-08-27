@@ -5,36 +5,49 @@ Ação única do ano: 20% OFF em todo o site, frete grátis acima de R$1.000, pa
 ## Regra geral
 Em qualquer etapa, quem compra sai do fluxo de vendas (pode entrar num fluxo de agradecimento à parte, sem mais mensagens de urgência).
 
+## Cronograma
+
+| Quando | Mensagem | Público |
+|---|---|---|
+| Sexta 28/08, 10h30 | Mensagem 1 — Anúncio | Base completa |
+| Sábado 29/08, 11h00 | Mensagem 1B — Reforço | Não abriu a Mensagem 1 |
+| Sábado 29/08, 11h00 | Mensagem 2 — "Só até amanhã" | Abriu a Mensagem 1, não comprou |
+| Domingo 30/08, 11h00 | Mensagem 3 — Último dia | Ainda não comprou (dos dois braços do sábado) |
+| Domingo 30/08, 20h30 | Mensagem 4 — Últimas horas | Ainda não comprou depois da Mensagem 3 |
+
+Copy completa: `texto-whatsapp-msg1.md` (Mensagem 1) e `texto-whatsapp-msg1b-a-4.md` (Mensagens 1B, 2, 3 e 4).
+
 ## Etapas
 
-**1. Sexta 28/08, manhã — Mensagem 1 (Anúncio)**
-Disparo pra base completa. Anuncia a ação, o prazo e as condições (20% OFF, frete grátis acima de R$1.000, 5x sem juros). Copy pronta em `texto-whatsapp-msg1.md`.
+**1. Sexta 28/08, 10h30 — Mensagem 1 (Anúncio)**
+Disparo pra base completa. Anuncia a ação, o prazo e as condições (20% OFF, frete grátis acima de R$1.000, 5x sem juros).
 
-Checar ~24h depois (sábado de manhã) quem abriu:
+Checar ~24h depois (sábado de manhã, antes das 11h) quem abriu:
 
-- **Abriu e não comprou** → segue pro passo 2 (Mensagem 2)
-- **Não abriu** → passo 2B (Mensagem 1B, reforço)
+- **Abriu e não comprou** → passo 2 (Mensagem 2)
+- **Não abriu** → passo 2B (Mensagem 1B)
 - **Comprou** → sai do fluxo
 
-**2. Sábado 29/08, manhã — Mensagem 2 (Lembrete "só até amanhã")**
+**2. Sábado 29/08, 11h00 — Mensagem 2 (Lembrete "só até amanhã")**
 Pra quem abriu a Mensagem 1 mas não comprou. Reforça a urgência: só até domingo, amanhã é o último dia.
 
-**2B. Sábado 29/08, manhã — Mensagem 1B (Reforço pra quem não abriu)**
-Pra quem não abriu a Mensagem 1. Ângulo diferente do anúncio original (não é repetir a mesma mensagem) — por exemplo, foco direto na condição de pagamento (frete grátis + 5x) em vez de reapresentar a ação. Objetivo é recuperar atenção de quem não viu a primeira.
+**2B. Sábado 29/08, 11h00 — Mensagem 1B (Reforço pra quem não abriu)**
+Pra quem não abriu a Mensagem 1. Ângulo diferente do anúncio original (entra pelas condições de pagamento, não repete a mesma abertura). Objetivo é recuperar atenção de quem não viu a primeira.
 
 Checar de novo quem comprou até aqui — quem não comprou (dos dois braços) segue junto pro domingo.
 
-**3. Domingo 30/08, manhã — Mensagem 3 (Último dia)**
+**3. Domingo 30/08, 11h00 — Mensagem 3 (Último dia)**
 Pra todo mundo que ainda não comprou. Comunica que hoje é o último dia da ação.
 
-**4. Domingo 30/08, noite (~20h–21h) — Mensagem 4 (Últimas horas)**
-Urgência máxima: encerra à meia-noite. Pra quem ainda não comprou depois da Mensagem 3.
+**4. Domingo 30/08, 20h30 — Mensagem 4 (Últimas horas)**
+Urgência máxima: encerra à meia-noite. Janela de ~3h30 até o fechamento, pra quem ainda não comprou depois da Mensagem 3.
+
+## Por que esses horários
+Sexta e fim de semana de manhã (10h30–11h): fora do horário de trabalho, público decide com calma, sem concorrer com notificação de segunda-feira. Domingo à noite (20h30): urgência de última hora, mas com folga suficiente (3h30) pra decidir e finalizar a compra antes da meia-noite, sem ser tão em cima da hora que a pessoa perde o prazo.
 
 ## Mapa visual
-Ver artifact publicado (mapa-fluxo-fechamento) para a versão em fluxograma.
+Ver artifact publicado (mapa-fluxo-fechamento) para a versão em fluxograma, já com os horários.
 
 ## Em aberto
-- Confirmar horário exato de cada disparo
 - Confirmar `[link]` de destino (home ou coleção específica da promoção)
-- Escrever copy das Mensagens 1B, 2, 3 e 4 (esse arquivo cobre só a lógica do fluxo — a Mensagem 1 já está pronta em `texto-whatsapp-msg1.md`)
 - Confirmar ferramenta de disparo/automação usada (pra saber se dá pra automatizar o "abriu/não abriu" de fato, ou se o acompanhamento vai ser manual)

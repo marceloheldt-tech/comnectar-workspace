@@ -1,6 +1,6 @@
 # Texto WhatsApp — Ação de Fechamento 20% OFF (Mensagem 1 · Anúncio)
 
-**Disparo:** sexta-feira, 28/08, manhã
+**Disparo:** sexta-feira, 28/08, às 10h30
 **Público:** base completa de clientes
 
 ---
