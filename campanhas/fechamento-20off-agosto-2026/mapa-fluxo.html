@@ -1,0 +1,267 @@
+<title>Fechamento 20% OFF</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f8f4f6;
+    --surface-border: #e8dde3;
+    --text: #14100f;
+    --text-muted: #6b5d63;
+    --accent: #991356;
+    --accent-soft: #f0dbe6;
+    --rail-border: #b9a3ac;
+    --font-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+    --font-body: 'Rubik', 'Segoe UI', system-ui, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e0b0c;
+      --surface: #1a1416;
+      --surface-border: #2e2226;
+      --text: #f3ecee;
+      --text-muted: #b3a1a8;
+      --accent: #e8558f;
+      --accent-soft: #3a1826;
+      --rail-border: #4a3a40;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0e0b0c;
+    --surface: #1a1416;
+    --surface-border: #2e2226;
+    --text: #f3ecee;
+    --text-muted: #b3a1a8;
+    --accent: #e8558f;
+    --accent-soft: #3a1826;
+    --rail-border: #4a3a40;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    padding: 48px 24px 72px;
+  }
+
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(28px, 4.5vw, 42px);
+    line-height: 1.08;
+    margin: 0 0 14px;
+    text-wrap: balance;
+    color: var(--text);
+  }
+
+  .subhead {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    max-width: 62ch;
+    margin: 0 0 28px;
+  }
+
+  .conditions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 44px;
+  }
+
+  .chip {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    color: var(--text);
+  }
+
+  .chip strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  figure {
+    margin: 0 0 20px;
+    padding: 28px 20px;
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 14px;
+    overflow-x: auto;
+  }
+
+  svg { display: block; width: 100%; height: auto; min-width: 640px; }
+
+  figcaption {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 16px;
+    line-height: 1.5;
+    max-width: 68ch;
+  }
+
+  .node-label { font-family: var(--font-body); font-weight: 600; font-size: 13.5px; }
+  .node-sub { font-family: var(--font-body); font-weight: 400; font-size: 11.5px; }
+  .day-label { font-family: var(--font-body); font-weight: 600; font-size: 11px; letter-spacing: 0.08em; }
+  .arrow-label { font-family: var(--font-body); font-weight: 500; font-size: 11px; }
+  .rail-title { font-family: var(--font-body); font-weight: 600; font-size: 12.5px; letter-spacing: 0.04em; }
+  .rail-sub { font-family: var(--font-body); font-weight: 400; font-size: 11px; }
+
+  .footnote {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 68ch;
+  }
+
+  .footnote a { color: var(--accent); }
+
+  section.open-items {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid var(--surface-border);
+  }
+
+  section.open-items h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0 0 12px;
+  }
+
+  section.open-items ul {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.9;
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+
+<main>
+  <p class="eyebrow">Automação WhatsApp · comnéctar</p>
+  <h1>Ação de Fechamento — 20% OFF</h1>
+  <p class="subhead">Ação única do ano, aberta pra base inteira de clientes. Roda de sexta a domingo, com uma mensagem de anúncio e três toques de acompanhamento conforme o cliente abre (ou não) e compra (ou não).</p>
+
+  <div class="conditions">
+    <span class="chip"><strong>20% OFF</strong> em todo o site</span>
+    <span class="chip"><strong>28/08 a 30/08</strong> · sexta a domingo</span>
+    <span class="chip">Frete grátis <strong>acima de R$1.000</strong></span>
+    <span class="chip">Parcelamento em <strong>5x sem juros</strong></span>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 920 720" role="img" aria-label="Fluxograma da automação: mensagem de anúncio na sexta, ramificação sábado entre quem abriu e quem não abriu, convergindo em mensagens de último dia e últimas horas no domingo; em qualquer etapa quem compra sai do fluxo">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"></path>
+        </marker>
+      </defs>
+
+      <!-- day labels -->
+      <text x="24" y="70" class="day-label" fill="currentColor" opacity="0.55">SEXTA 28/08</text>
+      <text x="24" y="300" class="day-label" fill="currentColor" opacity="0.55">SÁBADO 29/08</text>
+      <text x="24" y="430" class="day-label" fill="currentColor" opacity="0.55">DOMINGO · MANHÃ</text>
+      <text x="24" y="560" class="day-label" fill="currentColor" opacity="0.55">DOMINGO · NOITE</text>
+
+      <!-- exit rail -->
+      <rect x="700" y="130" width="200" height="520" rx="10" fill="none" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="4 4"></rect>
+      <text x="800" y="160" text-anchor="middle" class="rail-title" fill="currentColor">COMPROU</text>
+      <text x="800" y="178" text-anchor="middle" class="rail-sub" fill="currentColor" opacity="0.7">sai do fluxo</text>
+      <text x="800" y="194" text-anchor="middle" class="rail-sub" fill="currentColor" opacity="0.7">(qualquer mensagem)</text>
+
+      <!-- Node 1 -->
+      <rect x="190" y="40" width="280" height="70" rx="10" fill="var(--accent)" stroke="none"></rect>
+      <text x="330" y="68" text-anchor="middle" class="node-label" fill="#ffffff">MENSAGEM 1 · Anúncio</text>
+      <text x="330" y="86" text-anchor="middle" class="node-sub" fill="#ffffff" opacity="0.9">20% OFF em todo o site · toda a base</text>
+
+      <line x1="330" y1="110" x2="330" y2="128" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"></line>
+
+      <!-- Decision diamond -->
+      <polygon points="330,128 442,185 330,242 218,185" fill="var(--surface)" stroke="currentColor" stroke-width="1.5"></polygon>
+      <text x="330" y="190" text-anchor="middle" class="node-label" fill="currentColor">Abriu?</text>
+
+      <!-- branch left -->
+      <line x1="255" y1="210" x2="165" y2="268" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"></line>
+      <text x="150" y="245" text-anchor="middle" class="arrow-label" fill="currentColor" opacity="0.75">não abriu</text>
+
+      <!-- branch right -->
+      <line x1="405" y1="210" x2="495" y2="268" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"></line>
+      <text x="512" y="245" text-anchor="middle" class="arrow-label" fill="currentColor" opacity="0.75">abriu, não comprou</text>
+
+      <!-- Node 2B -->
+      <rect x="20" y="270" width="260" height="70" rx="10" fill="var(--surface)" stroke="var(--surface-border)" stroke-width="1.5"></rect>
+      <text x="150" y="298" text-anchor="middle" class="node-label" fill="currentColor">MENSAGEM 1B · Reforço</text>
+      <text x="150" y="316" text-anchor="middle" class="node-sub" fill="currentColor" opacity="0.7">ângulo diferente, foco em pagamento</text>
+
+      <!-- Node 2 -->
+      <rect x="380" y="270" width="260" height="70" rx="10" fill="var(--surface)" stroke="var(--surface-border)" stroke-width="1.5"></rect>
+      <text x="510" y="298" text-anchor="middle" class="node-label" fill="currentColor">MENSAGEM 2 · Lembrete</text>
+      <text x="510" y="316" text-anchor="middle" class="node-sub" fill="currentColor" opacity="0.7">"só até amanhã"</text>
+
+      <!-- converge to node 3 -->
+      <line x1="150" y1="340" x2="330" y2="398" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"></line>
+      <line x1="510" y1="340" x2="330" y2="398" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"></line>
+
+      <!-- Node 3 -->
+      <rect x="190" y="400" width="280" height="70" rx="10" fill="var(--surface)" stroke="var(--surface-border)" stroke-width="1.5"></rect>
+      <text x="330" y="428" text-anchor="middle" class="node-label" fill="currentColor">MENSAGEM 3 · Último dia</text>
+      <text x="330" y="446" text-anchor="middle" class="node-sub" fill="currentColor" opacity="0.7">domingo de manhã, pra quem falta</text>
+
+      <line x1="330" y1="470" x2="330" y2="528" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"></line>
+
+      <!-- Node 4 -->
+      <rect x="190" y="530" width="280" height="70" rx="10" fill="var(--accent)" stroke="none"></rect>
+      <text x="330" y="558" text-anchor="middle" class="node-label" fill="#ffffff">MENSAGEM 4 · Últimas horas</text>
+      <text x="330" y="576" text-anchor="middle" class="node-sub" fill="#ffffff" opacity="0.9">domingo à noite, urgência máxima</text>
+
+      <line x1="330" y1="600" x2="330" y2="648" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"></line>
+
+      <!-- end pill -->
+      <rect x="230" y="650" width="200" height="46" rx="23" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+      <text x="330" y="678" text-anchor="middle" class="node-label" fill="currentColor">Encerra 23:59</text>
+
+      <!-- dashed exits to rail -->
+      <line x1="470" y1="75" x2="700" y2="160" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.55" marker-end="url(#arrow)"></line>
+      <line x1="640" y1="305" x2="700" y2="290" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.55" marker-end="url(#arrow)"></line>
+      <line x1="470" y1="435" x2="700" y2="420" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.55" marker-end="url(#arrow)"></line>
+      <line x1="470" y1="565" x2="700" y2="550" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.55" marker-end="url(#arrow)"></line>
+    </svg>
+    <figcaption>Fluxo dos 4 disparos entre sexta e domingo. Quem abre a Mensagem 1 mas não compra segue pro Lembrete de sábado; quem não abre recebe um reforço com ângulo diferente. Os dois braços convergem no domingo. A qualquer momento, quem compra sai do fluxo (linhas tracejadas) — vale também pra quem recebe a Mensagem 1B, mesmo sem seta própria no desenho.</figcaption>
+  </figure>
+
+  <section class="open-items">
+    <h2>Em aberto</h2>
+    <ul>
+      <li>Horário exato de cada disparo</li>
+      <li>Link de destino da Mensagem 1 (home ou coleção da promoção)</li>
+      <li>Copy das Mensagens 1B, 2, 3 e 4 — a Mensagem 1 já está pronta</li>
+      <li>Ferramenta de disparo: confirmar se dá pra automatizar a checagem de "abriu/não abriu" ou se o acompanhamento vai ser manual</li>
+    </ul>
+  </section>
+</main>
