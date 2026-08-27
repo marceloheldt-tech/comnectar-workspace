@@ -45,9 +45,11 @@ Urgência máxima: encerra à meia-noite. Janela de ~3h30 até o fechamento, pra
 ## Por que esses horários
 Sexta e fim de semana de manhã (10h30–11h): fora do horário de trabalho, público decide com calma, sem concorrer com notificação de segunda-feira. Domingo à noite (20h30): urgência de última hora, mas com folga suficiente (3h30) pra decidir e finalizar a compra antes da meia-noite, sem ser tão em cima da hora que a pessoa perde o prazo.
 
+## Link de destino
+https://www.comnectar.com.br/collections/vinhos — usado em todas as 5 mensagens.
+
+## Rastreamento
+A ferramenta de disparo automatiza tanto "abriu a mensagem" quanto "clicou no link". O fluxo acima usa abertura como critério de ramificação (passo 1 → 2/2B), mas como o clique também é rastreado, dá pra refinar depois: por exemplo, tratar "abriu mas não clicou" e "clicou mas não comprou" como dois públicos diferentes, com mensagens mais direcionadas. Fica como evolução possível, não como bloqueio pro disparo de sexta.
+
 ## Mapa visual
 Ver artifact publicado (mapa-fluxo-fechamento) para a versão em fluxograma, já com os horários.
-
-## Em aberto
-- Confirmar `[link]` de destino (home ou coleção específica da promoção)
-- Confirmar ferramenta de disparo/automação usada (pra saber se dá pra automatizar o "abriu/não abriu" de fato, ou se o acompanhamento vai ser manual)
