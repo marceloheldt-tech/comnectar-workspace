@@ -1,6 +1,6 @@
 # Fluxo de Automação — Ação de Fechamento 20% OFF (28/08 a 30/08)
 
-Ação única do ano: 20% OFF em todo o site, frete grátis acima de R$1.000, parcelamento em 5x sem juros.
+Ação única do ano: 15% OFF em todo o site no cartão, 25% OFF no Pix, frete grátis acima de R$1.000, parcelamento em 5x sem juros no cartão.
 
 ## Regra geral
 Em qualquer etapa, quem compra sai do fluxo de vendas (pode entrar num fluxo de agradecimento à parte, sem mais mensagens de urgência).
