@@ -2,8 +2,8 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-25-jose-eduardo-franca-italia';
-const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3', 'catalog-p4', 'catalog-p5'];
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-28-davi-brancos-espumantes';
+const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3', 'catalog-p4'];
 
 const browser = await chromium.launch();
 const context = await browser.newContext();
@@ -29,5 +29,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/Novidades Franca e Italia - Jose Eduardo.pdf`, output);
-console.log('\n✅ PDF gerado: Novidades Franca e Italia - Jose Eduardo.pdf');
+writeFileSync(`${dir}/Brancos e Espumantes - Davi.pdf`, output);
+console.log('\n✅ PDF gerado: Brancos e Espumantes - Davi.pdf');
