@@ -1,9 +1,10 @@
 import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
-import { writeFileSync } from 'fs';
+import { writeFileSync, readFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-08-28-davi-brancos-espumantes';
-const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3', 'catalog-p4'];
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-09-02-catalogo-completo';
+const pageNames = JSON.parse(readFileSync('C:/Users/marce/AppData/Local/Temp/claude/c--Users-marce-Desktop-claude-comn-ctar/b42994ea-3282-409b-ad7d-6f9092181d27/scratchpad/full_catalog_pages.json', 'utf8'));
+const pages = ['catalog-capa', ...pageNames];
 
 const browser = await chromium.launch();
 const context = await browser.newContext();
@@ -12,7 +13,7 @@ const pdfBuffers = [];
 for (const name of pages) {
   const page = await context.newPage();
   await page.goto(`file:///${dir}/${name}.html`, { waitUntil: 'load', timeout: 60000 });
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(300);
   const pdf = await page.pdf({ width: '1080px', height: '1350px', printBackground: true });
   pdfBuffers.push(pdf);
   await page.close();
@@ -29,5 +30,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/Brancos e Espumantes - Davi.pdf`, output);
-console.log('\n✅ PDF gerado: Brancos e Espumantes - Davi.pdf');
+writeFileSync(`${dir}/Catalogo Completo - Setembro 2026.pdf`, output);
+console.log('\n✅ PDF gerado com', pages.length, 'páginas');
