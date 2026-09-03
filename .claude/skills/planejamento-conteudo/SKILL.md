@@ -17,8 +17,26 @@ description: >
 - **Tom de voz:** `_contexto/preferencias.md`
 - **Contexto do negócio:** `_contexto/empresa.md`
 - **Estratégia atual:** `_contexto/estrategia.md`
+- **Padrão visual dos carrosséis:** `marca/design-guide.md`, seção "Padrão de layout com imagem (carrosseis) — v2" — ler sempre antes de montar HTML de slide
+- **Post-modelo de referência:** `conteudo/carrosseis/2026-09-07-curadoria-prioridade/` — copiar a estrutura de CSS desses HTMLs (não reinventar) pra qualquer post novo
 - **Gerador de Excel:** `.claude/skills/planejamento-conteudo/gerar_excel.py` — módulo reutilizável, importar `build_workbook` e `GUIA_IMAGENS_PADRAO`
 - **Dependência Python:** `openpyxl` — pode sumir entre sessões (ver memória `pdf-dependencias-nao-persistem`), testar com `py -3 -c "import openpyxl"` antes de rodar
+- **Playwright CLI:** `npx playwright screenshot` — pra renderizar os HTMLs em PNG (mesmo padrão da skill `/carrossel`)
+
+---
+
+## Padrão visual fixo dos carrosséis (confirmado com o Marcelo em 02/set/2026)
+
+Todo carrossel de feed (Instagram) segue esse padrão sem exceção — não é escolha por post, é identidade fixa:
+
+- **Fundo:** foto real (nunca gerada por IA) full-bleed, com gradiente escuro por baixo pro texto. Nunca fundo branco ou vinho chapado nos slides de conteúdo.
+- **Logo:** só a gota (`dados/gota-transparente.png`), 168px, canto superior esquerdo, em todo slide — nunca o logotipo escrito.
+- **Fonte:** uma só pro texto principal — `'Geotipe','Palatino Linotype',Georgia,serif` — em todos os slides, sem misturar com sans-serif no corpo. Tamanhos grandes (headline ~90px, corpo ~48-56px) pra leitura no celular.
+- **Sem tag de pilar visível** ("Educação", "Bastidores" etc.) em nenhum slide.
+- **Slide de CTA final:** fixo, sem foto, fundo vinho sólido (`#7A0F42`) com textura sutil, gota branca — reaproveitado igual em todo carrossel, é o único slide que foge do padrão "foto de fundo" de propósito.
+- **Fotos vêm sempre do Marcelo** (ou do banco `dados/imagens-vinhos/` quando fizer sentido produto). Pedir sempre: vertical, celular resolve, luz lateral quente, deixar área escura/vazia pro texto.
+
+Antes de montar o HTML de um post novo, copiar a estrutura de `conteudo/carrosseis/2026-09-07-curadoria-prioridade/instagram/` (slides 1 a 5) como base e só trocar texto + imagem de fundo — não recriar CSS do zero a cada post.
 
 ---
 

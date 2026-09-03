@@ -47,15 +47,21 @@ Clean e minimalista com posicionamento premium. Muito espaço em branco, fotogra
 - Distorcer ou recolorir o logo
 - **Cobrir a garrafa (ou qualquer produto) com overlay ou máscara escura** — o produto deve aparecer 100% visível. Se houver painel escuro pra texto, o produto fica no lado direito limpo, fora de qualquer sobreposição
 
-## Padrão de layout com imagem (carrosseis)
-Fundo padrão dos slides é SEMPRE branco (#FFFFFF). Imagens entram como elemento visual com máscara CSS gradiente, nunca cobrindo o fundo inteiro com overlay escuro.
+## Padrão de layout com imagem (carrosseis) — v2, set/2026
 
-**Regras obrigatórias:**
-1. Usar sempre `dados/comnectar-transparente.png` (logo fundo transparente) em slides com fundo claro
-2. Imagens recebem máscara CSS (`mask-image: linear-gradient(...)`) que funde a foto no fundo branco, garantindo que os produtos (garrafas) fiquem visíveis
-3. Fotos de produto: máscara horizontal (fade da esquerda pro direito), produto aparece no lado direito
-4. Fotos de paisagem/vinhedo: máscara vertical (fade de cima pra baixo), área de texto fica no branco inferior
-5. Nunca usar overlay escuro full-slide — o produto deve ser sempre 100% visível no lado sem máscara
+Padrão oficial a partir do post-modelo "Curadoria Prioridade" (`conteudo/carrosseis/2026-09-07-curadoria-prioridade/`). Substitui a v1 (fundo sempre branco). Vale pra todo carrossel novo, gerado pela skill `/carrossel` ou pela `/planejamento-conteudo`.
+
+**Fundo:** foto real (nunca gerada por IA — já testamos, o Marcelo prefere fotografia de verdade) ocupando o slide inteiro (`object-fit: cover`), com gradiente escuro por cima (`linear-gradient(180deg, rgba(0,0,0,0.05-0.20) 0%, rgba(0,0,0,0.15-0.35) 35-45%, rgba(0,0,0,0.90-0.95) 100%)`) — mais escuro embaixo, onde o texto entra. Nunca fundo branco ou vinho sólido nos slides de conteúdo (só o slide de CTA final pode ser vinho sólido, ver abaixo).
+
+**Logo:** só a gota (`dados/gota-transparente.png`), NUNCA o logotipo escrito por extenso, em todo e qualquer slide de carrossel. Tamanho fixo: 168px de largura, canto superior esquerdo (top: 72px, left: 56px em canvas 1080x1350), com leve drop-shadow pra legibilidade sobre foto clara.
+
+**Tipografia:** uma fonte só pro texto principal de todos os slides — `'Geotipe','Palatino Linotype',Georgia,serif`, weight 400 (peso 600 só nos trechos em `<b>`). Nunca misturar com a sans-serif (Rubik) no corpo principal — Rubik fica reservado pra elementos pequenos de apoio (badge de CTA, por exemplo). Tamanhos maiores que a v1 pra leitura no celular: headline de capa ~90px, corpo de texto ~48-56px.
+
+**Sem rótulo de pilar no slide:** não escrever "Educação", "Bastidores" etc. como tag visível em nenhum slide — some do slide 1 pra sempre.
+
+**Slide de CTA final (fixo, reaproveitado em todo carrossel):** único slide sem foto — fundo vinho sólido (`#7A0F42`) com textura sutil (radial-gradient bem discreto), gota branca centralizada (168px), mesmo tratamento de fonte. É o card que fecha todo carrossel puxando pro quiz de perfil — precisa ser visualmente reconhecível e igual em todos os posts.
+
+**Fonte das imagens:** sempre pedir foto real pro Marcelo (celular resolve, luz natural ou luminária quente lateral, nunca flash de frente, formato vertical 4:5 ou 9:16, deixar uma área mais escura/vazia pra encaixar o texto). Nunca gerar por IA como solução padrão — só como rascunho de direção, se pedido explicitamente.
 
 ---
 
