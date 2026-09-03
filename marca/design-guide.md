@@ -63,6 +63,18 @@ Padrão oficial a partir do post-modelo "Curadoria Prioridade" (`conteudo/carros
 
 **Fonte das imagens:** sempre pedir foto real pro Marcelo (celular resolve, luz natural ou luminária quente lateral, nunca flash de frente, formato vertical 4:5 ou 9:16, deixar uma área mais escura/vazia pra encaixar o texto). Nunca gerar por IA como solução padrão — só como rascunho de direção, se pedido explicitamente.
 
+### Mesclar slide escuro e slide claro (confirmado 03/set/2026)
+
+Carrossel não pode ser só slide escuro do início ao fim — fica pesado demais na grade do feed. Todo carrossel de conteúdo (a partir do post "Vinho como parte do momento", 8/set — o de 7/set fica só escuro, não precisa refazer) mescla os dois tratamentos entre os slides de conteúdo. Padrão flexível, não fixo: pode ser escuro-claro-escuro-claro, ou dois escuros e um claro no meio, o que fizer mais sentido pro conteúdo daquele slide — só não pode ser tudo igual.
+
+**Slide escuro:** o padrão já descrito acima (foto full-bleed + gradiente escuro + texto branco).
+
+**Slide claro (novo, volta do padrão antigo de imagem):** fundo branco (`#FFFFFF`), foto entra como elemento com **máscara CSS clara** (`mask-image: linear-gradient(...)`) que funde a foto no branco — nunca overlay escuro num slide claro. Texto em preto (`#000000`) ou vinho (`#991356`) pro destaque, nunca branco. Mesma fonte (Geotipe/Palatino), mesmo tamanho, mesma posição de logo (gota 168px, canto superior esquerdo — na versão vinho sólida, já que não tem fundo escuro pra precisar do drop-shadow).
+
+**De onde tiram as fotos dos slides claros:** fotos de produto (garrafa) do banco `dados/imagens-vinhos/` já funcionam direto nesse tratamento, sem precisar pedir nada novo pro Marcelo — a máscara clara foi desenhada originalmente pra esse tipo de foto. Só pedir foto nova pro Marcelo quando o slide claro precisar de uma cena específica (não só produto).
+
+**CTA final continua igual sempre:** vinho sólido, fora da lógica claro/escuro — é o card fixo, não entra na mescla.
+
 ---
 
 ## Logo

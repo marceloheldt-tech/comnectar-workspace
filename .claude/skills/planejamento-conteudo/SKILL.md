@@ -35,6 +35,8 @@ Todo carrossel de feed (Instagram) segue esse padrão sem exceção — não é 
 - **Sem tag de pilar visível** ("Educação", "Bastidores" etc.) em nenhum slide.
 - **Slide de CTA final:** fixo, sem foto, fundo vinho sólido (`#7A0F42`) com textura sutil, gota branca — reaproveitado igual em todo carrossel, é o único slide que foge do padrão "foto de fundo" de propósito.
 - **Fotos vêm sempre do Marcelo** (ou do banco `dados/imagens-vinhos/` quando fizer sentido produto). Pedir sempre: vertical, celular resolve, luz lateral quente, deixar área escura/vazia pro texto.
+- **Mesclar escuro e claro dentro do mesmo carrossel** (a partir do post 8/set — o de 7/set ficou só escuro e não precisa refazer): os slides de conteúdo alternam entre o tratamento escuro (foto full-bleed + gradiente escuro + texto branco) e o tratamento claro (fundo branco + foto com máscara clara + texto preto/vinho). Padrão flexível — não precisa ser sempre 1-1, pode ser 2 escuros e 1 claro, o que fizer sentido — só não pode ficar tudo igual. Ver `marca/design-guide.md` seção "Mesclar slide escuro e slide claro" pro CSS exato. CTA final continua sempre vinho sólido, fora dessa lógica.
+- **Slides claros usam foto de produto do banco** (`dados/imagens-vinhos/`) sempre que possível — não precisa pedir foto nova pro Marcelo pra isso, só quando o slide claro pedir uma cena específica.
 
 Antes de montar o HTML de um post novo, copiar a estrutura de `conteudo/carrosseis/2026-09-07-curadoria-prioridade/instagram/` (slides 1 a 5) como base e só trocar texto + imagem de fundo — não recriar CSS do zero a cada post.
 
