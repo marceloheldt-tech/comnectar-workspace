@@ -2,9 +2,8 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync, readFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-09-02-catalogo-completo';
-const pageNames = JSON.parse(readFileSync('C:/Users/marce/AppData/Local/Temp/claude/c--Users-marce-Desktop-claude-comn-ctar/b42994ea-3282-409b-ad7d-6f9092181d27/scratchpad/full_catalog_pages.json', 'utf8'));
-const pages = ['catalog-capa', ...pageNames];
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-09-08-italianos-gustavo';
+const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3', 'catalog-p4', 'catalog-p5'];
 
 const browser = await chromium.launch();
 const context = await browser.newContext();
@@ -30,5 +29,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/Catalogo Completo - Setembro 2026.pdf`, output);
-console.log('\n✅ PDF gerado com', pages.length, 'páginas');
+writeFileSync(`${dir}/Italianos para Gustavo.pdf`, output);
+console.log('\n✅ PDF gerado: Italianos para Gustavo.pdf');
