@@ -1,7 +1,7 @@
 # Email Marketing — Pré-Venda: 4 Rótulos Chegando
 
 **Data:** 2026-09-09
-**Ângulo editorial:** pré-venda — os 4 rótulos ainda estão a caminho, e quem reserva agora trava o preço de pré-venda antes da chegada oficial (quando o preço sobe pro valor cheio). Espanha, França e Itália (dois Piemonte) numa mesma leva.
+**Ângulo editorial:** pré-venda — os 4 rótulos ainda estão a caminho, e quem reserva agora trava o preço de pré-venda antes da chegada oficial (quando o preço sobe pro valor cheio). Espanha, França e Itália (dois Piemonte) numa mesma leva. Urgência real: só 6 garrafas de cada rótulo vêm nessa remessa pra comnéctar.
 
 ---
 
@@ -16,7 +16,7 @@ Rioja, Vale do Loire e dois Piemonte a caminho da comnéctar. Reserva agora e tr
 ## TÍTULO INTERNO (H1)
 4 rótulos novos estão a caminho — e você pode garantir antes de chegarem
 
-Tem remessa nova vindo pra comnéctar, e antes de qualquer rótulo pisar no estoque, abrimos pré-venda pra quem quiser garantir o preço de chegada. São 4 vinhos, 3 países, e o preço de pré-venda vale só até a remessa desembarcar — depois disso, volta pro valor cheio.
+Tem remessa nova vindo pra comnéctar, e antes de qualquer rótulo pisar no estoque, abrimos pré-venda pra quem quiser garantir o preço de chegada. São 4 vinhos, 3 países — e a remessa é pequena: só 6 garrafas de cada rótulo. O preço de pré-venda vale só até a remessa desembarcar, e as garrafas devem acabar antes disso.
 
 **Espanha, o clássico de Rioja**
 
@@ -36,7 +36,7 @@ Dogliani DOCG Briccolero 2023, da Chionetti — uma das casas mais respeitadas d
 
 *(imagens dos 4 rótulos)*
 
-Reserva agora e garante o preço de pré-venda. Assim que a remessa chegar, os rótulos entram no site pelo valor cheio — quem reservou antes já leva pelo preço combinado hoje.
+Reserva agora e garante o preço de pré-venda. São só 6 garrafas de cada rótulo — assim que acabar ou a remessa chegar, os preços voltam pro valor cheio.
 
 **Os 4 rótulos**
 - Akutain Crianza 2020 — Bodega Akutain (Rioja, Espanha)
@@ -52,7 +52,7 @@ Reserva agora e garante o preço de pré-venda. Assim que a remessa chegar, os r
 
 ## Parágrafo de fechamento
 
-Pré-venda aberta só até a remessa chegar. Depois disso, os 4 rótulos voltam pro preço cheio.
+Só 6 garrafas de cada rótulo nessa remessa. Pré-venda aberta até acabar ou até a chegada — o que vier primeiro.
 
 ## Linha de CTA
 Garanta seu rótulo na pré-venda da comnéctar.
@@ -65,6 +65,6 @@ Garanta seu rótulo na pré-venda da comnéctar.
 
 > Notas de envio:
 > - Preços vêm da planilha do fornecedor: coluna "De" = preço cheio, coluna "Por Pix" = preço de pré-venda. Colunas de CUSTO e DIFAL são internas — não usar em nenhuma peça voltada ao cliente.
-> - Não usei os números da coluna "Estoque" da planilha (437 / 434 / 282 / 241) porque não sei se refletem o volume que a comnéctar está trazendo ou o estoque total do fornecedor — confirmar com você antes de comunicar quantidade limitada ou "últimas unidades".
+> - Coluna "Estoque" da planilha (437/434/282/241) é o estoque do FORNECEDOR, não da comnéctar — não usada na comunicação. Confirmado com Marcelo: a comnéctar recebe só 6 garrafas de cada rótulo nessa remessa — esse é o número real usado na urgência da campanha.
 > - Preço cartão (parcelado) não veio na planilha — só "De" (cheio) e "Por Pix". Se quiser oferecer opção de cartão na pré-venda, me passa o valor ou a regra de desconto pra eu incluir.
 > - Uva Dolcetto mencionada pros dois italianos porque é definida por lei na denominação (Dogliani e Dolcetto d'Alba são, por regulamento da DOC/DOCG, à base de Dolcetto) — não inventado. Classificação Crianza do Rioja (mínimo 2 anos, 1 em barrica) também é regra oficial da DOCa, não específica dessa garrafa. Não afirmei uva/blend exato de nenhum dos 4 rótulos por falta de ficha técnica.

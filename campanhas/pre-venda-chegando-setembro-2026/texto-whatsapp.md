@@ -4,7 +4,7 @@
 
 > Substituir `{{nome}}` pelo primeiro nome de cada cliente na hora do disparo.
 
-Oi, {{nome}}! Abri pré-venda de 4 rótulos que estão a caminho da comnéctar — reserva agora e trava o preço antes da chegada 🍷
+Oi, {{nome}}! Abri pré-venda de 4 rótulos que estão a caminho da comnéctar — só 6 garrafas de cada, então reserva agora e trava o preço antes de acabar 🍷
 
 *Os 4 rótulos:*
 - Akutain Crianza 2020 — Bodega Akutain (Rioja, Espanha)
@@ -18,7 +18,7 @@ Oi, {{nome}}! Abri pré-venda de 4 rótulos que estão a caminho da comnéctar �
 - Dogliani DOCG Briccolero — de R$ 231,98 por R$ 208,78
 - Dolcetto d'Alba DOC Barturot — de R$ 302,73 por R$ 272,46
 
-Assim que a remessa chegar, os preços voltam pro valor cheio — quem reserva agora garante esse valor.
+São só 6 garrafas de cada rótulo nessa remessa. Assim que acabar (ou a remessa chegar), o preço volta pro valor cheio.
 
 Me chama aqui pra reservar o seu.
 
@@ -26,6 +26,6 @@ Me chama aqui pra reservar o seu.
 
 > Notas de envio:
 > - Preços da planilha do fornecedor: "De" = cheio, "Por Pix" = pré-venda. CUSTO e DIFAL são internos, não entram na comunicação.
-> - Não usei os números de "Estoque" da planilha (437/434/282/241) — não sei se é volume trazido pela comnéctar ou estoque total do fornecedor. Confirma antes de eu falar em "últimas unidades".
+> - Estoque da planilha (437/434/282/241) é do fornecedor, não da comnéctar. Confirmado com Marcelo: chegam só 6 garrafas de cada rótulo — número real usado na urgência do texto.
 > - Preço de cartão não veio na planilha — só cheio e Pix. Avisa se quiser incluir opção parcelada.
 > - O asterisco (*) formata como negrito no WhatsApp
