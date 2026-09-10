@@ -2,8 +2,8 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync, readFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-09-10-rafael-pinot-brunello-albarino';
-const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3'];
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-09-10-ney-velho-novo-mundo';
+const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3', 'catalog-p4'];
 
 const browser = await chromium.launch();
 const context = await browser.newContext();
@@ -29,5 +29,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/Selecao Rafael - Pinot Noir Brunello Albarino.pdf`, output);
-console.log('\n✅ PDF gerado: Selecao Rafael - Pinot Noir Brunello Albarino.pdf');
+writeFileSync(`${dir}/Selecao Ney - Velho e Novo Mundo.pdf`, output);
+console.log('\n✅ PDF gerado: Selecao Ney - Velho e Novo Mundo.pdf');
