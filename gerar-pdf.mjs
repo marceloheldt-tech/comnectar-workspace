@@ -2,8 +2,8 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync, readFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-09-10-gustavo-lamas';
-const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3', 'catalog-p4', 'catalog-p5'];
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-09-10-marcelo-malbec';
+const pages = ['catalog-p1'];
 
 const browser = await chromium.launch();
 const context = await browser.newContext();
@@ -29,5 +29,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/Selecao Gustavo Lamas - Franca e Italia.pdf`, output);
-console.log('\n✅ PDF gerado: Selecao Gustavo Lamas - Franca e Italia.pdf');
+writeFileSync(`${dir}/Selecao Marcelo - Malbec.pdf`, output);
+console.log('\n✅ PDF gerado: Selecao Marcelo - Malbec.pdf');
