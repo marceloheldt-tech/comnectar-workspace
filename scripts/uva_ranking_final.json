@@ -1,0 +1,1215 @@
+[
+  {
+    "title": "Vinho Tinto Langhe Dolcetto 2023 - Giuseppe Cortese",
+    "grape": "Dolcetto",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Protos Reserva 5º Año Tempranillo 2020 - Protos",
+    "grape": "Tempranillo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Langhe Nebbiolo 2023 - Castello Di Verduno",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Barolo 2021 - Silvio Grasso",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Cartuxa Reserva 2018 - Cartuxa",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Trincadeira|Tempranillo|Alicante Bouschet"
+  },
+  {
+    "title": "Vinho Tinto La Piu Belle 2022 - Viña Vik",
+    "grape": "Carménère",
+    "pct": 68,
+    "source": "desc/uva",
+    "grapesList": "Cabernet Sauvignon|Cabernet Franc|Carménère"
+  },
+  {
+    "title": "Vinho Branco Chablis Premier Cru Fourchaume 2024 - Albert Bichot",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Valpolicella Ripasso 2023 - Montresor",
+    "grape": "Corvina",
+    "pct": 60,
+    "source": "desc/uva",
+    "grapesList": "Corvina|Rondinella|Molinara"
+  },
+  {
+    "title": "Vinho Tinto Capitel Amarone 2016 - Montresor",
+    "grape": "Corvina",
+    "pct": 60,
+    "source": "desc/uva",
+    "grapesList": "Corvina|Rondinella|Molinara|Oseleta"
+  },
+  {
+    "title": "Vinho Tinto Barolo 2020 - Roversi",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Amarone Satinato 2021 - Montresor",
+    "grape": "Corvina",
+    "pct": 70,
+    "source": "desc/uva",
+    "grapesList": "Corvina|Rondinella|Molinara"
+  },
+  {
+    "title": "Vinho Tinto Lucente 2023 - Tenute Luce",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Merlot|Sangiovese"
+  },
+  {
+    "title": "Vinho Tinto Chianti Classico 2021 - Perano",
+    "grape": "Sangiovese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Origines Pinot Noir 2023 - Albert Bichot",
+    "grape": "Pinot Noir",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Pommard 2022 - Albert Bichot",
+    "grape": "Pinot Noir",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Sauternes 2022 500ml - Calvet",
+    "grape": "Sémillon",
+    "pct": 80,
+    "source": "desc/uva",
+    "grapesList": "Sémillon|Sauvignon Blanc|Muscadelle"
+  },
+  {
+    "title": "Vinho Branco Petit Chablis 2024 - Albert Bichot",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Amarone Della Valpoliccella Classico DOCG 2022 - Sensi",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Corvina|Rondinella"
+  },
+  {
+    "title": "Vinho Tinto Marquesa Alorna 2019 - Quinta da Alorna",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado"
+  },
+  {
+    "title": "Vinho Tinto Col Di Bacche Morellino Di Scansano DOCG 2023 - Col Di Bacche",
+    "grape": "Sangiovese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto A d'Aussières 2023 - Domaine D'Aussières",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Syrah|Grenache|Cabernet Sauvignon|Marselan|Carignan|Merlot|Cabernet Franc|Mourvèdre|Alicante Henri-Bouschet|Petit Verdot"
+  },
+  {
+    "title": "Vinho Tinto Ginestrino Langhe Nebbiolo 2023 - Conterno Fantino",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Pequeno Dilema 2023 - Symington Family Estates",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Arinto|Albariño|Códega do Larinho|Rabigato|Viosinho"
+  },
+  {
+    "title": "Vinho Tinto Marqués de Murrieta Reserva 2021 - Marqués de Murrieta",
+    "grape": "Tempranillo",
+    "pct": 83,
+    "source": "desc-manual",
+    "grapesList": "Graciano|Tempranillo|Mazuelo|Grenache"
+  },
+  {
+    "title": "Vinho Tinto Barolo 2020 - Elio Altare",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Roquette & Cazes Douro 2022 - Roquette & Cazes",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Touriga Nacional|Touriga Franca|Tempranillo"
+  },
+  {
+    "title": "Vinho Tinto Langhe Nebbiolo 2023 - Elio Altare",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Chateauneuf du Pape 2021 - Urbain V",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Grenache|Syrah|Mourvèdre"
+  },
+  {
+    "title": "Vinho Tinto Idda Etna Rosso 2022 - Gaja",
+    "grape": "Nerello Mascalese",
+    "pct": 98,
+    "source": "desc/uva",
+    "grapesList": "Nerello Mascalese|Nerello Cappuccio"
+  },
+  {
+    "title": "Vinho Tinto Esprit de Pavie 2018 - Chateau Pavie",
+    "grape": "Merlot",
+    "pct": 65,
+    "source": "desc/uva",
+    "grapesList": "Cabernet Franc|Cabernet Sauvignon|Merlot"
+  },
+  {
+    "title": "Vinho Branco Atlantico Sur Reserve Albariño 2024 - Familia Deicas",
+    "grape": "Albariño",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Marius By Michel Chapoutier Vermentino 2022 - M. Chapoutier",
+    "grape": "Vermentino",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Pinot Grigio Monovitigno 2024 - Di Lenardo",
+    "grape": "Pinot Grigio",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Louis Jadot Bourgogne Chardonnay 2023 - Louis Jadot",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Vino Nobile Di Montepulciano DOCG 2021 - Boscarelli",
+    "grape": "Sangiovese",
+    "pct": 85,
+    "source": "desc-manual",
+    "grapesList": "Colorino|Canaiolo|Mammolo"
+  },
+  {
+    "title": "Vinho Tinto Prugnolo Rosso Di Montepulciano 2023 - Boscarelli",
+    "grape": "Sangiovese",
+    "pct": 90,
+    "source": "desc/uva",
+    "grapesList": "Mammolo|Sangiovese"
+  },
+  {
+    "title": "Espumante 130 Brut - Valduga",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Chardonnay|Pinot Noir"
+  },
+  {
+    "title": "Vinho Branco Louis Jadot Chablis 2023 - Louis Jadot",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Louis Jadot Petit Chablis 2023 - Louis Jadot",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Rosé La Piu Belle 2024 Magnum - Viña Vik",
+    "grape": "Cabernet Sauvignon",
+    "pct": 85,
+    "source": "desc/uva",
+    "grapesList": "Cabernet Franc|Cabernet Sauvignon|Syrah"
+  },
+  {
+    "title": "Vinho Rosé Rosato Cappuccetto Toscana 2022 - Podere Le Ripi",
+    "grape": "Sangiovese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Trabener Schimbock Riesling Qualitatswein Trocken Mosel 2020 - Weingut Vollenweider",
+    "grape": "Riesling",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Molsheim Riesling 2018 - Battenfeld Spanier",
+    "grape": "Riesling",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Langhe Nebbiolo 2024 - Mario Costa",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Vinha Formal 2023 - Luis Pato",
+    "grape": "Bical",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Coelheiros 2024 - Tapada de Coelheiros",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Antão Vaz|Arinto dos Açores"
+  },
+  {
+    "title": "Vinho Branco Vinhas Velhas 2023 - Luis Pato",
+    "grape": "Bical",
+    "pct": 50,
+    "source": "desc/uva",
+    "grapesList": "Bical|Cercial|Sercealinho"
+  },
+  {
+    "title": "Vinho Branco Greco Di Tufo DOCG 2024 - Mastroberardino",
+    "grape": "Greco",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Regaleale Bianco DOC Sicilia 2023 - Tasca D'Almerita",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Catarratto|Chardonnay|Inzolia|Grecanico"
+  },
+  {
+    "title": "Vinho Branco Bourgogne AOC Blanc 2022 - Joseph Drouhin",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Chateau Marjosse Bordeaux Banc 2022 - Chateau Marjosse",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Sémillon|Sauvignon Blanc|Sauvignon Gris|Muscadelle"
+  },
+  {
+    "title": "Vinho Branco La Ferme Julien Blanc 2023 - La Vieille Ferme",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Bourboulenc|Grenache|Roussanne|Ugni Blanc|Vermentino"
+  },
+  {
+    "title": "Vinho Rosé La Piu Belle 2022 - Viña Vik",
+    "grape": "Cabernet Sauvignon",
+    "pct": 85,
+    "source": "desc/uva",
+    "grapesList": "Cabernet Sauvignon|Cabernet Franc|Syrah"
+  },
+  {
+    "title": "Vinho Tinto Brunello di Montalcino 2020 - Caprili",
+    "grape": "Sangiovese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Rosé La Spinetta Il Rose Di Casanova 2019 - La Spinetta",
+    "grape": "Sangiovese",
+    "pct": 50,
+    "source": "desc/uva",
+    "grapesList": "Sangiovese|Sangiovese)"
+  },
+  {
+    "title": "Vinho Tinto Barbera Dasti Battaglione 2023 - Ratti",
+    "grape": "Barbera",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Tempo de Angelus 2023 - Angelus",
+    "grape": "Merlot",
+    "pct": 90,
+    "source": "desc/uva",
+    "grapesList": "Cabernet Franc|Merlot"
+  },
+  {
+    "title": "Vinho Tinto Sito Moresco Langhe 2020 - Gaja",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Barbera|Cabernet Sauvignon|Merlot|Nebbiolo"
+  },
+  {
+    "title": "Vinho Tinto Promis 2021 Ca'Marcanda - Gaja",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Merlot|Sangiovese|Syrah"
+  },
+  {
+    "title": "Vinho Rosé Côtes de Provence 2022 - Miraval",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Cinsault|Grenache|Vermentino|Syrah"
+  },
+  {
+    "title": "Vinho Branco Mâcon-Villages 2022 - Joseph Drouhin",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "correcao-manual"
+  },
+  {
+    "title": "Vinho Tinto Alión 2019 - Vega Sicilia",
+    "grape": "Tempranillo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Pintia 2019 - Vega Sicilia",
+    "grape": "Tempranillo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Macán Clássico 2020 - Vega Sicilia & Rothschild",
+    "grape": "Tempranillo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Pêra Manca 2023 - Cartuxa",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Antão Vaz|Arinto dos Açores"
+  },
+  {
+    "title": "Vinho Tinto Barolo 2021 - Pio Cesare",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco L'Altro Chardonnay 2024 - Pio Cesare",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Etna DOC Bianco Superiore 2023 - Barone Di Villagrande",
+    "grape": "Carricante",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Rully Montmorin 2022 - Domaine Jean Chartron",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Bourgogne Chardonnay 2023 - Aurore Bachelet",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Villa Pattono Barbera D´Asti 2022 - Ratti",
+    "grape": "Barbera",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Barolo Marcenasco DOCG 2020 - Ratti",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Colombe Langhe Dolcetto 2023 - Ratti",
+    "grape": "Dolcetto",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Pequeñas Producciones Chardonnay 2023 - Escorihuela Gascón",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Espumante Stravaganzza Brut - Don Giovanni",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Chardonnay|Pinot Noir"
+  },
+  {
+    "title": "Espumante Blanc de Noir Brut - Don Giovanni",
+    "grape": "Pinot Noir",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Il Gentile Di Casanova IGT Prugnolo 2016 - La Spinetta",
+    "grape": "Sangiovese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Barbera Dasti Battaglione 2019 - Ratti",
+    "grape": "Barbera",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Langhe Nebbiolo DOC Reggimento 2020 - Ratti",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Barbera D'Alba Zio Nando 2021 - Rivetto",
+    "grape": "Barbera",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Barbera D'Alba DOC Vignota 2022 - Conterno Fantino",
+    "grape": "Barbera",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Langhe DOC Nebbiolo Angelo 2022 - Mauro Veglio",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Barbera D'Alba Punta 2020 - Azelia",
+    "grape": "Barbera",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Rosso Di Caparsa IGT 2020 - Caparsa",
+    "grape": "Sangiovese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Barbera D'Alba DOC Superiore 2021 - Scarzello",
+    "grape": "Barbera",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Poggio Badiola 2022 - Mazzei",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Sangiovese|Merlot"
+  },
+  {
+    "title": "Vinho Tinto Pinot Nero 2021 - Franz Haas",
+    "grape": "Pinot Noir",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Rosso \"Attenti Al Lupo\" IGT Sangiovese 2022 - Podere Le Ripi",
+    "grape": "Sangiovese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Capisme-e Langhe Nebbiolo 2023 - Domenico Clerico",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Chateau Ormes de Pez Saint Estephe 2018 - Chateau Ormes de Pez",
+    "grape": "Merlot",
+    "pct": 50,
+    "source": "desc/uva",
+    "grapesList": "Cabernet Sauvignon|Merlot|Cabernet Franc|Petit Verdot"
+  },
+  {
+    "title": "Vinho Tinto Nebbiolo D'Alba DOC Bernardina Nebbiolo 2021 - Ceretto",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Sant Antimo Rosso 2020 - Capanna",
+    "grape": "Merlot",
+    "pct": 60,
+    "source": "desc/uva",
+    "grapesList": "Merlot|Sangiovese"
+  },
+  {
+    "title": "Vinho Branco Private Selection Chardonnay 2023 - Robert Mondavi",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Rosé Alto do Joa 2023 - Casa do Joa",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado"
+  },
+  {
+    "title": "Vinho Tinto Alto do Joa 2017 - Casa do Joa",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado"
+  },
+  {
+    "title": "Vinho Branco Alto do Joa 2019 - Casa do Joa",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado"
+  },
+  {
+    "title": "Vinho Branco Ameixâmbar 2021 - Adega do Vulcão",
+    "grape": "Arinto dos Açores",
+    "pct": 90,
+    "source": "desc/uva",
+    "grapesList": "Arinto dos Açores|Terrantez do Pico"
+  },
+  {
+    "title": "Vinho Tinto Louis Jadot Beaujolais Villages Gamay 2024 - Louis Jadot",
+    "grape": "Gamay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Louis Jadot Bourgogne Couvent Des Jacobins Pinot Noir 2022 - Louis Jadot",
+    "grape": "Pinot Noir",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Garzón Reserva Tannat 2022 - Bodega Garzón",
+    "grape": "Tannat",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Concerto Di Fonterutoli 2020 - Mazzei",
+    "grape": "Sangiovese",
+    "pct": 80,
+    "source": "desc/uva",
+    "grapesList": "Sangiovese|Cabernet Sauvignon"
+  },
+  {
+    "title": "Vinho Tinto Mirea Primitivo di Manduria DOP 2023 - Masseria Borgo dei Trulli",
+    "grape": "Primitivo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Rosé La Piu Belle 2024 - Viña Vik",
+    "grape": "Cabernet Sauvignon",
+    "pct": 85,
+    "source": "desc/uva",
+    "grapesList": "Cabernet Sauvignon|Cabernet Franc|Syrah"
+  },
+  {
+    "title": "Vinho Branco Preludio Barrel Select 2023 - Familia Deicas",
+    "grape": "Chardonnay",
+    "pct": 90,
+    "source": "desc/uva",
+    "grapesList": "Chardonnay|Viognier"
+  },
+  {
+    "title": "Vinho Branco Gran Reserva Chardonnay 2023 - Escorihuela Gascón",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Private Selection Red 2021 - Robert Mondavi",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Syrah|Merlot|Malbec|Cabernet Sauvignon|Petit Verdot|Petite Syrah|Zinfandel"
+  },
+  {
+    "title": "Vinho Rosé Dolce & Gabbana Rosato Sicilia 2022 - Donnafugata",
+    "grape": "Nerello Mascalese",
+    "pct": 70,
+    "source": "desc/uva",
+    "grapesList": "Nerello Mascalese|Nocera"
+  },
+  {
+    "title": "Vinho Branco Collection 2022 - Herdade do Arrepiado Velho",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Chardonnay|Riesling"
+  },
+  {
+    "title": "Vinho Tinto Las 3 Marias 2019 - Viña Gandolini",
+    "grape": "Cabernet Sauvignon",
+    "pct": 95,
+    "source": "desc/uva",
+    "grapesList": "Cabernet Sauvignon|Cabernet Franc|Petit Verdot"
+  },
+  {
+    "title": "Vinho Tinto Preludio Barrel Select 2019 - Familia Deicas",
+    "grape": "Merlot",
+    "pct": 52,
+    "source": "desc/uva",
+    "grapesList": "Merlot|Tannat|Cabernet Sauvignon|Cabernet Franc|Petit Verdot|Marselan"
+  },
+  {
+    "title": "Vinho Tinto Protos Reserva 5º Año Tempranillo 2018 - Protos",
+    "grape": "Tempranillo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Maldonado Albariño 2021 - Vinos de Mar",
+    "grape": "Albariño",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Maldonado Tannat 2021 - Vinos de Mar",
+    "grape": "Tannat",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Sierra de Las Palmas Albariño 2021 - Vinos de Mar",
+    "grape": "Albariño",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Sierra de Las Palmas Pinot Noir 2021 - Vinos de Mar",
+    "grape": "Pinot Noir",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Champagne Louis Roederer Collection 244 Brut - Louis Roederer",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Pinot Meunier|Pinot Noir|Chardonnay"
+  },
+  {
+    "title": "Vinho Tinto Pequeñas Producciones Malbec 2021 - Escorihuela Gascón",
+    "grape": "Malbec",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Le Volte Dell'Ornellaia 2022 - Ornellaia",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Cabernet Sauvignon|Merlot|Petit Verdot"
+  },
+  {
+    "title": "Vinho Tinto La Piu Belle 2021 - Viña Vik",
+    "grape": "Carménère",
+    "pct": 68,
+    "source": "desc/uva",
+    "grapesList": "Cabernet Sauvignon|Cabernet Franc|Carménère"
+  },
+  {
+    "title": "Vinho Branco Louis Jadot Petit Chablis 2022 - Louis Jadot",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Milla Cala 2021 - Viña Vik",
+    "grape": "Cabernet Sauvignon",
+    "pct": 60,
+    "source": "desc/uva",
+    "grapesList": "Cabernet Sauvignon|Cabernet Franc|Carménère|Merlot|Syrah"
+  },
+  {
+    "title": "Vinho Tinto Clos Apalta 2019 - Clos Apalta",
+    "grape": "Carménère",
+    "pct": 70,
+    "source": "desc/uva",
+    "grapesList": "Malbec|Carménère|Cabernet Sauvignon"
+  },
+  {
+    "title": "Vinho Rosé Marius By Michel Chapoutier 2020 - M. Chapoutier",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Grenache|Cinsault"
+  },
+  {
+    "title": "Champagne Veuve Clicquot Brut - Veuve Clicquot",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Pinot Meunier|Chardonnay|Pinot Noir"
+  },
+  {
+    "title": "Champagne Moët & Chandon Imperial Extra Brut - Moët & Chandon",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Pinot Noir|Pinot Meunier|Chardonnay"
+  },
+  {
+    "title": "Champagne Taittinger Réserve Brut - Taittinger",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Chardonnay|Pinot Noir|Pinot Meunier"
+  },
+  {
+    "title": "Vinho Tinto Villa Pattono Monferrato 2016 Magnum - Ratti",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Barbera|Cabernet Sauvignon|Merlot"
+  },
+  {
+    "title": "Vinho Tinto Villa Pattono Monferrato 2016 - Ratti",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Barbera|Cabernet Sauvignon|Merlot"
+  },
+  {
+    "title": "Vinho Branco Scapulin 2023 - Giuseppe Cortese",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Barbaresco 2021 - Castello Di Verduno",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Barbaresco Rabajá 2021 - Giuseppe Cortese",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Basadone 2023 - Castello Di Verduno",
+    "grape": "Pelaverga Piccolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Barbaresco 2021 - Giuseppe Cortese",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Crozes Hermitage 2021 - E. Guigal",
+    "grape": "Syrah",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Cotes Du Rhone 2022 - E. Guigal",
+    "grape": "Syrah",
+    "pct": 50,
+    "source": "desc/uva",
+    "grapesList": "Grenache|Mourvèdre|Syrah"
+  },
+  {
+    "title": "Vinho Tinto Barolo Silio Reserva 2018 - Rizieri",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Dogliani San Luigi 2023 - Chionetti",
+    "grape": "Dolcetto",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Mirto 2018 - Ramon Bilbao",
+    "grape": "Tempranillo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Nuits Saint Georges 2021 - Albert Bichot",
+    "grape": "Pinot Noir",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto CastelGiocondo Brunello 2020 - Frescobaldi",
+    "grape": "Sangiovese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Cascinotto D'Alba Nebbiolo 2022 - Claudio Alario",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Barolo Sorano 2021 - Claudio Alario",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Etna Rosso Santo Spirito 2019 - Tenuta Delle Terre Nere",
+    "grape": "Nerello Mascalese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Etna Rosso 2022 - Tenuta Delle Terre Nere",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Nerello Mascalese|Nerello Cappuccio"
+  },
+  {
+    "title": "Vinho Tinto Etna Rosso San Lorenzo 2021 - Tenuta Delle Terre Nere",
+    "grape": "Nerello Mascalese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Etna Rosso Vigneto Guardiola 2021 - Tenuta Delle Terre Nere",
+    "grape": "Nerello Mascalese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Rosso 2023 - Bakkanali",
+    "grape": "Sangiovese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Kani 2023 - Bakkanali",
+    "grape": "Sangiovese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Fiorenzo 2022 - Bakkanali",
+    "grape": "Sangiovese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Garzon Single Vineyard Tannat 2023 - Bodega Garzón",
+    "grape": "Tannat",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Petit Clos Block 487 Marselan 2020 - Bodega Garzón",
+    "grape": "Marselan",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Malbec 2023 - Escorihuela Gascón",
+    "grape": "Malbec",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Garzón Reserva Albariño 2025 - Bodega Garzón",
+    "grape": "Albariño",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Etna 2023 - Alta Mora",
+    "grape": "Nerello Mascalese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Sul Vulcano Etna 2021 - Donnafugata",
+    "grape": "Nerello Mascalese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Chapelle 2016 - Potensac",
+    "grape": "Merlot",
+    "pct": 75,
+    "source": "desc/uva",
+    "grapesList": "Merlot|Cabernet Sauvignon|Cabernet Franc"
+  },
+  {
+    "title": "Vinho Tinto Dairyman Pinot Noir 2022 - Belle Glos",
+    "grape": "Pinot Noir",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Extreme Vineyard Suelo Invertido Tannat 2021 - Familia Deicas",
+    "grape": "Tannat",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Giuletta Langhe Rosso 2023 - Olek Bondonio",
+    "grape": "Pelaverga",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Roncagliette Barbaresco 2021 - Olek Bondonio",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto 50th Anniversary Cabernet Sauvignon 2022 - Caymus",
+    "grape": "Cabernet Sauvignon",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Delon Médoc 2014 - Chateau Potensac",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Cabernet Sauvignon|Merlot|Cabernet Franc"
+  },
+  {
+    "title": "Vinho Branco Poggio Alle Gazze 2022 - Ornellaia",
+    "grape": "Sauvignon Blanc",
+    "pct": 53,
+    "source": "desc/uva",
+    "grapesList": "Sauvignon Blanc|Vermentino|Viognier|Verdicchio|Sémillon"
+  },
+  {
+    "title": "Vinho Tinto Petit Clos Pinot Noir 2023 - Bodega Garzón",
+    "grape": "Pinot Noir",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Espumante Blanc de Blanc - Cave Geisse",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Milla Cala 2022 - Viña Vik",
+    "grape": "Cabernet Sauvignon",
+    "pct": 60,
+    "source": "desc/uva",
+    "grapesList": "Cabernet Sauvignon|Cabernet Franc|Carménère|Merlot|Syrah"
+  },
+  {
+    "title": "Vinho Tinto Vik A Limited Edition 2023 - Viña Vik",
+    "grape": "Cabernet Sauvignon",
+    "pct": 85,
+    "source": "desc/uva",
+    "grapesList": "Cabernet Sauvignon|Carménère|Syrah"
+  },
+  {
+    "title": "Vinho Tinto Dolcetto D'Alba Campot 2023 - Castello di Verduno",
+    "grape": "Dolcetto",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Bakkanali K 2023 - Bakkanali",
+    "grape": "Sangiovese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Rosé Rosa 2023 - Bakkanali",
+    "grape": "Sangiovese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Langhe Nebbiolo 2021 - Fontanafredda",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Campo Sassi Rosso 2023 - Frescobaldi",
+    "grape": "Sangiovese",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Mercurey 2022 - Albert Bichot",
+    "grape": "Pinot Noir",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Beaune 2023 - Albert Bichot",
+    "grape": "Pinot Noir",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Aloxe Corton 2022 - Albert Bichot",
+    "grape": "Pinot Noir",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Langhe Nebbiolo Fralu 2023 - Bruno Rocca",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Le Volte Dell'Ornellaia 2023 Magnum - Ornellaia",
+    "grape": "Cabernet Sauvignon",
+    "pct": 51,
+    "source": "desc/uva",
+    "grapesList": "Cabernet Sauvignon|Merlot|Petit Verdot"
+  },
+  {
+    "title": "Vinho Tinto Barolo 2020 - Bovio",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Barolo Gaterra 2020 - Bovio",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Barolo Del Comune Di La Morra 2021 - Bovio",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Barbaresco 2022 - Bovio",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Firagnetti Langhe Nebbiolo 2023 - Bovio",
+    "grape": "Nebbiolo",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Echo de Lynch Bages 2023 - Château Lynch-Bages",
+    "grape": "Cabernet Sauvignon",
+    "pct": 58,
+    "source": "desc/uva",
+    "grapesList": "Cabernet Sauvignon|Merlot|Cabernet Franc"
+  },
+  {
+    "title": "Vinho Tinto La Dame de Montrose 2013 - Chateau Montrose",
+    "grape": "Merlot",
+    "pct": 52,
+    "source": "desc/uva",
+    "grapesList": "Merlot|Cabernet Sauvignon|Petit Verdot|Cabernet Franc"
+  },
+  {
+    "title": "Vinho Tinto Aromes de Pavie 2021 - Chateau Pavie",
+    "grape": "Merlot",
+    "pct": 50,
+    "source": "desc/uva",
+    "grapesList": "Merlot|Cabernet Franc|Cabernet Sauvignon"
+  },
+  {
+    "title": "Vinho Tinto Viñas Jovenes 2022 - Miguel Merino",
+    "grape": null,
+    "pct": null,
+    "source": "indeterminado",
+    "grapesList": "Tempranillo|Graciano|Grenache"
+  },
+  {
+    "title": "Vinho Branco Bourgogne Tonnerre 2023 - Calcarius",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Tinto Morgon 2023 - Julien Sunier",
+    "grape": "Gamay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Vinho Branco Macon-Vruzille Clos des Avoueries Monopole 2022 - Chateau De Messey",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Espumante 130 Brut Blanc de Blanc - Valduga",
+    "grape": "Chardonnay",
+    "pct": 100,
+    "source": "unica"
+  },
+  {
+    "title": "Espumante 130 Brut Blanc de Noir - Valduga",
+    "grape": "Pinot Noir",
+    "pct": 100,
+    "source": "unica"
+  }
+]
