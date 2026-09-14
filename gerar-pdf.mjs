@@ -2,7 +2,7 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync, readFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-09-11-barolos-barbarescos-luiz-gonzaga';
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-09-14-selecao-pedro-velho-mundo';
 const pages = ['catalog-capa', 'catalog-p1', 'catalog-p2', 'catalog-p3', 'catalog-p4'];
 
 const browser = await chromium.launch();
@@ -29,5 +29,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/Selecao Barolo e Barbaresco - Luiz Gonzaga.pdf`, output);
-console.log('\n✅ PDF gerado: Selecao Barolo e Barbaresco - Luiz Gonzaga.pdf');
+writeFileSync(`${dir}/Selecao Velho Mundo - Pedro.pdf`, output);
+console.log('\n✅ PDF gerado: Selecao Velho Mundo - Pedro.pdf');
