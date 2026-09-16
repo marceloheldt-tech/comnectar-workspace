@@ -201,6 +201,9 @@ def ler_pdf_adega_alentejana(config):
                     nome = None
                     pais = None
                     for v in reversed(vals):
+                        s = str(v).strip()
+                        if s.isdigit() and len(s) > 8:
+                            continue  # código de barras (EAN13/EAN14), não é preço
                         c = parse_preco(v)
                         if c is not None and c > 1:
                             custo = c
