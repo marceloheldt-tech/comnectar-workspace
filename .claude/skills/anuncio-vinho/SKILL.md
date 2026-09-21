@@ -37,7 +37,7 @@ poucos elementos, preço como protagonista, layout limpo.
 - Garrafa 100% visível, sem overlay, sombra bem sutil. Nunca gerada por IA
 - Stories: topo 250px livre. Preço e cupom sobem, deixando um vão de ~350px pro botão "Comprar agora" (que NÃO entra na arte), e o logotipo completo (`dados/comnectar-transparente.png`, cores originais) fica embaixo, centralizado
 - Preço novo é o maior texto da peça. Serifada (Geotipe, cai pra Palatino se não instalada) nos títulos e valores, Rubik no apoio (precisa de internet pra carregar)
-- Só 5 blocos de texto: gancho, produtor + nome, cupom, preço de/por, "no pix", mais o logotipo. Não adicionar mais que isso
+- Só 5 blocos de texto: bandeira, gancho, produtor + nome, preço de/por e "no pix com o cupom [CÓDIGO]" (nessa ordem, cupom por último), mais o logotipo. Não adicionar mais que isso
 - Se o percentual de desconto for citado, arredondar pra baixo (299 por 210 = 29,8%, então "quase 30%")
 
 ## Requisitos
