@@ -120,7 +120,7 @@ async function prepararLogo(entrada, saida) {
 }
 
 (async () => {
-  const dados = JSON.parse(fs.readFileSync(path.join(pasta, 'dados.json'), 'utf8'));
+  const dados = { nome_style: '', ...JSON.parse(fs.readFileSync(path.join(pasta, 'dados.json'), 'utf8')) };
   const g = await recortarGarrafa(path.join(pasta, 'foto.jpg'), path.join(pasta, 'garrafa.png'));
   await prepararGota(path.join(RAIZ, 'dados/gota-transparente.png'), path.join(pasta, 'gota.png'));
 
