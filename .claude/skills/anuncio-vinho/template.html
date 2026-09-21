@@ -9,27 +9,30 @@
   html, body { overflow: hidden; }
   body { position: relative; background: var(--fundo); color: var(--preto); font-family: var(--sans); }
 
-  /* ---------- Stories 1080x1920 (topo 250px e base 340px livres pra interface do Instagram) ---------- */
+  /* ---------- Stories 1080x1920 (topo 250px livre pra interface; espaço do botão entre o preço e o logo) ---------- */
   body.stories { width: 1080px; height: 1920px;
     --b-top: 320px; --b-h: 1300px; --b-left: 120px;
-    --g-w: 640px; --g-right: 30px; --g-top: 1090px;
+    --g-w: 640px; --g-right: 30px; --g-top: 940px;
+    --l-w: 400px; --l-top: 1735px;
     --t-left: 560px; --t-w: 460px;
     --gancho-top: 330px; --gancho: 46px;
-    --nome: 92px; --preco-bottom: 400px;
+    --nome: 92px; --preco-bottom: 540px;
     --de: 46px; --por: 150px; --cupom: 38px; --mini: 34px; }
 
   /* ---------- Feed 1080x1350 ---------- */
   body.feed { width: 1080px; height: 1350px;
     --b-top: 150px; --b-h: 980px; --b-left: 105px;
-    --g-w: 520px; --g-right: 30px; --g-top: 720px;
+    --g-w: 520px; --g-right: 30px; --g-top: 590px;
+    --l-w: 340px; --l-top: 1235px;
     --t-left: 540px; --t-w: 480px;
     --gancho-top: 150px; --gancho: 42px;
-    --nome: 84px; --preco-bottom: 170px;
+    --nome: 84px; --preco-bottom: 260px;
     --de: 42px; --por: 132px; --cupom: 36px; --mini: 32px; }
 
   .gota { position: absolute; width: var(--g-w); right: var(--g-right); top: var(--g-top); opacity: .17; }
   .garrafa { position: absolute; top: var(--b-top); left: var(--b-left); height: var(--b-h); aspect-ratio: {{RATIO}};
     transform: rotate(7deg); filter: drop-shadow(26px 34px 34px rgba(60,30,30,.16)); }
+  .logo { position: absolute; left: 50%; transform: translateX(-50%); width: var(--l-w); top: var(--l-top); }
   .texto { position: absolute; left: var(--t-left); width: var(--t-w); }
 
   .gancho { top: var(--gancho-top); text-wrap: balance; font-size: var(--gancho); line-height: 1.22; font-weight: 400; letter-spacing: -.3px; }
@@ -57,6 +60,7 @@
 <body class="{{FORMATO}}">
   <img class="gota" src="./gota.png">
   <img class="garrafa" src="./garrafa.png">
+  <img class="logo" src="./logo.png">
 
   <div class="texto gancho">{{GANCHO}}</div>
   <div class="produtor">{{PRODUTOR}}</div>

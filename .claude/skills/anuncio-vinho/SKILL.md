@@ -35,9 +35,9 @@ poucos elementos, preço como protagonista, layout limpo.
 
 - Fundo `#F5F2ED` liso, sem gradiente. Gota `#991356` a ~8,5% de opacidade como marca d'água, reconhecível (nunca ampliada ao ponto de virar mancha)
 - Garrafa 100% visível, sem overlay, sombra bem sutil. Nunca gerada por IA
-- Stories: topo 250px e base 340px livres pra interface do Instagram. Botão "Comprar agora" NÃO entra na arte
+- Stories: topo 250px livre. Preço e cupom sobem, deixando um vão de ~350px pro botão "Comprar agora" (que NÃO entra na arte), e o logotipo completo (`dados/comnectar-transparente.png`, cores originais) fica embaixo, centralizado
 - Preço novo é o maior texto da peça. Serifada (Geotipe, cai pra Palatino se não instalada) nos títulos e valores, Rubik no apoio (precisa de internet pra carregar)
-- Só 5 blocos: gancho, produtor + nome, cupom, preço de/por, "no pix". Não adicionar mais que isso
+- Só 5 blocos de texto: gancho, produtor + nome, cupom, preço de/por, "no pix", mais o logotipo. Não adicionar mais que isso
 - Se o percentual de desconto for citado, arredondar pra baixo (299 por 210 = 29,8%, então "quase 30%")
 
 ## Requisitos

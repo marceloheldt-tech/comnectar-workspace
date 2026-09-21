@@ -1,6 +1,6 @@
 // Uso: node .claude/skills/anuncio-vinho/scripts/gerar.js <pasta-do-anuncio>
 // A pasta precisa ter foto.jpg (garrafa em fundo branco) e dados.json.
-// Gera garrafa.png, gota.png, stories.html/png e feed.html/png na mesma pasta.
+// Gera garrafa.png, gota.png, logo.png, stories.html/png e feed.html/png na mesma pasta.
 const fs = require('fs');
 const path = require('path');
 const { createCanvas, loadImage } = require('canvas');
@@ -93,10 +93,38 @@ async function prepararGota(entrada, saida) {
   fs.writeFileSync(saida, out.toBuffer('image/png'));
 }
 
+// Logotipo completo: só corta a margem e tira o branco opaco, sem recolorir.
+async function prepararLogo(entrada, saida) {
+  const img = await loadImage(fs.readFileSync(entrada));
+  const w = img.width, h = img.height;
+  const c = createCanvas(w, h), ctx = c.getContext('2d');
+  ctx.drawImage(img, 0, 0);
+  const id = ctx.getImageData(0, 0, w, h), d = id.data;
+  let minX = w, minY = h, maxX = 0, maxY = 0;
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      const p = (y * w + x) * 4;
+      if (Math.min(d[p], d[p + 1], d[p + 2]) >= 250) d[p + 3] = 0;
+      if (d[p + 3] > 12) {
+        if (x < minX) minX = x; if (x > maxX) maxX = x;
+        if (y < minY) minY = y; if (y > maxY) maxY = y;
+      }
+    }
+  }
+  ctx.putImageData(id, 0, 0);
+  const cw = maxX - minX + 1, ch = maxY - minY + 1;
+  const esc = Math.min(1, 1400 / cw);
+  const out = createCanvas(Math.round(cw * esc), Math.round(ch * esc));
+  out.getContext('2d').drawImage(c, minX, minY, cw, ch, 0, 0, out.width, out.height);
+  fs.writeFileSync(saida, out.toBuffer('image/png'));
+}
+
 (async () => {
   const dados = JSON.parse(fs.readFileSync(path.join(pasta, 'dados.json'), 'utf8'));
   const g = await recortarGarrafa(path.join(pasta, 'foto.jpg'), path.join(pasta, 'garrafa.png'));
   await prepararGota(path.join(RAIZ, 'dados/gota-transparente.png'), path.join(pasta, 'gota.png'));
+
+  await prepararLogo(path.join(RAIZ, 'dados/comnectar-transparente.png'), path.join(pasta, 'logo.png'));
 
   const modelo = fs.readFileSync(path.join(__dirname, '../template.html'), 'utf8');
   const formatos = { stories: [1080, 1920], feed: [1080, 1350] };
