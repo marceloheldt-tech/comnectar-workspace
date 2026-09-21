@@ -126,6 +126,11 @@ async function prepararLogo(entrada, saida) {
 
   await prepararLogo(path.join(RAIZ, 'dados/comnectar-transparente.png'), path.join(pasta, 'logo.png'));
 
+  const bandeiras = JSON.parse(fs.readFileSync(path.join(__dirname, '../bandeiras.json'), 'utf8'));
+  const svg = bandeiras[(dados.pais || '').toUpperCase()];
+  if (!svg) throw new Error('Bandeira não encontrada pra pais=' + dados.pais + ' (adicione em bandeiras.json)');
+  dados.bandeira = 'data:image/svg+xml;base64,' + Buffer.from(svg).toString('base64');
+
   const modelo = fs.readFileSync(path.join(__dirname, '../template.html'), 'utf8');
   const formatos = { stories: [1080, 1920], feed: [1080, 1350] };
   const browser = await chromium.launch();
