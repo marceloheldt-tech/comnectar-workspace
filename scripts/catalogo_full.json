@@ -760,7 +760,7 @@
       "edges": [
         {
           "node": {
-            "availableForSale": true,
+            "availableForSale": false,
             "price": "1059.00"
           }
         }
@@ -1208,7 +1208,7 @@
     },
     "priceRangeV2": {
       "minVariantPrice": {
-        "amount": "289.0",
+        "amount": "234.0",
         "currencyCode": "BRL"
       }
     },
@@ -1217,7 +1217,7 @@
         {
           "node": {
             "availableForSale": true,
-            "price": "289.00"
+            "price": "234.00"
           }
         }
       ]
@@ -1586,7 +1586,7 @@
   {
     "id": "gid://shopify/Product/9045903966465",
     "title": "Vinho Rosé Côtes de Provence 2022 - Miraval",
-    "description": "Vinho Rosé Côtes de Provence Rosé 2022 - Miraval Côtes de Provence Rosé 2022 Miraval é um dos rosés franceses mais cultuados no mundo, elaborado na famosa propriedade Miraval, localizada no coração da Provence, Cotaux Varois. Esse vinho é produzido a partir de Syrah, Cinsault, Grenache e Rolle (Vermentino), com uvas colhidas pela manhã e uma seleção rigorosa, garantindo frescor e qualidade. Com envolvente coloração rosada, destaca-se por aromas intensos de flores, frutas silvestres e um toque mineral refrescante, acrescido por notas cítricas mediterrâneas e final lembrando campos de lavanda. A vinificação utiliza pressurização direta para a maioria das uvas, com parte da Syrah vinificada pelo método “saignée”. O vinho passa por fermentação a baixa temperatura (95% em inox, 5% em barrica com batonnage), destacando corpo médio e teor alcoólico de 13%. Premiado com 90 pontos por Robert Parker e Wine Spectator, Miraval Rosé 2022 é perfeito para harmonizar com saladas, frutos do mar, sushis, culinária mediterrânea ou simplesmente para momentos de degustação descontraída. Um dos vinhos rosé mais buscados do planeta, Miraval alia tradição, sabor único e elegância francesa. Se procura comprar vinho rosé Provence online, Miraval é referência absoluta entre os melhores vinhos franceses da categoria. Uvas: Syrah, Cinsault, Grenache e Rolle (Vermentino)",
+    "description": "Vinho Rosé Côtes de Provence Rosé 2022 - Miraval Côtes de Provence Rosé 2022 Miraval é um dos rosés franceses mais cultuados no mundo, elaborado na famosa propriedade Miraval, localizada no coração da Provence, Cotaux Varois. Esse vinho é produzido a partir de Syrah, Cinsault, Grenache e Rolle (Vermentino), com uvas colhidas pela manhã e uma seleç��o rigorosa, garantindo frescor e qualidade. Com envolvente coloração rosada, destaca-se por aromas intensos de flores, frutas silvestres e um toque mineral refrescante, acrescido por notas cítricas mediterrâneas e final lembrando campos de lavanda. A vinificação utiliza pressurização direta para a maioria das uvas, com parte da Syrah vinificada pelo método “saignée”. O vinho passa por fermentação a baixa temperatura (95% em inox, 5% em barrica com batonnage), destacando corpo médio e teor alcoólico de 13%. Premiado com 90 pontos por Robert Parker e Wine Spectator, Miraval Rosé 2022 é perfeito para harmonizar com saladas, frutos do mar, sushis, culinária mediterrânea ou simplesmente para momentos de degustação descontraída. Um dos vinhos rosé mais buscados do planeta, Miraval alia tradição, sabor único e elegância francesa. Se procura comprar vinho rosé Provence online, Miraval é referência absoluta entre os melhores vinhos franceses da categoria. Uvas: Syrah, Cinsault, Grenache e Rolle (Vermentino)",
     "featuredImage": {
       "url": "https://cdn.shopify.com/s/files/1/0802/2114/3297/files/5789fb7c5a055144fa2edc7d57a24c2f.jpg?v=1772474945"
     },
@@ -1720,7 +1720,7 @@
       "edges": [
         {
           "node": {
-            "availableForSale": true,
+            "availableForSale": false,
             "price": "1199.00"
           }
         }
@@ -4624,7 +4624,7 @@
       "edges": [
         {
           "node": {
-            "availableForSale": true,
+            "availableForSale": false,
             "price": "4499.00"
           }
         }
