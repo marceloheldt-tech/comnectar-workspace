@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --vinho: #991356; --preto: #111; --fundo: #F5F2ED; --serif: 'Geotipe','Palatino Linotype',Georgia,serif; --sans: 'Rubik',sans-serif; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { overflow: hidden; }
+  body { position: relative; background: var(--fundo); color: var(--preto); font-family: var(--sans); }
+
+  /* ---------- Stories 1080x1920 (topo 250px e base 340px livres pra interface do Instagram) ---------- */
+  body.stories { width: 1080px; height: 1920px;
+    --b-top: 300px; --b-h: 1340px; --b-left: 70px;
+    --g-w: 760px; --g-right: -70px; --g-top: 1010px;
+    --t-left: 560px; --t-w: 460px;
+    --gancho-top: 330px; --gancho: 46px;
+    --nome: 92px; --preco-bottom: 400px;
+    --de: 46px; --por: 150px; --cupom: 38px; --mini: 34px; }
+
+  /* ---------- Feed 1080x1350 ---------- */
+  body.feed { width: 1080px; height: 1350px;
+    --b-top: 130px; --b-h: 1010px; --b-left: 80px;
+    --g-w: 640px; --g-right: -50px; --g-top: 640px;
+    --t-left: 540px; --t-w: 480px;
+    --gancho-top: 150px; --gancho: 42px;
+    --nome: 84px; --preco-bottom: 170px;
+    --de: 42px; --por: 132px; --cupom: 36px; --mini: 32px; }
+
+  .gota { position: absolute; width: var(--g-w); right: var(--g-right); top: var(--g-top); opacity: .085; }
+  .garrafa { position: absolute; top: var(--b-top); left: var(--b-left); height: var(--b-h); aspect-ratio: {{RATIO}};
+    filter: drop-shadow(26px 34px 34px rgba(60,30,30,.16)); }
+  .texto { position: absolute; left: var(--t-left); width: var(--t-w); }
+
+  .gancho { top: var(--gancho-top); text-wrap: balance; font-size: var(--gancho); line-height: 1.22; font-weight: 400; letter-spacing: -.3px; }
+  .gancho b { font-weight: 500; }
+  .produtor { position: absolute; left: var(--t-left); top: calc(var(--gancho-top) + var(--gancho) * 2.9 + 40px);
+    font-size: 26px; letter-spacing: 6px; text-transform: uppercase; font-weight: 500; color: var(--vinho); }
+  .nome { position: absolute; left: var(--t-left); width: var(--t-w);
+    top: calc(var(--gancho-top) + var(--gancho) * 2.9 + 92px);
+    font-family: var(--serif); font-style: italic; font-weight: 400; font-size: var(--nome); line-height: 1.02; letter-spacing: -1.5px; }
+  .detalhe { position: absolute; left: var(--t-left); font-size: var(--mini); font-weight: 400; color: #5b544d;
+    top: calc(var(--gancho-top) + var(--gancho) * 2.9 + 92px + var(--nome) * 2.1 + 26px); }
+
+  .preco { position: absolute; left: var(--t-left); width: var(--t-w); bottom: var(--preco-bottom); }
+  .cupom { font-size: var(--cupom); line-height: 1.2; font-weight: 400; }
+  .cupom span { display: block; font-size: calc(var(--cupom) * .85); color: #5b544d; letter-spacing: 1px; margin-bottom: 4px; }
+  .cupom strong { display: block; font-weight: 500; letter-spacing: 1.5px; color: var(--vinho); font-size: calc(var(--cupom) * .98); }
+  .de { margin-top: 34px; font-family: var(--serif); font-size: var(--de); line-height: 1; color: #5b544d;
+    text-decoration: line-through; text-decoration-thickness: 2px; }
+  .de i { font-family: var(--sans); font-style: normal; font-size: calc(var(--de) * .72); text-decoration: none; display: inline-block; margin-left: 12px; }
+  .por { margin-top: 8px; font-family: var(--serif); font-size: var(--por); line-height: .95; letter-spacing: -3px; font-weight: 400; white-space: nowrap; }
+  .por small { font-size: .42em; letter-spacing: 0; margin-right: 6px; }
+  .pix { margin-top: 14px; font-size: var(--mini); font-weight: 500; letter-spacing: 3px; text-transform: uppercase; }
+</style>
+</head>
+<body class="{{FORMATO}}">
+  <img class="gota" src="./gota.png">
+  <img class="garrafa" src="./garrafa.png">
+
+  <div class="texto gancho">{{GANCHO}}</div>
+  <div class="produtor">{{PRODUTOR}}</div>
+  <div class="nome">{{NOME}}</div>
+  <div class="detalhe">{{DETALHE}}</div>
+
+  <div class="preco">
+    <div class="cupom"><span>cupom</span><strong>{{CUPOM}}</strong></div>
+    <div class="de">R$ {{PRECO_DE}}<i>por</i></div>
+    <div class="por"><small>R$</small>{{PRECO_POR}}</div>
+    <div class="pix">no pix</div>
+  </div>
+</body>
+</html>
