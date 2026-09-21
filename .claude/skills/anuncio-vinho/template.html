@@ -11,8 +11,8 @@
 
   /* ---------- Stories 1080x1920 (topo 250px e base 340px livres pra interface do Instagram) ---------- */
   body.stories { width: 1080px; height: 1920px;
-    --b-top: 300px; --b-h: 1340px; --b-left: 70px;
-    --g-w: 760px; --g-right: -70px; --g-top: 1010px;
+    --b-top: 320px; --b-h: 1300px; --b-left: 120px;
+    --g-w: 640px; --g-right: 30px; --g-top: 1090px;
     --t-left: 560px; --t-w: 460px;
     --gancho-top: 330px; --gancho: 46px;
     --nome: 92px; --preco-bottom: 400px;
@@ -20,16 +20,16 @@
 
   /* ---------- Feed 1080x1350 ---------- */
   body.feed { width: 1080px; height: 1350px;
-    --b-top: 130px; --b-h: 1010px; --b-left: 80px;
-    --g-w: 640px; --g-right: -50px; --g-top: 640px;
+    --b-top: 150px; --b-h: 980px; --b-left: 105px;
+    --g-w: 520px; --g-right: 30px; --g-top: 720px;
     --t-left: 540px; --t-w: 480px;
     --gancho-top: 150px; --gancho: 42px;
     --nome: 84px; --preco-bottom: 170px;
     --de: 42px; --por: 132px; --cupom: 36px; --mini: 32px; }
 
-  .gota { position: absolute; width: var(--g-w); right: var(--g-right); top: var(--g-top); opacity: .085; }
+  .gota { position: absolute; width: var(--g-w); right: var(--g-right); top: var(--g-top); opacity: .17; }
   .garrafa { position: absolute; top: var(--b-top); left: var(--b-left); height: var(--b-h); aspect-ratio: {{RATIO}};
-    filter: drop-shadow(26px 34px 34px rgba(60,30,30,.16)); }
+    transform: rotate(7deg); filter: drop-shadow(26px 34px 34px rgba(60,30,30,.16)); }
   .texto { position: absolute; left: var(--t-left); width: var(--t-w); }
 
   .gancho { top: var(--gancho-top); text-wrap: balance; font-size: var(--gancho); line-height: 1.22; font-weight: 400; letter-spacing: -.3px; }
