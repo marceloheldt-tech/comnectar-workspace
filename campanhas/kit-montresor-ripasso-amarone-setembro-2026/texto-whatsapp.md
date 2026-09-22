@@ -4,9 +4,9 @@
 
 > Substituir `{{nome}}` pelo primeiro nome de cada cliente na hora do disparo.
 
-Oi, {{nome}}! Montei um kit com três vinhos da Montresor que contam a mesma história em intensidades diferentes 🍷
+{{nome}}, sabia que o Ripasso é chamado de "baby Amarone"? Ele é repassado sobre as cascas que sobram da produção do Amarone — aí ganha corpo e vira a porta de entrada perfeita pro estilo 🍷
 
-Tudo começa no Ripasso, que é "repassado" sobre as cascas que sobram da produção do Amarone — aí ganha corpo e é a porta de entrada perfeita pro estilo. Depois vem o Satinato, já um Amarone jovem e elegante, e fecha com o Capitel Amarone 2016, um Amarone della Valpolicella Classico DOCG com 8 anos de guarda. Três atos, uma casa só.
+Juntei esse Ripasso com mais dois Amarone da Montresor, formando um kit que sobe de intensidade: o Satinato entra como um Amarone jovem e elegante, e o Capitel Amarone 2016 fecha com 8 anos de guarda. Três atos, uma casa só.
 
 *O que vem no kit:*
 - Valpolicella Ripasso 2023 — Montresor
