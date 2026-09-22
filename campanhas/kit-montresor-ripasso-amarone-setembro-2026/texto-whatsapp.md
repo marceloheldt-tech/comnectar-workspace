@@ -17,11 +17,12 @@ Juntei esse Ripasso com mais dois Amarone da Montresor, formando um kit que sobe
 
 Só dá pra montar 5 kits com o estoque que tenho agora.
 
-Me chama aqui que eu separo o seu.
+Garanta o seu aqui: https://www.comnectar.com.br/collections/kits/products/kit-montresor-3-garrafas
 
 ---
 
 > Notas de envio:
-> - Kit ainda não cadastrado como produto no Shopify — preços calculados a partir do preço cheio de cada garrafa avulsa (soma R$1.347,00), -10% cartão, -10% adicional Pix, depois arredondado (R$1.212,30 → R$1.210,00 cartão; R$1.091,07 → R$1.090,00 Pix). Frete grátis confirmado pelo Marcelo. Cadastrar o kit no Shopify antes de disparar.
+> - Preços calculados a partir do preço cheio de cada garrafa avulsa (soma R$1.347,00), -10% cartão, -10% adicional Pix, depois arredondado (R$1.212,30 → R$1.210,00 cartão; R$1.091,07 → R$1.090,00 Pix). Frete grátis confirmado pelo Marcelo. Confirmar que o kit está cadastrado no Shopify com esses valores no link antes de disparar.
 > - Estoque: 5 kits (limitado pelo Ripasso e pelo Satinato, ambos com 5 garrafas; Capitel Amarone tem 6). Confirmar estoque atualizado antes do disparo.
 > - O asterisco (*) formata como negrito no WhatsApp
+> - Link de destino: https://www.comnectar.com.br/collections/kits/products/kit-montresor-3-garrafas

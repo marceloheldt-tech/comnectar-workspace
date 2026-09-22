@@ -60,13 +60,14 @@ De **R$ 1.347,00** (soma das garrafas avulsas) por **R$ 1.210,00 no cartão em 5
 ## Linha de CTA
 Conheça o Kit Montresor na comnéctar.
 
-[BOTÃO: GARANTIR O MEU]
+[BOTÃO: GARANTIR O MEU] → https://www.comnectar.com.br/collections/kits/products/kit-montresor-3-garrafas
 
 *(rodapé de benefícios inserido automaticamente pelo MESSAGING)*
 
 ---
 
 > Notas de envio:
-> - Kit ainda não cadastrado como produto no Shopify — preços calculados a partir do preço cheio de cada garrafa avulsa: soma R$1.347,00, -10% cartão = R$1.212,30, -10% adicional Pix = R$1.091,07, depois arredondados para R$1.210,00 (cartão) e R$1.090,00 (Pix), conforme pedido pelo Marcelo. Frete grátis confirmado pelo Marcelo. Cadastrar o kit no Shopify com esses valores antes de disparar.
+> - Preços calculados a partir do preço cheio de cada garrafa avulsa: soma R$1.347,00, -10% cartão = R$1.212,30, -10% adicional Pix = R$1.091,07, depois arredondados para R$1.210,00 (cartão) e R$1.090,00 (Pix), conforme pedido pelo Marcelo. Frete grátis confirmado pelo Marcelo. Confirmar que o kit está cadastrado no Shopify com esses valores no link antes de disparar.
 > - Estoque: 5 kits (limitado pelo Ripasso e pelo Satinato, ambos com 5 garrafas; Capitel Amarone tem 6). Confirmar estoque atualizado antes do disparo.
 > - Fatos sobre os vinhos (método Ripasso, linha "I Satinati", garrafa satinada de 1921, cru Capitel della Crosara) vêm das descrições já cadastradas no Shopify — não pesquisados novamente em fontes externas
+> - Link de destino: https://www.comnectar.com.br/collections/kits/products/kit-montresor-3-garrafas
