@@ -1,7 +1,8 @@
 import { chromium } from 'playwright';
 import { writeFileSync } from 'fs';
 
-const OUT = 'C:/Users/marce/AppData/Local/Temp/claude/c--Users-marce-Desktop-claude-comn-ctar/061757e4-902f-4d79-95ae-3d2a61930cc0/scratchpad';
+const OUT = process.env.TANYNO_OUT;
+if (!OUT) throw new Error('Defina TANYNO_OUT (mesma pasta usada no login-estoque.mjs)');
 
 const browser = await chromium.launch({
   headless: false,

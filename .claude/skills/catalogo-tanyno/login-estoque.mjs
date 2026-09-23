@@ -1,6 +1,7 @@
 import { chromium } from 'playwright';
 
-const OUT = 'C:/Users/marce/AppData/Local/Temp/claude/c--Users-marce-Desktop-claude-comn-ctar/061757e4-902f-4d79-95ae-3d2a61930cc0/scratchpad';
+const OUT = process.env.TANYNO_OUT;
+if (!OUT) throw new Error('Defina TANYNO_OUT (pasta fora do repo, ex: scratchpad) — o tanyno-auth.json guarda cookie de login');
 
 const browser = await chromium.launch({
   headless: false,
