@@ -15,9 +15,9 @@ A Vita Eterna é uma vinícola boutique de Pinto Bandeira, na Serra Gaúcha, com
 
 [COMPLETAR: 1 ou 2 frases sobre o vinho em si (safra, tempo em barrica ou aço, perfil na taça, harmonização)]
 
-Pra comemorar o lançamento, o preço especial no Pix vale pra compra de *caixa fechada*:
+Pra comemorar o lançamento, o preço especial no Pix vale pra compra da *caixa fechada com 6 garrafas*:
 
-*De R$ 89,00, por R$ 70,00 no Pix (por garrafa, na caixa fechada)*
+*De R$ 89,00, por R$ 70,00 a garrafa no Pix (caixa com 6 = R$ 420,00)*
 
 Me chama aqui que eu separo a sua caixa: [LINK DO PRODUTO]
 
@@ -25,7 +25,7 @@ Me chama aqui que eu separo a sua caixa: [LINK DO PRODUTO]
 
 > Notas de envio:
 > - Não encontrei o Versant no site da comnéctar, no site da Vita Eterna nem na busca. Dados da vinícola vêm de vitaeterna.com.br e do Guia Descorchados; nada sobre o vinho em si foi inventado
-> - Confirmar: R$ 70 é por garrafa na caixa fechada? Quantas garrafas tem a caixa (6?). Se o R$ 89 é o preço do site (cartão), a frase "De R$ 89,00" está certa
+> - Caixa com 6 garrafas (confirmado). R$ 70 por garrafa no Pix = R$ 420,00 a caixa, calculado por mim, conferir se é assim mesmo. Se o R$ 89 é o preço do site (cartão), a frase "De R$ 89,00" está certa
 > - Confirmar até quando vale a promo de lançamento e incluir a data na mensagem se tiver prazo
 > - Se o Versant for de outra linha ou tiver outra proposta (ex.: laranja, espumante), ajustar a frase da vinícola
 > - O asterisco (*) formata como negrito no WhatsApp
