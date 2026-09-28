@@ -1,7 +1,6 @@
 {
   "pasta_base": "dados/fornecedores/tabelas fornecedores para claude",
   "folder_drive_id": "1yey27_8ps54N4V-Vm3xXeQejZFvQ8gFt",
-
   "fornecedores": {
     "boisse": {
       "arquivo": "BOISSE.xlsx",
@@ -48,7 +47,10 @@
       "arquivo": "del maipo.xlsx",
       "drive_id": "1daMqE-hUzjxGYY-D-3W6lAgYSJkOL1ug",
       "tipo": "excel",
-      "abas": ["TABELA DE IMPORTAÇÃO", "VINHOS ESPECIAIS"],
+      "abas": [
+        "TABELA DE IMPORTAÇÃO",
+        "VINHOS ESPECIAIS"
+      ],
       "col_codigo": 1,
       "col_nome": 2,
       "col_safra": 3,
@@ -97,22 +99,22 @@
       "arquivo": "mistral.xlsx",
       "drive_id": "1U8CRldeMlnXosvgvqOSFg_4_7lSAreZS",
       "tipo": "excel",
-      "aba": "OFF",
-      "col_codigo": 1,
-      "col_nome": 2,
-      "col_volume": 4,
-      "col_tipo": 5,
-      "col_safra": 6,
-      "col_embalagem": 7,
-      "col_pais": 8,
-      "col_subregiao": 19,
-      "col_uva": 20,
-      "col_produtor": 21,
-      "col_custo": 16,
+      "aba": "GERAL",
+      "col_codigo": 2,
+      "col_nome": 3,
+      "col_volume": 5,
+      "col_tipo": 6,
+      "col_safra": 7,
+      "col_pais": 11,
+      "col_subregiao": 22,
+      "col_uva": 25,
+      "col_produtor": 9,
+      "col_custo": 19,
       "col_custo_label": "PREÇO FINAL C/ IPI",
       "formula": "direto",
       "data_inicio": 1,
-      "filtro_linha": "col_custo_numerico_e_col_nome_nao_vazio"
+      "filtro_linha": "col_custo_numerico_e_col_nome_nao_vazio",
+      "col_estoque": 8
     },
     "world wine": {
       "arquivo": "world wine.xlsx",
