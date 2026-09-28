@@ -1,39 +1,22 @@
 # Instagram — Le Difese 2019, Tenuta San Guido
 
-Três peças: carrossel no feed (narrativo, conta a história e fecha com a oferta), legenda, e sequência de stories.
+Três peças: carrossel de 2 slides no feed (informativo + produto com preço), legenda e sequência de stories.
 
 ---
 
-## Carrossel (feed, 1080x1350)
+## Carrossel (feed, 1080x1350, 2 slides)
 
-**Slide 1 — capa**
+**Slide 1 — informativo**
 O mesmo DNA do Sassicaia
-*Le Difese 2019 · Tenuta San Guido*
-(foto da garrafa limpa, texto sobre painel escuro)
 
-**Slide 2**
-Bolgheri, 1940s
-O marquês Mario Incisa della Rocchetta achou que o solo pedregoso da sua propriedade na costa toscana lembrava Bordeaux. Plantou Cabernet Sauvignon e fez um vinho só pra família.
+O Le Difese é feito pela Tenuta San Guido, em Bolgheri, casa do Sassicaia, o supertoscano que venceu os grandes Bordeaux às cegas em 1978. Leva lotes de Sassicaia e Guidalberto no corte e estagia nas barricas que já guardaram esses dois vinhos.
 
-**Slide 3**
-1978
-Numa degustação às cegas da revista Decanter, o Sassicaia 1972 ficou em primeiro lugar entre 33 grandes tintos de 11 países. Nascia a fama dos supertoscanos.
+Cabernet Sauvignon + Sangiovese · 92 pts James Suckling
 
-**Slide 4**
-Uma DOC só dele
-Em 1994, o Sassicaia ganhou a Bolgheri Sassicaia DOC, única denominação da Itália dedicada a uma só propriedade.
-
-**Slide 5**
-A porta de entrada da casa
-O Le Difese é feito pela mesma Tenuta San Guido. Leva lotes de Sassicaia e Guidalberto no corte e estagia nas barricas que já guardaram esses dois vinhos.
-
-**Slide 6**
-Na taça
-Cabernet Sauvignon e Sangiovese. Amora, cassis e especiarias, taninos finos e acidez marcante.
-92 pontos James Suckling
-
-**Slide 7 — oferta**
+**Slide 2 — produto e preço**
+(foto da garrafa)
 Le Difese 2019
+Tenuta San Guido · Toscana, Itália
 ~~R$ 870~~ **R$ 499**
 Estoque limitado · link na bio
 
@@ -79,5 +62,4 @@ Estoque limitado
 
 > Notas:
 > - Visual segue as regras de marca: painel escuro só na área do texto, garrafa 100% visível, logo transparente
-> - "1940s" no slide 2: o primeiro Sassicaia foi feito em 1948 (fonte: Wikipedia/Tenuta San Guido). Se preferir, trocar por "1948"
 > - Confirmar se R$ 499 é preço Pix antes de publicar
