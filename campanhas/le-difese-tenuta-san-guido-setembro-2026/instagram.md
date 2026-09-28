@@ -24,7 +24,7 @@ Estoque limitado · link na bio
 
 ## Legenda
 
-Tem vinho que carrega o sobrenome da casa 🐗
+Tem vinho que carrega o sobrenome da casa
 
 O Le Difese é feito pela Tenuta San Guido, em Bolgheri, a mesma família que criou o Sassicaia, o supertoscano que venceu os grandes Bordeaux numa degustação às cegas em 1978 e tem até uma DOC exclusiva.
 
