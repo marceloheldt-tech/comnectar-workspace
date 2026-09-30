@@ -9,9 +9,9 @@ const b64 = f => 'data:image/png;base64,' + readFileSync(path.join(root, f)).toS
 const logo = b64('dados/comnectar-transparente.png');
 const gota = b64('dados/gota-transparente.png');
 
-// [nome, produtor, país, tipo, preço cheio]
+// [nome, produtor, país, tipo, preço cheio, pix fixo (opcional)]
 const vinhos = [
-  ['Langhe Nebbiolo 2024', 'Mario Costa', 'Itália', 'Tinto', 246],
+  ['Langhe Nebbiolo 2024', 'Mario Costa', 'Itália', 'Tinto', 279, 220],
   ['La Piu Belle Rosé 2024', 'Viña Vik', 'Chile', 'Rosé', 189],
   ['Blanc de Blanc', 'Cave Geisse', 'Brasil', 'Espumante', 239],
   ['La Piu Belle Rosé 2022', 'Viña Vik', 'Chile', 'Rosé', 219],
@@ -55,12 +55,12 @@ const grupos = ['Tintos:Tinto', 'Brancos:Branco', 'Rosés:Rosé', 'Espumantes:Es
 
 const secoes = grupos.map(([titulo, tipo]) => {
   const itens = vinhos.filter(v => v[3] === tipo).sort((a, b) => a[4] - b[4]);
-  const linhas = itens.map(([nome, prod, pais, , p]) => `
+  const linhas = itens.map(([nome, prod, pais, , p, pix]) => `
       <tr>
         <td class="vinho"><span class="nome">${nome}</span><span class="meta">${prod} · ${pais}</span></td>
         <td class="cheio">${brl(p)}</td>
         <td class="cartao">${brl(p * 0.9)}</td>
-        <td class="pix">${brl(p * 0.8)}</td>
+        <td class="pix">${brl(pix ?? p * 0.8)}</td>
       </tr>`).join('');
   return `
     <section>
