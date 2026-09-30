@@ -49,7 +49,7 @@ const vinhos = [
   ['La Piu Belle Tinto 2022', 'Viña Vik', 'Chile', 'Tinto', 579],
 ];
 
-const brl = v => 'R$ ' + (Math.round(v * 100) / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const brl = v => 'R$ ' + Math.ceil(Math.round(v * 100) / 100).toLocaleString('pt-BR');
 
 const grupos = ['Tintos:Tinto', 'Brancos:Branco', 'Rosés:Rosé', 'Espumantes:Espumante'].map(s => s.split(':'));
 
