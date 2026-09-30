@@ -1,5 +1,5 @@
 import { chromium } from 'playwright';
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { fileURLToPath } from 'url';
 import path from 'path';
 
@@ -136,5 +136,108 @@ await page.pdf({
   footerTemplate: '<div style="width:100%;text-align:center;font-size:7pt;font-family:Arial;color:#991356">comnéctar · <span class="pageNumber"></span>/<span class="totalPages"></span></div>',
 });
 await page.screenshot({ path: path.join(dir, 'preview.png'), fullPage: true });
+
+// ---------- STORIES (1080x1920) ----------
+const baseCss = `
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; }
+  body { font-family: 'Rubik', Arial, sans-serif; color: #000; }
+  .serif { font-family: 'Geotipe','Palatino Linotype',Georgia,serif; font-weight: 400; }`;
+const fontLink = '<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">';
+
+const capa = `<!doctype html><html><head><meta charset="utf-8">${fontLink}<style>${baseCss}
+  body { background: #991356; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .gota { width: 360px; filter: brightness(0) invert(1); margin-bottom: 40px; }
+  .t1 { font-size: 150px; letter-spacing: 6px; line-height: 1; }
+  .t2 { font-size: 96px; letter-spacing: 14px; margin-top: 30px; }
+  .linha { width: 140px; height: 2px; background: #fff; margin: 80px 0 70px; }
+  .sub { font-size: 40px; font-weight: 300; line-height: 1.4; max-width: 780px; }
+  .selos { display: flex; gap: 28px; margin-top: 80px; }
+  .selo { border: 2px solid #fff; border-radius: 12px; padding: 26px 40px; font-size: 40px; font-weight: 300; }
+  .selo b { font-weight: 500; }
+  .selo.v { background: #fff; color: #991356; }
+  .rod { position: absolute; bottom: 260px; font-size: 30px; font-weight: 300; letter-spacing: 2px; }
+</style></head><body>
+  <img class="gota" src="${gota}">
+  <div class="serif t1">FECHA MÊS</div>
+  <div class="serif t2">SETEMBRO</div>
+  <div class="linha"></div>
+  <div class="sub">${vinhos.length} rótulos com condição especial pra fechar o mês.</div>
+  <div class="selos">
+    <div class="selo"><b>10% OFF</b> no cartão</div>
+    <div class="selo v"><b>20% OFF</b> no PIX</div>
+  </div>
+  <div class="rod">TOQUE PRA VER A SELEÇÃO →</div>
+</body></html>`;
+
+const telas = [];
+
+const tela = (t, i) => `<!doctype html><html><head><meta charset="utf-8">${fontLink}<style>${baseCss}
+  body { background: #fff; padding: 230px 80px 0; }
+  .topo { display: flex; align-items: center; justify-content: space-between; }
+  .topo img { width: 200px; margin-left: -40px; }
+  .topo .tag { font-size: 30px; letter-spacing: 3px; color: #991356; text-align: right; line-height: 1.3; }
+  .topo .tag small { display: block; font-family: 'Rubik'; font-size: 24px; letter-spacing: 1px; font-weight: 300; color: #000; }
+  h2 { font-size: 60px; color: #991356; margin-top: 50px; padding-bottom: 14px; border-bottom: 2px solid #991356; }
+  .cols { display: flex; justify-content: flex-end; font-size: 20px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; margin: 18px 0 4px; }
+  .cols span { width: 170px; text-align: right; }
+  .row { display: flex; align-items: center; padding: 20px 0; border-bottom: 1px solid #e6e6e6; }
+  .v { flex: 1; padding-right: 20px; }
+  .nome { font-size: 33px; font-weight: 500; line-height: 1.15; }
+  .meta { font-size: 25px; font-weight: 300; margin-top: 6px; }
+  .p { width: 170px; text-align: right; white-space: nowrap; }
+  .cheio { font-size: 28px; font-weight: 300; text-decoration: line-through; }
+  .cartao { font-size: 32px; }
+  .pix { font-size: 42px; font-weight: 500; color: #991356; }
+  .pag { position: absolute; bottom: 250px; left: 0; right: 0; text-align: center; font-size: 24px; font-weight: 300; letter-spacing: 2px; }
+</style></head><body>
+  <div class="topo"><img src="${gota}"><div class="tag serif">FECHA MÊS SETEMBRO<small>10% OFF cartão · 20% OFF PIX</small></div></div>
+  ${t.blocos.map(b => `
+    <h2 class="serif">${b.titulo}</h2>
+    <div class="cols"><span>Cheio</span><span>Cartão</span><span>PIX</span></div>
+    ${b.itens.map(([nome, prod, pais, , p, pix]) => `
+      <div class="row">
+        <div class="v"><div class="nome">${nome}</div><div class="meta">${prod} · ${pais}</div></div>
+        <div class="p cheio">${brl(p)}</div>
+        <div class="p cartao">${brl(p * 0.9)}</div>
+        <div class="p pix">${brl(pix ?? p * 0.8)}</div>
+      </div>`).join('')}`).join('')}
+  <div class="pag">${i === telas.length - 1 ? 'Condições válidas enquanto durarem os estoques.' : `${i + 1}/${telas.length} · continua →`}</div>
+</body></html>`;
+
+const sdir = path.join(dir, 'stories');
+mkdirSync(sdir, { recursive: true });
+const sp = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
+
+// monta as telas medindo a altura real: enche cada story até onde cabe (acima do rodapé),
+// e não deixa título de grupo sozinho no fim da tela com só 1 vinho se o grupo tiver mais
+const LIMITE = 1600;
+const cabe = async t => {
+  await sp.setContent(tela(t, 0), { waitUntil: 'networkidle' });
+  return sp.evaluate(lim => Math.max(...[...document.querySelectorAll('.row')].map(r => r.getBoundingClientRect().bottom)) <= lim, LIMITE);
+};
+const com = (t, titulo, vs) => {
+  const blocos = t.blocos.map(b => ({ titulo: b.titulo, itens: [...b.itens] }));
+  if (blocos.at(-1)?.titulo !== titulo) blocos.push({ titulo, itens: [] });
+  blocos.at(-1).itens.push(...vs);
+  return { blocos };
+};
+for (const [titulo, tipo] of grupos) {
+  const itens = vinhos.filter(v => v[3] === tipo).sort((a, b) => a[4] - b[4]);
+  for (let k = 0; k < itens.length; k++) {
+    const t = telas.at(-1);
+    const novoGrupo = t && t.blocos.at(-1).titulo !== titulo;
+    const teste = novoGrupo ? itens.slice(k, k + 2) : [itens[k]];
+    if (t && await cabe(com(t, titulo, teste))) telas[telas.length - 1] = com(t, titulo, [itens[k]]);
+    else telas.push(com({ blocos: [] }, titulo, [itens[k]]));
+  }
+}
+
+const shots = [['00-capa', capa], ...telas.map((t, i) => [String(i + 1).padStart(2, '0') + '-selecao', tela(t, i)])];
+for (const [nome, h] of shots) {
+  await sp.setContent(h, { waitUntil: 'networkidle' });
+  await sp.screenshot({ path: path.join(sdir, nome + '.png') });
+}
+
 await browser.close();
 console.log('ok');
