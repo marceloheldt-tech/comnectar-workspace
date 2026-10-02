@@ -1,0 +1,82 @@
+{
+  "despachos": [
+    {
+      "codigo": "TXAQ581563442tx",
+      "cliente": null,
+      "adicionadoEm": "2026-10-02",
+      "arquivado": false,
+      "situacao": "aguardando_coleta",
+      "pedidoTotal": "16243967338",
+      "previsao": null,
+      "ultimoStatus": "ARQUIVO RECEBIDO",
+      "dataStatus": "2026-10-01 16:46:16",
+      "etapa": null,
+      "ultimaConsulta": "2026-10-02"
+    },
+    {
+      "codigo": "TXAQ581563434tx",
+      "cliente": null,
+      "adicionadoEm": "2026-10-02",
+      "arquivado": false,
+      "situacao": "aguardando_coleta",
+      "pedidoTotal": "16243967338",
+      "previsao": null,
+      "ultimoStatus": "ARQUIVO RECEBIDO",
+      "dataStatus": "2026-10-01 16:46:16",
+      "etapa": null,
+      "ultimaConsulta": "2026-10-02"
+    },
+    {
+      "codigo": "TXAQ580940245tx",
+      "cliente": null,
+      "adicionadoEm": "2026-10-02",
+      "arquivado": false,
+      "situacao": "em_transito",
+      "pedidoTotal": "1426",
+      "previsao": "2026-10-07",
+      "ultimoStatus": "TRANSFERENCIA PARA: - SAO",
+      "dataStatus": "2026-10-02 05:57:24",
+      "etapa": "Transferência para unidade local",
+      "ultimaConsulta": "2026-10-02"
+    },
+    {
+      "codigo": "TXAQ580583300tx",
+      "cliente": null,
+      "adicionadoEm": "2026-10-02",
+      "arquivado": false,
+      "situacao": "em_transito",
+      "pedidoTotal": "16242749091",
+      "previsao": "2026-10-08",
+      "ultimoStatus": "TRANSFERENCIA PARA: - SAO",
+      "dataStatus": "2026-10-02 05:57:24",
+      "etapa": "Transferência para unidade local",
+      "ultimaConsulta": "2026-10-02"
+    },
+    {
+      "codigo": "TXAQ580585552tx",
+      "cliente": null,
+      "adicionadoEm": "2026-10-02",
+      "arquivado": false,
+      "situacao": "em_transito",
+      "pedidoTotal": "16242445187",
+      "previsao": "2026-10-08",
+      "ultimoStatus": "TRANSFERENCIA PARA: - SAO",
+      "dataStatus": "2026-10-02 05:57:24",
+      "etapa": "Transferência para unidade local",
+      "ultimaConsulta": "2026-10-02"
+    },
+    {
+      "codigo": "TXAQ581638889tx",
+      "cliente": null,
+      "adicionadoEm": "2026-10-02",
+      "arquivado": false,
+      "situacao": "aguardando_coleta",
+      "pedidoTotal": "16244766452",
+      "previsao": null,
+      "ultimoStatus": "ARQUIVO RECEBIDO",
+      "dataStatus": "2026-10-01 18:04:40",
+      "etapa": null,
+      "ultimaConsulta": "2026-10-02"
+    }
+  ]
+}
