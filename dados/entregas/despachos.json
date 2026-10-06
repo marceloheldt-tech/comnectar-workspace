@@ -5,52 +5,53 @@
       "cliente": null,
       "adicionadoEm": "2026-10-02",
       "arquivado": false,
-      "situacao": "aguardando_coleta",
+      "situacao": "saiu_para_entrega",
       "pedidoTotal": "16243967338",
-      "previsao": null,
-      "ultimoStatus": "ARQUIVO RECEBIDO",
-      "dataStatus": "2026-10-01 16:46:16",
-      "etapa": null,
-      "ultimaConsulta": "2026-10-02"
+      "previsao": "2026-10-07",
+      "ultimoStatus": "PROCESSO DE ENTREGA",
+      "dataStatus": "2026-10-06 08:53:24",
+      "etapa": "Saída para Entrega",
+      "ultimaConsulta": "2026-10-06"
     },
     {
       "codigo": "TXAQ581563434tx",
       "cliente": null,
       "adicionadoEm": "2026-10-02",
       "arquivado": false,
-      "situacao": "aguardando_coleta",
+      "situacao": "saiu_para_entrega",
       "pedidoTotal": "16243967338",
-      "previsao": null,
-      "ultimoStatus": "ARQUIVO RECEBIDO",
-      "dataStatus": "2026-10-01 16:46:16",
-      "etapa": null,
-      "ultimaConsulta": "2026-10-02"
+      "previsao": "2026-10-07",
+      "ultimoStatus": "PROCESSO DE ENTREGA",
+      "dataStatus": "2026-10-06 08:53:24",
+      "etapa": "Saída para Entrega",
+      "ultimaConsulta": "2026-10-06"
     },
     {
       "codigo": "TXAQ580940245tx",
       "cliente": null,
       "adicionadoEm": "2026-10-02",
-      "arquivado": false,
-      "situacao": "em_transito",
+      "arquivado": true,
+      "situacao": "entregue",
       "pedidoTotal": "1426",
       "previsao": "2026-10-07",
-      "ultimoStatus": "TRANSFERENCIA PARA: - SAO",
-      "dataStatus": "2026-10-02 05:57:24",
-      "etapa": "Transferência para unidade local",
-      "ultimaConsulta": "2026-10-02"
+      "ultimoStatus": "ENTREGA REALIZADA",
+      "dataStatus": "2026-10-05 13:33:45",
+      "etapa": "Entrega Realizada",
+      "ultimaConsulta": "2026-10-06",
+      "entregueEm": "2026-10-05"
     },
     {
       "codigo": "TXAQ580583300tx",
       "cliente": null,
       "adicionadoEm": "2026-10-02",
       "arquivado": false,
-      "situacao": "em_transito",
+      "situacao": "saiu_para_entrega",
       "pedidoTotal": "16242749091",
       "previsao": "2026-10-08",
-      "ultimoStatus": "TRANSFERENCIA PARA: - SAO",
-      "dataStatus": "2026-10-02 05:57:24",
-      "etapa": "Transferência para unidade local",
-      "ultimaConsulta": "2026-10-02"
+      "ultimoStatus": "PROCESSO DE ENTREGA",
+      "dataStatus": "2026-10-05 18:25:45",
+      "etapa": "Saída para Entrega",
+      "ultimaConsulta": "2026-10-06"
     },
     {
       "codigo": "TXAQ580585552tx",
@@ -60,23 +61,24 @@
       "situacao": "em_transito",
       "pedidoTotal": "16242445187",
       "previsao": "2026-10-08",
-      "ultimoStatus": "TRANSFERENCIA PARA: - SAO",
-      "dataStatus": "2026-10-02 05:57:24",
+      "ultimoStatus": "RECEBIDO CD DE: - : HUB/MATRIZ",
+      "dataStatus": "2026-10-03 07:12:34",
       "etapa": "Transferência para unidade local",
-      "ultimaConsulta": "2026-10-02"
+      "ultimaConsulta": "2026-10-06"
     },
     {
       "codigo": "TXAQ581638889tx",
       "cliente": null,
       "adicionadoEm": "2026-10-02",
-      "arquivado": false,
-      "situacao": "aguardando_coleta",
+      "arquivado": true,
+      "situacao": "entregue",
       "pedidoTotal": "16244766452",
-      "previsao": null,
-      "ultimoStatus": "ARQUIVO RECEBIDO",
-      "dataStatus": "2026-10-01 18:04:40",
-      "etapa": null,
-      "ultimaConsulta": "2026-10-02"
+      "previsao": "2026-10-08",
+      "ultimoStatus": "ENTREGA REALIZADA",
+      "dataStatus": "2026-10-05 09:40:40",
+      "etapa": "Entrega Realizada",
+      "ultimaConsulta": "2026-10-06",
+      "entregueEm": "2026-10-05"
     }
   ]
 }
