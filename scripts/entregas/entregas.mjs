@@ -30,7 +30,11 @@ async function consultar(codigos) {
     viewport: { width: 1400, height: 900 }, locale: 'pt-BR', timezoneId: 'America/Sao_Paulo',
     userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
   });
-  await ctx.addInitScript(() => Object.defineProperty(navigator, 'webdriver', { get: () => undefined }));
+  await ctx.addInitScript(() => {
+    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // marca o aviso "Fique atento" como já visto hoje (mesma chave que a página grava ao fechar o modal)
+    try { localStorage.setItem('modal_alert_date', new Date().toISOString().split('T')[0]); } catch {}
+  });
   const page = await ctx.newPage();
   let api = {};
   page.on('response', async r => {
