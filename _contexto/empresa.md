@@ -15,5 +15,8 @@
 - Controle financeiro e fechamentos mensais
 - Relatórios de vendas e performance
 
+## Cadeia de fornecimento e procedência (confirmado 07/out)
+A comnéctar não importa diretamente — vende produtos legalizados, trazidos ao Brasil por importadoras licenciadas. Todo vinho tem registro no MAPA e contrarrótulo em português. A garantia de procedência é que o vinho que sai da vinícola é exatamente o mesmo que chega na adega do cliente, sem alteração. Além disso, todos os vinhos vendidos passam por um processo de curadoria antes de entrar no catálogo. Nunca descrever a comnéctar como importadora em conteúdo.
+
 ## Contexto adicional
 Mercado de vinhos premium é pequeno e segmentado — captação de novos leads é um desafio estrutural do negócio, não falta de esforço. O Marcelo entende bem o produto e o público, e quer usar o Claude principalmente pra escalar produção de conteúdo e assumir os criativos que hoje dependem de terceiros.
