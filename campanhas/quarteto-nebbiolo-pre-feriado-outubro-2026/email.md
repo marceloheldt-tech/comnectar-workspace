@@ -9,7 +9,7 @@
 Quatro Nebbiolos, uma condição que acaba hoje
 
 ## PREVIEW (texto prévio)
-Quarteto do Piemonte com preço especial pré-feriado. Os pedidos de hoje saem amanhã.
+Quarteto do Piemonte por R$ 999 no Pix, com frete grátis. Os pedidos de hoje saem amanhã.
 
 ---
 
@@ -52,7 +52,9 @@ Abra na ordem, do Mario Costa ao Fontanafredda, e repare como a mesma uva muda c
 
 A condição é pré-feriado e vale só até hoje, às 23h59. São 7 quartetos, e os pedidos de hoje saem amanhã.
 
-De **R$ 1.133,00** (soma das garrafas avulsas) por **R$ 1.019,70 no cartão**, ou **R$ 917,73 no Pix**.
+**R$ 999,00 no Pix**, ou **R$ 1.099,00 no cartão em até 5x sem juros**.
+
+**Frete grátis.**
 
 ## Linha de CTA
 Garanta o seu Quarteto Nebbiolo antes do feriado.
@@ -65,4 +67,4 @@ Garanta o seu Quarteto Nebbiolo antes do feriado.
 
 > Notas de envio:
 > - Kit ainda não cadastrado no Shopify. Antes de disparar, cadastrar com esses preços ou apontar o botão pro WhatsApp.
-> - Se quiser citar a entrega no dia seguinte pra região, incluir no fechamento: "Pra quem está em [CIDADE/REGIÃO], a entrega é amanhã mesmo."
+> - Preços definidos pelo Marcelo: R$ 999,00 no Pix e R$ 1.099,00 no cartão (até 5x sem juros). Frete grátis.
