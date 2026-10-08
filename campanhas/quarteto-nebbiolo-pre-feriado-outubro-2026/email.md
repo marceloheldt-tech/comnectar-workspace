@@ -59,7 +59,7 @@ De **R$ 1.199,00** por **R$ 999,00 no Pix**, ou **R$ 1.099,00 no cartão em até
 ## Linha de CTA
 Garanta o seu Quarteto Nebbiolo antes do feriado.
 
-[BOTÃO: QUERO O MEU]
+[BOTÃO: QUERO O MEU] (link pro WhatsApp)
 
 *(rodapé de benefícios inserido automaticamente pelo MESSAGING)*
 
