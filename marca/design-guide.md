@@ -67,9 +67,16 @@ Isso garante contraste máximo pro texto (cor sólida, não foto) e preserva 100
 
 **Fonte das imagens:** sempre pedir foto real pro Marcelo (celular resolve, luz natural ou luminária quente lateral, nunca flash de frente, formato vertical 4:5 ou 9:16). Nunca gerar por IA como solução padrão — só como rascunho de direção, se pedido explicitamente. Como não há mais máscara, não precisa mais reservar área escura/vazia na foto pro texto — o texto agora vive no painel, não na foto.
 
-### Mesclar slide escuro e slide claro (confirmado 03/set/2026, mantido no v3)
+### Mesclar cores de painel (confirmado 03/set/2026, expandido 08/out/2026)
 
-Carrossel não pode ser só slide escuro do início ao fim — fica pesado demais na grade do feed. Todo carrossel de conteúdo mescla os dois tratamentos (painel preto / painel branco) entre os slides de conteúdo, na ordem que fizer mais sentido pro conteúdo daquele slide — só não pode ser tudo igual.
+Carrossel não pode ser só slide escuro do início ao fim — fica pesado demais na grade do feed. Todo carrossel de conteúdo mescla os tratamentos de painel entre os slides, na ordem que fizer mais sentido pro conteúdo daquele slide — só não pode ser tudo igual.
+
+**Três cores de painel disponíveis** (texto do bloco de foto nunca muda — só o painel sólido embaixo):
+- **Preto `#000`:** texto branco, kicker branco 80% opacidade, separador `rgba(255,255,255,0.08)`
+- **Branco `#FFFFFF`:** texto preto `#1a1a1a`, kicker vinho `#991356`, separador `rgba(0,0,0,0.08)`
+- **Vinho sólido `#7A0F42`** (mesma cor do CTA final): texto branco, kicker branco 80% opacidade, separador `rgba(255,255,255,0.12)`. Usar com moderação — 1 slide no máximo por carrossel, pra não concorrer visualmente com o CTA final que também é vinho sólido.
+
+Variar entre as três ao longo do carrossel (ex: preto, branco, vinho, branco) em vez de alternar só preto/branco.
 
 **CTA final continua igual sempre:** vinho sólido, fora da lógica claro/escuro — é o card fixo, não entra na mescla.
 
