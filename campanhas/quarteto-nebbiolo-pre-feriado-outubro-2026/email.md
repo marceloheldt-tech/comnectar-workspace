@@ -52,7 +52,7 @@ Abra na ordem, do Mario Costa ao Fontanafredda, e repare como a mesma uva muda c
 
 A condição é pré-feriado e vale só até hoje, às 23h59. São 7 quartetos, e os pedidos de hoje saem amanhã.
 
-**R$ 999,00 no Pix**, ou **R$ 1.099,00 no cartão em até 5x sem juros**.
+De **R$ 1.186,00** por **R$ 999,00 no Pix**, ou **R$ 1.099,00 no cartão em até 5x sem juros**.
 
 **Frete grátis.**
 
