@@ -27,6 +27,6 @@ Quando escrever para o público da comnéctar (posts, emails, WhatsApp), manter 
 
 ## Regras visuais obrigatórias — carrosseis e posts
 
-**1. Máscara escura sobre a imagem de fundo:** sempre aplicar um overlay/painel escuro sobre a imagem de fundo. O texto do slide fica posicionado acima dessa máscara, garantindo legibilidade.
+**1. Nunca aplicar gradiente, máscara ou overlay em cima da foto.** Testamos e o overlay precisa de opacidade alta pra garantir leitura do texto, e isso apaga informação real da imagem por baixo (ex: um rótulo ficou ilegível). Padrão atual (confirmado 08/out): foto e texto em blocos sólidos separados, empilhados, sem nenhuma sobreposição — ver `marca/design-guide.md`, seção "Padrão de layout com imagem (carrosseis) — v3".
 
-**2. Produto sempre 100% visível:** a garrafa (ou qualquer produto) nunca pode ficar atrás da máscara escura. A máscara cobre apenas a área do texto. O produto fica no lado limpo do slide, sem nenhuma sobreposição. Usar painel escuro posicionado (não overlay full-slide) quando houver produto na imagem.
+**2. Produto/foto sempre 100% visível:** a garrafa, rótulo ou qualquer elemento da imagem nunca pode ficar coberto por nada. A foto ocupa seu próprio bloco, sem tratamento algum por cima. O texto vive só no painel sólido abaixo (ou ao lado), nunca sobre a foto.
