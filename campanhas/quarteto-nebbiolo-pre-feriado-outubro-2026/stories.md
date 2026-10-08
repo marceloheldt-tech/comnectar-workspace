@@ -22,7 +22,7 @@ Do inox puro à safra mais madura
 ## Story 3 (a oferta)
 **Visual:** garrafas + preço em destaque
 **Texto:**
-De R$ 1.186
+De R$ 1.199
 por R$ 999 no Pix
 ou R$ 1.099 em até 5x sem juros
 Frete grátis

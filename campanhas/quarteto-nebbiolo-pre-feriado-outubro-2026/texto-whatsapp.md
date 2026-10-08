@@ -20,7 +20,7 @@ A ideia é abrir lado a lado e perceber como o Nebbiolo muda de produtor pra pro
 - Langhe Nebbiolo 2023, Castello di Verduno
 - Langhe Nebbiolo 2021, Fontanafredda
 
-*De R$ 1.186,00 por R$ 999,00 no Pix, ou R$ 1.099,00 no cartão em até 5x sem juros.*
+*De R$ 1.199,00 por R$ 999,00 no Pix, ou R$ 1.099,00 no cartão em até 5x sem juros.*
 *Frete grátis.*
 
 São só 7 quartetos, e a condição vale até hoje às 23h59. Os pedidos saem amanhã cedo.
@@ -39,7 +39,7 @@ Os pedidos de hoje saem amanhã. Se quiser o seu, é só me responder aqui.
 
 > Notas de envio:
 > - Preços definidos pelo Marcelo: R$ 999,00 no Pix e R$ 1.099,00 no cartão (até 5x sem juros, R$ 219,80 por parcela). Frete grátis.
-> - Preço cheio: R$ 1.186,00 (Mario Costa R$ 299, Clerico R$ 319, Fontanafredda R$ 279, Castello di Verduno R$ 289).
+> - Preço cheio de referência: R$ 1.199,00, definido pelo Marcelo (a soma das avulsas com o Mario Costa a R$ 299 dá R$ 1.186,00).
 > - Estoque: 7 quartetos (limitado pelo Capisme-e, Clerico, com 7 garrafas).
 > - Kit ainda não cadastrado como produto no Shopify.
 > - Atualizar o [X] do follow-up com o número real de quartetos que sobraram.
