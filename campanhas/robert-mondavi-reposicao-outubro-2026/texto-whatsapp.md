@@ -22,22 +22,22 @@ São três:
 *De R$ 229,00 por R$ 199,00 cada garrafa.*
 *Frete grátis nas compras acima de R$ 1.000.*
 
-Levando duas de cada, são seis garrafas por R$ 1.194,00 e o frete fica por nossa conta.
+Fechando uma caixa com 6 garrafas, o frete já sai grátis. Dá pra montar do seu jeito: seis do seu preferido ou duas de cada, pra ter um branco, um tinto leve e um encorpado sempre à mão. A caixa sai por R$ 1.194,00, com a entrega por nossa conta.
 
-O estoque é curto, então me chama aqui que eu separo as suas.
+O estoque é curto, então me chama aqui que eu monto a sua caixa.
 
 ---
 
 ## Follow-up (opcional, no fim do dia, só pra quem não respondeu)
 
-Oi, {{nome}}! Passando pra lembrar da reposição da Robert Mondavi: Chardonnay, Pinot Noir e Cabernet Sauvignon 2024, já com os rótulos novos, a R$ 199,00 cada. Acima de R$ 1.000 o frete é grátis.
+Oi, {{nome}}! Passando pra lembrar da reposição da Robert Mondavi: Chardonnay, Pinot Noir e Cabernet Sauvignon 2024, já com os rótulos novos, a R$ 199,00 cada. Fechando a caixa com 6 garrafas, misturando do jeito que você quiser, o frete é grátis.
 
-Se quiser separar as suas, é só me responder aqui.
+Se quiser montar a sua, é só me responder aqui.
 
 ---
 
 > Notas de envio:
 > - Estoque no Shopify hoje: 6 garrafas de cada (18 no total).
 > - Os produtos 2024 no Shopify ainda estão a R$ 229,00. Ajustar o preço pra R$ 199,00 (com "comparar em" R$ 229,00) antes do disparo.
-> - 5 garrafas dão R$ 995,00, então o frete grátis só entra a partir da 6ª garrafa. Por isso a sugestão das "duas de cada".
+> - 5 garrafas dão R$ 995,00, então o frete grátis só entra a partir da 6ª garrafa. Por isso a chamada da caixa com 6.
 > - O asterisco (*) deixa o texto em negrito no WhatsApp.

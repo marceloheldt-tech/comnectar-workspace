@@ -14,9 +14,9 @@ Rótulo novo, mesmo vinho de sempre 🍷 A Robert Mondavi renovou o visual de to
 Vinhos da casa que Robert Mondavi fundou em 1966 no Napa Valley, a mesma que criou o Opus One junto com o Mouton Rothschild.
 
 De R$ 229 por R$ 199 cada garrafa.
-Frete grátis acima de R$ 1.000.
+📦 Fechando uma caixa com 6, o frete é grátis. Pode ser seis do seu preferido ou duas de cada.
 
-Estoque curto. Chama a gente no WhatsApp pelo link da bio 🍷
+Estoque curto. Chama a gente no WhatsApp pelo link da bio e monta a sua 🍷
 
 #vinho #robertmondavi #napavalley #vinhocaliforniano #pinotnoir #cabernetsauvignon #chardonnay #comnectar
 

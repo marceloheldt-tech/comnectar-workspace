@@ -9,7 +9,7 @@
 Robert Mondavi de volta, com rótulo novo
 
 ## PREVIEW (texto prévio)
-Chardonnay, Pinot Noir e Cabernet 2024 por R$ 199 cada. Frete grátis acima de R$ 1.000.
+Chardonnay, Pinot Noir e Cabernet 2024 por R$ 199 cada. Fechando a caixa com 6, o frete é grátis.
 
 ---
 
@@ -38,7 +38,7 @@ Cerca de 10 meses em barricas de carvalho francês e americano, com alguns lotes
 
 *(imagem das 3 garrafas com os rótulos novos)*
 
-Os três estão com o mesmo preço especial, então dá pra montar do jeito que você preferir.
+Os três estão com o mesmo preço especial, então a caixa com 6 garrafas pode ser montada do jeito que você preferir. Duas de cada é uma boa pedida: um branco pros dias de peixe e frutos do mar, um tinto leve que acompanha quase tudo e um encorpado pro fim de semana.
 
 **O que chegou**
 - Chardonnay 2024, Robert Mondavi
@@ -49,14 +49,14 @@ Os três estão com o mesmo preço especial, então dá pra montar do jeito que 
 
 De **R$ 229,00** por **R$ 199,00** cada garrafa.
 
-**Frete grátis nas compras acima de R$ 1.000.** Duas garrafas de cada já passam desse valor: são seis vinhos por R$ 1.194,00, com o frete por nossa conta.
+**Fechando uma caixa com 6 garrafas, o frete é grátis.** Seis do mesmo ou duas de cada, a caixa sai por R$ 1.194,00 e a entrega fica por nossa conta (frete grátis em compras acima de R$ 1.000).
 
 O estoque da reposição é curto, com poucas garrafas de cada.
 
 ## Linha de CTA
-Garanta os seus Mondavi com rótulo novo.
+Monte a sua caixa de Mondavi com rótulo novo.
 
-[BOTÃO: QUERO OS MEUS] (link pra coleção/produtos no site ou pro WhatsApp)
+[BOTÃO: MONTAR MINHA CAIXA] (link pra coleção/produtos no site ou pro WhatsApp)
 
 *(rodapé de benefícios inserido automaticamente pelo MESSAGING)*
 
