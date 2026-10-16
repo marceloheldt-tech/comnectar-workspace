@@ -34,3 +34,6 @@ tarefas.md
 # Sistema
 .DS_Store
 node_modules/
+
+# Dados puxados do Bling (financeiro, clientes) — só local
+dados/bling/
