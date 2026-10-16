@@ -37,3 +37,6 @@ node_modules/
 
 # Dados puxados do Bling (financeiro, clientes) — só local
 dados/bling/
+
+# Relatórios por cliente (dados pessoais) — só local
+analises/clientes/
