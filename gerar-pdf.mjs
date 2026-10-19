@@ -2,7 +2,7 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync, readFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-10-15-alexandre';
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-10-19-pedro';
 const pages = ['catalog-capa','catalog-p1','catalog-p2'];
 
 const browser = await chromium.launch();
@@ -29,5 +29,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/Selecao Alexandre - comnectar.pdf`, output);
-console.log('\n✅ PDF gerado: Selecao Alexandre - comnectar.pdf');
+writeFileSync(`${dir}/Selecao Pedro - comnectar.pdf`, output);
+console.log('\n✅ PDF gerado: Selecao Pedro - comnectar.pdf');
