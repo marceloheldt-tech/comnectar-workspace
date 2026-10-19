@@ -35,6 +35,7 @@ Informal, leve e educado. O público é premium, então a comunicação é sempr
 ## Ferramentas conectadas
 - Shopify — loja, newsletter e gestão de pedidos (MCP conectado)
 - Bling — sistema de gestão completo (ERP)
+- Bevean — CRM (clientes, campanhas, cashback, atendimento) — MCP conectado, só leitura, skill `/bevean`
 - Canva — criação de visuais (MCP conectado)
 - WhatsApp Business — campanhas e atendimento
 - Instagram — canal principal de conteúdo

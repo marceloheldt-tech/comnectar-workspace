@@ -6,7 +6,7 @@
 **Perfil:** solopreneur
 **Atende clientes:** B2C (foco principal) + alguns B2B (estabelecimentos PJ)
 **Equipe:** Solo. Tem 2 freelancers que cuidam de criativos (layouts e copies) — plano é internalizar essa parte
-**Ferramentas:** Shopify (loja + newsletter), Bling (ERP/gestão), Canva, WhatsApp Business, Instagram, TikTok
+**Ferramentas:** Shopify (loja + newsletter), Bling (ERP/gestão), Bevean (CRM: base de clientes, campanhas WhatsApp/email, cashback, atendimento), Canva, WhatsApp Business, Instagram, TikTok
 **Principais entregas:**
 - Conteúdo para redes sociais (Instagram e TikTok)
 - Campanhas de vendas via WhatsApp
