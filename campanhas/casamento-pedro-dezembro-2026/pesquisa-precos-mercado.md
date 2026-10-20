@@ -72,3 +72,15 @@ Levantamento feito em 20/10/2026, pra responder o pedido de melhoria de preço d
 | **Total** | 144 | 20.190,00 | 18.574,80 | 14.676,00 | | 1,38x | 19,3% | **3.898,80** |
 
 Markup = venda ÷ (custo + frete). Preço mínimo sem prejuízo (custo ÷ 0,92): Geisse R$ 135,87 · Riesling R$ 102,17 · Pinot R$ 76,09.
+
+## Cenário: −5% em todos os preços da Opção 2
+
+| Vinho | Qtd | Venda | Líquido (−8%) | Custo + frete | Lucro/un | Markup | Margem | Lucro total |
+|---|---|---|---|---|---|---|---|---|
+| Cave Geisse Brut | 60 | 161,50 | 148,58 | 125,00 | 23,58 | 1,29x | 14,6% | 1.414,80 |
+| Riesling Terroir Exclusivo | 54 | 128,25 | 117,99 | 94,00 | 23,99 | 1,36x | 18,7% | 1.295,46 |
+| Terroir Pinot Noir | 30 | 85,50 | 78,66 | 70,00 | 8,66 | 1,22x | 10,1% | 259,80 |
+| **Total** | 144 | 19.180,50 | 17.646,06 | 14.676,00 | | 1,31x | 15,5% | **2.970,06** |
+
+Contra o atual: −R$ 1.009,50 pro cliente, −R$ 928,74 de lucro. R$ 127,87 por convidado.
+Pedido vs vinícola cheio (R$ 21.516): −10,9% · vs vinícola Pix/boleto (R$ 20.650,20): −7,1% · vs menor preço de cada loja (R$ 18.664,20): +2,8%.
