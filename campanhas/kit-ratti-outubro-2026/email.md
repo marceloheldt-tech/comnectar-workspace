@@ -6,10 +6,10 @@
 ---
 
 ## ASSUNTO
-Seis rótulos da Renato Ratti, com o preço avulso do lado
+Seis rótulos da Renato Ratti, avulsos ou no kit
 
 ## PREVIEW (texto prévio)
-Do Dolcetto ao Barolo Marcenasco: compre só o que quiser, ou leve o kit completo por R$ 2.410,25 no Pix.
+Do Dolcetto ao Barolo Marcenasco: escolha as garrafas que quiser, ou leve o kit completo por R$ 2.537,10 no Pix.
 
 ---
 
@@ -23,8 +23,6 @@ Nos anos 1970, ele foi além e desenhou o primeiro mapa detalhado dos vinhedos h
 A gente juntou seis rótulos dessa casa num kit só. Dá pra provar como a Ratti trabalha cada uva do Piemonte, do vinho de todo dia ao Barolo de guarda.
 
 **O que vem no kit**
-
-*(imagem do kit)*
 
 **Barolo Marcenasco DOCG 2020**
 O rótulo que começou tudo. 100% Nebbiolo de La Morra, com alcaçuz, tabaco e toques terrosos, taninos finos e final longo. A safra 2020 recebeu 96 pontos de James Suckling, 94 da Wine Spectator e 92 da Vinous.
@@ -48,26 +46,23 @@ O vinho do dia a dia da Ratti. Feito em inox, com cereja fresca, framboesa e um 
 
 **Avulso ou no kit: você escolhe**
 
-Cada garrafa pode ser comprada separada, pelo preço abaixo. Pra quem quer conhecer a casa inteira, o kit sai bem mais em conta.
+Cada garrafa pode ser comprada separada, no cartão ou com 10% de desconto no Pix. Pra quem quer conhecer a casa inteira, o kit completo sai mais em conta nas duas formas de pagamento.
 
-| Vinho | Avulso no cartão | Avulso no Pix |
+*(imagem: tabela-kit-ratti.png)*
+
+| | Cartão | Pix |
 |---|---|---|
-| Barolo Marcenasco DOCG 2020 | R$ 899,00 | R$ 809,10 |
-| Langhe Nebbiolo Reggimento 2020 | R$ 559,00 | R$ 503,10 |
-| Villa Pattono Barbera d'Asti 2022 | R$ 489,00 | R$ 440,10 |
-| Villa Pattono Monferrato 2016 | R$ 369,00 | R$ 332,10 |
-| Barbera d'Asti Battaglione 2019 | R$ 359,00 | R$ 323,10 |
-| Colombè Langhe Dolcetto 2023 | R$ 299,00 | R$ 269,10 |
-| **Total das seis avulsas** | **R$ 2.974,00** | **R$ 2.676,60** |
-| **Kit Ratti completo** | **R$ 2.678,05** em até 5x sem juros | **R$ 2.410,25** |
+| As 6 garrafas avulsas | R$ 2.974,00 | R$ 2.676,60 |
+| **Kit Ratti completo** | **R$ 2.819,00** | **R$ 2.537,10** |
+| Você economiza | R$ 155,00 | R$ 139,50 |
 
-No Pix, o kit sai **R$ 563,75 abaixo** do preço cheio das seis garrafas. E tem frete grátis.
+No Pix, o kit sai **R$ 436,90 abaixo** do preço cheio das seis garrafas. No cartão, dá pra parcelar em até 5x sem juros. Frete grátis.
 
 ## Parágrafo de fechamento
 
 Temos **só 2 kits** com o estoque atual, e três dos rótulos estão nas últimas garrafas. Se a ideia é ter a Ratti completa em casa, vale garantir o seu agora.
 
-**Kit Ratti, 6 garrafas:** R$ 2.678,05 no cartão em até 5x sem juros, ou **R$ 2.410,25 no Pix**. Frete grátis.
+**Kit Ratti, 6 garrafas:** R$ 2.819,00 no cartão em até 5x sem juros, ou **R$ 2.537,10 no Pix**. Frete grátis.
 
 ## Linha de CTA
 Conheça o Kit Ratti na comnéctar.
@@ -79,9 +74,9 @@ Conheça o Kit Ratti na comnéctar.
 ---
 
 > Notas de envio:
-> - Link do botão: https://comnectar.com.br/products/kit-ratti-6-garrafas (confirmar domínio). O site mostra o kit a R$ 2.819,00; os preços de cartão e Pix do email precisam de cupom ou ajuste manual.
-> - **Pix avulso com 10% off é uma suposição: confirmar com o Marcelo antes de disparar.**
-> - Se o MESSAGING não renderizar tabela, trocar por lista: "Barolo Marcenasco DOCG 2020: R$ 899,00 no cartão ou R$ 809,10 no Pix" e assim por diante.
-> - Pontuações: Marcenasco 2020 (JS 96, WS 94, Vinous 92) conferidas na campanha de agosto; Battaglione 2019 (WS 91) vem da descrição do produto no Shopify, sem conferência externa.
+> - Link do botão: página do produto "Kit Ratti - 6 Garrafas" no Shopify (handle `kit-ratti-6-garrafas`).
+> - A imagem `tabela-kit-ratti.png` já tem os preços de cada garrafa avulsa. A tabela curta em texto fica logo abaixo dela; se o MESSAGING não renderizar tabela, trocar por três linhas de texto.
+> - Pix com 10% de desconto: confirmar se o checkout do site já aplica automaticamente ou se é pelo atendimento.
+> - Pontuações: Marcenasco 2020 (JS 96, WS 94, Vinous 92) conferidas na campanha de agosto; Battaglione 2019 (WS 91) vem da descrição do produto no Shopify.
 > - História do Renato Ratti: mesmas fontes do email do Barolo Marcenasco de agosto (ratti.com, Granai della Memoria).
 > - Estoque: 2 kits. Se acabar antes do envio, atualizar o fechamento.

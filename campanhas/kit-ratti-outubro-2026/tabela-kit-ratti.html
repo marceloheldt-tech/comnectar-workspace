@@ -6,14 +6,14 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { width: 1080px; height: 1350px; overflow: hidden; background: #fff; font-family: 'Rubik', sans-serif; }
-.page { width: 1080px; height: 1350px; padding: 56px 64px 40px; display: flex; flex-direction: column; position: relative; }
+.page { width: 1080px; height: 1350px; padding: 48px 64px 40px; display: flex; flex-direction: column; position: relative; }
 .serif { font-family: 'Geotipe', 'Palatino Linotype', Georgia, serif; font-weight: 400; }
 
 .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 26px; }
 .kicker { font-size: 15px; color: #991356; letter-spacing: 4px; text-transform: uppercase; font-weight: 500; margin-bottom: 8px; }
 .title { font-size: 58px; color: #000; line-height: 1.05; }
 .subtitle { font-size: 21px; color: #000; margin-top: 10px; font-weight: 300; }
-.gota { width: 70px; margin-top: 6px; }
+.gota { width: 90px; margin-top: 6px; }
 
 table { width: 100%; border-collapse: collapse; }
 th { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; color: #000; text-align: right; padding: 0 0 10px; border-bottom: 1.5px solid #000; }
@@ -21,8 +21,8 @@ th.vinho { text-align: left; }
 th.pix, td.pix { color: #991356; }
 td { padding: 6px 0; border-bottom: 1px solid #eee; vertical-align: middle; }
 .wine { display: flex; align-items: center; gap: 18px; }
-.thumb { width: 58px; height: 104px; flex-shrink: 0; display: flex; justify-content: center; overflow: hidden; }
-.thumb img { height: 100%; width: auto; object-fit: contain; }
+.thumb { width: 64px; height: 92px; flex-shrink: 0; display: flex; justify-content: center; overflow: hidden; }
+.thumb img { height: 100%; width: auto; object-fit: cover; object-position: 30% center; }
 .wname { font-size: 22px; color: #000; line-height: 1.2; }
 .wtype { font-size: 14px; color: #991356; font-weight: 500; margin-top: 3px; letter-spacing: 0.5px; }
 td.num { text-align: right; font-size: 22px; font-weight: 500; color: #000; white-space: nowrap; width: 170px; }
@@ -31,7 +31,7 @@ tr.total td { border-bottom: none; padding-top: 16px; }
 tr.total .tlabel { font-size: 15px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; }
 tr.total td.num { font-size: 24px; font-weight: 700; }
 
-.kit { margin-top: auto; background: #991356; border-radius: 12px; color: #fff; padding: 30px 40px 28px; }
+.kit { margin-top: 28px; background: #991356; border-radius: 12px; color: #fff; padding: 30px 40px 28px; }
 .kit-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
 .kit-title { font-size: 36px; }
 .kit-tag { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; opacity: 0.85; }
@@ -44,7 +44,7 @@ tr.total td.num { font-size: 24px; font-weight: 700; }
 .kit-price.big { font-size: 58px; }
 .kit-save { display: inline-block; background: #fff; color: #991356; font-size: 16px; font-weight: 500; padding: 6px 12px; border-radius: 8px; }
 .kit-note { font-size: 15px; opacity: 0.85; margin-top: 6px; }
-.kit-foot { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.25); font-size: 19px; display: flex; justify-content: space-between; }
+.kit-foot { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.25); font-size: 19px; display: flex; justify-content: space-between; }
 .kit-foot b { font-weight: 700; }
 </style>
 </head>
