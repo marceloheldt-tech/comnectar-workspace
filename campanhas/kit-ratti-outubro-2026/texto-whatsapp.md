@@ -14,10 +14,17 @@ Foi o Renato Ratti quem, em 1965, colocou pela primeira vez o nome de um vinhedo
 
 O kit passa pelas uvas que a casa faz de melhor: o Barolo Marcenasco (96 pontos James Suckling na safra 2020), o Langhe Nebbiolo Reggimento de vinhedos a quase 500 metros em La Morra, duas Barberas d'Asti com estilos diferentes, o Dolcetto Colombè pro dia a dia e o Villa Pattono Monferrato 2016, um corte de Barbera, Cabernet e Merlot já com quase dez anos de garrafa.
 
-Pode levar só os rótulos que quiser, ou o kit completo com desconto. Na imagem estão os preços de cada garrafa, no cartão e no Pix:
+Pode levar só os rótulos que quiser, ou o kit completo com desconto.
 
-*Avulsas, as seis somam:*
-R$ 2.974,00 no cartão ou R$ 2.676,60 no Pix
+*Avulsos (cartão / Pix):*
+• Barolo Marcenasco DOCG 2020: R$ 899,00 / R$ 809,10
+• Langhe Nebbiolo Reggimento 2020: R$ 559,00 / R$ 503,10
+• Villa Pattono Barbera d'Asti 2022: R$ 489,00 / R$ 440,10
+• Villa Pattono Monferrato 2016: R$ 369,00 / R$ 332,10
+• Barbera d'Asti Battaglione 2019: R$ 359,00 / R$ 323,10
+• Colombè Langhe Dolcetto 2023: R$ 299,00 / R$ 269,10
+
+*As seis avulsas somam R$ 2.974,00 no cartão ou R$ 2.676,60 no Pix.*
 
 *No kit completo:*
 *R$ 2.819,00 no cartão* (em até 5x sem juros)
