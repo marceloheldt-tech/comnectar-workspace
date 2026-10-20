@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1080px; height: 1350px; overflow: hidden; background: #fff; font-family: 'Rubik', sans-serif; }
+.page { width: 1080px; height: 1350px; padding: 48px 64px 40px; display: flex; flex-direction: column; position: relative; }
+.serif { font-family: 'Geotipe', 'Palatino Linotype', Georgia, serif; font-weight: 400; }
+
+.header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 26px; }
+.kicker { font-size: 15px; color: #991356; letter-spacing: 4px; text-transform: uppercase; font-weight: 500; margin-bottom: 8px; }
+.title { font-size: 54px; color: #000; line-height: 1.05; }
+.subtitle { font-size: 21px; color: #000; margin-top: 10px; font-weight: 300; }
+.gota { width: 90px; margin-top: 6px; }
+
+table { width: 100%; border-collapse: collapse; }
+th { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; color: #000; text-align: right; padding: 0 0 10px; border-bottom: 1.5px solid #000; }
+th.vinho { text-align: left; }
+th.pix, td.pix { color: #991356; }
+td { padding: 6px 0; border-bottom: 1px solid #eee; vertical-align: middle; }
+.wine { display: flex; align-items: center; gap: 18px; }
+.thumb { width: 64px; height: 92px; flex-shrink: 0; display: flex; justify-content: center; overflow: hidden; }
+.thumb img { height: 100%; width: auto; object-fit: cover; object-position: 30% center; }
+.wname { font-size: 22px; color: #000; line-height: 1.2; }
+.wtype { font-size: 14px; color: #991356; font-weight: 500; margin-top: 3px; letter-spacing: 0.5px; }
+td.num { text-align: right; font-size: 22px; font-weight: 500; color: #000; white-space: nowrap; width: 170px; }
+td.num.pix { color: #991356; }
+th.safra, td.safra { text-align: center; width: 90px; }
+td.safra { font-size: 22px; color: #000; }
+tr.total td { border-bottom: none; padding-top: 16px; }
+tr.total .tlabel { font-size: 15px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; }
+tr.total td.num { font-size: 24px; font-weight: 700; }
+
+.kit { margin-top: 28px; background: #991356; border-radius: 12px; color: #fff; padding: 30px 40px 28px; }
+.kit-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
+.kit-title { font-size: 36px; }
+.kit-tag { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; opacity: 0.85; }
+.kit-cols { display: flex; gap: 0; }
+.kit-col { flex: 1; padding-right: 24px; }
+.kit-col + .kit-col { padding-left: 32px; border-left: 1px solid rgba(255,255,255,0.25); }
+.kit-label { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; opacity: 0.85; margin-bottom: 6px; }
+.kit-from { font-size: 19px; text-decoration: line-through; opacity: 0.6; }
+.kit-price { font-size: 46px; font-weight: 700; line-height: 1.1; margin: 2px 0 6px; }
+.kit-price.big { font-size: 58px; }
+.kit-save { display: inline-block; background: #fff; color: #991356; font-size: 16px; font-weight: 500; padding: 6px 12px; border-radius: 8px; }
+.kit-note { font-size: 15px; opacity: 0.85; margin-top: 6px; }
+.kit-foot { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.25); font-size: 19px; display: flex; justify-content: space-between; }
+.kit-foot b { font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div>
+      <div class="kicker">Albert Bichot · Borgonha, França</div>
+      <div class="title serif">Kit Albert Bichot, 6 garrafas</div>
+      <div class="subtitle">Leve avulso ou o kit completo. Veja quanto você economiza.</div>
+    </div>
+    <img class="gota" src="../../dados/gota-transparente.png" alt="">
+  </div>
+
+  <table>
+    <thead>
+      <tr><th class="vinho">Rótulo (avulso)</th><th class="safra">Safra</th><th>Cartão</th><th class="pix">Pix (−10%)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="wine"><div class="thumb"><img src="imagens/6-pommard-2022.jpg"></div><div><div class="wname serif">Pommard</div><div class="wtype">Pinot Noir · Côte de Beaune</div></div></div></td>
+        <td class="safra">2022</td><td class="num">R$ 899,00</td><td class="num pix">R$ 809,10</td>
+      </tr>
+      <tr>
+        <td><div class="wine"><div class="thumb"><img src="imagens/2-aloxe-corton-2022.jpg"></div><div><div class="wname serif">Aloxe-Corton</div><div class="wtype">Pinot Noir · Côte de Beaune</div></div></div></td>
+        <td class="safra">2022</td><td class="num">R$ 499,00</td><td class="num pix">R$ 449,10</td>
+      </tr>
+      <tr>
+        <td><div class="wine"><div class="thumb"><img src="imagens/4-mercurey-2022.jpg"></div><div><div class="wname serif">Mercurey</div><div class="wtype">Pinot Noir · Côte Chalonnaise</div></div></div></td>
+        <td class="safra">2022</td><td class="num">R$ 489,00</td><td class="num pix">R$ 440,10</td>
+      </tr>
+      <tr>
+        <td><div class="wine"><div class="thumb"><img src="imagens/3-beaune-2023.jpg"></div><div><div class="wname serif">Beaune</div><div class="wtype">Pinot Noir · Côte de Beaune</div></div></div></td>
+        <td class="safra">2023</td><td class="num">R$ 369,00</td><td class="num pix">R$ 332,10</td>
+      </tr>
+      <tr>
+        <td><div class="wine"><div class="thumb"><img src="imagens/5-origines-pinot-noir-2023.jpg"></div><div><div class="wname serif">Origines Pinot Noir</div><div class="wtype">Pinot Noir · Top 100 Wine Spectator</div></div></div></td>
+        <td class="safra">2023</td><td class="num">R$ 349,00</td><td class="num pix">R$ 314,10</td>
+      </tr>
+      <tr>
+        <td><div class="wine"><div class="thumb"><img src="imagens/1-petit-chablis-2024.jpg"></div><div><div class="wname serif">Petit Chablis</div><div class="wtype">Chardonnay · Chablis</div></div></div></td>
+        <td class="safra">2024</td><td class="num">R$ 289,00</td><td class="num pix">R$ 260,10</td>
+      </tr>
+      <tr class="total">
+        <td colspan="2"><span class="tlabel">Total das 6 avulsas</span></td>
+        <td class="num">R$ 2.894,00</td><td class="num pix">R$ 2.604,60</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="kit">
+    <div class="kit-head">
+      <div class="kit-title serif">No kit completo</div>
+      <div class="kit-tag">Frete grátis</div>
+    </div>
+    <div class="kit-cols">
+      <div class="kit-col">
+        <div class="kit-label">Cartão</div>
+        <div class="kit-from">R$ 2.894,00</div>
+        <div class="kit-price">R$ 2.749,00</div>
+        <div class="kit-save">Economia de R$ 145,00</div>
+        <div class="kit-note">em até 5x de R$ 549,80 sem juros</div>
+      </div>
+      <div class="kit-col">
+        <div class="kit-label">Pix</div>
+        <div class="kit-from">R$ 2.604,60</div>
+        <div class="kit-price big">R$ 2.474,10</div>
+        <div class="kit-save">Economia de R$ 130,50</div>
+      </div>
+    </div>
+    <div class="kit-foot">
+      <span>Kit no Pix x 6 avulsas no cartão</span>
+      <span><b>R$ 419,90 a menos</b></span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
