@@ -61,3 +61,14 @@ Levantamento feito em 20/10/2026, pra responder o pedido de melhoria de preço d
 - https://loja.famigliavalduga.com.br/terroir-pinot-noir/p
 - https://www.vievino.com.br/espumante-cave-geisse-brut-750-ml
 - https://www.meuvinho.com.br/shop/produto/5198/casa-valduga-terroir-exclusivo-riesling-renano-2024
+
+## Margem da Opção 2 (custo + R$ 7 de frete RJ por garrafa, Simples 8% sobre a venda)
+
+| Vinho | Qtd | Venda | Líquido (−8%) | Custo + frete | Lucro/un | Markup | Margem | Lucro total |
+|---|---|---|---|---|---|---|---|---|
+| Cave Geisse Brut | 60 | 170,00 | 156,40 | 125,00 | 31,40 | 1,36x | 18,5% | 1.884,00 |
+| Riesling Terroir Exclusivo | 54 | 135,00 | 124,20 | 94,00 | 30,20 | 1,44x | 22,4% | 1.630,80 |
+| Terroir Pinot Noir | 30 | 90,00 | 82,80 | 70,00 | 12,80 | 1,29x | 14,2% | 384,00 |
+| **Total** | 144 | 20.190,00 | 18.574,80 | 14.676,00 | | 1,38x | 19,3% | **3.898,80** |
+
+Markup = venda ÷ (custo + frete). Preço mínimo sem prejuízo (custo ÷ 0,92): Geisse R$ 135,87 · Riesling R$ 102,17 · Pinot R$ 76,09.
