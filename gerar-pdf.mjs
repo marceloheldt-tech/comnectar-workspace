@@ -2,8 +2,8 @@ import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { writeFileSync, readFileSync } from 'fs';
 
-const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-10-21-alan-tintos-ate-350';
-const pages = ['catalog-capa','catalog-p1','catalog-p2','catalog-p3','catalog-p4','catalog-p5','catalog-p6'];
+const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-10-23-black-november-cliente';
+const pages = ['catalog-capa','catalog-p1','catalog-p2'];
 
 const browser = await chromium.launch();
 const context = await browser.newContext();
@@ -29,5 +29,5 @@ for (const buf of pdfBuffers) {
 }
 
 const output = await merged.save();
-writeFileSync(`${dir}/Selecao Alan - comnectar.pdf`, output);
-console.log('\n✅ PDF gerado: Selecao Alan - comnectar.pdf');
+writeFileSync(`${dir}/Black November - comnectar.pdf`, output);
+console.log('\n✅ PDF gerado: Black November - comnectar.pdf');
