@@ -3,7 +3,7 @@ import { PDFDocument } from 'pdf-lib';
 import { writeFileSync, readFileSync } from 'fs';
 
 const dir = 'C:/Users/marce/Desktop/claude comnéctar/conteudo/catalogos/2026-10-23-black-november-cliente';
-const pages = ['catalog-capa','catalog-p1','catalog-p2'];
+const pages = ['catalog-capa','catalog-p1','catalog-p2','catalog-p3','catalog-p4'];
 
 const browser = await chromium.launch();
 const context = await browser.newContext();
