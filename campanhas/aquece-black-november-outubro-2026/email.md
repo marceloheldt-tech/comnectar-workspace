@@ -1,12 +1,12 @@
 # Email Marketing: Aquece Black November, Guidalberto + Lagrange
 
 **Data:** a definir (fim de outubro/2026)
-**Ângulo editorial:** abrir o Black November com dois tintos de escolas diferentes, vendidos juntos. O Guidalberto, da casa do Sassicaia, com 94 pontos dos principais críticos, é o protagonista. O Lagrange entra como o Merlot de Saint-Émilion pro dia a dia. Condição da dupla: de R$ 1.340 por R$ 1.200 no cartão em até 5x ou R$ 1.070 no Pix, com frete grátis.
+**Ângulo editorial:** abrir o Black November com dois tintos de escolas diferentes, vendidos juntos. O Guidalberto, da casa do Sassicaia, com 94 pontos dos principais críticos, é o protagonista. O Lagrange entra como o Merlot de Saint-Émilion pro dia a dia. Condição da dupla: de R$ 1.340 por R$ 1.200 no cartão em até 5x ou R$ 1.080 no Pix, com frete grátis.
 
 ---
 
 ## ASSUNTO
-Aquece Black November: Guidalberto + Lagrange por R$ 1.070 no Pix
+Aquece Black November: Guidalberto + Lagrange por R$ 1.080 no Pix
 
 ## PREVIEW (texto prévio)
 O segundo vinho da casa do Sassicaia e um Merlot de Saint-Émilion, juntos e com frete grátis.
@@ -18,7 +18,7 @@ Começando o Black November mais cedo
 
 Novembro ainda nem chegou e a gente já separou uma condição pra quem gosta de vinho bom com preço melhor. São dois tintos que acabaram de entrar na loja, cada um de um lado da Europa: um supertoscano de Bolgheri e um Merlot da margem direita de Bordeaux.
 
-A dupla sai de **R$ 1.340** por **R$ 1.200 no cartão em até 5x sem juros**, ou **R$ 1.070 no Pix**. E o frete é grátis.
+A dupla sai de **R$ 1.340** por **R$ 1.200 no cartão em até 5x sem juros**, ou **R$ 1.080 no Pix**. O frete é grátis e, comprando pelo nosso site, você ainda ganha **+3% de cashback**.
 
 **Guidalberto 2022, Tenuta San Guido**
 
@@ -48,8 +48,9 @@ Um supertoscano pra uma ocasião especial e um Bordeaux pro jantar de sexta, jun
 
 De ~~R$ 1.340,00~~
 **R$ 1.200,00 no cartão** em até 5x de R$ 240,00 sem juros
-**R$ 1.070,00 no Pix**
+**R$ 1.080,00 no Pix**
 **FRETE GRÁTIS**
+**+3% de CASHBACK** comprando no nosso site
 
 ## Parágrafo de fechamento
 
@@ -66,7 +67,7 @@ Garanta a dupla Guidalberto + Lagrange na comnéctar.
 
 > Notas de envio:
 > - Preços avulsos no site (27/10/2026): Guidalberto R$ 979,00 + Lagrange R$ 359,00 = R$ 1.338,00, arredondado pra R$ 1.340 no "de".
-> - Condição da dupla: R$ 1.200 no cartão (5x R$ 240), R$ 1.070 no Pix, frete grátis.
+> - Condição da dupla: R$ 1.200 no cartão (5x R$ 240), R$ 1.080 no Pix, frete grátis.
 > - Link do botão: ainda não existe produto da dupla no Shopify. Criar um kit ou definir se o pedido vai ser pelo atendimento.
 > - Pontuações Guidalberto 2022: JS 94 (fev/24), WA 94 (Monica Larner, mar/24), WS 94 (Bruce Sanderson, jun/24), WE 94. Decanter deu 93 e Vinous 91, não usados.
 > - Este Château Lagrange é o de Lussac-Saint-Émilion, **não** o Château Lagrange de Saint-Julien (3ème Cru Classé). O texto não cita classificação nem pontuação pra não gerar confusão.
