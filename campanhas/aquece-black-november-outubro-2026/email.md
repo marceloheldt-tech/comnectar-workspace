@@ -59,7 +59,7 @@ Temos **6 duplas** com o estoque atual, e a condição vale enquanto durar a aç
 ## Linha de CTA
 Garanta a dupla Guidalberto + Lagrange na comnéctar.
 
-[BOTÃO: QUERO A DUPLA]
+[BOTÃO: QUERO A DUPLA](https://www.comnectar.com.br/collections/kits/products/guidalberto-e-lagrange)
 
 *(rodapé de benefícios inserido automaticamente pelo MESSAGING)*
 
@@ -68,7 +68,7 @@ Garanta a dupla Guidalberto + Lagrange na comnéctar.
 > Notas de envio:
 > - Preços avulsos no site (27/10/2026): Guidalberto R$ 979,00 + Lagrange R$ 359,00 = R$ 1.338,00, arredondado pra R$ 1.340 no "de".
 > - Condição da dupla: R$ 1.200 no cartão (5x R$ 240), R$ 1.080 no Pix, frete grátis.
-> - Link do botão: ainda não existe produto da dupla no Shopify. Criar um kit ou definir se o pedido vai ser pelo atendimento.
+> - Link do botão: https://www.comnectar.com.br/collections/kits/products/guidalberto-e-lagrange
 > - Pontuações Guidalberto 2022: JS 94 (fev/24), WA 94 (Monica Larner, mar/24), WS 94 (Bruce Sanderson, jun/24), WE 94. Decanter deu 93 e Vinous 91, não usados.
 > - Este Château Lagrange é o de Lussac-Saint-Émilion, **não** o Château Lagrange de Saint-Julien (3ème Cru Classé). O texto não cita classificação nem pontuação pra não gerar confusão.
 > - Estoque: 6 unidades de cada (27/10), ou seja, 6 duplas. Vender avulso reduz as duplas disponíveis.

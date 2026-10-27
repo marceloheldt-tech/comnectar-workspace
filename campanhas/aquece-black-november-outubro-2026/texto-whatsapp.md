@@ -20,7 +20,8 @@ De R$ 1.340
 ou *R$ 1.080 no Pix*
 *FRETE GRÁTIS*
 
-Comprando pelo nosso site, você ainda ganha *+3% de cashback*.
+Comprando pelo nosso site, você ainda ganha *+3% de cashback*:
+https://www.comnectar.com.br/collections/kits/products/guidalberto-e-lagrange
 
 Tenho só *6 duplas*. Me chama aqui que eu separo a sua.
 
@@ -30,7 +31,8 @@ Tenho só *6 duplas*. Me chama aqui que eu separo a sua.
 
 Oi, {{nome}}! Passando pra lembrar do aquece Black November: Guidalberto 2022 (94 pontos, da casa do Sassicaia) + Château Lagrange 2022 por R$ 1.080 no Pix ou R$ 1.200 em até 5x sem juros, com frete grátis e +3% de cashback comprando no site.
 
-Ainda tenho [X] duplas. É só responder aqui.
+Ainda tenho [X] duplas. É só responder aqui ou garantir pelo site:
+https://www.comnectar.com.br/collections/kits/products/guidalberto-e-lagrange
 
 ---
 
