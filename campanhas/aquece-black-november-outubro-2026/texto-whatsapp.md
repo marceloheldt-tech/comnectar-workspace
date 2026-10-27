@@ -14,32 +14,26 @@ O primeiro é o *Guidalberto 2022*, da Tenuta San Guido, a mesma casa do Sassica
 
 O segundo é o *Château Lagrange 2022*, um Lussac-Saint-Émilion 100% Merlot da margem direita de Bordeaux. Macio, encorpado, com cereja e ameixa maduras. Tinto pra abrir sem cerimônia no fim de semana.
 
-*Guidalberto 2022*
-De R$ 979,00
-*R$ 881,10 no cartão* em até 5x
-*R$ 783,20 no Pix*
+*Guidalberto + Lagrange*
+De R$ 1.340
+*R$ 1.200 no cartão* em até 5x sem juros
+ou *R$ 1.070 no Pix*
+*FRETE GRÁTIS*
 
-*Château Lagrange 2022*
-De R$ 359,00
-*R$ 323,10 no cartão* em até 5x
-*R$ 287,20 no Pix*
-
-Levando *uma garrafa de cada*, o *frete é grátis*: R$ 1.070,40 no Pix ou R$ 1.204,20 em até 5x.
-
-Tenho só *6 garrafas de cada*. Me chama aqui que eu separo as suas.
+Tenho só *6 duplas*. Me chama aqui que eu separo a sua.
 
 ---
 
 ## Follow-up (fim do dia, só pra quem não respondeu)
 
-Oi, {{nome}}! Passando pra lembrar do aquece Black November: Guidalberto 2022 (94 pontos, da casa do Sassicaia) por R$ 783,20 no Pix e Château Lagrange 2022 por R$ 287,20 no Pix. No cartão, 10% off em até 5x. Levando os dois, frete grátis.
+Oi, {{nome}}! Passando pra lembrar do aquece Black November: Guidalberto 2022 (94 pontos, da casa do Sassicaia) + Château Lagrange 2022 por R$ 1.070 no Pix ou R$ 1.200 em até 5x sem juros, com frete grátis.
 
-Ainda tenho [X] Guidalberto e [X] Lagrange. É só responder aqui.
+Ainda tenho [X] duplas. É só responder aqui.
 
 ---
 
 > Notas de envio:
-> - Cartão = preço do site com 10% off, em até 5x (Guidalberto 5x R$ 176,22; Lagrange 5x R$ 64,62; combo 5x R$ 240,84). Pix = 20% off.
-> - Frete grátis só no combo com uma garrafa de cada.
-> - Atualizar os [X] do follow-up com o estoque real.
+> - Preço cheio avulso: R$ 979 + R$ 359 = R$ 1.338, arredondado pra R$ 1.340.
+> - Cartão: 5x de R$ 240 sem juros.
+> - Atualizar o [X] do follow-up com o estoque real.
 > - O asterisco (*) deixa o texto em negrito no WhatsApp.
