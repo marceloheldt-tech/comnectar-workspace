@@ -138,6 +138,17 @@
       "data_inicio": 8,
       "filtro_linha": "col_custo_numerico"
     },
+    "prem1um": {
+      "arquivo": "Tabela Prem1um.xlsx",
+      "tipo": "excel",
+      "aba": "Planilha1",
+      "col_nome": 3,
+      "col_custo": 5,
+      "col_custo_label": "PREÇO FINAL C/IPI",
+      "formula": "direto",
+      "data_inicio": 16,
+      "filtro_linha": "col_nome_nao_vazio_e_col_custo_numerico"
+    },
     "cantu": {
       "arquivo": "cantu.pdf",
       "drive_id": "17QyDT9j-iUDUpSQRtXiRTpeQ4rL8gM1g",

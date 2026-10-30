@@ -42,6 +42,7 @@ Script de leitura:
 | `interfood` | interfood.xlsx | Col K (valor final) |
 | `mistral` | mistral.xlsx | Col P (PREÇO FINAL C/ IPI) |
 | `world wine` | world wine.xlsx | Col S (Preço Com Desconto Com IPI) |
+| `prem1um` | Tabela Prem1um.xlsx | Col E (PREÇO FINAL C/IPI) |
 | `cantu` | cantu.pdf | Coluna PREÇO UNIT. FINAL |
 | `adega alentejana` | adega alentejana.pdf | Coluna PREÇO FINAL (só vinhos/espumantes) |
 | `vila porto` | vila porto.pdf | Coluna Lojas Especializadas |
