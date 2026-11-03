@@ -27,6 +27,7 @@ sel = {
   ("Concerto di Fonterutoli 2020", "Mazzei", 1, 1399),
   ("Guidalberto 2022", "Tenuta San Guido", 4, 979),
   ("Promis 2021", "Gaja Ca' Marcanda", 1, 979),
+  ("Brunello di Montalcino DOCG 2018", "Cupano", 1, 1499, 1349),
   ("Brunello di Montalcino CastelGiocondo 2020", "Frescobaldi", 6, 899),
   ("Brunello di Montalcino 2020", "Caprili", 1, 879),
   ("Le Difese 2019", "Tenuta San Guido", 2, 849),
@@ -62,41 +63,44 @@ def brl(v):
     s = f"{v:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
     return "R$ " + s
 
+def pix(item):  # preço PIX manual (5º campo) ou cartão - 10%
+    return item[4] if len(item) > 4 else item[3] * PIX
+
 def tot(grupos):
-    q = sum(n for g in grupos for *_, n, p in sel[g])
-    v = sum(n * p for g in grupos for *_, n, p in sel[g])
-    return q, v
+    itens = [i for g in grupos for i in sel[g]]
+    return (sum(i[2] for i in itens), sum(i[2] * i[3] for i in itens),
+            sum(i[2] * pix(i) for i in itens))
 
 tintos = [g for g in sel if g != "Brancos"]
-qT, vT = tot(tintos); qB, vB = tot(["Brancos"]); qA, vA = qT + qB, vT + vB
-assert (qT, qB) == (80, 20)
+qT, vT, pT = tot(tintos); qB, vB, pB = tot(["Brancos"]); qA, vA, pA = qT + qB, vT + vB, pT + pB
 qIT = qT - tot(["Espanha"])[0]
 
 def tabela(grupos, total=None):
     h = ['<table><colgroup><col><col style="width:12mm"><col style="width:27mm"><col style="width:27mm"><col style="width:30mm"></colgroup><tr><th>Vinho</th><th class="n">Qtd</th><th class="n">Cartão</th><th class="n">PIX</th><th class="n">Subtotal PIX</th></tr>']
     for g in grupos:
-        q, v = tot([g])
+        q, v, _ = tot([g])
         h.append(f'<tr class="grupo"><td colspan="4">{g}</td><td class="n">{q} gfs</td></tr>')
-        for nome, prod, n, p in sel[g]:
+        for it in sel[g]:
+            nome, prod, n, p = it[:4]
             h.append(f'<tr><td>{nome}<span class="prod">{prod}</span></td><td class="n">{n}</td>'
-                     f'<td class="n">{brl(p)}</td><td class="n pix">{brl(p*PIX)}</td><td class="n">{brl(n*p*PIX)}</td></tr>')
+                     f'<td class="n">{brl(p)}</td><td class="n pix">{brl(pix(it))}</td><td class="n">{brl(n*pix(it))}</td></tr>')
     if total:
         label, gt = total
-        q, v = tot(gt)
-        h.append(f'<tr class="total"><td>{label}<span class="prod">{brl(v)} no cartão</span></td><td class="n">{q}</td><td></td><td></td><td class="n">{brl(v*PIX)}</td></tr>')
+        q, v, pv = tot(gt)
+        h.append(f'<tr class="total"><td>{label}<span class="prod">{brl(v)} no cartão</span></td><td class="n">{q}</td><td></td><td></td><td class="n">{brl(pv)}</td></tr>')
     h.append('</table>')
     return "\n".join(h)
 
 def card_regiao(g):
-    q, v = tot([g])
-    return f'<div><span class="r">{g}</span><span class="q">{q} gfs</span><span class="v">{brl(v*PIX)}</span></div>'
+    q, v, pv = tot([g])
+    return f'<div><span class="r">{g}</span><span class="q">{q} gfs</span><span class="v">{brl(pv)}</span></div>'
 
 html = open("modelo.html", encoding="utf-8").read()
 for k, v in {
     "{{qT}}": str(qT), "{{qB}}": str(qB), "{{qA}}": str(qA), "{{qIT}}": str(qIT),
-    "{{vA_cartao}}": brl(vA), "{{vA_pix}}": brl(vA * PIX), "{{economia}}": brl(vA * (1 - PIX)),
-    "{{media_cartao}}": brl(vA / qA), "{{media_pix}}": brl(vA * PIX / qA),
-    "{{vT_pix}}": brl(vT * PIX), "{{vB_pix}}": brl(vB * PIX),
+    "{{vA_cartao}}": brl(vA), "{{vA_pix}}": brl(pA), "{{economia}}": brl(vA - pA),
+    "{{media_cartao}}": brl(vA / qA), "{{media_pix}}": brl(pA / qA),
+    "{{vT_pix}}": brl(pT), "{{vB_pix}}": brl(pB),
     "{{regioes}}": "\n".join(card_regiao(g) for g in sel),
     "{{tab_p2}}": tabela(["Piemonte"]),
     "{{tab_p3}}": tabela(["Toscana", "Sicília · Etna", "Vêneto · Amarone", "Espanha"], ("Total tintos", tintos)),
@@ -105,4 +109,4 @@ for k, v in {
 }.items():
     html = html.replace(k, v)
 open("adega-willian.html", "w", encoding="utf-8").write(html)
-print(qA, brl(vA), brl(vA*PIX), brl(vA/qA), brl(vA*PIX/qA), brl(vT*PIX), brl(vB*PIX))
+print(qA, qT, qB, brl(vA), brl(pA), brl(vA/qA), brl(pA/qA), brl(vT), brl(pT), brl(pB))
