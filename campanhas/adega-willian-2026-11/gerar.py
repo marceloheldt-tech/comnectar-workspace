@@ -1,5 +1,8 @@
-# Gera adega-willian.html a partir da seleção (preço cartão; PIX = -10%)
+# Gera adega-willian.html a partir da seleção.
+# Preço da lista = preço cheio do site (Shopify). Para o Willian: cartão = site - 7%; PIX = cartão - 10%.
+# Item com 5º campo (PIX manual) mantém o preço de cartão e PIX como estão, sem descontos.
 import json
+DESC_CLIENTE = 0.93
 PIX = 0.90
 sel = {
  "Piemonte": [
@@ -63,12 +66,15 @@ def brl(v):
     s = f"{v:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
     return "R$ " + s
 
-def pix(item):  # preço PIX manual (5º campo) ou cartão - 10%
-    return item[4] if len(item) > 4 else item[3] * PIX
+def cartao(item):
+    return item[3] if len(item) > 4 else round(item[3] * DESC_CLIENTE, 2)
+
+def pix(item):
+    return item[4] if len(item) > 4 else round(cartao(item) * PIX, 2)
 
 def tot(grupos):
     itens = [i for g in grupos for i in sel[g]]
-    return (sum(i[2] for i in itens), sum(i[2] * i[3] for i in itens),
+    return (sum(i[2] for i in itens), sum(i[2] * cartao(i) for i in itens),
             sum(i[2] * pix(i) for i in itens))
 
 tintos = [g for g in sel if g != "Brancos"]
@@ -83,7 +89,7 @@ def tabela(grupos, total=None):
         for it in sel[g]:
             nome, prod, n, p = it[:4]
             h.append(f'<tr><td>{nome}<span class="prod">{prod}</span></td><td class="n">{n}</td>'
-                     f'<td class="n">{brl(p)}</td><td class="n pix">{brl(pix(it))}</td><td class="n">{brl(n*pix(it))}</td></tr>')
+                     f'<td class="n">{brl(cartao(it))}</td><td class="n pix">{brl(pix(it))}</td><td class="n">{brl(n*pix(it))}</td></tr>')
     if total:
         label, gt = total
         q, v, pv = tot(gt)
