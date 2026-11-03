@@ -24,7 +24,7 @@ sel = {
   ("Barolo 2020", "Bovio", 2, 669),
   ("Langhe Rosso Monprà 2022", "Conterno Fantino", 2, 599),
   ("Barbaresco 2021", "Giuseppe Cortese", 2, 589),
-  ("Langhe Nebbiolo Reggimento 2020", "Ratti", 4, 559),
+  ("Langhe Nebbiolo Reggimento 2020", "Ratti", 3, 559),
  ],
  "Toscana": [
   ("Concerto di Fonterutoli 2020", "Mazzei", 1, 1399),
