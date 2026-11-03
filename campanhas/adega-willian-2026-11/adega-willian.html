@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Proposta de adega · Willian</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Rubik', sans-serif; color: #000; background: #FFF; }
+  .pagina { width: 210mm; height: 297mm; padding: 16mm 18mm; position: relative; page-break-after: always; overflow: hidden; }
+  .pagina:last-child { page-break-after: auto; }
+  .serif { font-family: 'Geotipe', 'Palatino Linotype', Georgia, serif; font-weight: 400; }
+
+  .cabecalho { display: flex; justify-content: space-between; align-items: center; margin-bottom: 11mm; }
+  .logo { width: 130px; height: 31px; overflow: hidden; position: relative; }
+  .logo img { position: absolute; width: 230.3px; left: -50.2px; top: -49.3px; }
+  .cabecalho .ref { text-align: right; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #991356; font-weight: 500; }
+
+  .kicker { font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; color: #991356; font-weight: 500; margin-bottom: 3mm; }
+  h1 { font-size: 38px; line-height: 1.1; margin-bottom: 4mm; }
+  h2 { font-size: 24px; line-height: 1.2; margin-bottom: 5mm; }
+  p { font-size: 12px; line-height: 1.65; margin-bottom: 3mm; }
+  .intro { font-size: 13px; max-width: 160mm; margin-bottom: 8mm; }
+
+  .qtd { display: flex; gap: 4mm; margin: 2mm 0 8mm; }
+  .qtd .card { flex: 1; border-radius: 10px; padding: 5mm; color: #FFF; }
+  .qtd .card.preto { background: #000; }
+  .qtd .card.vinho { background: #991356; }
+  .qtd .card.borda { background: #FFF; color: #000; border: 1px solid #000; }
+  .qtd .tipo { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; opacity: .85; margin-bottom: 2mm; }
+  .qtd .num { font-size: 40px; line-height: 1; }
+  .qtd .det { font-size: 10.5px; margin-top: 2mm; opacity: .85; }
+
+  .valores { display: flex; gap: 4mm; margin-bottom: 8mm; }
+  .valores > div { flex: 1; border-radius: 10px; padding: 5mm; border: 1px solid rgba(0,0,0,0.12); }
+  .valores .pixbox { border: 1.5px solid #991356; }
+  .valores .r { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #991356; margin-bottom: 2mm; font-weight: 500; }
+  .valores .t { font-size: 30px; line-height: 1.1; }
+  .valores .m { font-size: 11px; margin-top: 2mm; }
+
+  .regioes { margin-bottom: 8mm; }
+  .regioes div { display: flex; font-size: 12px; padding: 2.3mm 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+  .regioes .r { flex: 1; }
+  .regioes .q { width: 25mm; text-align: right; }
+  .regioes .v { width: 38mm; text-align: right; font-weight: 500; }
+  .regioes .cab { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: #991356; border-bottom: 1px solid #000; }
+  .regioes .cab span { font-weight: 500 !important; }
+
+  .nota { font-size: 11px; line-height: 1.6; }
+
+  table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 10.5px; }
+  th { text-align: left; font-weight: 500; font-size: 8.5px; letter-spacing: 1px; text-transform: uppercase; padding: 0 0 1.5mm; color: #991356; border-bottom: 1px solid #000; }
+  td { padding: 1.3mm 0; border-bottom: 1px solid rgba(0,0,0,0.08); vertical-align: middle; }
+  td.n, th.n { text-align: right; white-space: nowrap; padding-left: 3mm; }
+  td.pix { color: #991356; font-weight: 500; }
+  td .prod { display: block; font-size: 8.5px; color: rgba(0,0,0,0.55); margin-top: .3mm; }
+  tr.grupo td { font-family: 'Geotipe', 'Palatino Linotype', Georgia, serif; font-size: 15px; padding: 4.5mm 0 1.5mm; border-bottom: 1px solid rgba(0,0,0,0.25); }
+  tr.grupo td.n { font-family: 'Rubik', sans-serif; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: #991356; vertical-align: bottom; }
+  tr.total td { border-bottom: none; font-weight: 500; padding-top: 3mm; font-size: 11px; }
+
+  .fecho { background: #000; color: #FFF; border-radius: 10px; padding: 6mm; margin-top: 7mm; display: flex; gap: 6mm; align-items: center; }
+  .fecho .l { flex: 1; }
+  .fecho .r { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; opacity: .8; margin-bottom: 1.5mm; }
+  .fecho .t { font-size: 26px; line-height: 1.1; }
+  .fecho .m { font-size: 10.5px; opacity: .85; margin-top: 1.5mm; }
+  .fecho .div { width: 1px; align-self: stretch; background: rgba(255,255,255,0.2); }
+
+  .rodape { position: absolute; bottom: 11mm; left: 18mm; right: 18mm; display: flex; justify-content: space-between; align-items: center; font-size: 9px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 3mm; }
+</style>
+</head>
+<body>
+
+<!-- PÁGINA 1: resumo -->
+<div class="pagina">
+  <div class="cabecalho">
+    <div class="logo"><img src="../../dados/comnectar-transparente.png" alt="comnéctar"></div>
+    <div class="ref">Proposta de adega</div>
+  </div>
+
+  <div class="kicker">Para o Willian</div>
+  <h1 class="serif">Uma adega italiana, com um toque espanhol</h1>
+  <p class="intro">Willian, montamos a sua adega com 100 garrafas, todas do nosso estoque e prontas para entrega. A base é italiana: Barolo e Barbaresco do Piemonte, Brunello e supertoscanos, Etna e Amarone. Para variar, entram alguns espanhóis, com Pintia e Macán da família Vega Sicilia. Sem franceses, como você pediu. São 42 rótulos diferentes, com poucas garrafas de cada, pra você ter sempre algo novo para abrir.</p>
+
+  <div class="qtd">
+    <div class="card vinho"><div class="tipo">Tintos</div><div class="num serif">80</div><div class="det">75 italianos · 5 espanhóis</div></div>
+    <div class="card preto"><div class="tipo">Brancos</div><div class="num serif">20</div><div class="det">17 italianos · 3 espanhóis</div></div>
+    <div class="card borda"><div class="tipo">Total</div><div class="num serif">100</div><div class="det">garrafas · 42 rótulos</div></div>
+  </div>
+
+  <div class="valores">
+    <div class="pixbox">
+      <div class="r">À vista no PIX · 10% off</div>
+      <div class="t serif">R$ 67.383,00</div>
+      <div class="m">Média de R$ 673,83 por garrafa</div>
+    </div>
+    <div>
+      <div class="r">No cartão</div>
+      <div class="t serif">R$ 74.870,00</div>
+      <div class="m">Média de R$ 748,70 por garrafa</div>
+    </div>
+  </div>
+
+  <div class="kicker">Como a adega se divide</div>
+  <div class="regioes">
+    <div class="cab"><span class="r">Região</span><span class="q">Garrafas</span><span class="v">Valor no PIX</span></div>
+    <div><span class="r">Piemonte</span><span class="q">37 gfs</span><span class="v">R$ 27.632,70</span></div>
+<div><span class="r">Toscana</span><span class="q">21 gfs</span><span class="v">R$ 16.775,10</span></div>
+<div><span class="r">Sicília · Etna</span><span class="q">6 gfs</span><span class="v">R$ 4.548,60</span></div>
+<div><span class="r">Vêneto · Amarone</span><span class="q">11 gfs</span><span class="v">R$ 6.758,10</span></div>
+<div><span class="r">Espanha</span><span class="q">5 gfs</span><span class="v">R$ 4.243,50</span></div>
+<div><span class="r">Brancos</span><span class="q">20 gfs</span><span class="v">R$ 7.425,00</span></div>
+  </div>
+
+  <p class="nota">No PIX você economiza <b style="font-weight:500">R$ 7.487,00</b>. Nas próximas páginas está cada vinho, com o valor por garrafa no cartão e no PIX.</p>
+
+  <div class="rodape"><span>comnéctar · vinhos com curadoria</span><span>1 / 4</span></div>
+</div>
+
+<!-- PÁGINA 2: Piemonte e Toscana -->
+<div class="pagina">
+  <div class="cabecalho">
+    <div class="logo"><img src="../../dados/comnectar-transparente.png" alt="comnéctar"></div>
+    <div class="ref">Adega do Willian · Tintos</div>
+  </div>
+  <table><colgroup><col><col style="width:12mm"><col style="width:27mm"><col style="width:27mm"><col style="width:30mm"></colgroup><tr><th>Vinho</th><th class="n">Qtd</th><th class="n">Cartão</th><th class="n">PIX</th><th class="n">Subtotal PIX</th></tr>
+<tr class="grupo"><td colspan="4">Piemonte</td><td class="n">37 gfs</td></tr>
+<tr><td>Barbaresco Rabajá 2020<span class="prod">Castello di Verduno</span></td><td class="n">2</td><td class="n">R$ 1.149,00</td><td class="n pix">R$ 1.034,10</td><td class="n">R$ 2.068,20</td></tr>
+<tr><td>Barbaresco 2021<span class="prod">Massolino</span></td><td class="n">1</td><td class="n">R$ 1.099,00</td><td class="n pix">R$ 989,10</td><td class="n">R$ 989,10</td></tr>
+<tr><td>Barolo Silio Riserva 2018<span class="prod">Rizieri</span></td><td class="n">1</td><td class="n">R$ 1.049,00</td><td class="n pix">R$ 944,10</td><td class="n">R$ 944,10</td></tr>
+<tr><td>Sito Moresco Langhe 2020<span class="prod">Gaja</span></td><td class="n">1</td><td class="n">R$ 1.049,00</td><td class="n pix">R$ 944,10</td><td class="n">R$ 944,10</td></tr>
+<tr><td>Barbaresco Roncagliette 2021<span class="prod">Olek Bondonio</span></td><td class="n">4</td><td class="n">R$ 999,00</td><td class="n pix">R$ 899,10</td><td class="n">R$ 3.596,40</td></tr>
+<tr><td>Barbaresco Rabajá 2021<span class="prod">Giuseppe Cortese</span></td><td class="n">2</td><td class="n">R$ 979,00</td><td class="n pix">R$ 881,10</td><td class="n">R$ 1.762,20</td></tr>
+<tr><td>Barbaresco Rabajá-Bas 2020<span class="prod">Castello di Verduno</span></td><td class="n">2</td><td class="n">R$ 979,00</td><td class="n pix">R$ 881,10</td><td class="n">R$ 1.762,20</td></tr>
+<tr><td>Barolo Sorano 2021<span class="prod">Claudio Alario</span></td><td class="n">1</td><td class="n">R$ 959,00</td><td class="n pix">R$ 863,10</td><td class="n">R$ 863,10</td></tr>
+<tr><td>Barolo Gattera 2020<span class="prod">Bovio</span></td><td class="n">2</td><td class="n">R$ 949,00</td><td class="n pix">R$ 854,10</td><td class="n">R$ 1.708,20</td></tr>
+<tr><td>Barolo del Comune di Serralunga d'Alba 2021<span class="prod">Rivetto</span></td><td class="n">2</td><td class="n">R$ 899,00</td><td class="n pix">R$ 809,10</td><td class="n">R$ 1.618,20</td></tr>
+<tr><td>Barolo Marcenasco 2020<span class="prod">Ratti</span></td><td class="n">2</td><td class="n">R$ 899,00</td><td class="n pix">R$ 809,10</td><td class="n">R$ 1.618,20</td></tr>
+<tr><td>Barolo del Comune di La Morra 2021<span class="prod">Bovio</span></td><td class="n">2</td><td class="n">R$ 719,00</td><td class="n pix">R$ 647,10</td><td class="n">R$ 1.294,20</td></tr>
+<tr><td>Barbaresco 2021<span class="prod">Castello di Verduno</span></td><td class="n">2</td><td class="n">R$ 699,00</td><td class="n pix">R$ 629,10</td><td class="n">R$ 1.258,20</td></tr>
+<tr><td>Barbaresco 2022<span class="prod">Bovio</span></td><td class="n">2</td><td class="n">R$ 689,00</td><td class="n pix">R$ 620,10</td><td class="n">R$ 1.240,20</td></tr>
+<tr><td>Nebbiolo d'Alba Vigna Lirano 2023<span class="prod">Rivetto</span></td><td class="n">1</td><td class="n">R$ 679,00</td><td class="n pix">R$ 611,10</td><td class="n">R$ 611,10</td></tr>
+<tr><td>Barolo 2020<span class="prod">Bovio</span></td><td class="n">2</td><td class="n">R$ 669,00</td><td class="n pix">R$ 602,10</td><td class="n">R$ 1.204,20</td></tr>
+<tr><td>Langhe Rosso Monprà 2022<span class="prod">Conterno Fantino</span></td><td class="n">2</td><td class="n">R$ 599,00</td><td class="n pix">R$ 539,10</td><td class="n">R$ 1.078,20</td></tr>
+<tr><td>Barbaresco 2021<span class="prod">Giuseppe Cortese</span></td><td class="n">2</td><td class="n">R$ 589,00</td><td class="n pix">R$ 530,10</td><td class="n">R$ 1.060,20</td></tr>
+<tr><td>Langhe Nebbiolo Reggimento 2020<span class="prod">Ratti</span></td><td class="n">4</td><td class="n">R$ 559,00</td><td class="n pix">R$ 503,10</td><td class="n">R$ 2.012,40</td></tr>
+</table>
+  <div class="rodape"><span>Valores por garrafa. PIX com 10% de desconto sobre o cartão.</span><span>2 / 4</span></div>
+</div>
+
+<!-- PÁGINA 3: Toscana, Etna, Amarone, Espanha -->
+<div class="pagina">
+  <div class="cabecalho">
+    <div class="logo"><img src="../../dados/comnectar-transparente.png" alt="comnéctar"></div>
+    <div class="ref">Adega do Willian · Tintos</div>
+  </div>
+  <table><colgroup><col><col style="width:12mm"><col style="width:27mm"><col style="width:27mm"><col style="width:30mm"></colgroup><tr><th>Vinho</th><th class="n">Qtd</th><th class="n">Cartão</th><th class="n">PIX</th><th class="n">Subtotal PIX</th></tr>
+<tr class="grupo"><td colspan="4">Toscana</td><td class="n">21 gfs</td></tr>
+<tr><td>Concerto di Fonterutoli 2020<span class="prod">Mazzei</span></td><td class="n">1</td><td class="n">R$ 1.399,00</td><td class="n pix">R$ 1.259,10</td><td class="n">R$ 1.259,10</td></tr>
+<tr><td>Guidalberto 2022<span class="prod">Tenuta San Guido</span></td><td class="n">4</td><td class="n">R$ 979,00</td><td class="n pix">R$ 881,10</td><td class="n">R$ 3.524,40</td></tr>
+<tr><td>Promis 2021<span class="prod">Gaja Ca' Marcanda</span></td><td class="n">1</td><td class="n">R$ 979,00</td><td class="n pix">R$ 881,10</td><td class="n">R$ 881,10</td></tr>
+<tr><td>Brunello di Montalcino CastelGiocondo 2020<span class="prod">Frescobaldi</span></td><td class="n">6</td><td class="n">R$ 899,00</td><td class="n pix">R$ 809,10</td><td class="n">R$ 4.854,60</td></tr>
+<tr><td>Brunello di Montalcino 2020<span class="prod">Caprili</span></td><td class="n">1</td><td class="n">R$ 879,00</td><td class="n pix">R$ 791,10</td><td class="n">R$ 791,10</td></tr>
+<tr><td>Le Difese 2019<span class="prod">Tenuta San Guido</span></td><td class="n">2</td><td class="n">R$ 849,00</td><td class="n pix">R$ 764,10</td><td class="n">R$ 1.528,20</td></tr>
+<tr><td>Fiorenzo 2022<span class="prod">Bakkanali</span></td><td class="n">4</td><td class="n">R$ 779,00</td><td class="n pix">R$ 701,10</td><td class="n">R$ 2.804,40</td></tr>
+<tr><td>Kani 2023<span class="prod">Bakkanali</span></td><td class="n">2</td><td class="n">R$ 629,00</td><td class="n pix">R$ 566,10</td><td class="n">R$ 1.132,20</td></tr>
+<tr class="grupo"><td colspan="4">Sicília · Etna</td><td class="n">6 gfs</td></tr>
+<tr><td>Idda Etna Rosso 2022<span class="prod">Gaja</span></td><td class="n">1</td><td class="n">R$ 1.099,00</td><td class="n pix">R$ 989,10</td><td class="n">R$ 989,10</td></tr>
+<tr><td>Etna Rosso San Lorenzo 2021<span class="prod">Tenuta delle Terre Nere</span></td><td class="n">2</td><td class="n">R$ 899,00</td><td class="n pix">R$ 809,10</td><td class="n">R$ 1.618,20</td></tr>
+<tr><td>Etna Rosso Santo Spirito 2019<span class="prod">Tenuta delle Terre Nere</span></td><td class="n">2</td><td class="n">R$ 719,00</td><td class="n pix">R$ 647,10</td><td class="n">R$ 1.294,20</td></tr>
+<tr><td>Etna Rosso Vigneto Guardiola 2021<span class="prod">Tenuta delle Terre Nere</span></td><td class="n">1</td><td class="n">R$ 719,00</td><td class="n pix">R$ 647,10</td><td class="n">R$ 647,10</td></tr>
+<tr class="grupo"><td colspan="4">Vêneto · Amarone</td><td class="n">11 gfs</td></tr>
+<tr><td>Amarone della Valpolicella Classico 2022<span class="prod">Sensi</span></td><td class="n">4</td><td class="n">R$ 789,00</td><td class="n pix">R$ 710,10</td><td class="n">R$ 2.840,40</td></tr>
+<tr><td>Amarone della Valpolicella Classico Corte Vaona 2018<span class="prod">Novaia</span></td><td class="n">4</td><td class="n">R$ 639,00</td><td class="n pix">R$ 575,10</td><td class="n">R$ 2.300,40</td></tr>
+<tr><td>Amarone Capitel 2016<span class="prod">Montresor</span></td><td class="n">3</td><td class="n">R$ 599,00</td><td class="n pix">R$ 539,10</td><td class="n">R$ 1.617,30</td></tr>
+<tr class="grupo"><td colspan="4">Espanha</td><td class="n">5 gfs</td></tr>
+<tr><td>Pintia 2019<span class="prod">Vega Sicilia · Toro</span></td><td class="n">1</td><td class="n">R$ 1.569,00</td><td class="n pix">R$ 1.412,10</td><td class="n">R$ 1.412,10</td></tr>
+<tr><td>Macán Clásico 2020<span class="prod">Vega Sicilia & Rothschild · Rioja</span></td><td class="n">1</td><td class="n">R$ 1.049,00</td><td class="n pix">R$ 944,10</td><td class="n">R$ 944,10</td></tr>
+<tr><td>Ensamblaje 2024<span class="prod">Bodegas Viñátigo · Canárias</span></td><td class="n">3</td><td class="n">R$ 699,00</td><td class="n pix">R$ 629,10</td><td class="n">R$ 1.887,30</td></tr>
+<tr class="total"><td>Total tintos<span class="prod">R$ 66.620,00 no cartão</span></td><td class="n">80</td><td></td><td></td><td class="n">R$ 59.958,00</td></tr>
+</table>
+  <div class="rodape"><span>Valores por garrafa. PIX com 10% de desconto sobre o cartão.</span><span>3 / 4</span></div>
+</div>
+
+<!-- PÁGINA 4: brancos e total -->
+<div class="pagina">
+  <div class="cabecalho">
+    <div class="logo"><img src="../../dados/comnectar-transparente.png" alt="comnéctar"></div>
+    <div class="ref">Adega do Willian · Brancos</div>
+  </div>
+  <table><colgroup><col><col style="width:12mm"><col style="width:27mm"><col style="width:27mm"><col style="width:30mm"></colgroup><tr><th>Vinho</th><th class="n">Qtd</th><th class="n">Cartão</th><th class="n">PIX</th><th class="n">Subtotal PIX</th></tr>
+<tr class="grupo"><td colspan="4">Brancos</td><td class="n">20 gfs</td></tr>
+<tr><td>Greco di Tufo 2024<span class="prod">Mastroberardino · Campânia</span></td><td class="n">4</td><td class="n">R$ 459,00</td><td class="n pix">R$ 413,10</td><td class="n">R$ 1.652,40</td></tr>
+<tr><td>L'Altro Chardonnay 2024<span class="prod">Pio Cesare · Piemonte</span></td><td class="n">6</td><td class="n">R$ 439,00</td><td class="n pix">R$ 395,10</td><td class="n">R$ 2.370,60</td></tr>
+<tr><td>Etna Bianco Superiore 2023<span class="prod">Barone di Villagrande · Sicília</span></td><td class="n">2</td><td class="n">R$ 389,00</td><td class="n pix">R$ 350,10</td><td class="n">R$ 700,20</td></tr>
+<tr><td>Scapulin 2023<span class="prod">Giuseppe Cortese · Piemonte</span></td><td class="n">5</td><td class="n">R$ 379,00</td><td class="n pix">R$ 341,10</td><td class="n">R$ 1.705,50</td></tr>
+<tr><td>Listán de Canarias 2025<span class="prod">Bodegas Viñátigo · Canárias</span></td><td class="n">3</td><td class="n">R$ 369,00</td><td class="n pix">R$ 332,10</td><td class="n">R$ 996,30</td></tr>
+<tr class="total"><td>Total brancos<span class="prod">R$ 8.250,00 no cartão</span></td><td class="n">20</td><td></td><td></td><td class="n">R$ 7.425,00</td></tr>
+</table>
+
+  <div class="fecho">
+    <div class="l">
+      <div class="r">Total no PIX · 100 garrafas</div>
+      <div class="t serif">R$ 67.383,00</div>
+      <div class="m">Tintos R$ 59.958,00 · Brancos R$ 7.425,00</div>
+    </div>
+    <div class="div"></div>
+    <div class="l">
+      <div class="r">Total no cartão</div>
+      <div class="t serif">R$ 74.870,00</div>
+      <div class="m">Economia de R$ 7.487,00 no PIX</div>
+    </div>
+  </div>
+
+  <div class="rodape"><span>Valores sujeitos à disponibilidade de estoque. Fale com a gente para reservar.</span><span>4 / 4</span></div>
+</div>
+
+</body>
+</html>

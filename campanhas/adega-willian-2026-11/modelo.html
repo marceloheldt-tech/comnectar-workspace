@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Proposta de adega · Willian</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Rubik', sans-serif; color: #000; background: #FFF; }
+  .pagina { width: 210mm; height: 297mm; padding: 16mm 18mm; position: relative; page-break-after: always; overflow: hidden; }
+  .pagina:last-child { page-break-after: auto; }
+  .serif { font-family: 'Geotipe', 'Palatino Linotype', Georgia, serif; font-weight: 400; }
+
+  .cabecalho { display: flex; justify-content: space-between; align-items: center; margin-bottom: 11mm; }
+  .logo { width: 130px; height: 31px; overflow: hidden; position: relative; }
+  .logo img { position: absolute; width: 230.3px; left: -50.2px; top: -49.3px; }
+  .cabecalho .ref { text-align: right; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #991356; font-weight: 500; }
+
+  .kicker { font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; color: #991356; font-weight: 500; margin-bottom: 3mm; }
+  h1 { font-size: 38px; line-height: 1.1; margin-bottom: 4mm; }
+  h2 { font-size: 24px; line-height: 1.2; margin-bottom: 5mm; }
+  p { font-size: 12px; line-height: 1.65; margin-bottom: 3mm; }
+  .intro { font-size: 13px; max-width: 160mm; margin-bottom: 8mm; }
+
+  .qtd { display: flex; gap: 4mm; margin: 2mm 0 8mm; }
+  .qtd .card { flex: 1; border-radius: 10px; padding: 5mm; color: #FFF; }
+  .qtd .card.preto { background: #000; }
+  .qtd .card.vinho { background: #991356; }
+  .qtd .card.borda { background: #FFF; color: #000; border: 1px solid #000; }
+  .qtd .tipo { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; opacity: .85; margin-bottom: 2mm; }
+  .qtd .num { font-size: 40px; line-height: 1; }
+  .qtd .det { font-size: 10.5px; margin-top: 2mm; opacity: .85; }
+
+  .valores { display: flex; gap: 4mm; margin-bottom: 8mm; }
+  .valores > div { flex: 1; border-radius: 10px; padding: 5mm; border: 1px solid rgba(0,0,0,0.12); }
+  .valores .pixbox { border: 1.5px solid #991356; }
+  .valores .r { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #991356; margin-bottom: 2mm; font-weight: 500; }
+  .valores .t { font-size: 30px; line-height: 1.1; }
+  .valores .m { font-size: 11px; margin-top: 2mm; }
+
+  .regioes { margin-bottom: 8mm; }
+  .regioes div { display: flex; font-size: 12px; padding: 2.3mm 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+  .regioes .r { flex: 1; }
+  .regioes .q { width: 25mm; text-align: right; }
+  .regioes .v { width: 38mm; text-align: right; font-weight: 500; }
+  .regioes .cab { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: #991356; border-bottom: 1px solid #000; }
+  .regioes .cab span { font-weight: 500 !important; }
+
+  .nota { font-size: 11px; line-height: 1.6; }
+
+  table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 10.5px; }
+  th { text-align: left; font-weight: 500; font-size: 8.5px; letter-spacing: 1px; text-transform: uppercase; padding: 0 0 1.5mm; color: #991356; border-bottom: 1px solid #000; }
+  td { padding: 1.3mm 0; border-bottom: 1px solid rgba(0,0,0,0.08); vertical-align: middle; }
+  td.n, th.n { text-align: right; white-space: nowrap; padding-left: 3mm; }
+  td.pix { color: #991356; font-weight: 500; }
+  td .prod { display: block; font-size: 8.5px; color: rgba(0,0,0,0.55); margin-top: .3mm; }
+  tr.grupo td { font-family: 'Geotipe', 'Palatino Linotype', Georgia, serif; font-size: 15px; padding: 4.5mm 0 1.5mm; border-bottom: 1px solid rgba(0,0,0,0.25); }
+  tr.grupo td.n { font-family: 'Rubik', sans-serif; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: #991356; vertical-align: bottom; }
+  tr.total td { border-bottom: none; font-weight: 500; padding-top: 3mm; font-size: 11px; }
+
+  .fecho { background: #000; color: #FFF; border-radius: 10px; padding: 6mm; margin-top: 7mm; display: flex; gap: 6mm; align-items: center; }
+  .fecho .l { flex: 1; }
+  .fecho .r { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; opacity: .8; margin-bottom: 1.5mm; }
+  .fecho .t { font-size: 26px; line-height: 1.1; }
+  .fecho .m { font-size: 10.5px; opacity: .85; margin-top: 1.5mm; }
+  .fecho .div { width: 1px; align-self: stretch; background: rgba(255,255,255,0.2); }
+
+  .rodape { position: absolute; bottom: 11mm; left: 18mm; right: 18mm; display: flex; justify-content: space-between; align-items: center; font-size: 9px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 3mm; }
+</style>
+</head>
+<body>
+
+<!-- PÁGINA 1: resumo -->
+<div class="pagina">
+  <div class="cabecalho">
+    <div class="logo"><img src="../../dados/comnectar-transparente.png" alt="comnéctar"></div>
+    <div class="ref">Proposta de adega</div>
+  </div>
+
+  <div class="kicker">Para o Willian</div>
+  <h1 class="serif">Uma adega italiana, com um toque espanhol</h1>
+  <p class="intro">Willian, montamos a sua adega com {{qA}} garrafas, todas do nosso estoque e prontas para entrega. A base é italiana: Barolo e Barbaresco do Piemonte, Brunello e supertoscanos, Etna e Amarone. Para variar, entram alguns espanhóis, com Pintia e Macán da família Vega Sicilia. Sem franceses, como você pediu. São {{rotulos}} rótulos diferentes, com poucas garrafas de cada, pra você ter sempre algo novo para abrir.</p>
+
+  <div class="qtd">
+    <div class="card vinho"><div class="tipo">Tintos</div><div class="num serif">{{qT}}</div><div class="det">{{qIT}} italianos · 5 espanhóis</div></div>
+    <div class="card preto"><div class="tipo">Brancos</div><div class="num serif">{{qB}}</div><div class="det">17 italianos · 3 espanhóis</div></div>
+    <div class="card borda"><div class="tipo">Total</div><div class="num serif">{{qA}}</div><div class="det">garrafas · {{rotulos}} rótulos</div></div>
+  </div>
+
+  <div class="valores">
+    <div class="pixbox">
+      <div class="r">À vista no PIX · 10% off</div>
+      <div class="t serif">{{vA_pix}}</div>
+      <div class="m">Média de {{media_pix}} por garrafa</div>
+    </div>
+    <div>
+      <div class="r">No cartão</div>
+      <div class="t serif">{{vA_cartao}}</div>
+      <div class="m">Média de {{media_cartao}} por garrafa</div>
+    </div>
+  </div>
+
+  <div class="kicker">Como a adega se divide</div>
+  <div class="regioes">
+    <div class="cab"><span class="r">Região</span><span class="q">Garrafas</span><span class="v">Valor no PIX</span></div>
+    {{regioes}}
+  </div>
+
+  <p class="nota">No PIX você economiza <b style="font-weight:500">{{economia}}</b>. Nas próximas páginas está cada vinho, com o valor por garrafa no cartão e no PIX.</p>
+
+  <div class="rodape"><span>comnéctar · vinhos com curadoria</span><span>1 / 4</span></div>
+</div>
+
+<!-- PÁGINA 2: Piemonte e Toscana -->
+<div class="pagina">
+  <div class="cabecalho">
+    <div class="logo"><img src="../../dados/comnectar-transparente.png" alt="comnéctar"></div>
+    <div class="ref">Adega do Willian · Tintos</div>
+  </div>
+  {{tab_p2}}
+  <div class="rodape"><span>Valores por garrafa. PIX com 10% de desconto sobre o cartão.</span><span>2 / 4</span></div>
+</div>
+
+<!-- PÁGINA 3: Toscana, Etna, Amarone, Espanha -->
+<div class="pagina">
+  <div class="cabecalho">
+    <div class="logo"><img src="../../dados/comnectar-transparente.png" alt="comnéctar"></div>
+    <div class="ref">Adega do Willian · Tintos</div>
+  </div>
+  {{tab_p3}}
+  <div class="rodape"><span>Valores por garrafa. PIX com 10% de desconto sobre o cartão.</span><span>3 / 4</span></div>
+</div>
+
+<!-- PÁGINA 4: brancos e total -->
+<div class="pagina">
+  <div class="cabecalho">
+    <div class="logo"><img src="../../dados/comnectar-transparente.png" alt="comnéctar"></div>
+    <div class="ref">Adega do Willian · Brancos</div>
+  </div>
+  {{tab_p4}}
+
+  <div class="fecho">
+    <div class="l">
+      <div class="r">Total no PIX · {{qA}} garrafas</div>
+      <div class="t serif">{{vA_pix}}</div>
+      <div class="m">Tintos {{vT_pix}} · Brancos {{vB_pix}}</div>
+    </div>
+    <div class="div"></div>
+    <div class="l">
+      <div class="r">Total no cartão</div>
+      <div class="t serif">{{vA_cartao}}</div>
+      <div class="m">Economia de {{economia}} no PIX</div>
+    </div>
+  </div>
+
+  <div class="rodape"><span>Valores sujeitos à disponibilidade de estoque. Fale com a gente para reservar.</span><span>4 / 4</span></div>
+</div>
+
+</body>
+</html>
