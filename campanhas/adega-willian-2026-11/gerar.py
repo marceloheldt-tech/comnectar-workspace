@@ -58,12 +58,13 @@ sel = {
   ("Ensamblaje 2024", "Bodegas Viñátigo · Canárias", 3, 699),
  ],
  "Brancos": [
-  ("Greco di Tufo 2024", "Mastroberardino · Campânia", 4, 459),
-  ("L'Altro Chardonnay 2024", "Pio Cesare · Piemonte", 4, 439),
-  ("Etna Bianco Superiore 2023", "Barone di Villagrande · Sicília", 2, 389),
-  ("Scapulin 2023", "Giuseppe Cortese · Piemonte", 3, 379),
-  ("Listán de Canarias 2025", "Bodegas Viñátigo · Canárias", 3, 369),
-  ("Arinto 2024", "Calcarius · Portugal", 4, 139),
+  ("Chablis Premier Cru Fourchaume 2024", "Albert Bichot · Chablis", 1, 749),
+  ("Chablis 2023", "Louis Jadot · Chablis", 2, 449),
+  ("Petit Chablis 2023", "Louis Jadot · Chablis", 5, 419),
+  ("Petit Chablis 2024", "Albert Bichot · Chablis", 2, 289),
+  ("Arinto 2024", "Calcarius · Portugal", 6, 139),
+  ("Greco di Tufo 2024", "Mastroberardino · Campânia", 2, 459),
+  ("L'Altro Chardonnay 2024", "Pio Cesare · Piemonte", 2, 439),
  ],
 }
 
