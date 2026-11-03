@@ -95,13 +95,13 @@ def tabela(grupos, total=None):
         h.append(f'<tr class="grupo"><td colspan="5">{g}</td><td class="n">{q} gfs</td></tr>')
         for it in sel[g]:
             nome, prod, n, p = it[:4]
-            h.append(f'<tr><td>{nome}<span class="prod">{prod}</span></td><td class="n">{n}</td><td class="n cheio">{brl(p)}</td>'
+            h.append(f'<tr><td>{nome}<span class="prod">{prod}</span></td><td class="n">{n}</td><td class="n cheio{' risco' if p != cartao(it) else ''}">{brl(p)}</td>'
                      f'<td class="n">{brl(cartao(it))}</td><td class="n pix">{brl(pix(it))}</td><td class="n">{brl(n*pix(it))}</td></tr>')
     if total:
         label, gt = total
         q, v, pv = tot(gt)
         cheio = sum(i[2] * i[3] for g in gt for i in sel[g])
-        h.append(f'<tr class="total"><td>{label}</td><td class="n">{q}</td><td class="n cheio">{brl(cheio)}</td><td class="n">{brl(v)}</td><td></td><td class="n">{brl(pv)}</td></tr>')
+        h.append(f'<tr class="total"><td>{label}</td><td class="n">{q}</td><td class="n cheio risco">{brl(cheio)}</td><td class="n">{brl(v)}</td><td></td><td class="n">{brl(pv)}</td></tr>')
     h.append('</table>')
     return "\n".join(h)
 
