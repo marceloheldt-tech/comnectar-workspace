@@ -59,10 +59,11 @@ sel = {
  ],
  "Brancos": [
   ("Greco di Tufo 2024", "Mastroberardino · Campânia", 4, 459),
-  ("L'Altro Chardonnay 2024", "Pio Cesare · Piemonte", 6, 439),
+  ("L'Altro Chardonnay 2024", "Pio Cesare · Piemonte", 4, 439),
   ("Etna Bianco Superiore 2023", "Barone di Villagrande · Sicília", 2, 389),
-  ("Scapulin 2023", "Giuseppe Cortese · Piemonte", 5, 379),
+  ("Scapulin 2023", "Giuseppe Cortese · Piemonte", 3, 379),
   ("Listán de Canarias 2025", "Bodegas Viñátigo · Canárias", 3, 369),
+  ("Arinto 2024", "Calcarius · Portugal", 4, 139),
  ],
 }
 
