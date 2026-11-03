@@ -85,18 +85,19 @@ qT, vT, pT = tot(tintos); qB, vB, pB = tot(["Brancos"]); qA, vA, pA = qT + qB, v
 qIT = qT - tot(["Espanha"])[0]
 
 def tabela(grupos, total=None):
-    h = ['<table><colgroup><col><col style="width:12mm"><col style="width:27mm"><col style="width:27mm"><col style="width:30mm"></colgroup><tr><th>Vinho</th><th class="n">Qtd</th><th class="n">Cartão</th><th class="n">PIX</th><th class="n">Subtotal PIX</th></tr>']
+    h = ['<table><colgroup><col><col style="width:10mm"><col style="width:24mm"><col style="width:23mm"><col style="width:22mm"><col style="width:25mm"></colgroup><tr><th>Vinho</th><th class="n">Qtd</th><th class="n">Preço cheio</th><th class="n">Cartão</th><th class="n">PIX</th><th class="n">Subtotal PIX</th></tr>']
     for g in grupos:
         q, v, _ = tot([g])
-        h.append(f'<tr class="grupo"><td colspan="4">{g}</td><td class="n">{q} gfs</td></tr>')
+        h.append(f'<tr class="grupo"><td colspan="5">{g}</td><td class="n">{q} gfs</td></tr>')
         for it in sel[g]:
             nome, prod, n, p = it[:4]
-            h.append(f'<tr><td>{nome}<span class="prod">{prod}</span></td><td class="n">{n}</td>'
+            h.append(f'<tr><td>{nome}<span class="prod">{prod}</span></td><td class="n">{n}</td><td class="n cheio">{brl(p)}</td>'
                      f'<td class="n">{brl(cartao(it))}</td><td class="n pix">{brl(pix(it))}</td><td class="n">{brl(n*pix(it))}</td></tr>')
     if total:
         label, gt = total
         q, v, pv = tot(gt)
-        h.append(f'<tr class="total"><td>{label}<span class="prod">{brl(v)} no cartão</span></td><td class="n">{q}</td><td></td><td></td><td class="n">{brl(pv)}</td></tr>')
+        cheio = sum(i[2] * i[3] for g in gt for i in sel[g])
+        h.append(f'<tr class="total"><td>{label}</td><td class="n">{q}</td><td class="n cheio">{brl(cheio)}</td><td class="n">{brl(v)}</td><td></td><td class="n">{brl(pv)}</td></tr>')
     h.append('</table>')
     return "\n".join(h)
 
@@ -108,7 +109,7 @@ html = open("modelo.html", encoding="utf-8").read()
 for k, v in {
     "{{qT}}": str(qT), "{{qB}}": str(qB), "{{qA}}": str(qA), "{{qIT}}": str(qIT),
     "{{vA_cartao}}": brl(vA), "{{vA_pix}}": brl(pA), "{{economia}}": brl(vA - pA),
-    "{{media_cartao}}": brl(vA / qA), "{{media_pix}}": brl(pA / qA),
+    "{{media_cartao}}": brl(vA / qA), "{{vA_cheio}}": brl(sum(i[2] * i[3] for g in sel for i in sel[g])), "{{eco_cheio}}": brl(sum(i[2] * i[3] for g in sel for i in sel[g]) - pA), "{{media_pix}}": brl(pA / qA),
     "{{vT_pix}}": brl(pT), "{{vB_pix}}": brl(pB),
     "{{regioes}}": "\n".join(card_regiao(g) for g in sel),
     "{{tab_p2}}": tabela(["Piemonte"]),
