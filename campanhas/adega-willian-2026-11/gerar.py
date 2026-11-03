@@ -62,15 +62,18 @@ sel = {
  ],
 }
 
-def brl(v):
-    s = f"{v:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+def brl(v):  # valores cheios, sem centavos
+    s = f"{v:,.0f}".replace(",", ".")
     return "R$ " + s
 
+def inteiro(v):  # arredonda pro real mais próximo (0,50 sobe)
+    return int(v + 0.5)
+
 def cartao(item):
-    return item[3] if len(item) > 4 else round(item[3] * DESC_CLIENTE, 2)
+    return item[3] if len(item) > 4 else inteiro(item[3] * DESC_CLIENTE)
 
 def pix(item):
-    return item[4] if len(item) > 4 else round(cartao(item) * PIX, 2)
+    return item[4] if len(item) > 4 else inteiro(cartao(item) * PIX)
 
 def tot(grupos):
     itens = [i for g in grupos for i in sel[g]]
