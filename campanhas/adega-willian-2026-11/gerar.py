@@ -94,7 +94,7 @@ FOTOS = json.load(open("imagens/mapa.json", encoding="utf-8"))
 SEM_FOTO = "../../dados/gota-transparente.png"
 
 # Alturas aproximadas (mm) pra paginar as tabelas sem cortar nada
-H_PAG, H_TH, H_GRUPO, H_ITEM, H_TOTAL, H_FECHO = 242, 5, 11.7, 16, 8, 36
+H_PAG, H_TH, H_GRUPO, H_ITEM, H_TOTAL, H_FECHO = 242, 5, 11.7, 28, 8, 36
 COLS = '<colgroup><col><col style="width:10mm"><col style="width:24mm"><col style="width:23mm"><col style="width:22mm"><col style="width:25mm"></colgroup>'
 TH = '<tr><th>Vinho</th><th class="n">Qtd</th><th class="n">Preço cheio</th><th class="n">Cartão</th><th class="n">PIX</th><th class="n">Subtotal PIX</th></tr>'
 
