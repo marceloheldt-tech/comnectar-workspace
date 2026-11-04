@@ -56,6 +56,9 @@
   td.cheio { color: rgba(0,0,0,0.5); }
   td.cheio.risco { text-decoration: line-through; text-decoration-thickness: 0.5px; }
   td.pix { color: #991356; font-weight: 500; }
+  .vinho { display: flex; align-items: center; gap: 3mm; }
+  .foto { width: 13mm; height: 13mm; object-fit: contain; flex: none; }
+  .foto.ph { padding: 3mm; opacity: .3; }
   td .prod { display: block; font-size: 8.5px; color: rgba(0,0,0,0.55); margin-top: .3mm; }
   tr.grupo td { font-family: 'Geotipe', 'Palatino Linotype', Georgia, serif; font-size: 15px; padding: 4.5mm 0 1.5mm; border-bottom: 1px solid rgba(0,0,0,0.25); }
   tr.grupo td.n { font-family: 'Rubik', sans-serif; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: #991356; vertical-align: bottom; }
@@ -112,53 +115,10 @@
   </div>
 
 
-  <div class="rodape"><span>comnéctar · vinhos com curadoria</span><span>1 / 4</span></div>
+  <div class="rodape"><span>comnéctar · vinhos com curadoria</span><span>1 / {{npags}}</span></div>
 </div>
 
-<!-- PÁGINA 2: Piemonte e Toscana -->
-<div class="pagina">
-  <div class="cabecalho">
-    <div class="logo"><img src="../../dados/comnectar-transparente.png" alt="comnéctar"></div>
-    <div class="ref">Adega do Willian · Tintos</div>
-  </div>
-  {{tab_p2}}
-  <div class="rodape"><span></span><span>2 / 4</span></div>
-</div>
-
-<!-- PÁGINA 3: Toscana, Etna, Amarone, Espanha -->
-<div class="pagina">
-  <div class="cabecalho">
-    <div class="logo"><img src="../../dados/comnectar-transparente.png" alt="comnéctar"></div>
-    <div class="ref">Adega do Willian · Tintos</div>
-  </div>
-  {{tab_p3}}
-  <div class="rodape"><span></span><span>3 / 4</span></div>
-</div>
-
-<!-- PÁGINA 4: brancos e total -->
-<div class="pagina">
-  <div class="cabecalho">
-    <div class="logo"><img src="../../dados/comnectar-transparente.png" alt="comnéctar"></div>
-    <div class="ref">Adega do Willian · Espanha e brancos</div>
-  </div>
-  {{tab_p4}}
-
-  <div class="fecho">
-    <div class="l">
-      <div class="r">Total no PIX · {{qA}} garrafas</div>
-      <div class="t serif">{{vA_pix}}</div>
-      <div class="m">Tintos {{vT_pix}} · Brancos {{vB_pix}}</div>
-    </div>
-    <div class="div"></div>
-    <div class="l">
-      <div class="r">Total no cartão</div>
-      <div class="t serif">{{vA_cartao}}</div>
-      <div class="m">Economia de {{economia}} no PIX</div>
-    </div>
-  </div>
-
-  <div class="rodape"><span>Valores sujeitos à disponibilidade de estoque. Fale com a gente para reservar.</span><span>4 / 4</span></div>
-</div>
+{{paginas}}
 
 </body>
 </html>

@@ -90,37 +90,79 @@ tintos = [g for g in sel if g != "Brancos"]
 qT, vT, pT = tot(tintos); qB, vB, pB = tot(["Brancos"]); qA, vA, pA = qT + qB, vT + vB, pT + pB
 qIT = qT - tot(["Espanha"])[0]
 
-def tabela(grupos, total=None):
-    h = ['<table><colgroup><col><col style="width:10mm"><col style="width:24mm"><col style="width:23mm"><col style="width:22mm"><col style="width:25mm"></colgroup><tr><th>Vinho</th><th class="n">Qtd</th><th class="n">Preço cheio</th><th class="n">Cartão</th><th class="n">PIX</th><th class="n">Subtotal PIX</th></tr>']
-    for g in grupos:
-        q, v, _ = tot([g])
-        h.append(f'<tr class="grupo"><td colspan="5">{g}</td><td class="n">{q} gfs</td></tr>')
-        for it in sel[g]:
-            nome, prod, n, p = it[:4]
-            h.append(f'<tr><td>{nome}<span class="prod">{prod}</span></td><td class="n">{n}</td><td class="n cheio{' risco' if p != cartao(it) else ''}">{brl(p)}</td>'
-                     f'<td class="n">{brl(cartao(it))}</td><td class="n pix">{brl(pix(it))}</td><td class="n">{brl(n*pix(it))}</td></tr>')
-    if total:
-        label, gt = total
-        q, v, pv = tot(gt)
-        cheio = sum(i[2] * i[3] for g in gt for i in sel[g])
-        h.append(f'<tr class="total"><td>{label}</td><td class="n">{q}</td><td class="n cheio risco">{brl(cheio)}</td><td class="n">{brl(v)}</td><td></td><td class="n">{brl(pv)}</td></tr>')
-    h.append('</table>')
-    return "\n".join(h)
+FOTOS = json.load(open("imagens/mapa.json", encoding="utf-8"))
+SEM_FOTO = "../../dados/gota-transparente.png"
 
+# Alturas aproximadas (mm) pra paginar as tabelas sem cortar nada
+H_PAG, H_TH, H_GRUPO, H_ITEM, H_TOTAL, H_FECHO = 242, 5, 11.7, 16, 8, 36
+COLS = '<colgroup><col><col style="width:10mm"><col style="width:24mm"><col style="width:23mm"><col style="width:22mm"><col style="width:25mm"></colgroup>'
+TH = '<tr><th>Vinho</th><th class="n">Qtd</th><th class="n">Preço cheio</th><th class="n">Cartão</th><th class="n">PIX</th><th class="n">Subtotal PIX</th></tr>'
+
+def linha_item(it):
+    nome, prod, n, p = it[:4]
+    foto = FOTOS.get(nome + "|" + prod)
+    img = f'<img class="foto" src="{foto}">' if foto else f'<img class="foto ph" src="{SEM_FOTO}">'
+    risco = " risco" if p != cartao(it) else ""
+    return (f'<tr><td><div class="vinho">{img}<div>{nome}<span class="prod">{prod}</span></div></div></td><td class="n">{n}</td>'
+            f'<td class="n cheio{risco}">{brl(p)}</td><td class="n">{brl(cartao(it))}</td><td class="n pix">{brl(pix(it))}</td><td class="n">{brl(n*pix(it))}</td></tr>')
+
+def linha_total(label, gt):
+    q, v, pv = tot(gt)
+    cheio = sum(i[2] * i[3] for g in gt for i in sel[g])
+    return f'<tr class="total"><td>{label}</td><td class="n">{q}</td><td class="n cheio risco">{brl(cheio)}</td><td class="n">{brl(v)}</td><td></td><td class="n">{brl(pv)}</td></tr>'
+
+def blocos():
+    # (altura, html, tipo); tipo "grupo" não pode ficar sozinho no fim da página
+    for g in sel:
+        q, _, _ = tot([g])
+        yield H_GRUPO, f'<tr class="grupo"><td colspan="5">{g}</td><td class="n">{q} gfs</td></tr>', "grupo"
+        for it in sel[g]:
+            yield H_ITEM, linha_item(it), "item"
+        if g == tintos[-1]:
+            yield H_TOTAL, linha_total("Total tintos", tintos), "total"
+    yield H_TOTAL, linha_total("Total brancos", ["Brancos"]), "total"
+    yield H_FECHO, "FECHO", "fecho"
+
+def paginas_tabela():
+    pags, atual, usado = [], [], H_TH
+    bl = list(blocos())
+    for k, (h, html, tipo) in enumerate(bl):
+        extra = bl[k + 1][0] if tipo == "grupo" else 0
+        if usado + h + extra > H_PAG and atual:
+            pags.append(atual); atual, usado = [], H_TH
+        atual.append((html, tipo)); usado += h
+    pags.append(atual)
+    return pags
 def card_regiao(g):
     q, v, pv = tot([g])
     return f'<div><span class="r">{g}</span><span class="q">{q} gfs</span><span class="v">{brl(pv)}</span></div>'
 
 html = open("modelo.html", encoding="utf-8").read()
+pags = paginas_tabela()
+npags = len(pags) + 1
+paginas_html = []
+for n, pag in enumerate(pags, start=2):
+    linhas = [h for h, t in pag if t != "fecho"]
+    fecho = any(t == "fecho" for h, t in pag)
+    rodape = "Valores sujeitos à disponibilidade de estoque. Fale com a gente para reservar." if n == npags else ""
+    paginas_html.append(f"""<div class="pagina">
+  <div class="cabecalho">
+    <div class="logo"><img src="../../dados/comnectar-transparente.png" alt="comnéctar"></div>
+    <div class="ref">Adega do Willian · Seleção</div>
+  </div>
+{f"  <table>{COLS}{TH}{chr(10)}{chr(10).join(linhas)}{chr(10)}  </table>" if linhas else ""}
+{'{{FECHO}}' if fecho else ''}
+  <div class="rodape"><span>{rodape}</span><span>{n} / {npags}</span></div>
+</div>""")
+FECHO_HTML = open("fecho.html", encoding="utf-8").read()
+html = html.replace("{{paginas}}", (chr(10) * 2).join(paginas_html)).replace("{{FECHO}}", "  " + FECHO_HTML + chr(10))
 for k, v in {
     "{{qT}}": str(qT), "{{qB}}": str(qB), "{{qA}}": str(qA), "{{qIT}}": str(qIT),
     "{{vA_cartao}}": brl(vA), "{{vA_pix}}": brl(pA), "{{economia}}": brl(vA - pA),
     "{{media_cartao}}": brl(vA / qA), "{{vA_cheio}}": brl(sum(i[2] * i[3] for g in sel for i in sel[g])), "{{eco_cheio}}": brl(sum(i[2] * i[3] for g in sel for i in sel[g]) - pA), "{{media_pix}}": brl(pA / qA),
     "{{vT_pix}}": brl(pT), "{{vB_pix}}": brl(pB),
     "{{regioes}}": "\n".join(card_regiao(g) for g in sel),
-    "{{tab_p2}}": tabela(["Piemonte"]),
-    "{{tab_p3}}": tabela(["Toscana", "Sicília · Etna", "Vêneto · Amarone"]),
-    "{{tab_p4}}": tabela(["Espanha"], ("Total tintos", tintos)) + '<div style="height:5mm"></div>' + tabela(["Brancos"], ("Total brancos", ["Brancos"])),
+    "{{npags}}": str(npags),
     "{{rotulos}}": str(sum(len(sel[g]) for g in sel)),
 }.items():
     html = html.replace(k, v)
