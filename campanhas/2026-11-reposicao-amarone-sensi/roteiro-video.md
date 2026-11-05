@@ -9,35 +9,37 @@
 
 **1. Abertura (0 a 5 s)**
 Cena: mão colocando a garrafa na bancada, câmera fechada no rótulo.
-Fala: "Voltou o Amarone da Sensi. Chegou reposição aqui na comnéctar."
+Fala: "Ele voltou. O Amarone da Sensi chegou de novo aqui na comnéctar."
 Texto na tela: VOLTOU · AMARONE SENSI
 
-**2. O que é o Amarone (5 a 15 s)**
+**2. O que é o Amarone (5 a 16 s)**
 Cena: gira a garrafa devagar, aproxima do selo DOCG.
-Fala: "Amarone é o grande tinto do Vêneto. As uvas, Corvina e Rondinella, secam por meses antes de virar vinho. Por isso ele fica tão concentrado."
+Fala: "Pra quem não conhece: no Amarone, as uvas passam meses secando antes de virar vinho. Perdem água e concentram tudo, fruta, açúcar, sabor. É o tinto mais intenso do Vêneto."
 Texto na tela: Valpolicella Classico DOCG · Vêneto, Itália
 
-**3. Como ele é (15 a 25 s)**
+**3. Como ele é (16 a 26 s)**
 Cena: serve uma taça, close no vinho escuro girando.
-Fala: "Esse é 2022, com 24 meses em barrica. Cereja preta, geleia de frutas silvestres, encorpado e macio. São 15% de álcool, mas muito bem equilibrado."
-Texto na tela: Safra 2022 · 24 meses em barrica · 15%
+Fala: "Na taça, é cereja preta madura, geleia de frutas silvestres. Passou dois anos em barrica, então chega redondo, sem aresta nenhuma."
+Texto na tela: Safra 2022 · 24 meses em barrica
 
-**4. Pra quando (25 a 32 s)**
+**4. Pra quando (26 a 33 s)**
 Cena: taça ao lado da tábua de queijo ou de um prato de carne.
-Fala: "É vinho pra carne assada, queijo curado, jantar mais longo. Serve entre 18 e 20 graus."
+Fala: "É vinho de jantar sem pressa. Carne assada, um queijo bem curado, e a garrafa aberta no centro da mesa."
 Texto na tela: Carnes · queijos curados · embutidos
 
-**5. Fechamento (32 a 40 s)**
+**5. Fechamento (33 a 40 s)**
 Cena: garrafa e taça juntas, câmera parada.
-Fala: "Chegaram poucas garrafas e quem já provou sabe que ele vai rápido. Link na bio ou chama no WhatsApp."
-Texto na tela: REPOSIÇÃO · POUCAS UNIDADES · R$ 789
+Fala: "Vieram só seis garrafas. Se você tava esperando ele voltar, a hora é agora. Link na bio."
+Texto na tela: REPOSIÇÃO · SÓ 6 GARRAFAS · R$ 789
 
 ---
 
 ## Legenda pro post
 
-> Voltou o Amarone da Sensi 🍷
+> O Amarone da Sensi voltou 🍷
 >
-> O grande tinto do Vêneto, feito com uvas Corvina e Rondinella que secam por meses antes da fermentação. Safra 2022, 24 meses em barrica, cereja preta e frutas silvestres, encorpado e macio.
+> No Amarone, as uvas Corvina e Rondinella passam meses secando antes da fermentação. Perdem água e concentram fruta e sabor, e é daí que vem a intensidade desse tinto do Vêneto.
 >
-> Chegou reposição, mas são poucas garrafas. Link na bio ou chama a gente no WhatsApp.
+> Safra 2022, dois anos em barrica. Cereja preta, geleia de frutas silvestres e uma textura bem redonda. Pede carne assada, queijo curado e jantar sem pressa.
+>
+> Vieram só 6 garrafas. Link na bio ou chama a gente no WhatsApp.
