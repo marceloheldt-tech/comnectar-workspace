@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1920px; overflow: hidden; background: #fff; font-family: 'Rubik', sans-serif; position: relative; }
+  .serif { font-family: 'Geotipe', 'Palatino Linotype', Georgia, serif; }
+
+  .header { padding: 56px 64px 34px; position: relative; }
+  .logo-box { width: 320px; height: 62px; overflow: hidden; position: relative; margin-bottom: 44px; } .logo { width: 460px; position: absolute; left: -92px; top: 50%; transform: translateY(-50%); }
+  .kicker { font-size: 22px; color: #991356; font-weight: 500; letter-spacing: 6px; text-transform: uppercase; display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .kicker img { height: 22px; box-shadow: 0 0 0 0.5px #ddd; }
+  .title { font-size: 80px; color: #000; font-weight: 400; line-height: 1.05; margin-bottom: 16px; }
+  .subtitle { font-size: 27px; color: #444; font-weight: 300; }
+
+  .table-head { display: flex; justify-content: flex-end; gap: 0; padding: 0 64px 12px; border-bottom: 1.5px solid #991356; margin: 0 0 0; }
+  .table-head span { font-size: 16px; color: #888; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; }
+
+  .row { display: flex; align-items: center; height: 258px; padding: 0 64px 0 40px; border-bottom: 1px solid #eee; }
+  .photo { width: 150px; height: 244px; overflow: hidden; position: relative; flex-shrink: 0; }
+  .photo img { height: 244px; width: 244px; position: absolute; left: 50%; top: 0; transform: translateX(-50%); }
+  .info { flex: 1; padding: 0 24px 0 20px; }
+  .type { font-size: 17px; color: #991356; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 8px; }
+  .name { font-size: 33px; color: #000; line-height: 1.15; margin-bottom: 8px; }
+  .producer { font-size: 20px; color: #444; line-height: 1.35; }
+  .producer b { font-weight: 500; color: #000; }
+
+  .prices { width: 290px; text-align: right; flex-shrink: 0; }
+  .de { font-size: 20px; color: #999; margin-bottom: 8px; }
+  .de s { color: #999; }
+  .card { font-size: 21px; color: #000; margin-bottom: 6px; }
+  .card b { font-weight: 500; }
+  .pix-label { font-size: 15px; color: #991356; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; margin-top: 4px; }
+  .pix { font-size: 46px; color: #991356; font-weight: 700; line-height: 1.05; }
+
+  .footer { position: absolute; left: 0; right: 0; bottom: 0; height: 230px; background: #991356; color: #fff; padding: 40px 64px; display: flex; align-items: center; justify-content: space-between; }
+  .footer .main { font-size: 40px; line-height: 1.25; }
+  .footer .small { font-size: 24px; font-weight: 300; margin-top: 14px; opacity: 0.9; }
+  .footer .gota { width: 110px; filter: brightness(0) invert(1); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo-box"><img class="logo" src="../../dados/comnectar-transparente.png" alt="comnéctar"></div>
+  <p class="kicker"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzIDIiPjxyZWN0IHdpZHRoPSIzIiBoZWlnaHQ9IjAuNSIgZmlsbD0iI2M2MGIxZSIvPjxyZWN0IHk9IjAuNSIgd2lkdGg9IjMiIGhlaWdodD0iMSIgZmlsbD0iI2ZmYzQwMCIvPjxyZWN0IHk9IjEuNSIgd2lkdGg9IjMiIGhlaWdodD0iMC41IiBmaWxsPSIjYzYwYjFlIi8+PC9zdmc+" alt="ES"> Recém-chegados</p>
+  <h1 class="title serif">Linha Espanha</h1>
+  <p class="subtitle">Espumante, brancos e tinto que acabaram de chegar e já estão aqui em casa.</p>
+</div>
+
+<div class="table-head"><span>De · Cartão · Pix</span></div>
+
+<div class="row">
+  <div class="photo"><img src="imagens/inedita.jpg" alt=""></div>
+  <div class="info">
+    <p class="type">Espumante</p>
+    <p class="name serif">Cuvée Inedita Reserva Extra Brut</p>
+    <p class="producer"><b>Vivanco</b> · Rioja<br>Método tradicional, 30 meses sobre as leveduras</p>
+  </div>
+  <div class="prices">
+    <p class="de">de <s>R$ 299,00</s></p>
+    <p class="card">cartão <b>R$ 269,10</b></p>
+    <p class="pix-label">no Pix</p>
+    <p class="pix">R$ 242,19</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="photo"><img src="imagens/vivanco.jpg" alt=""></div>
+  <div class="info">
+    <p class="type">Branco</p>
+    <p class="name serif">Vivanco Blanco 2024</p>
+    <p class="producer"><b>Vivanco</b> · Rioja<br>Viura, Tempranillo Blanco e Maturana Blanca</p>
+  </div>
+  <div class="prices">
+    <p class="de">de <s>R$ 139,00</s></p>
+    <p class="card">cartão <b>R$ 125,10</b></p>
+    <p class="pix-label">no Pix</p>
+    <p class="pix">R$ 112,59</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="photo"><img src="imagens/gorka.jpg" alt=""></div>
+  <div class="info">
+    <p class="type">Branco</p>
+    <p class="name serif">Gorka Izagirre 2025</p>
+    <p class="producer"><b>Gorka Izagirre</b> · País Basco<br>Txakoli de Hondarrabi Zuri e Zerratia</p>
+  </div>
+  <div class="prices">
+    <p class="de">de <s>R$ 259,00</s></p>
+    <p class="card">cartão <b>R$ 233,10</b></p>
+    <p class="pix-label">no Pix</p>
+    <p class="pix">R$ 209,79</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="photo"><img src="imagens/listan.jpg" alt=""></div>
+  <div class="info">
+    <p class="type">Branco</p>
+    <p class="name serif">Listán de Canarias 2025</p>
+    <p class="producer"><b>Bodegas Viñátigo</b> · Ilhas Canárias<br>Listán Blanco de solo vulcânico</p>
+  </div>
+  <div class="prices">
+    <p class="de">de <s>R$ 369,00</s></p>
+    <p class="card">cartão <b>R$ 332,10</b></p>
+    <p class="pix-label">no Pix</p>
+    <p class="pix">R$ 298,89</p>
+  </div>
+</div>
+
+<div class="row" style="border-bottom:none;">
+  <div class="photo"><img src="imagens/ensamblaje.jpg" alt=""></div>
+  <div class="info">
+    <p class="type">Tinto</p>
+    <p class="name serif">Viñátigo Ensamblaje 2024</p>
+    <p class="producer"><b>Bodegas Viñátigo</b> · Ilhas Canárias<br>Blend de 7 uvas nativas das ilhas</p>
+  </div>
+  <div class="prices">
+    <p class="de">de <s>R$ 699,00</s></p>
+    <p class="card">cartão <b>R$ 629,10</b></p>
+    <p class="pix-label">no Pix</p>
+    <p class="pix">R$ 566,19</p>
+  </div>
+</div>
+
+<div class="footer">
+  <div>
+    <p class="main">10% off no cartão<br>e mais 10% no Pix</p>
+    <p class="small">Frete grátis acima de R$ 1.000</p>
+  </div>
+  <img class="gota" src="../../dados/gota-transparente.png" alt="">
+</div>
+
+</body>
+</html>
