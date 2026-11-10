@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; background: #fff; font-family: 'Rubik', sans-serif; color: #000; }
+  .page { padding: 64px 56px 48px; }
+
+  .top { text-align: center; padding-bottom: 44px; border-bottom: 1px solid #991356; }
+  .top .logo { width: 300px; display: block; margin: 0 auto 44px; }
+  .kicker { font-size: 18px; font-weight: 500; letter-spacing: 6px; text-transform: uppercase; color: #991356; margin-bottom: 18px; }
+  h1 { font-family: 'Geotipe','Palatino Linotype',Georgia,serif; font-weight: 400; font-size: 64px; line-height: 1.1; margin-bottom: 22px; }
+  .sub { font-size: 21px; font-weight: 300; color: #444; line-height: 1.5; }
+  .sub b { font-weight: 500; color: #991356; }
+
+  .rules { display: flex; justify-content: center; gap: 14px; margin-top: 30px; }
+  .rule { border: 1px solid #991356; border-radius: 10px; padding: 12px 22px; font-size: 16px; color: #991356; font-weight: 500; letter-spacing: 1px; }
+  .rule.solid { background: #991356; color: #fff; }
+
+  section { margin-top: 48px; }
+  .ghead { display: flex; align-items: center; justify-content: space-between; background: #000; color: #fff; border-radius: 10px; padding: 16px 24px; }
+  .ghead .t { font-size: 18px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; }
+  .ghead .d { font-size: 16px; font-weight: 300; opacity: .8; }
+
+  .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px 20px; margin-top: 30px; }
+  .card { width: 226px; display: flex; flex-direction: column; }
+  .grid.n3 .card, .grid.n6 .card { width: 300px; }
+  .photo { height: 330px; display: flex; align-items: flex-end; justify-content: center; }
+  .photo img { max-height: 320px; max-width: 100%; object-fit: contain; }
+  .line { height: 1.5px; background: #991356; margin: 14px 0 12px; }
+  .prod { font-size: 13px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #991356; margin-bottom: 4px; }
+  .name { font-family: 'Geotipe','Palatino Linotype',Georgia,serif; font-size: 22px; line-height: 1.25; min-height: 55px; }
+  .orig { font-size: 14px; color: #777; margin: 6px 0 14px; display: flex; align-items: center; gap: 6px; }
+  .flag { height: 12px; box-shadow: 0 0 0 .5px #ddd; }
+
+  .prices { margin-top: auto; }
+  .prices p { display: flex; justify-content: space-between; align-items: baseline; }
+  .cheio { font-size: 15px; color: #999; margin-bottom: 4px; }
+  .cartao { font-size: 17px; color: #000; padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid rgba(0,0,0,.08); }
+  .cartao span { font-weight: 500; }
+  .pix { font-size: 32px; font-weight: 700; color: #991356; line-height: 1; }
+  .pix small { font-size: 14px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+
+  .foot { margin-top: 56px; padding-top: 28px; border-top: 1px solid rgba(0,0,0,.08); display: flex; align-items: flex-end; justify-content: space-between; }
+  .foot p { font-size: 17px; font-weight: 300; line-height: 1.6; color: #555; }
+  .foot p b { font-weight: 500; color: #000; }
+  .foot img { width: 72px; opacity: .7; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="top">
+    <img class="logo" src="../../dados/comnectar-transparente.png" alt="comnéctar">
+    <p class="kicker">Festas de fim de ano</p>
+    <h1>Espumantes &amp; Champagnes</h1>
+    <p class="sub">Uma seleção pra brindar a virada, das grandes maisons de Champagne<br>aos melhores espumantes de método tradicional.</p>
+    <div class="rules">
+      <span class="rule">Pix com 10% off</span>
+      <span class="rule solid">Frete grátis acima de R$ 1.000</span>
+    </div>
+  </div>
+{{SECOES}}
+
+  <div class="foot">
+    <p><b>comnectar.com.br</b><br>Estoque limitado, válido enquanto durarem as garrafas.</p>
+    <img src="../../dados/gota-transparente.png" alt="">
+  </div>
+
+</div>
+</body>
+</html>
