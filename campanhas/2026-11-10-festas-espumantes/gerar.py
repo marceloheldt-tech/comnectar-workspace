@@ -1,4 +1,4 @@
-# Gera festas-espumantes.html: cheio = base*1.10, cartão = base, Pix = base*0.90 (base = preço "de" quando houver)
+# Gera festas-espumantes.html: cheio = base*1.10, cartão = base, Pix = base*0.90 (base = preço atual do site)
 import json, math
 def r(x): return int(math.floor(x + 0.5))
 def brl(n): return f"{n:,}".replace(",", ".")
@@ -8,8 +8,8 @@ import base64
 BR=base64.b64encode(b'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 21"><rect width="30" height="21" fill="#009c3b"/><polygon points="15,2.5 27.5,10.5 15,18.5 2.5,10.5" fill="#ffdf00"/><circle cx="15" cy="10.5" r="4.6" fill="#002776"/></svg>').decode()
 grupos = [
  ("Champagnes", "França · Champagne", [
+  ("Taittinger Réserve Brut", "Taittinger", FR, "Reims", 599, "taittinger"),
   ("Veuve Clicquot Brut", "Veuve Clicquot", FR, "Reims", 669, "veuve"),
-  ("Taittinger Réserve Brut", "Taittinger", FR, "Reims", 699, "taittinger"),
   ("Moët & Chandon Impérial Extra Brut", "Moët & Chandon", FR, "Épernay", 699, "moet"),
   ("Billecart-Salmon Brut Réserve", "Billecart-Salmon", FR, "Mareuil-sur-Aÿ", 1099, "billecart"),
  ]),
@@ -19,8 +19,8 @@ grupos = [
   ("Cuvée Inédita Reserva Extra Brut", "Vivanco", ES, "Espanha · Rioja", 299, "vivanco"),
  ]),
  ("Espumantes brasileiros", "Serra Gaúcha · método tradicional", [
-  ("Stravaganzza Brut", "Don Giovanni", BR, "Pinto Bandeira", 139, "stravaganzza"),
-  ("Blanc de Noir Brut", "Don Giovanni", BR, "Pinto Bandeira", 179, "dg-bdn"),
+  ("Stravaganzza Brut", "Don Giovanni", BR, "Pinto Bandeira", 118, "stravaganzza"),
+  ("Blanc de Noir Brut", "Don Giovanni", BR, "Pinto Bandeira", 152, "dg-bdn"),
   ("Nature", "Cave Geisse", BR, "Pinto Bandeira", 189, "geisse-nature"),
   ("Blanc de Blanc Brut", "Cave Geisse", BR, "Pinto Bandeira", 239, "geisse-bdb"),
   ("130 Brut Blanc de Blanc", "Casa Valduga", BR, "Vale dos Vinhedos", 239, "valduga-bdb"),

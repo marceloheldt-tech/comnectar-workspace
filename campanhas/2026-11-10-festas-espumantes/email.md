@@ -34,15 +34,15 @@ Todos os rótulos com **10% de desconto no Pix** e **frete grátis acima de R$ 1
 
 | Rótulo | Preço cheio | Cartão | Pix |
 |---|---|---|---|
+| Champagne Taittinger Réserve Brut | R$ 659 | R$ 599 | R$ 539 |
 | Champagne Veuve Clicquot Brut | R$ 736 | R$ 669 | R$ 602 |
-| Champagne Taittinger Réserve Brut | R$ 769 | R$ 699 | R$ 629 |
 | Champagne Moët & Chandon Impérial Extra Brut | R$ 769 | R$ 699 | R$ 629 |
 | Champagne Billecart-Salmon Brut Réserve | R$ 1.209 | R$ 1.099 | R$ 989 |
 | Veuve Ambal Blanc de Blancs Brut | R$ 109 | R$ 99 | R$ 89 |
 | Veuve Ambal Crémant de Bourgogne Rosé Premières Fleurs | R$ 274 | R$ 249 | R$ 224 |
 | Vivanco Cuvée Inédita Reserva Extra Brut | R$ 329 | R$ 299 | R$ 269 |
-| Don Giovanni Stravaganzza Brut | R$ 153 | R$ 139 | R$ 125 |
-| Don Giovanni Blanc de Noir Brut | R$ 197 | R$ 179 | R$ 161 |
+| Don Giovanni Stravaganzza Brut | R$ 130 | R$ 118 | R$ 106 |
+| Don Giovanni Blanc de Noir Brut | R$ 167 | R$ 152 | R$ 137 |
 | Cave Geisse Nature | R$ 208 | R$ 189 | R$ 170 |
 | Cave Geisse Blanc de Blanc Brut | R$ 263 | R$ 239 | R$ 215 |
 | Casa Valduga 130 Brut Blanc de Blanc | R$ 263 | R$ 239 | R$ 215 |

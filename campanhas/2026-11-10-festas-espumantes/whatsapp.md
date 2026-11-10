@@ -13,7 +13,7 @@ Tem Veuve Clicquot, Taittinger, Moët e Billecart-Salmon, o Crémant Rosé da Ve
 No Pix, todos saem com *10% de desconto*. E acima de R$ 1.000 o *frete é grátis*.
 
 Alguns exemplos no Pix:
-Taittinger Réserve Brut por *R$ 629*
+Taittinger Réserve Brut por *R$ 539*
 Veuve Clicquot Brut por *R$ 602*
 Cave Geisse Nature por *R$ 170*
 Crémant Rosé Veuve Ambal por *R$ 224*
