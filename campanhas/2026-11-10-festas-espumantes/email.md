@@ -4,7 +4,7 @@
 As borbulhas do fim de ano já estão separadas
 
 **PRÉ-HEADER**
-Champagnes e espumantes com 10% off no Pix e frete grátis acima de R$ 1.000.
+Champagnes e espumantes com desconto no cartão, mais 10% no Pix e frete grátis acima de R$ 1.000.
 
 ---
 
@@ -30,23 +30,23 @@ A Serra Gaúcha faz alguns dos melhores espumantes de método tradicional fora d
 
 *(inserir aqui a imagem festas-espumantes.png)*
 
-Todos os rótulos com **10% de desconto no Pix** e **frete grátis acima de R$ 1.000**.
+Todos os rótulos saem com **desconto no cartão** e mais **10% de desconto no Pix**, em cima do preço do cartão. Acima de R$ 1.000, o **frete é grátis**.
 
 | Rótulo | Preço cheio | Cartão | Pix |
 |---|---|---|---|
-| Champagne Taittinger Réserve Brut | R$ 659 | R$ 599 | R$ 539 |
-| Champagne Veuve Clicquot Brut | R$ 736 | R$ 669 | R$ 602 |
-| Champagne Moët & Chandon Impérial Extra Brut | R$ 769 | R$ 699 | R$ 629 |
-| Champagne Billecart-Salmon Brut Réserve | R$ 1.209 | R$ 1.099 | R$ 989 |
-| Veuve Ambal Blanc de Blancs Brut | R$ 109 | R$ 99 | R$ 89 |
-| Veuve Ambal Crémant de Bourgogne Rosé Premières Fleurs | R$ 274 | R$ 249 | R$ 224 |
-| Vivanco Cuvée Inédita Reserva Extra Brut | R$ 329 | R$ 299 | R$ 269 |
-| Don Giovanni Stravaganzza Brut | R$ 130 | R$ 118 | R$ 106 |
-| Don Giovanni Blanc de Noir Brut | R$ 167 | R$ 152 | R$ 137 |
-| Cave Geisse Nature | R$ 208 | R$ 189 | R$ 170 |
-| Cave Geisse Blanc de Blanc Brut | R$ 263 | R$ 239 | R$ 215 |
-| Casa Valduga 130 Brut Blanc de Blanc | R$ 263 | R$ 239 | R$ 215 |
-| Casa Valduga 130 Brut Blanc de Noir | R$ 263 | R$ 239 | R$ 215 |
+| Champagne Taittinger Réserve Brut | R$ 699 | R$ 599 | R$ 539 |
+| Champagne Veuve Clicquot Brut | R$ 669 | R$ 602 | R$ 542 |
+| Champagne Moët & Chandon Impérial Extra Brut | R$ 699 | R$ 629 | R$ 566 |
+| Champagne Billecart-Salmon Brut Réserve | R$ 1.099 | R$ 989 | R$ 890 |
+| Veuve Ambal Blanc de Blancs Brut | R$ 99 | R$ 89 | R$ 80 |
+| Veuve Ambal Crémant de Bourgogne Rosé Premières Fleurs | R$ 249 | R$ 224 | R$ 202 |
+| Vivanco Cuvée Inédita Reserva Extra Brut | R$ 299 | R$ 269 | R$ 242 |
+| Don Giovanni Stravaganzza Brut | R$ 139 | R$ 118 | R$ 106 |
+| Don Giovanni Blanc de Noir Brut | R$ 179 | R$ 152 | R$ 137 |
+| Cave Geisse Nature | R$ 189 | R$ 170 | R$ 153 |
+| Cave Geisse Blanc de Blanc Brut | R$ 239 | R$ 215 | R$ 194 |
+| Casa Valduga 130 Brut Blanc de Blanc | R$ 239 | R$ 215 | R$ 194 |
+| Casa Valduga 130 Brut Blanc de Noir | R$ 239 | R$ 215 | R$ 194 |
 
 Alguns champagnes têm só uma ou duas garrafas em estoque. Se a ideia é garantir a ceia, vale não deixar pra última semana.
 
