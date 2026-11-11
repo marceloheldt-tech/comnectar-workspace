@@ -1,6 +1,6 @@
 # WhatsApp · Espumantes & Champagnes para as festas
 
-Enviar junto com a imagem festas-espumantes.png.
+Enviar junto com o PDF "Espumantes e Champagnes - comnectar.pdf".
 
 ---
 
@@ -18,6 +18,6 @@ Veuve Clicquot Brut por *R$ 542*
 Cave Geisse Nature por *R$ 153*
 Crémant Rosé Veuve Ambal por *R$ 202*
 
-Os preços de todos estão na imagem. Alguns champagnes têm poucas garrafas, então se quiser garantir a ceia, me chama aqui que eu separo pra você.
+Os preços de todos estão no PDF. Alguns champagnes têm poucas garrafas, então se quiser garantir a ceia, me chama aqui que eu separo pra você.
 
 [LINK]
