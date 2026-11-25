@@ -4,9 +4,13 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{width:1080px;height:1350px;overflow:hidden;position:relative;font-family:'Rubik',sans-serif;background:#000000;color:#FFFFFF;display:flex;flex-direction:column}
 .serif{font-family:'Geotipe','Palatino Linotype',Georgia,serif;font-weight:400}
-.wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px 50px 0 50px}
-.wordmark{width:900px;filter:brightness(0) invert(1);margin-bottom:6px}
-.gota{width:130px;margin-bottom:14px}
+.wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 50px}
+.logo-crop{overflow:hidden;position:relative}
+.logo-crop img{position:absolute;filter:brightness(0) invert(1)}
+.wordmark-crop{width:900px;height:213.5px;margin-bottom:10px}
+.wordmark-crop img{width:1594.7px;height:897px;left:-347.2px;top:-341.7px}
+.gota-crop{width:117px;height:130px;margin-bottom:16px}
+.gota-crop img{width:400.8px;height:225.4px;left:-138.9px;top:-44.9px}
 .kicker{font-weight:600;font-size:36px;letter-spacing:8px;text-transform:uppercase;color:#991356;margin-bottom:16px}
 .headline{line-height:1}
 .ate{font-size:40px;color:#FFFFFF;margin-bottom:2px}
@@ -20,8 +24,8 @@ body{width:1080px;height:1350px;overflow:hidden;position:relative;font-family:'R
 .cta{background:#991356;color:#FFFFFF;border-radius:10px;padding:20px 44px;font-size:28px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
 </style></head><body>
 <div class="wrap">
-<img class="wordmark" src="../../../dados/comnectar-transparente.png">
-<img class="gota" src="../../../dados/gota-transparente.png">
+<div class="logo-crop wordmark-crop"><img src="../../../dados/comnectar-transparente.png"></div>
+<div class="logo-crop gota-crop"><img src="../../../dados/gota-transparente.png"></div>
 <div class="kicker">Black Week</div>
 <div class="headline serif">
 <div class="ate">Até</div>
